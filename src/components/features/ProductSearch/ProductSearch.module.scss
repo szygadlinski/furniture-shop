@@ -11,6 +11,9 @@
     display: flex;
     align-items: center;
     position: relative;
+    padding: 5px 30px 5px 35px;
+    font-size: 14px;
+
 
     .icon:first-child {
       color: $form-icon;
@@ -23,6 +26,19 @@
       position: absolute;
       right: 10px;
       z-index: 0;
+    }
+
+    &__header {
+      &:hover {
+        .category__items {
+          height: auto;
+        }
+      }
+    }
+
+    &__items {
+      height: 0;
+      overflow: hidden;
     }
 
     select {
@@ -43,6 +59,12 @@
 
     &:hover {
       color: $orange;
+    }
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
     }
   }
 
