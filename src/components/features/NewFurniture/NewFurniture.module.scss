@@ -58,6 +58,7 @@
                 left: 0;
                 width: 100%;
                 border-bottom: 4px solid $primary;
+                @extend %hover-animation;
               }
             }
           }
@@ -88,6 +89,7 @@
             border-radius: 6px;
             background-color: #e1e1e1;
             font-size: 0;
+            @extend %hover-animation;
 
             &.active,
             &:hover {
