@@ -96,7 +96,6 @@ NewFurniture.propTypes = {
       stars: PropTypes.number,
       promo: PropTypes.string,
       newFurniture: PropTypes.bool,
-      isFavorite: PropTypes.bool,
     })
   ),
 };
