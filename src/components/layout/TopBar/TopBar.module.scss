@@ -15,6 +15,7 @@
       a {
         color: #ffffff;
         font-size: 13px;
+        @extend %hover-animation;
 
         &:hover {
           color: $primary;

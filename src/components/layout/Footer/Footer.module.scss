@@ -21,6 +21,7 @@
             font-size: 14px;
             line-height: 30px;
             color: rgb(169, 169, 169);
+            @extend %hover-animation;
 
             &:hover {
               color: #ffffff;
@@ -70,6 +71,7 @@
           a {
             color: rgb(169, 169, 169);
             text-decoration: none;
+            @extend %hover-animation;
 
             &:hover {
               color: $primary;
