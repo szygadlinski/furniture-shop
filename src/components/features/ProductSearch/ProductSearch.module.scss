@@ -6,65 +6,61 @@
   height: 45px;
   color: $form-text;
 
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
   .category {
-    border-right: 1px solid $form-border;
-    display: flex;
-    align-items: center;
-    position: relative;
-    padding: 5px 30px 5px 35px;
     font-size: 14px;
-
-
-    .icon:first-child {
+    cursor: pointer;
+    &:hover {
       color: $form-icon;
-      position: absolute;
-      left: 10px;
-      z-index: 0;
-    }
 
-    .icon:last-child {
-      position: absolute;
-      right: 10px;
-      z-index: 0;
+      &>.category__items {
+        height: auto;
+        color: $form-text;
+      }
     }
 
     &__header {
-      &:hover {
-        .category__items {
-          height: auto;
-        }
+      border-right: 1px solid $form-border;
+      display: flex;
+      align-items: center;
+      position: relative;
+      padding: 5px 30px 5px 35px;
+      height: 45px;
+
+
+      .icon:first-child {
+        color: $form-icon;
+        position: absolute;
+        left: 10px;
+        z-index: 0;
+      }
+
+      .icon:last-child {
+        position: absolute;
+        right: 10px;
+        z-index: 0;
       }
     }
 
     &__items {
       height: 0;
       overflow: hidden;
-    }
+      box-shadow: 2px 3.464px 6px rgba(1, 2, 2, 0.2);
+      background-color: #ffffff;
 
-    select {
-      -webkit-appearance: none;
-      border: 0;
-      background-color: $form-select-bcg;
-      padding: 5px 30px 5px 35px;
-      position: relative;
-      z-index: 1;
-      outline: none;
-      font-size: 14px;
-      cursor: pointer;
+      li {
+        padding: 5px 30px 5px 35px;
 
-      &:hover {
-        color: $orange;
+        &:hover {
+          color: $form-icon;
+          background-color: transparentize($color: $form-border, $amount: 0.9);
+        }
       }
-    }
-
-    &:hover {
-      color: $orange;
-    }
-
-    ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
     }
   }
 
