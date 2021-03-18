@@ -48,6 +48,7 @@
             text-decoration: none;
             font-size: 18px;
             display: block;
+            cursor: pointer;
 
             &.active,
             &:hover {
@@ -89,6 +90,7 @@
             border-radius: 6px;
             background-color: #e1e1e1;
             font-size: 0;
+            cursor: pointer;
             @extend %hover-animation;
 
             &.active,
@@ -99,5 +101,14 @@
         }
       }
     }
+  }
+
+  .fadeout {
+    opacity: 0;
+    transition: 0.5s;
+  }
+
+  .fadein {
+    transition: 0.5s;
   }
 }
