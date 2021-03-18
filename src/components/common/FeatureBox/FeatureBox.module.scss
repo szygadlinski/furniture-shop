@@ -3,7 +3,8 @@
 .root {
   border: 1px solid #b6b6b6;
   text-align: center;
-  margin-top: 40px;
+  margin-top: 60px;
+  height: 75%;
 
   .iconWrapper {
     height: 60px;
@@ -12,6 +13,7 @@
     display: inline-flex;
     justify-content: center;
     align-items: center;
+    @extend %hover-animation;
 
     .icon {
       position: relative;
@@ -51,6 +53,7 @@
     margin-top: -0.5rem;
     letter-spacing: 1px;
     font-weight: 300;
+    @extend %hover-animation;
 
     h5 {
       font-weight: 600;
