@@ -55,7 +55,7 @@ class NewFurniture extends React.Component {
     }
 
     return (
-      <Swipeable leftAction={leftAction} rightAction={rightAction} mouseEvents>
+      <Swipeable leftAction={leftAction} rightAction={rightAction}>
         <div className={styles.root}>
           <div className='container'>
             <div className={styles.panelBar}>
