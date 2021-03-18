@@ -26,14 +26,14 @@ class NewFurniture extends React.Component {
     const categoryProducts = products.filter(item => item.category === activeCategory);
     const pagesCount = Math.ceil(categoryProducts.length / 8);
 
-    const leftAction = () => {
+    const rightAction = () => {
       const newPage = activePage - 1;
       if (newPage >= 0) {
         this.setState({ activePage: newPage });
       }
     };
 
-    const rightAction = () => {
+    const leftAction = () => {
       const newPage = activePage + 1;
       if (newPage < pagesCount) {
         this.setState({ activePage: newPage });
@@ -55,7 +55,7 @@ class NewFurniture extends React.Component {
     }
 
     return (
-      <Swipeable leftAction={leftAction} rightAction={rightAction}>
+      <Swipeable leftAction={leftAction} rightAction={rightAction} mouseEvents>
         <div className={styles.root}>
           <div className='container'>
             <div className={styles.panelBar}>
