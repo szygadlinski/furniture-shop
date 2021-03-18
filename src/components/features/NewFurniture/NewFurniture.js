@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import styles from './NewFurniture.module.scss';
 import ProductBox from '../../common/ProductBox/ProductBox';
+import initialState from '../../../redux/initialState';
 
 class NewFurniture extends React.Component {
   state = {
@@ -18,8 +19,16 @@ class NewFurniture extends React.Component {
     this.setState({ activeCategory: newCategory });
   }
 
+  static propTypes = {
+    image: PropTypes.node,
+  };
+
+  static defaultProps = {
+    source: initialState.products.image,
+  };
+
   render() {
-    const { categories, products } = this.props;
+    const { categories, products, image } = this.props;
     const { activeCategory, activePage } = this.state;
 
     const categoryProducts = products.filter(item => item.category === activeCategory);
@@ -69,7 +78,7 @@ class NewFurniture extends React.Component {
           <div className='row'>
             {categoryProducts.slice(activePage * 8, (activePage + 1) * 8).map(item => (
               <div key={item.id} className='col-3'>
-                <ProductBox {...item} />
+                <ProductBox image={image} {...item} />
               </div>
             ))}
           </div>
