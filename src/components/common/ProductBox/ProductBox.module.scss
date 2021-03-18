@@ -75,4 +75,10 @@
     justify-content: space-between;
     align-items: center;
   }
+
+  .favorite {
+    background-color: $fave-bcg;
+    color: $fave-color;
+  }
 }
+
