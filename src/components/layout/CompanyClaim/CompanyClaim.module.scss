@@ -47,10 +47,13 @@
       }
 
       .cartCounter {
-        width: 28px;
+        width: auto;
+        max-width: 55px;
         height: 27px;
         border-radius: 14px;
-        background-color: $header-bg;
+        padding: 10px;
+        background-color: $primary;
+        border: 2px solid rgb(224, 227, 237);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -59,7 +62,7 @@
         position: absolute;
         top: 50%;
         right: 0;
-        transform: translate(50%, -50%);
+        transform: translate(75%, -50%);
       }
 
       &:hover {
