@@ -17,6 +17,8 @@
     overflow: hidden;
     align-items: flex-end;
 
+
+
     .sale {
       position: absolute;
       top: -30px;
@@ -29,8 +31,20 @@
     }
 
     .buttons {
+      visibility: hidden;
       display: flex;
       justify-content: space-between;
+    }
+
+    &:hover > .buttons {
+      visibility: visible;
+      display: flex;
+      justify-content: space-between;
+      opacity: 1;
+    }
+
+    &:hover {
+      background: rgba(41, 41, 41, 0.3);
     }
   }
 
@@ -76,9 +90,25 @@
     align-items: center;
   }
 
-  .favorite {
+ .price {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+
+    >* {
+      flex: 1 0 auto;
+      text-align: center;
+    }
+  }
+
+  .old_price {
+    text-decoration: line-through;
+    opacity: 0.5;
+  }
+}
+
+.favorite {
     background-color: $fave-bcg;
     color: $fave-color;
-  }
 }
 

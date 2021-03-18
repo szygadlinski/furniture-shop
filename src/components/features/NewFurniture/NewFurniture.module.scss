@@ -58,6 +58,7 @@
                 left: 0;
                 width: 100%;
                 border-bottom: 4px solid $menu-border-hover;
+                @extend %hover-animation;
               }
             }
           }
@@ -88,6 +89,7 @@
             border-radius: 6px;
             background-color: $dot-bcg;
             font-size: 0;
+            @extend %hover-animation;
 
             &.active,
             &:hover {
