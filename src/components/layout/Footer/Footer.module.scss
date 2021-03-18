@@ -21,6 +21,7 @@
             font-size: 14px;
             line-height: 30px;
             color: $footer-text-secondary;
+            @extend %hover-animation;
 
             &:hover {
               color: $footer-text;
@@ -70,6 +71,7 @@
           a {
             color: $footer-text-secondary;
             text-decoration: none;
+            @extend %hover-animation;
 
             &:hover {
               color: $footer-icon-hover;

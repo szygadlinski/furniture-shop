@@ -107,3 +107,14 @@ $tp-text-hover: $orange;
 //***BASE***//
 
 $base-padding: 24px;
+
+//***TRANSITIONS/ANIMATIONS***//
+
+$transition: 
+  color 0.25s, 
+  border 0.25s, 
+  background-color 0.25s;
+  
+%hover-animation {
+  transition: $transition;
+}

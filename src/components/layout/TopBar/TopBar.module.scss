@@ -15,6 +15,7 @@
       a {
         color: $tp-text;
         font-size: 13px;
+        @extend %hover-animation;
 
         &:hover {
           color: $tp-text-hover;

@@ -10,6 +10,7 @@
   line-height: 24px;
   font-weight: 600;
   padding: 10px 30px;
+  @extend %hover-animation;
 
   &:not(.noHover):hover {
     color: $btn-dark-text !important;
@@ -33,6 +34,7 @@
   color: $btn-light-text;
   font-size: 13px;
   line-height: 22px;
+  @extend %hover-animation;
 
   &:not(.noHover):hover {
     background-color: $btn-light-bcg-hover;
