@@ -1,16 +1,114 @@
+//*******COLOURS - VARIABLES*******//
+//DO NOT USE IN OTHER FILES!//
+$transparent: transparent;
+$dark-1: #434343;
+$dark-2: #363636;
+$dark-3: #2a2a2a;
+$dark-4: #292929;
+$dark-5: #010202;
+$white: #ffffff;
+$light-1: #f4f5f7;
+$light-2: #e1e1e1;
+$light-3: #e2e2e2;
+$light-4: #d8d8d8;
+$light-5: #b6b6b6;
+$light-6: #a9a9a9;
+$light-7: #e0e3ed;
+$orange: #d58e32;
+
+//*******COLOURS BY COMPONENT*******//
+//OTHER FILES USABLE!//
+
+//*****COMMON*****//
+//BUTTON
+$btn-dark-bcg: $dark-3;
+$btn-dark-bcg-hover: $orange;
+$btn-dark-text: $white;
+
+$btn-light-border: $dark-3;
+$btn-light-bcg-hover: $dark-3;
+$btn-light-text: $dark-3;
+$btn-light-text-hover: $white;
+
+//FEATURE BOX
+$fb-border: $light-5;
+$fb-bcg: $white;
+$fb-content: $dark-3;
+$fb-text: $dark-3;
+
+$fb-border-active: $orange;
+$fb-bcg-active: $orange;
+$fb-content-active: $orange;
+$fb-text-active: $white;
+
+//PRODUCT BOX
+$pb-border: $light-2;
+$pb-bcg: $white;
+
+$pb-bb:$dark-3;
+$pb-bb-before: $orange;
+
+$pb-photo-bcg: $light-1;
+
+$sale-bcg: $dark-4;
+$sale-text: $white;
+
+$product-title: $orange;
+
+$stars-colour: $dark-3;
+
+//*****FEATURES*****//
+//NEW FURNITURE
+$nf-border: $light-3;
+$nf-head-border: $orange;
+$nf-head-text: $orange;
+
+$menu-text: $dark-3;
+$menu-border-hover: $orange;
+
+$dot-bcg: $light-2;
+$dot-bcg-hover: $orange;
+$dots-bcg-hover: $white;
+
+//PRODUCT SEARCH
+$form-border: $dark-4;
+$form-icon: $orange;
+$form-text: $dark-3;
+$form-select-bcg: $transparent;
+
+//*****LAYOUT*****//
+//FOOTER
+$footer-bcg: $dark-2;
+$footer-claim-bcg: $dark-3;
+$footer-text: $white;
+$footer-text-secondary: $light-6;
+$footer-icon-hover: $orange;
+
+//HEADER
+$header-bcg: $dark-2;
+$header-topbar-bcg: $dark-1;
+$header-phone: $light-4;
+$header-icon: $orange;
+
+$cart-text: $white;
+$cc-counter: $light-7;
+
+//MENU BAR
+$menu-bcg: $white;
+$menu-bcg-hover: $orange;
+$menu-shadow: $dark-5;
+$menu-text: $dark-3;
+$menu-text-hover: $white;
+
+//TOP BAR
+$tp-text: $white;
+$tp-text-hover: $orange;
+
+//***BASE***//
+
 $base-padding: 24px;
 
-$header-topbar-bg: #434343;
-$header-bg: #363636;
-
-$footer-claim-bg: #2a2a2a;
-$footer-bg: #363636;
-
-$primary: #d58e32;
-
-$text-color: #2a2a2a;
-
-$form-border-color: #292929;
+//***TRANSITIONS/ANIMATIONS***//
 
 $transition: 
   color 0.25s, 
