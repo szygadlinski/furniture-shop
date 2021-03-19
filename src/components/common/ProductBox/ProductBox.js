@@ -11,10 +11,26 @@ import {
 import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../Button/Button';
 
-const ProductBox = ({ name, price, oldPrice, promo, stars, number, favorite, toggleFavorite, id }) => {
+const ProductBox = ({
+  name,
+  price,
+  oldPrice,
+  promo,
+  stars,
+  number,
+  favorite,
+  toggleFavorite,
+  id,
+  compareItems,
+  compare,
+}) => {
   const faveHandler = event => {
     event.preventDefault();
     toggleFavorite({ id });
+  };
+  const comparisonHandler = event => {
+    event.preventDefault();
+    compareItems({ id });
   };
   return (
     <div className={styles.root}>
@@ -46,14 +62,21 @@ const ProductBox = ({ name, price, oldPrice, promo, stars, number, favorite, tog
         <div className={styles.outlines}>
           <Button
             variant='outline'
-            className={(number === 0 || number === 2 ? styles.favorite : '') + (favorite ? styles.favorite : '')}
+            className={
+              (number === 0 || number === 2 ? styles.favorite : '') +
+              (favorite ? styles.favorite : '')
+            }
             onClick={faveHandler}
           >
             <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
           </Button>
           <Button
             variant='outline'
-            className={number === 1 || number === 2 ? styles.compare : ''}
+            className={
+              (number === 1 || number === 2 ? styles.compare : '') +
+              (compare ? styles.compare : '')
+            }
+            onClick={comparisonHandler}
           >
             <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
           </Button>
@@ -61,11 +84,11 @@ const ProductBox = ({ name, price, oldPrice, promo, stars, number, favorite, tog
         <div className={styles.price}>
           {oldPrice && (
             <Button className={styles.old_price} noHover variant='small'>
-            $ {oldPrice}
+              $ {oldPrice}
             </Button>
           )}
           <Button noHover variant='small'>
-          $ {price}
+            $ {price}
           </Button>
         </div>
       </div>
@@ -85,6 +108,9 @@ ProductBox.propTypes = {
   favorite: PropTypes.bool,
   id: PropTypes.string,
   number: PropTypes.number,
+  comparisonHandler: PropTypes.func,
+  compareItems: PropTypes.func,
+  compare: PropTypes.bool,
 };
 
 export default ProductBox;
