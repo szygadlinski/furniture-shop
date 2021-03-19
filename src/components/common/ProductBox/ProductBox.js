@@ -26,6 +26,7 @@ const ProductBox = ({ name, price, oldPrice, promo, stars, number, favorite, tog
             <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO CART
           </Button>
         </div>
+      </div>
       <div className={styles.content}>
         <h5>{name}</h5>
         <div className={styles.stars}>
@@ -50,22 +51,23 @@ const ProductBox = ({ name, price, oldPrice, promo, stars, number, favorite, tog
           >
             <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
           </Button>
-          <Button 
+          <Button
             variant='outline'
             className={number === 1 || number === 2 ? styles.compare : ''}
           >
             <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
           </Button>
         </div>
-      <div className={styles.price}>
-        {oldPrice && (
-          <Button className={styles.old_price} noHover variant='small'>
+        <div className={styles.price}>
+          {oldPrice && (
+            <Button className={styles.old_price} noHover variant='small'>
             $ {oldPrice}
-          </Button>
-        )}
-        <Button noHover variant='small'>
+            </Button>
+          )}
+          <Button noHover variant='small'>
           $ {price}
-        </Button>
+          </Button>
+        </div>
       </div>
     </div>
   );
