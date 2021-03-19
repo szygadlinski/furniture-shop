@@ -38,7 +38,7 @@ const TopBar = () => (
             </li>
             <li>
               <a href='#'>
-                <FontAwesomeIcon className={styles.icon} icon={faLock} />{' '}
+                <FontAwesomeIcon className={styles.icon} icon={faLock} />
                 <p>Register</p>
               </a>
             </li>
