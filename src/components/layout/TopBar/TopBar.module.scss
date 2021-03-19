@@ -39,6 +39,17 @@
     .icon {
       margin-right: 5px;
     }
+    p {
+      display: inline-block;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .topMenu ul li {
+      p {
+        display: none;
+      }
+    }
   }
 
   @media (max-width: 575px) {
