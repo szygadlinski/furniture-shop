@@ -14,50 +14,44 @@ import Button from '../Button/Button';
 
 const GalleryProduct = ({ name, price, oldPrice, stars }) => {
   return (
-    <div className={styles.root}>
-      <div
-        className={styles.photo}
-        style={{
-          backgroundImage: `url(${process.env.PUBLIC_URL}/images/gallery_1.png)`,
-        }}
-      >
-        <div className={styles.buttons}>
-          <Button variant='outline'>
-            <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
-          </Button>
-          <Button variant='outline'>
-            <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
-          </Button>
-          <Button variant='outline'>
-            <FontAwesomeIcon icon={faEye}>Quick view</FontAwesomeIcon>
-          </Button>
-          <Button variant='outline'>
-            <FontAwesomeIcon icon={faShoppingBasket}>Add to cart</FontAwesomeIcon>
-          </Button>
-        </div>
+    <div
+      className={styles.root}
+      style={{
+        backgroundImage: `url(${process.env.PUBLIC_URL}/images/gallery_1.png)`,
+      }}
+    >
+      <div className={'col-auto d-flex flex-column p-0 ' + styles.buttons}>
+        <Button variant='outline'>
+          <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
+        </Button>
+        <Button variant='outline'>
+          <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
+        </Button>
+        <Button variant='outline'>
+          <FontAwesomeIcon icon={faEye}>Quick view</FontAwesomeIcon>
+        </Button>
+        <Button variant='outline'>
+          <FontAwesomeIcon icon={faShoppingBasket}>Add to cart</FontAwesomeIcon>
+        </Button>
       </div>
-      <div className={styles.content}>
-        <div className={styles.price}>
-          {oldPrice && (
-            <Button className={styles.old_price} noHover variant='small'>
-              $ {oldPrice}
-            </Button>
-          )}
-          <Button noHover variant='small'>
-            $ {price}
-          </Button>
-        </div>
-        <h5>{name}</h5>
-        <div className={styles.stars}>
-          {[1, 2, 3, 4, 5].map(i => (
-            <a key={i} href='#'>
-              {i <= stars ? (
-                <FontAwesomeIcon icon={faStar}>{i} stars</FontAwesomeIcon>
-              ) : (
-                <FontAwesomeIcon icon={farStar}>{i} stars</FontAwesomeIcon>
-              )}
-            </a>
-          ))}
+      <div className='col-auto p-0 align-self-end'>
+        <div className={styles.label}>
+          <div className={styles.price}>
+            <div>$ {price}</div>
+            {oldPrice && <div className={styles.old_price}>$ {oldPrice}</div>}
+          </div>
+          <h5>{name}</h5>
+          <div className={styles.stars}>
+            {[1, 2, 3, 4, 5].map(i => (
+              <a key={i} href='#'>
+                {i <= stars ? (
+                  <FontAwesomeIcon icon={faStar}>{i} stars</FontAwesomeIcon>
+                ) : (
+                  <FontAwesomeIcon icon={farStar}>{i} stars</FontAwesomeIcon>
+                )}
+              </a>
+            ))}
+          </div>
         </div>
       </div>
     </div>

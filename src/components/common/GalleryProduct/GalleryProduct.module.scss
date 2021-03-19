@@ -1,43 +1,33 @@
 @import "../../../styles/settings.scss";
 
 .root {
-  background-color: $pb-bcg;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 300px;
+  background: {
+    color: $pb-photo-bcg;
+    size: contain;
+    position: center;
+    repeat: no-repeat;
+  }
+  overflow: hidden;
 
-  .photo {
-    position: relative;
-    padding: 80% 10px 0 10px;
-    background: {
-      color: $pb-photo-bcg;
-      size: contain;
-      position: center;
-      repeat: no-repeat;
-    }
-    overflow: hidden;
-    align-items: flex-end;
-
-    .sale {
-      position: absolute;
-      top: -30px;
-      left: 50%;
-      transform: translateX(-50%);
-      background-color: $sale-bcg;
-      border-radius: 50%;
-      color: $sale-text;
-      padding: 30px 15px 5px 15px;
-    }
-
-    .buttons {
-      display: flex;
-      justify-content: space-between;
+  .buttons {
+    > * {
+      margin-top: 5px;
+      margin-left: 5px;
     }
   }
 
-  .content {
+  .label {
     text-align: center;
     padding: 20px;
+    background-color: $label-bcg;
+    margin-bottom: $base-padding;
+    box-shadow: 2px 3.464px 6px $label-shadow;
 
     h5 {
-      color: $product-title;
       font-size: 16px;
       line-height: 24px;
       letter-spacing: 1px;
@@ -51,42 +41,23 @@
     }
   }
 
-  .line {
-    margin: 0 10px;
-    border-bottom: 1px solid $pb-bb;
-    position: relative;
-
-    &::before {
-      content: "";
-      position: absolute;
-      bottom: -1px;
-      left: 50%;
-      width: 30px;
-      border-bottom: 4px solid $pb-bb-before;
-      transform: translateX(-50%);
-    }
-  }
-
-  .actions {
-    padding: 15px 10px 10px 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
   .price {
+    position: absolute;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-
-    >* {
-      flex: 1 0 auto;
-      text-align: center;
-    }
+    flex-direction: column;
+    top: -80px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: $price-color;
+    background-color: transparentize($price-bcg, 0.2);
+    border-radius: 50%;
+    height: 90px;
+    width: 90px;
+    justify-content: center;
   }
 
   .old_price {
     text-decoration: line-through;
-    opacity: 0.5;
+    font-size: 0.8em;
   }
 }
