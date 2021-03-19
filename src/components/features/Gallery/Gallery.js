@@ -1,6 +1,8 @@
 import React from 'react';
+import initialState from '../../../redux/initialState';
 
 import SectionHeader from '../../common/SectionHeader/SectionHeader';
+import GalleryProduct from '../../common/GalleryProduct/GalleryProduct';
 
 import styles from './Gallery.module.scss';
 
@@ -68,11 +70,7 @@ const Gallery = () => {
                 </ul>
               </nav>
               <div>
-                <img
-                  className={styles.main_picture}
-                  src={process.env.PUBLIC_URL + '/images/gallery_1.png'}
-                  alt='gallery main'
-                />
+                <GalleryProduct {...initialState.products[1]} />
               </div>
             </div>
             <div className={styles.slider}>

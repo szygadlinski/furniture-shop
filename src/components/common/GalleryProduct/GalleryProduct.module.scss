@@ -1,0 +1,92 @@
+@import "../../../styles/settings.scss";
+
+.root {
+  background-color: $pb-bcg;
+
+  .photo {
+    position: relative;
+    padding: 80% 10px 0 10px;
+    background: {
+      color: $pb-photo-bcg;
+      size: contain;
+      position: center;
+      repeat: no-repeat;
+    }
+    overflow: hidden;
+    align-items: flex-end;
+
+    .sale {
+      position: absolute;
+      top: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: $sale-bcg;
+      border-radius: 50%;
+      color: $sale-text;
+      padding: 30px 15px 5px 15px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  .content {
+    text-align: center;
+    padding: 20px;
+
+    h5 {
+      color: $product-title;
+      font-size: 16px;
+      line-height: 24px;
+      letter-spacing: 1px;
+    }
+
+    .stars {
+      a {
+        text-decoration: none;
+        color: $stars-colour;
+      }
+    }
+  }
+
+  .line {
+    margin: 0 10px;
+    border-bottom: 1px solid $pb-bb;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: -1px;
+      left: 50%;
+      width: 30px;
+      border-bottom: 4px solid $pb-bb-before;
+      transform: translateX(-50%);
+    }
+  }
+
+  .actions {
+    padding: 15px 10px 10px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .price {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+
+    >* {
+      flex: 1 0 auto;
+      text-align: center;
+    }
+  }
+
+  .old_price {
+    text-decoration: line-through;
+    opacity: 0.5;
+  }
+}
