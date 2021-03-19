@@ -1,26 +1,69 @@
 @import "../../../styles/settings.scss";
 
-.header {
-  margin-bottom: 30px;
-  position: relative;
-  border-bottom: 4px solid $nf-border;
-
-  .title {
-    color: $nf-head-text;
-    text-transform: uppercase;
-    font-size: 20px;
-    line-height: 38px;
+.tabs {
+  ul {
+    list-style: none;
+    padding: 0;
     margin: 0;
-    letter-spacing: 1px;
+    display: flex;
+    justify-content: space-between;
   }
 
-  &::before {
-    content: "";
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    width: 45px;
-    border-bottom: 4px solid $nf-head-border;
+  li {
+    flex: 1;
+
+    & + li {
+      border-left: 1px solid $tab-border;
+    }
+  }
+
+  a {
+    display: flex;
+    justify-content: center;
+    color: $menu-text;
+    text-transform: uppercase;
+    font-size: 12px;
+    padding: $base-padding/4 $base-padding/2;
+    text-decoration: none;
+    text-align: center;
+    border-top: 4px solid $menu-bcg;
+    font-weight: 500;
+    letter-spacing: 1px;
+    cursor: pointer;
+    @extend %hover-animation;
+
+    &:hover, &:focus,
+    &.active {
+      background-color: $tab-bcg;
+      color: $tab-active;
+      border-color: $tab-active;
+      outline: none;
+    }
+
+    &.active {
+      border-color: $menu-text;
+    }
+  }
+}
+
+.main_picture {
+  width: 100%;
+}
+
+.border {
+  border: 1px solid $tab-border;
+}
+
+.slider {
+  display: flex;
+  overflow: hidden;
+
+}
+
+.picture_wrapper {
+  width: 100%;
+  img {
+    width: 100%;
   }
 }
 
