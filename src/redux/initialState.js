@@ -228,6 +228,23 @@ const initialState = {
   cart: {
     products: [],
   },
+  deals: {
+    leftImage:
+      'https://images.pexels.com/photos/1350789/pexels-photo-1350789.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+    leftDescription: ['Guest room', 'Chairs', '-20%'],
+    rightUpImage:
+      'https://images.pexels.com/photos/775219/pexels-photo-775219.jpeg?cs=srgb&fm=jpg&h=750&w=1260',
+    rightUpDescription: ['Bed', 'room', 'Collection', '$200.00'],
+    rightDownImage:
+      'https://images.pexels.com/photos/2631746/pexels-photo-2631746.jpeg?cs=srgb&fm=jpg&h=750&w=1260',
+    rightDownDescription: [
+      'Special',
+      ' collection',
+      'Save up ',
+      '45%',
+      ' of furniture',
+    ],
+  },
 };
 
 export default initialState;

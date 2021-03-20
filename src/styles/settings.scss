@@ -58,6 +58,11 @@ $product-title: $orange;
 $stars-colour: $dark-3;
 
 //*****FEATURES*****//
+//DEALS
+$deals-layer: $dark-3;
+$deals-white: $white;
+$deals-orange: $orange;
+
 //NEW FURNITURE
 $nf-border: $light-3;
 $nf-head-border: $orange;
@@ -110,11 +115,11 @@ $base-padding: 24px;
 
 //***TRANSITIONS/ANIMATIONS***//
 
-$transition: 
-  color 0.25s, 
-  border 0.25s, 
+$transition:
+  color 0.25s,
+  border 0.25s,
   background-color 0.25s;
-  
+
 %hover-animation {
   transition: $transition;
 }

@@ -82,15 +82,14 @@ class NewFurniture extends React.Component {
                 </div>
               </div>
             </div>
-          </div>
-          <div className='row'>
-            {categoryProducts
-              .slice(activePage * 8, (activePage + 1) * 8)
-              .map((item, i) => (
-                <div key={item.id} className='col-3'>
-                  <ProductBox {...item} number={i} />
-                </div>
-              ))}
+            <div className='row'>
+              {categoryProducts
+                .slice(activePage * 8, (activePage + 1) * 8)
+                .map((item, i) => (
+                  <div key={item.id} className='col-3'>
+                    <ProductBox {...item} number={i} />
+                  </div>
+                ))}
             </div>
           </div>
         </div>
