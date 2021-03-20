@@ -20,11 +20,20 @@ class NewFurniture extends React.Component {
   }
 
   render() {
-    const { categories, products } = this.props;
+    const { categories, products, deviceType } = this.props;
     const { activeCategory, activePage } = this.state;
 
     const categoryProducts = products.filter(item => item.category === activeCategory);
-    const pagesCount = Math.ceil(categoryProducts.length / 8);
+
+    let itemsPerPage;
+    if (deviceType === 'mobile') {
+      itemsPerPage = 2;
+    } else if (deviceType === 'tablet') {
+      itemsPerPage = 3;
+    } else if (deviceType === 'desktop') {
+      itemsPerPage = 8;
+    }
+    const pagesCount = Math.ceil(categoryProducts.length / itemsPerPage);
 
     const rightAction = () => {
       const newPage = activePage - 1;
@@ -85,10 +94,10 @@ class NewFurniture extends React.Component {
           </div>
           <div className='row'>
             {categoryProducts
-              .slice(activePage * 8, (activePage + 1) * 8)
+              .slice(activePage * itemsPerPage, (activePage + 1) * itemsPerPage)
               .map((item, i) => (
-                <div key={item.id} className='col-3'>
-                  <ProductBox {...item} number={i} product={item}/>
+                <div key={item.id} className='col-6 col-md-4 col-lg-3'>
+                  <ProductBox {...item} number={i} product={item} />
                 </div>
               ))}
           </div>
@@ -100,6 +109,7 @@ class NewFurniture extends React.Component {
 
 NewFurniture.propTypes = {
   children: PropTypes.node,
+  deviceType: PropTypes.string,
   categories: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string,
