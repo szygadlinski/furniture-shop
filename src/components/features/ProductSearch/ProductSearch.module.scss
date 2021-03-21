@@ -69,3 +69,25 @@
     }
   }
 }
+
+@media(max-width: 557px) {
+  .root {
+    min-height: 90px;
+    display: inline-block;
+    //flex-direction: column-reverse;
+    margin-bottom: 5px;
+    max-width: 100%;
+
+    .category {
+      min-height: 50%;
+      border-right: none;
+    }
+
+    .searchField {
+      min-height: 50%;
+      border-top: 1px solid $form-border;
+      justify-content: space-between;
+    }
+  }
+
+}

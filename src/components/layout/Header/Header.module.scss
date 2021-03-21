@@ -1,4 +1,34 @@
 @import "../../../styles/settings.scss";
 
 .root {
+  min-width: 100%;
+}
+@media(min-width: 992px) and (max-width: 1199px) {
+  .root {
+    min-width: 100%;
+  }
+}
+
+@media(min-width: 767px) and (max-width: 991px) {
+  .root {
+    min-width: 100%;
+  }
+}
+
+@media(max-width: 766px) {
+  .root {
+    min-width: 100%;
+  }
+}
+
+@media(max-width: 575px) {
+  .root {
+    min-width: 100%;
+  }
+}
+
+@media(max-width: 360px) {
+  .root {
+    min-width: 100%;
+  }
 }
