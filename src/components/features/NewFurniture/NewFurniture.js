@@ -91,7 +91,6 @@ class NewFurniture extends React.Component {
                   <ProductBox {...item} number={i} product={item}/>
                 </div>
               ))}
-            </div>
           </div>
         </div>
       </Swipeable>
