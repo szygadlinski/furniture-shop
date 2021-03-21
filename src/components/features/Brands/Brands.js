@@ -38,10 +38,7 @@ class Brands extends React.Component {
           <div className={'row align-items-center ' + styles.brandsBar}>
             <Button
               className={styles.button}
-              onClick={event =>
-                `${this.moveRight(this.state.margin)} ${event.preventDefault()}`
-              }
-            >
+              onClick={event => `${this.moveRight(this.state.margin)} ${event.preventDefault()}`}>
               <span className={styles.sign}>&lt;</span>
             </Button>
             <div className={styles.brandsPrimary}>
@@ -60,10 +57,7 @@ class Brands extends React.Component {
             </div>
             <Button
               className={styles.button}
-              onClick={event =>
-                `${this.moveLeft(this.state.margin)} ${event.preventDefault()}`
-              }
-            >
+              onClick={event => `${this.moveLeft(this.state.margin)} ${event.preventDefault()}`}>
               <span className={styles.sign}>&gt;</span>
             </Button>
           </div>
