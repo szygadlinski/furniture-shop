@@ -1,19 +1,19 @@
 @import "../../../styles/settings.scss";
 
 .root {
-  border: 1px solid $form-border-color;
+  border: 1px solid $form-border;
   display: inline-flex;
   height: 45px;
-  color: $text-color;
+  color: $form-text;
 
   .category {
-    border-right: 1px solid $form-border-color;
+    border-right: 1px solid $form-border;
     display: flex;
     align-items: center;
     position: relative;
 
     .icon:first-child {
-      color: $primary;
+      color: $form-icon;
       position: absolute;
       left: 10px;
       z-index: 0;
@@ -28,10 +28,21 @@
     select {
       -webkit-appearance: none;
       border: 0;
-      background-color: transparent;
+      background-color: $form-select-bcg;
       padding: 5px 30px 5px 35px;
       position: relative;
       z-index: 1;
+      outline: none;
+      font-size: 14px;
+      cursor: pointer;
+
+      &:hover {
+        color: $orange;
+      }
+    }
+
+    &:hover {
+      color: $orange;
     }
   }
 
@@ -47,14 +58,36 @@
       outline: none;
 
       &::placeholder {
-        color: $text-color;
+        color: $form-text;
       }
     }
 
     button {
       border: 0;
-      background-color: transparent;
+      background-color: $form-select-bcg;
       outline: none;
     }
   }
+}
+
+@media(max-width: 557px) {
+  .root {
+    min-height: 90px;
+    display: inline-block;
+    //flex-direction: column-reverse;
+    margin-bottom: 5px;
+    max-width: 100%;
+
+    .category {
+      min-height: 50%;
+      border-right: none;
+    }
+
+    .searchField {
+      min-height: 50%;
+      border-top: 1px solid $form-border;
+      justify-content: space-between;
+    }
+  }
+
 }

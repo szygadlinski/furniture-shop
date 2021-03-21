@@ -1,7 +1,7 @@
 @import "../../../styles/settings.scss";
 
 .root {
-  background-color: $header-topbar-bg;
+  background-color: $header-topbar-bcg;
 
   ul {
     list-style: none;
@@ -13,11 +13,12 @@
       line-height: 55px;
 
       a {
-        color: #ffffff;
+        color: $tp-text;
         font-size: 13px;
+        @extend %hover-animation;
 
         &:hover {
-          color: $primary;
+          color: $tp-text-hover;
           text-decoration: none;
         }
       }
@@ -37,6 +38,38 @@
 
     .icon {
       margin-right: 5px;
+    }
+    p {
+      display: inline-block;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .topMenu ul li {
+      p {
+        display: none;
+      }
+    }
+  }
+
+  @media (max-width: 575px) {
+    .topOptions {
+      padding-left: 5px;
+      padding-right: 0;
+
+      ul li {
+      margin-right: 2px;
+
+        .icon {
+          margin-left: 2px;
+          margin-right: 2px;
+        }
+      }
+    }
+
+    .topMenu {
+      padding-left: 0;
+      padding-right: 5px;
     }
   }
 }
