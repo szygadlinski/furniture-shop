@@ -90,7 +90,7 @@
     align-items: center;
   }
 
-  .price {
+ .price {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-end;
@@ -118,3 +118,9 @@
     border-color:#2a2a2a;
   }
 }
+
+.favorite {
+    background-color: $fave-bcg;
+    color: $fave-color;
+}
+
