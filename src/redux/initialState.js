@@ -275,6 +275,12 @@ const initialState = {
   cart: {
     products: [],
   },
+  promotion: {
+    picture:
+      'https://images.pexels.com/photos/276534/pexels-photo-276534.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+    picture2:
+      'https://images.pexels.com/photos/276528/pexels-photo-276528.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+  },
 };
 
 export default initialState;
