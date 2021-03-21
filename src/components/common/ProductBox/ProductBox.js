@@ -11,7 +11,6 @@ import {
 import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../Button/Button';
 
-
 const ProductBox = ({ name, price, oldPrice, promo, stars, number, favorite, toggleFavorite, id, compareItems, compare }) => {
   const faveHandler = event => {
     event.preventDefault();
@@ -67,11 +66,11 @@ const ProductBox = ({ name, price, oldPrice, promo, stars, number, favorite, tog
         <div className={styles.price}>
           {oldPrice && (
             <Button className={styles.old_price} noHover variant='small'>
-            $ {oldPrice}
+              $ {oldPrice}
             </Button>
           )}
           <Button noHover variant='small'>
-          $ {price}
+            $ {price}
           </Button>
         </div>
       </div>
