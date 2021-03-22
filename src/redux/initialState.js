@@ -17,6 +17,7 @@ const initialState = {
       newFurniture: true,
       image: 'https://cdn.pixabay.com/photo/2014/07/10/17/17/bedroom-389254_1280.jpg',
       favorite: true,
+      compare: false,
     },
     {
       id: 'aenean-ru-bristique-2',
@@ -29,6 +30,7 @@ const initialState = {
       newFurniture: true,
       image: 'https://cdn.pixabay.com/photo/2020/11/24/11/36/bedroom-5772286_1280.jpg',
       favorite: false,
+      compare: false,
     },
     {
       id: 'aenean-ru-bristique-3',
@@ -40,6 +42,7 @@ const initialState = {
       newFurniture: true,
       image: 'https://cdn.pixabay.com/photo/2016/12/30/07/55/bedroom-1940169_1280.jpg',
       favorite: false,
+      compare: false,
     },
     {
       id: 'aenean-ru-bristique-4',
@@ -51,6 +54,7 @@ const initialState = {
       newFurniture: true,
       image: 'https://cdn.pixabay.com/photo/2018/10/28/12/37/bedroom-3778695_1280.jpg',
       favorite: false,
+      compare: false,
     },
     {
       id: 'aenean-ru-bristique-5',
@@ -62,6 +66,7 @@ const initialState = {
       newFurniture: true,
       image: 'https://cdn.pixabay.com/photo/2018/07/14/17/19/interior-3538020_1280.jpg',
       favorite: false,
+      compare: false,
     },
     {
       id: 'aenean-ru-bristique-6',
@@ -73,6 +78,7 @@ const initialState = {
       newFurniture: true,
       image: 'https://cdn.pixabay.com/photo/2017/04/28/22/16/room-2269594_1280.jpg',
       favorite: false,
+      compare: false,
     },
     {
       id: 'aenean-ru-bristique-7',
@@ -85,6 +91,7 @@ const initialState = {
       image:
         'https://cdn.pixabay.com/photo/2014/08/11/21/31/wall-panel-416041_1280.jpg',
       favorite: false,
+      compare: false,
     },
     {
       id: 'aenean-ru-bristique-8',
@@ -96,6 +103,7 @@ const initialState = {
       newFurniture: true,
       image: 'https://cdn.pixabay.com/photo/2018/09/24/15/02/bed-3700115_1280.jpg',
       favorite: false,
+      compare: false,
     },
     {
       id: 'aenean-ru-bristique-9',
@@ -108,6 +116,7 @@ const initialState = {
       image:
         'https://images.pexels.com/photos/279746/pexels-photo-279746.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260',
       favorite: false,
+      compare: false,
     },
     {
       id: 'aenean-ru-bristique-10',
@@ -120,6 +129,7 @@ const initialState = {
       image:
         'https://images.pexels.com/photos/3659681/pexels-photo-3659681.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260',
       favorite: false,
+      compare: false,
     },
     {
       id: 'aenean-ru-bristique-11',
@@ -132,6 +142,7 @@ const initialState = {
       image:
         'https://images.pexels.com/photos/1329711/pexels-photo-1329711.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260',
       favorite: false,
+      compare: false,
     },
     {
       id: 'aenean-ru-bristique-12',
@@ -144,6 +155,7 @@ const initialState = {
       image:
         'https://images.pexels.com/photos/3773581/pexels-photo-3773581.png?auto=compress&cs=tinysrgb&h=750&w=1260',
       favorite: false,
+      compare: false,
     },
     {
       id: 'aenean-ru-bristique-13',
@@ -156,6 +168,7 @@ const initialState = {
       image:
         'https://images.pexels.com/photos/3773575/pexels-photo-3773575.png?auto=compress&cs=tinysrgb&h=750&w=1260',
       favorite: false,
+      compare: false,
     },
     {
       id: 'aenean-ru-bristique-14',
@@ -168,6 +181,7 @@ const initialState = {
       image:
         'https://images.pexels.com/photos/6198658/pexels-photo-6198658.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
       favorite: false,
+      compare: false,
     },
     {
       id: 'aenean-ru-bristique-15',
@@ -180,6 +194,7 @@ const initialState = {
       image:
         'https://images.pexels.com/photos/3753435/pexels-photo-3753435.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260',
       favorite: false,
+      compare: false,
     },
     {
       id: 'aenean-ru-bristique-16',
@@ -192,6 +207,7 @@ const initialState = {
       image:
         'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80',
       favorite: false,
+      compare: false,
     },
     {
       id: 'aenean-ru-bristique-17',
@@ -204,6 +220,7 @@ const initialState = {
       image:
         'https://images.unsplash.com/photo-1566665797739-1674de7a421a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80',
       favorite: false,
+      compare: false,
     },
     {
       id: 'aenean-ru-bristique-18',
@@ -216,6 +233,7 @@ const initialState = {
       image:
         'https://images.unsplash.com/photo-1592229505678-cf99a9908e03?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80',
       favorite: false,
+      compare: false,
     },
     {
       id: 'aenean-ru-bristique-19',
@@ -228,6 +246,7 @@ const initialState = {
       image:
         'https://images.unsplash.com/photo-1571508601936-6ca847b47ae4?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1051&q=80',
       favorite: false,
+      compare: false,
     },
     {
       id: 'aenean-ru-bristique-20',
@@ -240,6 +259,7 @@ const initialState = {
       image:
         'https://images.unsplash.com/photo-1572297258415-b9cc3cc5bb71?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1051&q=80',
       favorite: false,
+      compare: false,
     },
     {
       id: 'aenean-ru-bristique-21',
@@ -252,6 +272,7 @@ const initialState = {
       image:
         'https://images.unsplash.com/photo-1574873215043-44119461cb3b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80',
       favorite: false,
+      compare: false,
     },
     {
       id: 'aenean-ru-bristique-22',
@@ -264,6 +285,7 @@ const initialState = {
       image:
         'https://images.unsplash.com/flagged/photo-1573168710865-2e4c680d921a?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80',
       favorite: false,
+      compare: false,
     },
     {
       id: 'aenean-ru-bristique-23',
@@ -276,6 +298,7 @@ const initialState = {
       image:
         'https://images.unsplash.com/photo-1588046130717-0eb0c9a3ba15?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=719&q=80',
       favorite: false,
+      compare: false,
     },
     {
       id: 'aenean-ru-bristique-24',
@@ -288,6 +311,7 @@ const initialState = {
       image:
         'https://images.unsplash.com/flagged/photo-1556438758-8d49568ce18e?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1053&q=80',
       favorite: false,
+      compare: false,
     },
   ],
   brands: [
