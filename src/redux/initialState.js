@@ -1113,6 +1113,17 @@ const initialState = {
       newFurniture: true,
     },
   ],
+  feedbacks: [
+    {
+      id: 'client-1',
+      icon:
+        'https://www.flaticon.com/svg/vstatic/svg/565/565703.svg?token=exp=1616333731~hmac=efc4d87e0dbbcd8b62bfd8383e7ef1dd',
+      quote:
+        'Curabitur gravida dictum pulvinar. Aenean scelerisque sem eu imperdiet cursus. Cras porttitor elit imperdiet congue dignissim. Duis vitae nulla vitae risus lobortis tincidunt. Proin lacus turpis, volutpat eget sodales eu, vestibulum quis leo.',
+      image: 'https://cdn.pixabay.com/photo/2017/11/02/14/36/model-2911363_1280.jpg',
+      name: '~ John Smith',
+    },
+  ],
   cart: {
     products: [],
   },
