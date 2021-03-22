@@ -9,19 +9,32 @@ class NewFurniture extends React.Component {
   state = {
     activePage: 0,
     activeCategory: 'bed',
+    isFading: false,
   };
 
   handlePageChange(newPage) {
-    this.setState({ activePage: newPage });
+    this.setState({ isFading: true });
+    setTimeout(() => {
+      this.setState({ activePage: newPage });
+    }, 500);
+    setTimeout(() => {
+      this.setState({ isFading: false });
+    }, 500);
   }
 
   handleCategoryChange(newCategory) {
-    this.setState({ activeCategory: newCategory });
+    this.setState({ isFading: true });
+    setTimeout(() => {
+      this.setState({ activeCategory: newCategory });
+    }, 500);
+    setTimeout(() => {
+      this.setState({ isFading: false });
+    }, 500);
   }
 
   render() {
     const { categories, products, deviceType } = this.props;
-    const { activeCategory, activePage } = this.state;
+    const { activeCategory, activePage, isFading } = this.state;
 
     const categoryProducts = products.filter(item => item.category === activeCategory);
 
@@ -92,14 +105,17 @@ class NewFurniture extends React.Component {
               </div>
             </div>
           </div>
-          <div className='row'>
+          <div
+            className={'row' + (isFading ? ' ' + styles.fadeout : ' ' + styles.fadein)}
+          >
             {categoryProducts
               .slice(activePage * itemsPerPage, (activePage + 1) * itemsPerPage)
               .map((item, i) => (
                 <div key={item.id} className='col-6 col-md-4 col-lg-3'>
                   <ProductBox {...item} number={i} product={item} />
                 </div>
-              ))}
+              ))
+            }
           </div>
         </div>
       </Swipeable>
