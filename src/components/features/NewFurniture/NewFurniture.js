@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import styles from './NewFurniture.module.scss';
+import initialState from '../../../redux/initialState';
 import ProductBox from '../../common/ProductBox/ProductBoxContainer';
 import Swipeable from '../../common/Swipeable/Swipeable';
 
@@ -32,8 +33,16 @@ class NewFurniture extends React.Component {
     }, 500);
   }
 
+  static propTypes = {
+    image: PropTypes.node,
+  };
+
+  static defaultProps = {
+    source: initialState.products.image,
+  };
+
   render() {
-    const { categories, products } = this.props;
+    const { categories, products, image } = this.props;
     const { activeCategory, activePage, isFading } = this.state;
 
     const categoryProducts = products.filter(item => item.category === activeCategory);
@@ -103,7 +112,7 @@ class NewFurniture extends React.Component {
               .slice(activePage * 8, (activePage + 1) * 8)
               .map((item, i) => (
                 <div key={item.id} className='col-6 col-md-4 col-lg-3'>
-                  <ProductBox {...item} number={i} product={item} />
+                  <ProductBox image={image} {...item} number={i} product={item} />
                 </div>
               ))
             }

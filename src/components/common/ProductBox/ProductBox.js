@@ -11,7 +11,8 @@ import {
 import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../Button/Button';
 
-const ProductBox = ({ name, price, oldPrice, promo, stars, number, favorite, toggleFavorite, id }) => {
+
+const ProductBox = ({ name, price, oldPrice, promo, stars, image, number, favorite, toggleFavorite, id }) => {
   const faveHandler = event => {
     event.preventDefault();
     toggleFavorite({ id });
@@ -20,11 +21,14 @@ const ProductBox = ({ name, price, oldPrice, promo, stars, number, favorite, tog
     <div className={styles.root}>
       <div className={styles.photo}>
         {promo && <div className={styles.sale}>{promo}</div>}
-        <div className={styles.buttons}>
-          <Button variant='small'>Quick View</Button>
-          <Button variant='small'>
-            <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO CART
-          </Button>
+        <div className={styles.image}>
+          <img src={image} alt='' />
+          <div className={styles.buttons}>
+            <Button variant='small'>Quick View</Button>
+            <Button variant='small'>
+              <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO CART
+            </Button>
+          </div>
         </div>
       </div>
       <div className={styles.content}>
@@ -80,6 +84,7 @@ ProductBox.propTypes = {
   oldPrice: PropTypes.number,
   promo: PropTypes.string,
   stars: PropTypes.number,
+  image: PropTypes.string.isRequired,
   faveHandler: PropTypes.func,
   toggleFavorite: PropTypes.func,
   favorite: PropTypes.bool,
