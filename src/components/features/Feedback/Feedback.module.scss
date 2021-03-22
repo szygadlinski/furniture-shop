@@ -1,7 +1,7 @@
 @import "../../../styles/settings.scss";
 
 .root {
-  .panelBar {
+  .feedbackBar {
     margin-bottom: 30px;
     position: relative;
 
@@ -34,39 +34,14 @@
     .menu {
       text-align: center;
 
-      ul {
-        margin: 0;
-        padding: 0;
-        list-style: none;
-
-        li {
-          display: inline-block;
-          margin: 0 0.5rem;
-          font-weight: 600;
-
-          a {
-            color: $menu-text;
-            position: relative;
-            text-decoration: none;
-            font-size: 18px;
-            display: block;
-            cursor: pointer;
-
-            &.active,
-            &:hover {
-              &::before {
-                content: "";
-                position: absolute;
-                bottom: -4px;
-                left: 0;
-                width: 100%;
-                border-bottom: 4px solid $menu-border-hover;
-                @extend %hover-animation;
-              }
-            }
-          }
+        &::before {
+        content: "";
+          position: absolute;
+          bottom: -4px;
+          left: 0;
+          width: 100%;
+          border-bottom: 4px solid $dot-bcg;
         }
-      }
     }
 
     .dots {
@@ -92,7 +67,6 @@
             border-radius: 6px;
             background-color: $dot-bcg;
             font-size: 0;
-            cursor: pointer;
             @extend %hover-animation;
 
             &.active,
@@ -105,27 +79,64 @@
     }
   }
 
-  .fadeout {
-    opacity: 0;
-    transition: 0.5s;
-  }
+  .feedbackRow{
+    justify-content: center;
+    align-content: center;
+    display: flex;
 
-  .fadein {
-    transition: 0.5s;
-  }
-}
+  .feedbackBox {
+    display: flex;
+    padding: 10px 50px 25px 50px;
+    margin: 20px 50px 50px 50px;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+    max-width: 55%;
 
-@media (max-width: 767px) {
-  .root .panelBar .menu {
-    text-align: left;
-    padding-left: $base-padding / 4;
+    .icon {
+      height: 25px;
+      width: 25px;
+      display: flex;
+      align-content: center;
+      justify-content: center;
+      margin: 0 auto;
+      margin-bottom: 10px;
 
-    ul li {
-      margin: 0 0.1rem;
+      .img {
+        object-fit: cover;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        }
+    }
 
-      a {
-        font-size: 12px;
+    .quote {
+      font-style: italic;
+    }
+
+    .imageName{
+      display: flex;
+      justify-content: space-around;
+      margin: 0 auto;
+      margin-top: 25px;
+
+      .imageBox {
+        height: 55px;
+        width: 55px;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        margin-right: 30px;
+
+        .img {
+          object-fit: cover;
+          position: absolute;
+          width: 100%;
+          height: 100%;
+        }
       }
     }
   }
+}
+
 }

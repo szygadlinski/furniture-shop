@@ -53,6 +53,9 @@
       }
     }
   }
+  .search {
+    z-index: 1;
+  }
 }
 
 @media(min-width: 992px) and (max-width: 1199px) {
@@ -279,6 +282,5 @@
         border-color: $menu-text;
       }
   }
-
 }
 
