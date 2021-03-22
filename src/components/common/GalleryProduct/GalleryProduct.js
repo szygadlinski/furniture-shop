@@ -21,7 +21,12 @@ const GalleryProduct = ({ name, price, oldPrice, stars }) => {
       }}
     >
       <div className={'col-auto d-flex flex-column p-0 ' + styles.buttons}>
-        <Button variant='outline'>
+        <Button
+          variant='outline'
+          data-bs-toggle='tooltip'
+          data-bs-placement='right'
+          title='Tooltip on right'
+        >
           <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
         </Button>
         <Button variant='outline'>

@@ -24,6 +24,7 @@
     text-align: center;
     padding: 20px;
     background-color: $label-bcg;
+    background-image: linear-gradient(135deg, $label-corner, $label-corner 10%, $label-bcg 10%,$label-bcg 90%, $label-corner 0);
     margin-bottom: $base-padding;
     box-shadow: 2px 3.464px 6px $label-shadow;
 
