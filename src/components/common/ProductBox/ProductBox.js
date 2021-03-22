@@ -11,60 +11,67 @@ import {
 import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../Button/Button';
 
-const ProductBox = ({ name, price, oldPrice, promo, stars, number }) => (
-  <div className={styles.root}>
-    <div className={styles.photo}>
-      {promo && <div className={styles.sale}>{promo}</div>}
-      <div className={styles.buttons}>
-        <Button variant='small'>Quick View</Button>
-        <Button variant='small'>
-          <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO CART
-        </Button>
-      </div>
-    </div>
-    <div className={styles.content}>
-      <h5>{name}</h5>
-      <div className={styles.stars}>
-        {[1, 2, 3, 4, 5].map(i => (
-          <a key={i} href='#'>
-            {i <= stars ? (
-              <FontAwesomeIcon icon={faStar}>{i} stars</FontAwesomeIcon>
-            ) : (
-              <FontAwesomeIcon icon={farStar}>{i} stars</FontAwesomeIcon>
-            )}
-          </a>
-        ))}
-      </div>
-    </div>
-    <div className={styles.line}></div>
-    <div className={styles.actions}>
-      <div className={styles.outlines}>
-        <Button
-          className={number === 0 || number === 2 ? styles.favorite : ''}
-          variant='outline'
-        >
-          <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
-        </Button>
-        <Button
-          className={number === 1 || number === 2 ? styles.compare : ''}
-          variant='outline'
-        >
-          <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
-        </Button>
-      </div>
-      <div className={styles.price}>
-        {oldPrice && (
-          <Button className={styles.old_price} noHover variant='small'>
-            $ {oldPrice}
+const ProductBox = ({ name, price, oldPrice, promo, stars, number, favorite, toggleFavorite, id }) => {
+  const faveHandler = event => {
+    event.preventDefault();
+    toggleFavorite({ id });
+  };
+  return (
+    <div className={styles.root}>
+      <div className={styles.photo}>
+        {promo && <div className={styles.sale}>{promo}</div>}
+        <div className={styles.buttons}>
+          <Button variant='small'>Quick View</Button>
+          <Button variant='small'>
+            <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO CART
           </Button>
-        )}
-        <Button noHover variant='small'>
+        </div>
+      </div>
+      <div className={styles.content}>
+        <h5>{name}</h5>
+        <div className={styles.stars}>
+          {[1, 2, 3, 4, 5].map(i => (
+            <a key={i} href='#'>
+              {i <= stars ? (
+                <FontAwesomeIcon icon={faStar}>{i} stars</FontAwesomeIcon>
+              ) : (
+                <FontAwesomeIcon icon={farStar}>{i} stars</FontAwesomeIcon>
+              )}
+            </a>
+          ))}
+        </div>
+      </div>
+      <div className={styles.line}></div>
+      <div className={styles.actions}>
+        <div className={styles.outlines}>
+          <Button
+            variant='outline'
+            className={(number === 0 || number === 2 ? styles.favorite : '') + (favorite ? styles.favorite : '')}
+            onClick={faveHandler}
+          >
+            <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
+          </Button>
+          <Button
+            variant='outline'
+            className={number === 1 || number === 2 ? styles.compare : ''}
+          >
+            <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
+          </Button>
+        </div>
+        <div className={styles.price}>
+          {oldPrice && (
+            <Button className={styles.old_price} noHover variant='small'>
+            $ {oldPrice}
+            </Button>
+          )}
+          <Button noHover variant='small'>
           $ {price}
-        </Button>
+          </Button>
+        </div>
       </div>
     </div>
-  </div>
-);
+  );
+};
 
 ProductBox.propTypes = {
   children: PropTypes.node,
@@ -73,6 +80,10 @@ ProductBox.propTypes = {
   oldPrice: PropTypes.number,
   promo: PropTypes.string,
   stars: PropTypes.number,
+  faveHandler: PropTypes.func,
+  toggleFavorite: PropTypes.func,
+  favorite: PropTypes.bool,
+  id: PropTypes.string,
   number: PropTypes.number,
 };
 
