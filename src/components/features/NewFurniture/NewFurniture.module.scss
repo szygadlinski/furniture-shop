@@ -50,6 +50,7 @@
             text-decoration: none;
             font-size: 18px;
             display: block;
+            cursor: pointer;
 
             &.active,
             &:hover {
@@ -91,6 +92,7 @@
             border-radius: 6px;
             background-color: $dot-bcg;
             font-size: 0;
+            cursor: pointer;
             @extend %hover-animation;
 
             &.active,
@@ -101,6 +103,15 @@
         }
       }
     }
+  }
+
+  .fadeout {
+    opacity: 0;
+    transition: 0.5s;
+  }
+
+  .fadein {
+    transition: 0.5s;
   }
 }
 
