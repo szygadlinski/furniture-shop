@@ -20,7 +20,7 @@
         color: $header-icon;
         vertical-align: middle;
         margin-top: -3px;
-        margin-right: 0.8rem;
+        margin-right: 0.4rem;
       }
     }
   }
@@ -71,6 +71,46 @@
           background-color: lighten($header-icon, 10%);
         }
       }
+    }
+  }
+
+  @media (max-width: 767px) {
+    .phoneNumber{
+      top: 40px;
+      right: 69px;
+      padding-left: 0;
+      padding-right: 0;
+      width: 100px;
+      margin-right: 0;
+      p {
+        font-size: 14px;
+      }
+      .icon {
+        font-size: 10px;
+        margin-right: 0;
+      }
+    }
+    .logo {
+      order: -2;
+      top: -10px;
+    }
+    .cart {
+      order: -1;
+      top: -20px;
+    }
+  }
+
+  @media (max-width: 575px) {
+    .phoneNumber{
+      top: 40px;
+    }
+    .logo {
+      padding: 0;
+      padding-left: 5px;
+      top: -5px;
+    }
+    .cart {
+      top: -30px;
     }
   }
 }

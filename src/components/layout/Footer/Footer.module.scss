@@ -4,6 +4,9 @@
   .footerMenu {
     background-color: $footer-bcg;
     padding: 3rem 0;
+    img {
+      max-width: 125%; 
+    }
 
     .menuWrapper {
       h6 {

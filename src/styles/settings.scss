@@ -57,6 +57,12 @@ $product-title: $orange;
 
 $stars-colour: $dark-3;
 
+$fave-bcg: $dark-3;
+$fave-color: $light-1;
+
+$compare-bcg: $dark-3;
+$compare-color: $light-1;
+
 //*****FEATURES*****//
 //NEW FURNITURE
 $nf-border: $light-3;
@@ -70,11 +76,24 @@ $dot-bcg: $light-2;
 $dot-bcg-hover: $orange;
 $dots-bcg-hover: $white;
 
+//BRANDS
+$brands-text: $white;
+$brands-border: $light-2;
+$brands-btn: $dark-3;
+$brands-btn-hover: $orange;
+
 //PRODUCT SEARCH
 $form-border: $dark-4;
 $form-icon: $orange;
 $form-text: $dark-3;
 $form-select-bcg: $transparent;
+
+//STICKY BAR//
+$sticky-bcg: $dark-3;
+
+$sticky-photo-bcg: $light-1;
+
+$sticky-icon-bcg: $light-6;
 
 //*****LAYOUT*****//
 //FOOTER
@@ -110,11 +129,11 @@ $base-padding: 24px;
 
 //***TRANSITIONS/ANIMATIONS***//
 
-$transition: 
-  color 0.25s, 
-  border 0.25s, 
+$transition:
+  color 0.25s,
+  border 0.25s,
   background-color 0.25s;
-  
+
 %hover-animation {
   transition: $transition;
 }
