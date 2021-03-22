@@ -74,7 +74,15 @@
     .slide {
       @include border(top, bottom, left, right);
       width: calc((100% - 25px) / 6);
-      height: auto;
+      position: relative;
+      display: flex;
+      align-items: center;
+      background-color: $pb-photo-bcg;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
 
       &:nth-child(n+7) {
         display: none;
@@ -82,6 +90,20 @@
 
       & + .slide {
         margin-left: 5px;
+      }
+
+      &:not(.active) {
+        &::after {
+          content:'';
+          position: absolute;
+          top: 0;
+          left: 0;
+          display:block;
+          height: 100%;
+          width: 100%;
+          background-color: transparentize($slider-btn, 0.7);
+          z-index: 1;
+        }
       }
     }
   }
@@ -113,6 +135,7 @@
 .promo {
   position: relative;
   width: 100%;
+
   img {
     width: 100%;
   }

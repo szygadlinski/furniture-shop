@@ -11,38 +11,47 @@ const slides = [
   {
     id: '1',
     url: `${process.env.PUBLIC_URL}/images/gallery_1.png`,
+    active: true,
   },
   {
     id: '2',
     url: `${process.env.PUBLIC_URL}/images/gallery_2.png`,
+    active: false,
   },
   {
     id: '3',
     url: `${process.env.PUBLIC_URL}/images/gallery_3.png`,
+    active: false,
   },
   {
     id: '4',
     url: `${process.env.PUBLIC_URL}/images/gallery_1.png`,
+    active: false,
   },
   {
     id: '5',
     url: `${process.env.PUBLIC_URL}/images/gallery_2.png`,
+    active: false,
   },
   {
     id: '6',
     url: `${process.env.PUBLIC_URL}/images/gallery_3.png`,
+    active: false,
   },
   {
     id: '7',
     url: `${process.env.PUBLIC_URL}/images/gallery_1.png`,
+    active: false,
   },
   {
     id: '8',
     url: `${process.env.PUBLIC_URL}/images/gallery_2.png`,
+    active: false,
   },
   {
     id: '9',
     url: `${process.env.PUBLIC_URL}/images/gallery_3.png`,
+    active: false,
   },
 ];
 
@@ -79,12 +88,14 @@ const Gallery = () => {
               <div className={styles.slidesList}>
                 {slides.map(slide => {
                   return (
-                    <img
-                      className={styles.slide}
+                    <div
+                      className={
+                        slide.active ? `${styles.slide} ${styles.active}` : styles.slide
+                      }
                       key={slide.id}
-                      src={slide.url}
-                      alt={`slide ${slide.id}`}
-                    />
+                    >
+                      <img src={slide.url} alt={`slide ${slide.id}`} />
+                    </div>
                   );
                 })}
               </div>
