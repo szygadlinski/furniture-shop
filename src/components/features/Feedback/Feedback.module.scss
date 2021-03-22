@@ -1,0 +1,142 @@
+@import "../../../styles/settings.scss";
+
+.root {
+  .feedbackBar {
+    margin-bottom: 30px;
+    position: relative;
+
+    :global(.row) > * {
+      border-bottom: 4px solid $nf-border;
+    }
+
+    .heading {
+      position: relative;
+
+      h3 {
+        color: $nf-head-text;
+        text-transform: uppercase;
+        font-size: 20px;
+        line-height: 38px;
+        margin: 0;
+        letter-spacing: 1px;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 45px;
+        border-bottom: 4px solid $nf-head-border;
+      }
+    }
+
+    .menu {
+      text-align: center;
+
+        &::before {
+        content: "";
+          position: absolute;
+          bottom: -4px;
+          left: 0;
+          width: 100%;
+          border-bottom: 4px solid $dot-bcg;
+        }
+    }
+
+    .dots {
+      position: absolute;
+      right: 0;
+      top: 0;
+
+      ul {
+        margin: 0;
+        padding: 0 0 0 1rem;
+        list-style: none;
+        background-color: $dots-bcg-hover;
+        transform: translateY(15px);
+
+        li {
+          display: inline-block;
+          margin-left: 0.5rem;
+
+          a {
+            display: block;
+            width: 13px;
+            height: 13px;
+            border-radius: 6px;
+            background-color: $dot-bcg;
+            font-size: 0;
+            @extend %hover-animation;
+
+            &.active,
+            &:hover {
+              background-color: $dot-bcg-hover;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .feedbackRow{
+    justify-content: center;
+    align-content: center;
+    display: flex;
+
+  .feedbackBox {
+    display: flex;
+    padding: 10px 50px 25px 50px;
+    margin: 20px 50px 50px 50px;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+    max-width: 55%;
+
+    .icon {
+      height: 25px;
+      width: 25px;
+      display: flex;
+      align-content: center;
+      justify-content: center;
+      margin: 0 auto;
+      margin-bottom: 10px;
+
+      .img {
+        object-fit: cover;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        }
+    }
+
+    .quote {
+      font-style: italic;
+    }
+
+    .imageName{
+      display: flex;
+      justify-content: space-around;
+      margin: 0 auto;
+      margin-top: 25px;
+
+      .imageBox {
+        height: 55px;
+        width: 55px;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        margin-right: 30px;
+
+        .img {
+          object-fit: cover;
+          position: absolute;
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+}
+
+}
