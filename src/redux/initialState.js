@@ -1576,6 +1576,7 @@ const initialState = {
     picture2:
       'https://images.pexels.com/photos/276528/pexels-photo-276528.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
   },
+  favourites: [],
 };
 
 export default initialState;
