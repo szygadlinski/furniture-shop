@@ -13,7 +13,6 @@ import ProductPage from './components/views/ProductPage/ProductPage';
 import Cart from './components/views/Cart/Cart';
 import Blog from './components/views/Blog/Blog';
 
-import Products from './components/views/Products/Products';
 import Account from './components/views/Account/Account';
 import Info from './components/views/Info/Info';
 import Orders from './components/views/Orders/Orders';
