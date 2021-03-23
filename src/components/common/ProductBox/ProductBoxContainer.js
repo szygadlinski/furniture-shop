@@ -4,7 +4,7 @@ import { getAll, toggleFavorite, compareItems } from '../../../redux/productsRed
 import { addProduct } from '../../../redux/cartRedux';
 
 const mapStateToProps = (state, props) => ({
-  products: getAll(state, props),
+  // products: getAll(state, props),
 });
 
 const mapDispatchToProps = dispatch => ({

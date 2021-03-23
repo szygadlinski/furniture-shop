@@ -43,7 +43,7 @@ class NewFurniture extends React.Component {
   };
 
   render() {
-    const { categories, products, image, deviceType } = this.props;
+    const { categories, products, deviceType } = this.props;
     const { activeCategory, activePage, isFading } = this.state;
 
     const categoryProducts = products.filter(item => item.category === activeCategory);
