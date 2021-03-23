@@ -18,17 +18,23 @@ const ProductBox = ({
   promo,
   stars,
   image,
-  favorite,
-  toggleFavorite,
   id,
   compareItems,
   compare,
   addToCart,
+  isFavourite,
+  addFavourite,
+  removeFavourite,
 }) => {
   const faveHandler = event => {
     event.preventDefault();
-    toggleFavorite({ id });
+    if (isFavourite) {
+      removeFavourite(id);
+    } else {
+      addFavourite(id);
+    }
   };
+
   const comparisonHandler = event => {
     event.preventDefault();
     compareItems({ id });
@@ -71,7 +77,7 @@ const ProductBox = ({
         <div className={styles.outlines}>
           <Button
             variant='outline'
-            className={favorite ? styles.favorite : ''}
+            className={isFavourite ? styles.favorite : ''}
             onClick={faveHandler}
           >
             <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
@@ -108,13 +114,14 @@ ProductBox.propTypes = {
   stars: PropTypes.number,
   image: PropTypes.string.isRequired,
   faveHandler: PropTypes.func,
-  toggleFavorite: PropTypes.func,
-  favorite: PropTypes.bool,
   id: PropTypes.string,
   comparisonHandler: PropTypes.func,
   compareItems: PropTypes.func,
   compare: PropTypes.bool,
   addToCart: PropTypes.func,
+  isFavourite: PropTypes.bool,
+  addFavourite: PropTypes.func,
+  removeFavourite: PropTypes.func,
 };
 
 export default ProductBox;
