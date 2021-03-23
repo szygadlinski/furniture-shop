@@ -8,10 +8,12 @@ import Button from '../../common/Button/Button';
 import styles from './Cart.module.scss';
 
 const Cart = ({ count }) => (
-  <Button className={styles.cart} variant='main'>
-    <FontAwesomeIcon className={styles.icon} icon={faShoppingBasket} />
+  <a className={styles.cart}>
+    <div className={styles.cartIcon}>
+      <FontAwesomeIcon className={styles.icon} icon={faShoppingBasket} />
+    </div>
     <div className={styles.cartCounter}>{count}</div>
-  </Button>
+  </a>
 );
 
 Cart.propTypes = {
