@@ -2,9 +2,10 @@
 
 
 .cart {
-  display: inline-block;
   position: relative;
-  color: $cart-text;
+  background-color: $cart-bcg;
+  border-radius: 4px;
+  padding: $base-padding/2 $base-padding/1.5;
 
   .cartIcon {
     background-color: $header-icon;
@@ -43,7 +44,7 @@
 
   &:hover {
     .cartIcon {
-      background-color: lighten($header-icon, 10%);
+      background-color: lighten($cart-bcg, 10%);
     }
   }
 }

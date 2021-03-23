@@ -3,16 +3,15 @@ import PropTypes from 'prop-types';
 
 import { faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Button from '../../common/Button/Button';
 
 import styles from './Cart.module.scss';
 
 const Cart = ({ count }) => (
-  <a href='#' className={styles.cart}>
-    <div className={styles.cartIcon}>
-      <FontAwesomeIcon className={styles.icon} icon={faShoppingBasket} />
-    </div>
+  <Button className={styles.cart} variant='main'>
+    <FontAwesomeIcon className={styles.icon} icon={faShoppingBasket} />
     <div className={styles.cartCounter}>{count}</div>
-  </a>
+  </Button>
 );
 
 Cart.propTypes = {
