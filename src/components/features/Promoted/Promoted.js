@@ -104,9 +104,7 @@ const Promoted = () => {
               <div className={styles.headerBox}></div>
               <h1>INDOOR</h1> <h1>FURNITURE</h1>
               <h2>save up to 50% of all furniture</h2>
-              <div className={styles.buttonShop}>
-                <Button> SHOP NOW </Button>
-              </div>
+              <Button className={styles.buttonShop}> SHOP NOW </Button>
             </div>
           </div>
         </div>

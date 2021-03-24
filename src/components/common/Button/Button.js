@@ -3,13 +3,20 @@ import PropTypes from 'prop-types';
 
 import styles from './Button.module.scss';
 
-const Button = ({ children, variant, noHover, className: propClassName, ...props }) => {
+const Button = ({
+  children,
+  variant,
+  noHover,
+  className: propClassName,
+  tooltip,
+  ...props
+}) => {
   const classes = [];
 
   if (propClassName) classes.push(propClassName);
 
   if (variant) classes.push(styles[variant]);
-  else classes.push('main');
+  else classes.push(styles.main);
 
   let Comp = 'a';
 
@@ -20,6 +27,7 @@ const Button = ({ children, variant, noHover, className: propClassName, ...props
 
   return (
     <Comp href='#' {...props} className={classes.join(' ')}>
+      {tooltip ? <div className={styles.tooltip}>{tooltip}</div> : ''}
       {children}
     </Comp>
   );
@@ -30,6 +38,7 @@ Button.propTypes = {
   noHover: PropTypes.bool,
   className: PropTypes.string,
   variant: PropTypes.string,
+  tooltip: PropTypes.string,
 };
 
 export default Button;

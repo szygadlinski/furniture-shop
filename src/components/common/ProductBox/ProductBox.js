@@ -11,8 +11,21 @@ import {
 import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../Button/Button';
 
-const ProductBox = ({ name, price, oldPrice, promo, stars, image, number, favorite, toggleFavorite, id, compareItems, compare }) => {
-
+const ProductBox = ({
+  name,
+  price,
+  oldPrice,
+  promo,
+  stars,
+  image,
+  number,
+  favorite,
+  toggleFavorite,
+  id,
+  compareItems,
+  compare,
+  addToCart,
+}) => {
   const faveHandler = event => {
     event.preventDefault();
     toggleFavorite({ id });
@@ -21,6 +34,11 @@ const ProductBox = ({ name, price, oldPrice, promo, stars, image, number, favori
     event.preventDefault();
     compareItems({ id });
   };
+
+  const addCartHandler = () => {
+    addToCart({ id, name, price, image });
+  };
+
   return (
     <div className={styles.root}>
       <div className={styles.photo}>
@@ -29,7 +47,7 @@ const ProductBox = ({ name, price, oldPrice, promo, stars, image, number, favori
           <img src={image} alt='' />
           <div className={styles.buttons}>
             <Button variant='small'>Quick View</Button>
-            <Button variant='small'>
+            <Button variant='small' onClick={addCartHandler}>
               <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO CART
             </Button>
           </div>
@@ -54,14 +72,20 @@ const ProductBox = ({ name, price, oldPrice, promo, stars, image, number, favori
         <div className={styles.outlines}>
           <Button
             variant='outline'
-            className={(number === 0 || number === 2 ? styles.favorite : '') + (favorite ? styles.favorite : '')}
+            className={
+              (number === 0 || number === 2 ? styles.favorite : '') +
+              (favorite ? styles.favorite : '')
+            }
             onClick={faveHandler}
           >
             <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
           </Button>
           <Button
             variant='outline'
-            className={(number === 1 || number === 2 ? styles.compare : '') + (compare ? styles.compare : '')}
+            className={
+              (number === 1 || number === 2 ? styles.compare : '') +
+              (compare ? styles.compare : '')
+            }
             onClick={comparisonHandler}
           >
             <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
@@ -98,6 +122,7 @@ ProductBox.propTypes = {
   comparisonHandler: PropTypes.func,
   compareItems: PropTypes.func,
   compare: PropTypes.bool,
+  addToCart: PropTypes.func,
 };
 
 export default ProductBox;

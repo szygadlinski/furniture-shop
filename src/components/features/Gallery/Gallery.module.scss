@@ -1,0 +1,174 @@
+@import "../../../styles/settings.scss";
+
+@mixin border ($sides...) {
+  @each $side in $sides {
+    border-#{$side}: 1px solid $tab-border;
+  }
+}
+
+.tabs {
+  @include border(top, left, right);
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  li {
+    flex: 1;
+
+    & + li {
+      @include border(left);
+    }
+  }
+
+  a {
+    display: flex;
+    justify-content: center;
+    color: $menu-text;
+    text-transform: uppercase;
+    font-size: 12px;
+    padding: $base-padding/4 $base-padding/2;
+    text-decoration: none;
+    text-align: center;
+    border-top: 4px solid $menu-bcg;
+    font-weight: 500;
+    letter-spacing: 1px;
+    cursor: pointer;
+    @extend %hover-animation;
+
+    &:hover, &:focus,
+    &.active {
+      background-color: $tab-bcg;
+      color: $tab-active;
+      border-color: $tab-active;
+      outline: none;
+    }
+
+    &.active {
+      border-color: $menu-text;
+    }
+  }
+}
+
+.product {
+  @include border(left, right);
+  flex: 1 0 auto;
+}
+
+/* Slider */
+
+.slider {
+  padding: 5px 0;
+  display: flex;
+  align-items: stretch;
+  @include border(bottom, left, right);
+
+  .slidesList {
+    display: flex;
+    flex-wrap: nowrap;
+
+    .slide {
+      @include border(top, bottom, left, right);
+      width: calc((100% - 25px) / 6);
+      position: relative;
+      display: flex;
+      align-items: center;
+      background-color: $pb-photo-bcg;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+
+      &:nth-child(n+7) {
+        display: none;
+      }
+
+      & + .slide {
+        margin-left: 5px;
+      }
+
+      &:not(.active) {
+        &::after {
+          content:'';
+          position: absolute;
+          top: 0;
+          left: 0;
+          display:block;
+          height: 100%;
+          width: 100%;
+          background-color: transparentize($slider-btn, 0.7);
+          z-index: 1;
+        }
+      }
+    }
+  }
+
+  .button {
+    position: relative;
+    text-decoration: none;
+    color: $slider-text;
+    width: 30px;
+    border-radius: 2px;
+    background-color: $slider-btn;
+    margin: 0 5px;
+    @extend %hover-animation;
+    &:hover {
+      background-color: $slider-btn-hover;
+    }
+
+    span {
+      position: absolute;
+      transform: translate(-50%, -50%);
+      top: 50%;
+      left: 50%;
+    }
+  }
+}
+
+/*Right column*/
+
+.promo {
+  position: relative;
+  width: 100%;
+
+  img {
+    width: 100%;
+  }
+}
+
+.promo__inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: $base-padding * 2;
+
+  h3 {
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 1px;
+
+    span {
+      font-size: 2.5em;
+      font-weight: 600;
+      color: $promo-button;
+    }
+  }
+
+  h2 {
+    color: $tab-active;
+    font-weight: 600;
+    font-size: 2.3em;
+    margin-bottom: $base-padding;
+  }
+
+  .promo__button {
+    border-radius: 2px;
+    background-color: $promo-button;
+  }
+}
