@@ -11,9 +11,9 @@ import {
 
 const mapStateToProps = state => ({
   featured: getNew(state),
-  top_seller: getProductForPrice(state, 0, 30),
+  topSeller: getProductForPrice(state, 0, 30),
   sale: getOnSale(state),
-  top_rated: getMinRate(state, 3),
+  topRated: getMinRate(state, 3),
 });
 
 export default connect(mapStateToProps)(Gallery);

@@ -1,7 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import initialState from '../../../redux/initialState';
 
 import SectionHeader from '../../common/SectionHeader/SectionHeader';
 import GalleryProduct from '../../common/GalleryProduct/GalleryProduct';
@@ -9,63 +8,33 @@ import Button from '../../common/Button/Button';
 
 import styles from './Gallery.module.scss';
 
-const slides = [
-  {
-    id: '1',
-    url: `${process.env.PUBLIC_URL}/images/gallery_1.png`,
-    active: true,
-  },
-  {
-    id: '2',
-    url: `${process.env.PUBLIC_URL}/images/gallery_2.png`,
-    active: false,
-  },
-  {
-    id: '3',
-    url: `${process.env.PUBLIC_URL}/images/gallery_3.png`,
-    active: false,
-  },
-  {
-    id: '4',
-    url: `${process.env.PUBLIC_URL}/images/gallery_1.png`,
-    active: false,
-  },
-  {
-    id: '5',
-    url: `${process.env.PUBLIC_URL}/images/gallery_2.png`,
-    active: false,
-  },
-  {
-    id: '6',
-    url: `${process.env.PUBLIC_URL}/images/gallery_3.png`,
-    active: false,
-  },
-  {
-    id: '7',
-    url: `${process.env.PUBLIC_URL}/images/gallery_1.png`,
-    active: false,
-  },
-  {
-    id: '8',
-    url: `${process.env.PUBLIC_URL}/images/gallery_2.png`,
-    active: false,
-  },
-  {
-    id: '9',
-    url: `${process.env.PUBLIC_URL}/images/gallery_3.png`,
-    active: false,
-  },
-];
-
 const Gallery = ({ featured, topSeller, sale, topRated }) => {
-  const [isFading, setFading] = useState(false);
-  const [activeTab, setActiveTab] = useState(1);
+  const tabs = [
+    {
+      name: 'Featured',
+      products: featured,
+    },
+    {
+      name: 'TopSeller',
+      products: topSeller,
+    },
+    {
+      name: 'Sale off',
+      products: sale,
+    },
+    {
+      name: 'Top rated',
+      products: topRated,
+    },
+  ];
 
-  const handleTabChange = newTab => {
-    // console.log(event.target.tabIndex);
+  const [isFading, setFading] = useState(false);
+  const [activeTab, setActiveTab] = useState(tabs[0]);
+
+  const handleTabChange = newIndex => {
     setFading(true);
     setTimeout(() => {
-      setActiveTab(newTab);
+      setActiveTab(tabs[newIndex]);
     }, 500);
     setTimeout(() => {
       setFading(false);
@@ -80,52 +49,37 @@ const Gallery = ({ featured, topSeller, sale, topRated }) => {
             <SectionHeader title='Furniture Gallery' />
             <nav className={styles.tabs}>
               <ul>
-                <li>
-                  <a tabIndex={1} onClick={() => handleTabChange(1)}>
-                    Featured
-                  </a>
-                </li>
-                <li>
-                  <a tabIndex={2} onClick={() => handleTabChange(2)}>
-                    Top seller
-                  </a>
-                </li>
-                <li>
-                  <a tabIndex={3} onClick={() => handleTabChange(3)}>
-                    Sale off
-                  </a>
-                </li>
-                <li>
-                  <a tabIndex={4} onClick={() => handleTabChange(4)}>
-                    Top rated
-                  </a>
-                </li>
+                {tabs.map(tab => (
+                  <li key={tabs.indexOf(tab)}>
+                    <a
+                      tabIndex={tabs.indexOf(tab) + 1}
+                      onClick={() => handleTabChange(tabs.indexOf(tab))}
+                    >
+                      {tab.name}
+                    </a>
+                  </li>
+                ))}
               </ul>
             </nav>
-            <div className={styles.product}>
-              <GalleryProduct {...initialState.products[1]} />
-            </div>
-            <div className={styles.slider}>
-              <Button className={styles.button}>
-                <span>&lt;</span>
-              </Button>
-              <div className={styles.slidesList}>
-                {slides.map(slide => {
-                  return (
-                    <div
-                      className={
-                        slide.active ? `${styles.slide} ${styles.active}` : styles.slide
-                      }
-                      key={slide.id}
-                    >
-                      <img src={slide.url} alt={`slide ${slide.id}`} />
-                    </div>
-                  );
-                })}
+            <div className={styles.product_wrapper}>
+              <div className={isFading ? ` ${styles.fadeout}` : styles.fadein}>
+                <GalleryProduct {...activeTab.products[0]} />
+                <div className={styles.slider}>
+                  <Button className={styles.button}>
+                    <span>&lt;</span>
+                  </Button>
+                  <div className={styles.slidesList}>
+                    {activeTab.products.map(product => (
+                      <div className={styles.slide} key={product.id}>
+                        <img src={product.image} alt={product.name} />
+                      </div>
+                    ))}
+                  </div>
+                  <Button className={styles.button}>
+                    <span>&gt;</span>
+                  </Button>
+                </div>
               </div>
-              <Button className={styles.button}>
-                <span>&gt;</span>
-              </Button>
             </div>
           </div>
           <div className='col-6'>

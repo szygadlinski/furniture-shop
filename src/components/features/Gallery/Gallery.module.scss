@@ -54,9 +54,24 @@
   }
 }
 
-.product {
-  @include border(left, right);
+.product_wrapper {
   flex: 1 0 auto;
+  @include border(left, right, bottom);
+  display: flex;
+
+  >div {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.fadeout {
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.fadein {
+  transition: 0.5s;
 }
 
 /* Slider */
@@ -65,7 +80,7 @@
   padding: 5px 0;
   display: flex;
   align-items: stretch;
-  @include border(bottom, left, right);
+  height: 75px;
 
   .slidesList {
     display: flex;
