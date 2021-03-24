@@ -6,6 +6,29 @@ const initialState = {
     { id: 'table', name: 'Table' },
     { id: 'dining', name: 'Dining' },
   ],
+  brands: [
+    {
+      id: 'brand-1',
+      image:
+        'https://cdn.pixabay.com/photo/2015/05/04/20/23/corporate-752923_960_720.png',
+    },
+    {
+      id: 'brand-2',
+      image: 'https://cdn.pixabay.com/photo/2015/05/04/20/23/color-752920_960_720.png',
+    },
+    {
+      id: 'brand-3',
+      image: 'https://cdn.pixabay.com/photo/2015/05/03/12/38/logo-751133_960_720.png',
+    },
+    {
+      id: 'brand-4',
+      image: 'https://cdn.pixabay.com/photo/2015/05/04/20/23/logo-752922_960_720.png',
+    },
+    {
+      id: 'brand-5',
+      image: 'https://cdn.pixabay.com/photo/2015/05/04/20/23/logo-752921_960_720.png',
+    },
+  ],
   products: [
     {
       id: 'aenean-ru-bristique-1',
@@ -312,30 +335,6 @@ const initialState = {
         'https://images.unsplash.com/flagged/photo-1556438758-8d49568ce18e?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1053&q=80',
       favorite: false,
       compare: false,
-    },
-  ],
-  brands: [
-    {
-      id: 'brand-1',
-      image:
-        'https://cdn.pixabay.com/photo/2015/05/04/20/23/corporate-752923_960_720.png',
-    },
-    {
-      id: 'brand-2',
-      image: 'https://cdn.pixabay.com/photo/2015/05/04/20/23/color-752920_960_720.png',
-    },
-    {
-      id: 'brand-3',
-      image: 'https://cdn.pixabay.com/photo/2015/05/03/12/38/logo-751133_960_720.png',
-    },
-    {
-      id: 'brand-4',
-      image: 'https://cdn.pixabay.com/photo/2015/05/04/20/23/logo-752922_960_720.png',
-    },
-    {
-      id: 'brand-5',
-      image: 'https://cdn.pixabay.com/photo/2015/05/04/20/23/logo-752921_960_720.png',
-
     },
     {
       id: 'mauris-eu-nunc-1',

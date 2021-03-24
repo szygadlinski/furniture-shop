@@ -8,7 +8,7 @@ import './styles/global.scss';
 
 import MainLayout from './components/layout/MainLayout/MainLayout';
 import Homepage from './components/views/Homepage/Homepage';
-import ProductList from './components/views/ProductList/ProductList';
+import ProductList from './components/views/ProductList/ProductListContainer';
 import ProductPage from './components/views/ProductPage/ProductPage';
 
 const App = () => (
