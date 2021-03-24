@@ -37,6 +37,8 @@ const Gallery = ({ featured, topSeller, sale, topRated }) => {
     setFading(true);
     setTimeout(() => {
       setActiveTab(tabs[newIndex]);
+      setSliderStart(0);
+      setActiveProduct(tabs[newIndex].products[0]);
     }, 500);
     setTimeout(() => {
       setFading(false);
