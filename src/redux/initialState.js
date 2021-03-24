@@ -1,4 +1,5 @@
 const initialState = {
+  deviceType: '',
   categories: [
     { id: 'bed', name: 'Bed' },
     { id: 'chair', name: 'Chair' },

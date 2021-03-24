@@ -12,7 +12,6 @@ import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons'
 import Button from '../Button/Button';
 
 const ProductBox = ({ name, price, oldPrice, promo, stars, image, number, favorite, toggleFavorite, id, compareItems, compare }) => {
-
   const faveHandler = event => {
     event.preventDefault();
     toggleFavorite({ id });
