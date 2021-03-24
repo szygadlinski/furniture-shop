@@ -1,4 +1,5 @@
 const initialState = {
+  deviceType: '',
   categories: [
     { id: 'bed', name: 'Bed' },
     { id: 'chair', name: 'Chair' },
@@ -1123,9 +1124,108 @@ const initialState = {
       image: 'https://cdn.pixabay.com/photo/2017/11/02/14/36/model-2911363_1280.jpg',
       name: '~ John Smith',
     },
+    {
+      id: 'brand-6',
+      image: 'https://cdn.pixabay.com/photo/2015/05/04/20/23/logo-752921_960_720.png',
+    },
+    {
+      id: 'brand-7',
+      image: 'https://cdn.pixabay.com/photo/2015/05/04/20/23/logo-752921_960_720.png',
+    },
+    {
+      id: 'brand-8',
+      image:
+        'https://cdn.pixabay.com/photo/2015/05/04/20/23/corporate-752923_960_720.png',
+    },
+    {
+      id: 'brand-9',
+      image: 'https://cdn.pixabay.com/photo/2015/05/04/20/23/logo-752921_960_720.png',
+    },
+    {
+      id: 'brand-10',
+      image:
+        'https://cdn.pixabay.com/photo/2015/05/04/20/23/corporate-752923_960_720.png',
+    },
+    {
+      id: 'brand-11',
+      image: 'https://cdn.pixabay.com/photo/2015/05/04/20/23/logo-752921_960_720.png',
+    },
+    {
+      id: 'brand-12',
+      image:
+        'https://cdn.pixabay.com/photo/2015/05/04/20/23/corporate-752923_960_720.png',
+    },
+    {
+      id: 'brand-13',
+      image: 'https://cdn.pixabay.com/photo/2015/05/04/20/23/logo-752921_960_720.png',
+    },
+    {
+      id: 'brand-14',
+      image: 'https://cdn.pixabay.com/photo/2015/05/04/20/23/logo-752921_960_720.png',
+    },
+    {
+      id: 'brand-15',
+      image:
+        'https://cdn.pixabay.com/photo/2015/05/04/20/23/corporate-752923_960_720.png',
+    },
+    {
+      id: 'brand-16',
+      image: 'https://cdn.pixabay.com/photo/2015/05/04/20/23/logo-752921_960_720.png',
+    },
+    {
+      id: 'brand-17',
+      image: 'https://cdn.pixabay.com/photo/2015/05/04/20/23/logo-752921_960_720.png',
+    },
+    {
+      id: 'brand-18',
+      image:
+        'https://cdn.pixabay.com/photo/2015/05/04/20/23/corporate-752923_960_720.png',
+    },
+    {
+      id: 'brand-19',
+      image: 'https://cdn.pixabay.com/photo/2015/05/04/20/23/logo-752921_960_720.png',
+    },
+    {
+      id: 'brand-20',
+      image: 'https://cdn.pixabay.com/photo/2015/05/04/20/23/logo-752921_960_720.png',
+    },
+    {
+      id: 'brand-21',
+      image: 'https://cdn.pixabay.com/photo/2015/05/04/20/23/logo-752921_960_720.png',
+    },
+    {
+      id: 'brand-22',
+      image:
+        'https://cdn.pixabay.com/photo/2015/05/04/20/23/corporate-752923_960_720.png',
+    },
+    {
+      id: 'brand-23',
+      image: 'https://cdn.pixabay.com/photo/2015/05/04/20/23/color-752920_960_720.png',
+    },
+    {
+      id: 'brand-24',
+      image: 'https://cdn.pixabay.com/photo/2015/05/04/20/23/logo-752921_960_720.png',
+    },
   ],
   cart: {
     products: [],
+  },
+  deals: {
+    leftImage:
+      'https://images.pexels.com/photos/1350789/pexels-photo-1350789.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+    leftDescription: ['Guest room', 'Chairs', '-20%'],
+    rightUpImage:
+      'https://images.pexels.com/photos/775219/pexels-photo-775219.jpeg?cs=srgb&fm=jpg&h=750&w=1260',
+    rightUpDescription: ['Bed', 'room', 'Collection', '$200.00'],
+    rightDownImage:
+      'https://images.pexels.com/photos/2631746/pexels-photo-2631746.jpeg?cs=srgb&fm=jpg&h=750&w=1260',
+    rightDownDescription: [
+      'Special',
+      ' collection',
+      'Save up ',
+      '45%',
+      ' of furniture',
+    ],
   },
   promotion: {
     picture:
