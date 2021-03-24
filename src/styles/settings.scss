@@ -15,6 +15,7 @@ $light-5: #b6b6b6;
 $light-6: #a9a9a9;
 $light-7: #e0e3ed;
 $orange: #d58e32;
+$green: #79AE31;
 
 //*******COLOURS BY COMPONENT*******//
 //OTHER FILES USABLE!//
@@ -95,10 +96,24 @@ $form-select-bcg: $transparent;
 
 //STICKY BAR//
 $sticky-bcg: $dark-3;
-
 $sticky-photo-bcg: $light-1;
-
 $sticky-icon-bcg: $light-6;
+
+//GALLERY
+$tab-bcg: $light-1;
+$tab-border: $light-2;
+$tab-active: $orange;
+$slider-text: $white;
+$slider-btn: $dark-3;
+$slider-btn-hover: $orange;
+$promo-button: $green;
+
+//GALLERY PRODUCT
+$label-bcg: $white;
+$label-corner: $dark-5;
+$label-shadow: $light-5;
+$price-color: $white;
+$price-bcg: $dark-1;
 
 //*****LAYOUT*****//
 //FOOTER
