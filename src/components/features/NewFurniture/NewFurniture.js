@@ -114,17 +114,19 @@ class NewFurniture extends React.Component {
                 </div>
               </div>
             </div>
-          </div>
-          <div
-            className={'row' + (isFading ? ' ' + styles.fadeout : ' ' + styles.fadein)}
-          >
-            {categoryProducts
-              .slice(activePage * itemsPerPage, (activePage + 1) * itemsPerPage)
-              .map((item, i) => (
-                <div key={item.id} className='col-6 col-md-4 col-lg-3'>
-                  <ProductBox image={image} {...item} number={i} product={item} />
-                </div>
-              ))}
+            <div
+              className={
+                'row' + (isFading ? ' ' + styles.fadeout : ' ' + styles.fadein)
+              }
+            >
+              {categoryProducts
+                .slice(activePage * itemsPerPage, (activePage + 1) * itemsPerPage)
+                .map((item, i) => (
+                  <div key={item.id} className='col-6 col-md-4 col-lg-3'>
+                    <ProductBox image={image} {...item} number={i} product={item} />
+                  </div>
+                ))}
+            </div>
           </div>
         </div>
       </Swipeable>
