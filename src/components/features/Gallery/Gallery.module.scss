@@ -80,7 +80,7 @@
   padding: 5px 0;
   display: flex;
   align-items: stretch;
-  height: 75px;
+  height: 82px;
 
   .slidesList {
     display: flex;
@@ -89,6 +89,7 @@
     .slide {
       @include border(top, bottom, left, right);
       width: calc((100% - 25px) / 6);
+      height: 100%;
       position: relative;
       display: flex;
       align-items: center;
@@ -96,7 +97,8 @@
 
       img {
         width: 100%;
-        height: auto;
+        height: 100%;
+        object-fit: cover;
       }
 
       &:nth-child(n+7) {
@@ -125,12 +127,13 @@
 
   .button {
     position: relative;
-    text-decoration: none;
     color: $slider-text;
     width: 30px;
     border-radius: 2px;
     background-color: $slider-btn;
     margin: 0 5px;
+    padding: 0;
+    flex: 0 0 auto;
     @extend %hover-animation;
     &:hover {
       background-color: $slider-btn-hover;
