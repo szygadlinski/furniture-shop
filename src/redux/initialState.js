@@ -335,7 +335,6 @@ const initialState = {
     {
       id: 'brand-5',
       image: 'https://cdn.pixabay.com/photo/2015/05/04/20/23/logo-752921_960_720.png',
-
     },
     {
       id: 'mauris-eu-nunc-1',
@@ -1122,6 +1121,19 @@ const initialState = {
         'Curabitur gravida dictum pulvinar. Aenean scelerisque sem eu imperdiet cursus. Cras porttitor elit imperdiet congue dignissim. Duis vitae nulla vitae risus lobortis tincidunt. Proin lacus turpis, volutpat eget sodales eu, vestibulum quis leo.',
       image: 'https://cdn.pixabay.com/photo/2017/11/02/14/36/model-2911363_1280.jpg',
       name: '~ John Smith',
+    },
+  ],
+  blogboxes: [
+    {
+      id: 'post-1',
+      title: 'Witamy na nowej stronie sklepu!',
+      image:
+        'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260',
+      content:
+        'Quisque varius, sapien a maximus ornare, purus mauris sollicitudin odio, vitae blandit nisi metus sit amet quam. Quisque maximus odio et lacus sodales elementum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque ut interdum sem. In hac habitasse platea dictumst. Phasellus in sagittis quam, quis molestie mi. Donec ut lacus ac dui blandit sodales. Maecenas nisi risus, dapibus a aliquet ut, ultrices vel ex. Proin fermentum sagittis massa. Nam hendrerit est vitae laoreet sollicitudin.',
+      name: 'admin',
+      date: 'June 16, 2020',
+      tag: 'Unique',
     },
   ],
   cart: {

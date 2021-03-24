@@ -1,0 +1,39 @@
+@import "../../../styles/settings.scss";
+
+.root {
+  padding: $base-padding 0;
+
+  .title {
+    margin: 35px 55px 15px 125px ;
+    padding: 0 90px;
+  }
+
+  .search {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    border: 1px solid #434343;
+    border-radius: 2%;
+    padding: 10px 5px;
+    margin-bottom: 45px;
+
+    input {
+      border: 0;
+      padding-left: 10px;
+      font-size: 14px;
+      outline: none;
+
+      &::placeholder {
+        color: $form-text;
+      }
+    }
+
+    button {
+      border: 0;
+      background-color: $form-select-bcg;
+      outline: none;
+    }
+  }
+
+}
