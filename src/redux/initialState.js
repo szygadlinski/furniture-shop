@@ -314,30 +314,6 @@ const initialState = {
       favorite: false,
       compare: false,
     },
-  ],
-  brands: [
-    {
-      id: 'brand-1',
-      image:
-        'https://cdn.pixabay.com/photo/2015/05/04/20/23/corporate-752923_960_720.png',
-    },
-    {
-      id: 'brand-2',
-      image: 'https://cdn.pixabay.com/photo/2015/05/04/20/23/color-752920_960_720.png',
-    },
-    {
-      id: 'brand-3',
-      image: 'https://cdn.pixabay.com/photo/2015/05/03/12/38/logo-751133_960_720.png',
-    },
-    {
-      id: 'brand-4',
-      image: 'https://cdn.pixabay.com/photo/2015/05/04/20/23/logo-752922_960_720.png',
-    },
-    {
-      id: 'brand-5',
-      image: 'https://cdn.pixabay.com/photo/2015/05/04/20/23/logo-752921_960_720.png',
-
-    },
     {
       id: 'mauris-eu-nunc-1',
       name: 'Mauris eu nunc 1',
@@ -1114,15 +1090,27 @@ const initialState = {
       newFurniture: true,
     },
   ],
-  feedbacks: [
+  brands: [
     {
-      id: 'client-1',
-      icon:
-        'https://www.flaticon.com/svg/vstatic/svg/565/565703.svg?token=exp=1616333731~hmac=efc4d87e0dbbcd8b62bfd8383e7ef1dd',
-      quote:
-        'Curabitur gravida dictum pulvinar. Aenean scelerisque sem eu imperdiet cursus. Cras porttitor elit imperdiet congue dignissim. Duis vitae nulla vitae risus lobortis tincidunt. Proin lacus turpis, volutpat eget sodales eu, vestibulum quis leo.',
-      image: 'https://cdn.pixabay.com/photo/2017/11/02/14/36/model-2911363_1280.jpg',
-      name: '~ John Smith',
+      id: 'brand-1',
+      image:
+        'https://cdn.pixabay.com/photo/2015/05/04/20/23/corporate-752923_960_720.png',
+    },
+    {
+      id: 'brand-2',
+      image: 'https://cdn.pixabay.com/photo/2015/05/04/20/23/color-752920_960_720.png',
+    },
+    {
+      id: 'brand-3',
+      image: 'https://cdn.pixabay.com/photo/2015/05/03/12/38/logo-751133_960_720.png',
+    },
+    {
+      id: 'brand-4',
+      image: 'https://cdn.pixabay.com/photo/2015/05/04/20/23/logo-752922_960_720.png',
+    },
+    {
+      id: 'brand-5',
+      image: 'https://cdn.pixabay.com/photo/2015/05/04/20/23/logo-752921_960_720.png',
     },
     {
       id: 'brand-6',
@@ -1205,6 +1193,17 @@ const initialState = {
     {
       id: 'brand-24',
       image: 'https://cdn.pixabay.com/photo/2015/05/04/20/23/logo-752921_960_720.png',
+    },
+  ],
+  feedbacks: [
+    {
+      id: 'client-1',
+      icon:
+        'https://www.flaticon.com/svg/vstatic/svg/565/565703.svg?token=exp=1616333731~hmac=efc4d87e0dbbcd8b62bfd8383e7ef1dd',
+      quote:
+        'Curabitur gravida dictum pulvinar. Aenean scelerisque sem eu imperdiet cursus. Cras porttitor elit imperdiet congue dignissim. Duis vitae nulla vitae risus lobortis tincidunt. Proin lacus turpis, volutpat eget sodales eu, vestibulum quis leo.',
+      image: 'https://cdn.pixabay.com/photo/2017/11/02/14/36/model-2911363_1280.jpg',
+      name: '~ John Smith',
     },
   ],
   cart: {
