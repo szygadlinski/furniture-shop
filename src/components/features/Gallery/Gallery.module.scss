@@ -6,6 +6,10 @@
   }
 }
 
+.root {
+  padding: $base-padding*2 0;
+}
+
 .tabs {
   @include border(top, left, right);
 
@@ -110,6 +114,11 @@
       }
 
       &:not(.active) {
+        &:hover {
+          &::after {
+            background-color: transparent;
+          }
+        }
         &::after {
           content:'';
           position: absolute;
@@ -118,8 +127,9 @@
           display:block;
           height: 100%;
           width: 100%;
-          background-color: transparentize($slider-btn, 0.7);
+          background-color: transparentize($slider-btn, 0.6);
           z-index: 1;
+          @extend %hover-animation;
         }
       }
     }

@@ -30,6 +30,7 @@ const Gallery = ({ featured, topSeller, sale, topRated }) => {
 
   const [isFading, setFading] = useState(false);
   const [activeTab, setActiveTab] = useState(tabs[0]);
+  const [activeProduct, setActiveProduct] = useState(activeTab.products[0]);
 
   const handleTabChange = newIndex => {
     setFading(true);
@@ -39,6 +40,10 @@ const Gallery = ({ featured, topSeller, sale, topRated }) => {
     setTimeout(() => {
       setFading(false);
     }, 500);
+  };
+
+  const handleSlideClick = product => {
+    setActiveProduct(product);
   };
 
   return (
@@ -63,14 +68,21 @@ const Gallery = ({ featured, topSeller, sale, topRated }) => {
             </nav>
             <div className={styles.product_wrapper}>
               <div className={isFading ? ` ${styles.fadeout}` : styles.fadein}>
-                <GalleryProduct {...activeTab.products[0]} />
+                <GalleryProduct {...activeProduct} />
                 <div className={styles.slider}>
                   <Button className={styles.button}>
                     <span>&lt;</span>
                   </Button>
                   <div className={styles.slidesList}>
                     {activeTab.products.map(product => (
-                      <div className={styles.slide} key={product.id}>
+                      <div
+                        className={
+                          styles.slide +
+                          (product === activeProduct ? ` ${styles.active}` : '')
+                        }
+                        key={product.id}
+                        onClick={() => handleSlideClick(product)}
+                      >
                         <img src={product.image} alt={product.name} />
                       </div>
                     ))}
