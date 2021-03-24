@@ -31,6 +31,7 @@ const Gallery = ({ featured, topSeller, sale, topRated }) => {
   const [isFading, setFading] = useState(false);
   const [activeTab, setActiveTab] = useState(tabs[0]);
   const [activeProduct, setActiveProduct] = useState(activeTab.products[0]);
+  const [sliderStart, setSliderStart] = useState(0);
 
   const handleTabChange = newIndex => {
     setFading(true);
@@ -44,6 +45,20 @@ const Gallery = ({ featured, topSeller, sale, topRated }) => {
 
   const handleSlideClick = product => {
     setActiveProduct(product);
+  };
+
+  const handleSliderForward = event => {
+    event.preventDefault();
+    if (sliderStart + 6 < activeTab.products.length - 6) {
+      setSliderStart(sliderStart + 6);
+    } else setSliderStart(activeTab.products.length - 6);
+  };
+
+  const handleSliderBackward = event => {
+    event.preventDefault();
+    if (sliderStart - 6 > 0) {
+      setSliderStart(sliderStart - 6);
+    } else setSliderStart(0);
   };
 
   return (
@@ -70,24 +85,32 @@ const Gallery = ({ featured, topSeller, sale, topRated }) => {
               <div className={isFading ? ` ${styles.fadeout}` : styles.fadein}>
                 <GalleryProduct {...activeProduct} />
                 <div className={styles.slider}>
-                  <Button className={styles.button}>
+                  <Button
+                    className={styles.button}
+                    onClick={event => handleSliderBackward(event)}
+                  >
                     <span>&lt;</span>
                   </Button>
                   <div className={styles.slidesList}>
-                    {activeTab.products.map(product => (
-                      <div
-                        className={
-                          styles.slide +
-                          (product === activeProduct ? ` ${styles.active}` : '')
-                        }
-                        key={product.id}
-                        onClick={() => handleSlideClick(product)}
-                      >
-                        <img src={product.image} alt={product.name} />
-                      </div>
-                    ))}
+                    {activeTab.products
+                      .filter((product, index) => index >= sliderStart)
+                      .map(product => (
+                        <div
+                          className={
+                            styles.slide +
+                            (product === activeProduct ? ` ${styles.active}` : '')
+                          }
+                          key={product.id}
+                          onClick={() => handleSlideClick(product)}
+                        >
+                          <img src={product.image} alt={product.name} />
+                        </div>
+                      ))}
                   </div>
-                  <Button className={styles.button}>
+                  <Button
+                    className={styles.button}
+                    onClick={event => handleSliderForward(event)}
+                  >
                     <span>&gt;</span>
                   </Button>
                 </div>
