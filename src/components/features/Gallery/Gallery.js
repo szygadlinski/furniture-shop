@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from 'react';
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import initialState from '../../../redux/initialState';
 
 import SectionHeader from '../../common/SectionHeader/SectionHeader';
@@ -56,7 +57,16 @@ const slides = [
   },
 ];
 
-const Gallery = () => {
+const Gallery = ({ featured, topSeller, sale, topRated }) => {
+  const [isFading, setFading] = useState(false);
+
+  const handleTabChange = event => {
+    setFading(true);
+    setTimeout(() => {
+      setFading(false);
+    }, 500);
+  };
+
   return (
     <section className={styles.root}>
       <div className='container'>
@@ -66,16 +76,24 @@ const Gallery = () => {
             <nav className={styles.tabs}>
               <ul>
                 <li>
-                  <a tabIndex={1}>Featured</a>
+                  <a tabIndex={1} onClick={event => handleTabChange(event)}>
+                    Featured
+                  </a>
                 </li>
                 <li>
-                  <a tabIndex={2}>Top seller</a>
+                  <a tabIndex={2} onClick={handleTabChange}>
+                    Top seller
+                  </a>
                 </li>
                 <li>
-                  <a tabIndex={3}>Sale off</a>
+                  <a tabIndex={3} onClick={handleTabChange}>
+                    Sale off
+                  </a>
                 </li>
                 <li>
-                  <a tabIndex={4}>Top rated</a>
+                  <a tabIndex={4} onClick={handleTabChange}>
+                    Top rated
+                  </a>
                 </li>
               </ul>
             </nav>
@@ -126,6 +144,13 @@ const Gallery = () => {
       </div>
     </section>
   );
+};
+
+Gallery.propTypes = {
+  featured: PropTypes.arrayOf(PropTypes.object),
+  topSeller: PropTypes.arrayOf(PropTypes.object),
+  topRated: PropTypes.arrayOf(PropTypes.object),
+  sale: PropTypes.arrayOf(PropTypes.object),
 };
 
 export default Gallery;
