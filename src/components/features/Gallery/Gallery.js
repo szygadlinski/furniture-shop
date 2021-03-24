@@ -59,9 +59,14 @@ const slides = [
 
 const Gallery = ({ featured, topSeller, sale, topRated }) => {
   const [isFading, setFading] = useState(false);
+  const [activeTab, setActiveTab] = useState(1);
 
-  const handleTabChange = event => {
+  const handleTabChange = newTab => {
+    // console.log(event.target.tabIndex);
     setFading(true);
+    setTimeout(() => {
+      setActiveTab(newTab);
+    }, 500);
     setTimeout(() => {
       setFading(false);
     }, 500);
@@ -76,22 +81,22 @@ const Gallery = ({ featured, topSeller, sale, topRated }) => {
             <nav className={styles.tabs}>
               <ul>
                 <li>
-                  <a tabIndex={1} onClick={event => handleTabChange(event)}>
+                  <a tabIndex={1} onClick={() => handleTabChange(1)}>
                     Featured
                   </a>
                 </li>
                 <li>
-                  <a tabIndex={2} onClick={handleTabChange}>
+                  <a tabIndex={2} onClick={() => handleTabChange(2)}>
                     Top seller
                   </a>
                 </li>
                 <li>
-                  <a tabIndex={3} onClick={handleTabChange}>
+                  <a tabIndex={3} onClick={() => handleTabChange(3)}>
                     Sale off
                   </a>
                 </li>
                 <li>
-                  <a tabIndex={4} onClick={handleTabChange}>
+                  <a tabIndex={4} onClick={() => handleTabChange(4)}>
                     Top rated
                   </a>
                 </li>
