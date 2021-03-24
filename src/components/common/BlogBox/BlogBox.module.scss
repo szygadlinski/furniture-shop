@@ -4,10 +4,9 @@
   background-color: $bb-bcg;
   margin-bottom: 2rem;
   padding: $base-padding 0;
-  border: 1px solid #434343;
 
   .title {
-    padding: 10px 0 5px 0;
+    padding: 0 0 5px 0;
   }
 
   .blogImage {
@@ -72,6 +71,17 @@
       min-width: 250px;
       flex-direction: row;
       justify-content: space-between;
+
+      .admin, .date, .tags {
+        .icon {
+          margin-right: 5px;
+        }
+
+        a {
+          text-decoration: none;
+          color: #434343;
+        }
+      }
 
     }
 

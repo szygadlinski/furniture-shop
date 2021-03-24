@@ -6,6 +6,10 @@
   .title {
     margin: 35px 55px 15px 125px ;
     padding: 0 90px;
+    h3 {
+      font-weight: bold;
+    }
+
   }
 
   .search {
@@ -33,6 +37,40 @@
       border: 0;
       background-color: $form-select-bcg;
       outline: none;
+    }
+  }
+
+  .subtitles {
+    font-size: 18px;
+    font-weight: bold;
+    border-bottom: 1px solid #d8d8d8;
+  }
+
+  .allPostList, .allComments, .archives, .category {
+    margin-bottom: 55px;
+
+    ul {
+      width: 100%;
+      list-style: none;
+      display: flex;
+      justify-content: flex-start;
+      flex-direction: column;
+      padding: 0;
+
+      li{
+        font-size: 12px;
+        border-bottom: 1px solid #d8d8d8;
+        margin-bottom: 10px;
+
+        .icon {
+          margin-right: 10px;
+        }
+
+        a {
+          text-decoration: none;
+          color: #434343;
+        }
+      }
     }
   }
 
