@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 import PropTypes from 'prop-types';
 
@@ -123,8 +124,7 @@ class NewFurniture extends React.Component {
                 <div key={item.id} className='col-6 col-md-4 col-lg-3'>
                   <ProductBox image={image} {...item} number={i} product={item} />
                 </div>
-              ))
-            }
+              ))}
           </div>
         </div>
       </Swipeable>
