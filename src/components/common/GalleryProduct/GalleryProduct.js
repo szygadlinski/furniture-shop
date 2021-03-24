@@ -12,12 +12,12 @@ import {
 import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../Button/Button';
 
-const GalleryProduct = ({ name, price, oldPrice, stars }) => {
+const GalleryProduct = ({ name, price, oldPrice, stars, image }) => {
   return (
     <div
       className={styles.root}
       style={{
-        backgroundImage: `url(${process.env.PUBLIC_URL}/images/gallery_1.png)`,
+        backgroundImage: `url(${image}`,
       }}
     >
       <div className={'col-auto d-flex flex-column p-0 ' + styles.buttons}>
@@ -64,6 +64,7 @@ GalleryProduct.propTypes = {
   price: PropTypes.number,
   oldPrice: PropTypes.number,
   stars: PropTypes.number,
+  image: PropTypes.string,
 };
 
 export default GalleryProduct;
