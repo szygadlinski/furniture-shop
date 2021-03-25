@@ -34,7 +34,7 @@ class Deals extends React.Component {
       <div className={styles.root}>
         <div className='container'>
           <div className='row'>
-            <div className='col-6'>
+            <div className='col-12 col-lg-6'>
               <div className={styles.image}>
                 <img src={deals.leftImage} alt='deal1' />
                 <div className={styles.description + ' ' + styles.descriptionLeft}>
@@ -45,7 +45,7 @@ class Deals extends React.Component {
               </div>
             </div>
 
-            <div className='col-6'>
+            <div className='col-12 col-lg-6'>
               <div className={styles.image + ' ' + styles.small}>
                 <img src={deals.rightUpImage} alt='deal2' />
                 <div className={styles.description + ' ' + styles.descriptionRightUp}>
