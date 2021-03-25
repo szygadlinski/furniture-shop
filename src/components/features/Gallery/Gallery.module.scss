@@ -10,6 +10,8 @@
   padding: $base-padding*2 0;
 }
 
+/* Tabs */
+
 .tabs {
   @include border(top, left, right);
 
@@ -23,6 +25,9 @@
 
   li {
     flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
 
     & + li {
       @include border(left);
@@ -30,8 +35,7 @@
   }
 
   a {
-    display: flex;
-    justify-content: center;
+    flex: 1;
     color: $menu-text;
     text-transform: uppercase;
     font-size: 12px;
@@ -58,7 +62,9 @@
   }
 }
 
-.product_wrapper {
+/* Product */
+
+.productAndSlider {
   flex: 1 0 auto;
   @include border(left, right, bottom);
   display: flex;
@@ -87,26 +93,20 @@
   height: 82px;
 
   .slidesList {
-    display: flex;
-    flex-wrap: nowrap;
+    overflow: hidden;
 
     .slide {
       @include border(top, bottom, left, right);
+      display: inline-block;
       width: calc((100% - 25px) / 6);
       height: 100%;
       position: relative;
-      display: flex;
-      align-items: center;
       background-color: $pb-photo-bcg;
 
       img {
         width: 100%;
         height: 100%;
         object-fit: cover;
-      }
-
-      &:nth-child(n+7) {
-        display: none;
       }
 
       & + .slide {
@@ -198,5 +198,11 @@
   .promo__button {
     border-radius: 2px;
     background-color: $promo-button;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+  .slider .slidesList .slide {
+    width: calc((100% - 16px) / 4);
   }
 }

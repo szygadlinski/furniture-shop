@@ -12,10 +12,20 @@ import {
 import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../Button/Button';
 
-const GalleryProduct = ({ name, price, oldPrice, stars, image }) => {
+const GalleryProduct = ({
+  name,
+  price,
+  oldPrice,
+  stars,
+  image,
+  className: propClassName,
+}) => {
+  const classes = [styles.root];
+  if (propClassName) classes.push(propClassName);
+
   return (
     <div
-      className={styles.root}
+      className={classes.join(' ')}
       style={{
         backgroundImage: `url(${image}`,
       }}
@@ -65,6 +75,7 @@ GalleryProduct.propTypes = {
   oldPrice: PropTypes.number,
   stars: PropTypes.number,
   image: PropTypes.string,
+  className: PropTypes.string,
 };
 
 export default GalleryProduct;

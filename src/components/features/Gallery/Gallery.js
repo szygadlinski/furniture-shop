@@ -8,7 +8,7 @@ import Button from '../../common/Button/Button';
 
 import styles from './Gallery.module.scss';
 
-const Gallery = ({ featured, topSeller, sale, topRated }) => {
+const Gallery = ({ featured, topSeller, sale, topRated, deviceType }) => {
   const tabs = [
     {
       name: 'Featured',
@@ -28,7 +28,11 @@ const Gallery = ({ featured, topSeller, sale, topRated }) => {
     },
   ];
 
+  let sliderStep = 6;
+  if (deviceType === 'tablet') sliderStep = 4;
+
   const [isFading, setFading] = useState(false);
+  const [isProductFading, setProductFading] = useState(false);
   const [activeTab, setActiveTab] = useState(tabs[0]);
   const [activeProduct, setActiveProduct] = useState(activeTab.products[0]);
   const [sliderStart, setSliderStart] = useState(0);
@@ -39,27 +43,33 @@ const Gallery = ({ featured, topSeller, sale, topRated }) => {
       setActiveTab(tabs[newIndex]);
       setSliderStart(0);
       setActiveProduct(tabs[newIndex].products[0]);
-    }, 500);
+    }, 300);
     setTimeout(() => {
       setFading(false);
     }, 500);
   };
 
   const handleSlideClick = product => {
-    setActiveProduct(product);
+    setProductFading(true);
+    setTimeout(() => {
+      setActiveProduct(product);
+    }, 300);
+    setTimeout(() => {
+      setProductFading(false);
+    }, 500);
   };
 
   const handleSliderForward = event => {
     event.preventDefault();
-    if (sliderStart + 6 < activeTab.products.length - 6) {
-      setSliderStart(sliderStart + 6);
-    } else setSliderStart(activeTab.products.length - 6);
+    if (sliderStart + sliderStep < activeTab.products.length - sliderStep) {
+      setSliderStart(sliderStart + sliderStep);
+    } else setSliderStart(activeTab.products.length - sliderStep);
   };
 
   const handleSliderBackward = event => {
     event.preventDefault();
-    if (sliderStart - 6 > 0) {
-      setSliderStart(sliderStart - 6);
+    if (sliderStart - sliderStep > 0) {
+      setSliderStart(sliderStart - sliderStep);
     } else setSliderStart(0);
   };
 
@@ -73,19 +83,19 @@ const Gallery = ({ featured, topSeller, sale, topRated }) => {
               <ul>
                 {tabs.map(tab => (
                   <li key={tabs.indexOf(tab)}>
-                    <a
-                      tabIndex={tabs.indexOf(tab) + 1}
-                      onClick={() => handleTabChange(tabs.indexOf(tab))}
-                    >
+                    <a tabIndex={0} onClick={() => handleTabChange(tabs.indexOf(tab))}>
                       {tab.name}
                     </a>
                   </li>
                 ))}
               </ul>
             </nav>
-            <div className={styles.product_wrapper}>
+            <div className={styles.productAndSlider}>
               <div className={isFading ? ` ${styles.fadeout}` : styles.fadein}>
-                <GalleryProduct {...activeProduct} />
+                <GalleryProduct
+                  className={isProductFading ? ` ${styles.fadeout}` : styles.fadein}
+                  {...activeProduct}
+                />
                 <div className={styles.slider}>
                   <Button
                     className={styles.button}
@@ -147,6 +157,7 @@ Gallery.propTypes = {
   topSeller: PropTypes.arrayOf(PropTypes.object),
   topRated: PropTypes.arrayOf(PropTypes.object),
   sale: PropTypes.arrayOf(PropTypes.object),
+  deviceType: PropTypes.string,
 };
 
 export default Gallery;
