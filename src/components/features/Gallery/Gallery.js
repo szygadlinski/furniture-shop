@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 import SectionHeader from '../../common/SectionHeader/SectionHeader';
@@ -7,6 +7,29 @@ import GalleryProduct from '../../common/GalleryProduct/GalleryProduct';
 import Button from '../../common/Button/Button';
 
 import styles from './Gallery.module.scss';
+
+const useContainerWidth = myRef => {
+  const getWidth = () => myRef.current.offsetWidth;
+  const [width, setWidth] = useState(0);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWidth(getWidth());
+    };
+
+    if (myRef.current) {
+      setWidth(getWidth());
+    }
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [getWidth, myRef]);
+
+  return width;
+};
 
 const Gallery = ({ featured, topSeller, sale, topRated, deviceType }) => {
   const tabs = [
@@ -28,9 +51,11 @@ const Gallery = ({ featured, topSeller, sale, topRated, deviceType }) => {
     },
   ];
 
+  const sliderRef = useRef();
+  const sliderWidth = useContainerWidth(sliderRef);
   let sliderStep = 6;
-  let slideWidth = 72;
   if (deviceType === 'tablet') sliderStep = 4;
+  let slideWidth = (sliderWidth - 30) / sliderStep;
 
   const [isFading, setFading] = useState(false);
   const [isProductFading, setProductFading] = useState(false);
@@ -107,7 +132,7 @@ const Gallery = ({ featured, topSeller, sale, topRated, deviceType }) => {
                   >
                     <span>&lt;</span>
                   </Button>
-                  <div className={styles.slideList}>
+                  <div ref={sliderRef} className={styles.slideList}>
                     <div
                       className={styles.slideListInner}
                       style={{ marginLeft: sliderOffset }}
