@@ -10,7 +10,6 @@ import MainLayout from './components/layout/MainLayout/MainLayout';
 import Homepage from './components/views/Homepage/Homepage';
 import ProductList from './components/views/ProductList/ProductList';
 import ProductPage from './components/views/ProductPage/ProductPage';
-import Products from './components/views/Products/Products';
 import Blog from './components/views/Blog/Blog';
 
 const App = () => (
@@ -20,7 +19,6 @@ const App = () => (
         <Switch>
           <Route exact path={'/'} component={Homepage} />
           <Route exact path={'/shop/:categoryId'} component={ProductList} />
-          <Route exact path={'/product'} component={Products} />
           <Route exact path={'/product/:productId'} component={ProductPage} />
           <Route exact path={'/blog'} component={Blog} />
         </Switch>
