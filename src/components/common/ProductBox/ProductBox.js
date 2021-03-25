@@ -25,6 +25,7 @@ const ProductBox = ({
   toggleStar,
   hoverStar,
   rated,
+  addToCart,
 }) => {
   const faveHandler = event => {
     event.preventDefault();
@@ -34,6 +35,11 @@ const ProductBox = ({
     event.preventDefault();
     compareItems({ id });
   };
+
+  const addCartHandler = () => {
+    addToCart({ id, name, price, image });
+  };
+
   return (
     <div className={styles.root}>
       <div className={styles.photo}>
@@ -42,7 +48,7 @@ const ProductBox = ({
           <img src={image} alt='' />
           <div className={styles.buttons}>
             <Button variant='small'>Quick View</Button>
-            <Button variant='small'>
+            <Button variant='small' onClick={addCartHandler}>
               <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO CART
             </Button>
           </div>
@@ -64,20 +70,16 @@ const ProductBox = ({
         <div className={styles.outlines}>
           <Button
             variant='outline'
-            className={
-              (number === 0 || number === 2 ? styles.favorite : '') +
-              (favorite ? styles.favorite : '')
-            }
+            className={favorite ? styles.favorite : ''}
+
             onClick={faveHandler}
           >
             <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
           </Button>
           <Button
             variant='outline'
-            className={
-              (number === 1 || number === 2 ? styles.compare : '') +
-              (compare ? styles.compare : '')
-            }
+            className={compare ? styles.compare : ''}
+    
             onClick={comparisonHandler}
           >
             <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
@@ -110,7 +112,6 @@ ProductBox.propTypes = {
   toggleFavorite: PropTypes.func,
   favorite: PropTypes.bool,
   id: PropTypes.string,
-  number: PropTypes.number,
   comparisonHandler: PropTypes.func,
   compareItems: PropTypes.func,
   compare: PropTypes.bool,
@@ -118,6 +119,8 @@ ProductBox.propTypes = {
   toggleStar: PropTypes.func,
   hoverStar: PropTypes.func,
   rated: PropTypes.bool,
+  addToCart: PropTypes.func,
+
 };
 
 export default ProductBox;
