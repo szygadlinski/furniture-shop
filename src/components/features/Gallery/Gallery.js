@@ -29,19 +29,20 @@ const Gallery = ({ featured, topSeller, sale, topRated, deviceType }) => {
   ];
 
   let sliderStep = 6;
+  let slideWidth = 72;
   if (deviceType === 'tablet') sliderStep = 4;
 
   const [isFading, setFading] = useState(false);
   const [isProductFading, setProductFading] = useState(false);
   const [activeTab, setActiveTab] = useState(tabs[0]);
   const [activeProduct, setActiveProduct] = useState(activeTab.products[0]);
-  const [sliderStart, setSliderStart] = useState(0);
+  const [sliderOffset, setSliderOffset] = useState(0);
 
   const handleTabChange = newIndex => {
     setFading(true);
     setTimeout(() => {
       setActiveTab(tabs[newIndex]);
-      setSliderStart(0);
+      setSliderOffset(0);
       setActiveProduct(tabs[newIndex].products[0]);
     }, 300);
     setTimeout(() => {
@@ -61,16 +62,19 @@ const Gallery = ({ featured, topSeller, sale, topRated, deviceType }) => {
 
   const handleSliderForward = event => {
     event.preventDefault();
-    if (sliderStart + sliderStep < activeTab.products.length - sliderStep) {
-      setSliderStart(sliderStart + sliderStep);
-    } else setSliderStart(activeTab.products.length - sliderStep);
+    const minMargin = -(activeTab.products.length - sliderStep) * (slideWidth + 5);
+    const newMargin = -(slideWidth + 5) * sliderStep + sliderOffset;
+    if (minMargin < newMargin) {
+      setSliderOffset(newMargin);
+    } else setSliderOffset(minMargin);
   };
 
   const handleSliderBackward = event => {
     event.preventDefault();
-    if (sliderStart - sliderStep > 0) {
-      setSliderStart(sliderStart - sliderStep);
-    } else setSliderStart(0);
+    const newMargin = (slideWidth + 5) * sliderStep + sliderOffset;
+    if (newMargin < 0) {
+      setSliderOffset(newMargin);
+    } else setSliderOffset(0);
   };
 
   return (
@@ -103,21 +107,25 @@ const Gallery = ({ featured, topSeller, sale, topRated, deviceType }) => {
                   >
                     <span>&lt;</span>
                   </Button>
-                  <div className={styles.slidesList}>
-                    {activeTab.products
-                      .filter((product, index) => index >= sliderStart)
-                      .map(product => (
+                  <div className={styles.slideList}>
+                    <div
+                      className={styles.slideListInner}
+                      style={{ marginLeft: sliderOffset }}
+                    >
+                      {activeTab.products.map(product => (
                         <div
                           className={
                             styles.slide +
                             (product === activeProduct ? ` ${styles.active}` : '')
                           }
+                          style={{ width: slideWidth }}
                           key={product.id}
                           onClick={() => handleSlideClick(product)}
                         >
                           <img src={product.image} alt={product.name} />
                         </div>
                       ))}
+                    </div>
                   </div>
                   <Button
                     className={styles.button}
