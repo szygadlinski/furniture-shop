@@ -336,7 +336,88 @@ const initialState = {
     {
       id: 'brand-5',
       image: 'https://cdn.pixabay.com/photo/2015/05/04/20/23/logo-752921_960_720.png',
-
+    },
+    {
+      id: 'brand-6',
+      image: 'https://cdn.pixabay.com/photo/2015/05/04/20/23/logo-752921_960_720.png',
+    },
+    {
+      id: 'brand-7',
+      image: 'https://cdn.pixabay.com/photo/2015/05/04/20/23/logo-752921_960_720.png',
+    },
+    {
+      id: 'brand-8',
+      image:
+        'https://cdn.pixabay.com/photo/2015/05/04/20/23/corporate-752923_960_720.png',
+    },
+    {
+      id: 'brand-9',
+      image: 'https://cdn.pixabay.com/photo/2015/05/04/20/23/logo-752921_960_720.png',
+    },
+    {
+      id: 'brand-10',
+      image:
+        'https://cdn.pixabay.com/photo/2015/05/04/20/23/corporate-752923_960_720.png',
+    },
+    {
+      id: 'brand-11',
+      image: 'https://cdn.pixabay.com/photo/2015/05/04/20/23/logo-752921_960_720.png',
+    },
+    {
+      id: 'brand-12',
+      image:
+        'https://cdn.pixabay.com/photo/2015/05/04/20/23/corporate-752923_960_720.png',
+    },
+    {
+      id: 'brand-13',
+      image: 'https://cdn.pixabay.com/photo/2015/05/04/20/23/logo-752921_960_720.png',
+    },
+    {
+      id: 'brand-14',
+      image: 'https://cdn.pixabay.com/photo/2015/05/04/20/23/logo-752921_960_720.png',
+    },
+    {
+      id: 'brand-15',
+      image:
+        'https://cdn.pixabay.com/photo/2015/05/04/20/23/corporate-752923_960_720.png',
+    },
+    {
+      id: 'brand-16',
+      image: 'https://cdn.pixabay.com/photo/2015/05/04/20/23/logo-752921_960_720.png',
+    },
+    {
+      id: 'brand-17',
+      image: 'https://cdn.pixabay.com/photo/2015/05/04/20/23/logo-752921_960_720.png',
+    },
+    {
+      id: 'brand-18',
+      image:
+        'https://cdn.pixabay.com/photo/2015/05/04/20/23/corporate-752923_960_720.png',
+    },
+    {
+      id: 'brand-19',
+      image: 'https://cdn.pixabay.com/photo/2015/05/04/20/23/logo-752921_960_720.png',
+    },
+    {
+      id: 'brand-20',
+      image: 'https://cdn.pixabay.com/photo/2015/05/04/20/23/logo-752921_960_720.png',
+    },
+    {
+      id: 'brand-21',
+      image: 'https://cdn.pixabay.com/photo/2015/05/04/20/23/logo-752921_960_720.png',
+    },
+    {
+      id: 'brand-22',
+      image:
+        'https://cdn.pixabay.com/photo/2015/05/04/20/23/corporate-752923_960_720.png',
+    },
+    {
+      id: 'brand-23',
+      image: 'https://cdn.pixabay.com/photo/2015/05/04/20/23/color-752920_960_720.png',
+    },
+    {
+      id: 'brand-24',
+      image: 'https://cdn.pixabay.com/photo/2015/05/04/20/23/logo-752921_960_720.png',
     },
     {
       id: 'mauris-eu-nunc-1',
@@ -1116,95 +1197,28 @@ const initialState = {
   ],
   feedbacks: [
     {
-      id: 'client-1',
-      icon:
-        'https://www.flaticon.com/svg/vstatic/svg/565/565703.svg?token=exp=1616333731~hmac=efc4d87e0dbbcd8b62bfd8383e7ef1dd',
+      id: 1,
       quote:
         'Curabitur gravida dictum pulvinar. Aenean scelerisque sem eu imperdiet cursus. Cras porttitor elit imperdiet congue dignissim. Duis vitae nulla vitae risus lobortis tincidunt. Proin lacus turpis, volutpat eget sodales eu, vestibulum quis leo.',
-      image: 'https://cdn.pixabay.com/photo/2017/11/02/14/36/model-2911363_1280.jpg',
+      image:
+        'https://images.pexels.com/photos/7219665/pexels-photo-7219665.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
       name: '~ John Smith',
     },
     {
-      id: 'brand-6',
-      image: 'https://cdn.pixabay.com/photo/2015/05/04/20/23/logo-752921_960_720.png',
-    },
-    {
-      id: 'brand-7',
-      image: 'https://cdn.pixabay.com/photo/2015/05/04/20/23/logo-752921_960_720.png',
-    },
-    {
-      id: 'brand-8',
+      id: 2,
+      quote:
+        'Curabitur gravida dictum pulvinar. Aenean scelerisque sem eu imperdiet cursus. Cras porttitor elit imperdiet congue dignissim. Duis vitae nulla vitae risus lobortis tincidunt. Proin lacus turpis, volutpat eget sodales eu, vestibulum quis leo.',
       image:
-        'https://cdn.pixabay.com/photo/2015/05/04/20/23/corporate-752923_960_720.png',
+        'https://images.pexels.com/photos/3770254/pexels-photo-3770254.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+      name: '~ Clara Oswald',
     },
     {
-      id: 'brand-9',
-      image: 'https://cdn.pixabay.com/photo/2015/05/04/20/23/logo-752921_960_720.png',
-    },
-    {
-      id: 'brand-10',
+      id: 3,
+      quote:
+        'Curabitur gravida dictum pulvinar. Aenean scelerisque sem eu imperdiet cursus. Cras porttitor elit imperdiet congue dignissim. Duis vitae nulla vitae risus lobortis tincidunt. Proin lacus turpis, volutpat eget sodales eu, vestibulum quis leo.',
       image:
-        'https://cdn.pixabay.com/photo/2015/05/04/20/23/corporate-752923_960_720.png',
-    },
-    {
-      id: 'brand-11',
-      image: 'https://cdn.pixabay.com/photo/2015/05/04/20/23/logo-752921_960_720.png',
-    },
-    {
-      id: 'brand-12',
-      image:
-        'https://cdn.pixabay.com/photo/2015/05/04/20/23/corporate-752923_960_720.png',
-    },
-    {
-      id: 'brand-13',
-      image: 'https://cdn.pixabay.com/photo/2015/05/04/20/23/logo-752921_960_720.png',
-    },
-    {
-      id: 'brand-14',
-      image: 'https://cdn.pixabay.com/photo/2015/05/04/20/23/logo-752921_960_720.png',
-    },
-    {
-      id: 'brand-15',
-      image:
-        'https://cdn.pixabay.com/photo/2015/05/04/20/23/corporate-752923_960_720.png',
-    },
-    {
-      id: 'brand-16',
-      image: 'https://cdn.pixabay.com/photo/2015/05/04/20/23/logo-752921_960_720.png',
-    },
-    {
-      id: 'brand-17',
-      image: 'https://cdn.pixabay.com/photo/2015/05/04/20/23/logo-752921_960_720.png',
-    },
-    {
-      id: 'brand-18',
-      image:
-        'https://cdn.pixabay.com/photo/2015/05/04/20/23/corporate-752923_960_720.png',
-    },
-    {
-      id: 'brand-19',
-      image: 'https://cdn.pixabay.com/photo/2015/05/04/20/23/logo-752921_960_720.png',
-    },
-    {
-      id: 'brand-20',
-      image: 'https://cdn.pixabay.com/photo/2015/05/04/20/23/logo-752921_960_720.png',
-    },
-    {
-      id: 'brand-21',
-      image: 'https://cdn.pixabay.com/photo/2015/05/04/20/23/logo-752921_960_720.png',
-    },
-    {
-      id: 'brand-22',
-      image:
-        'https://cdn.pixabay.com/photo/2015/05/04/20/23/corporate-752923_960_720.png',
-    },
-    {
-      id: 'brand-23',
-      image: 'https://cdn.pixabay.com/photo/2015/05/04/20/23/color-752920_960_720.png',
-    },
-    {
-      id: 'brand-24',
-      image: 'https://cdn.pixabay.com/photo/2015/05/04/20/23/logo-752921_960_720.png',
+        'https://images.pexels.com/photos/4946649/pexels-photo-4946649.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+      name: '~ Meredith Grey',
     },
   ],
   cart: {
