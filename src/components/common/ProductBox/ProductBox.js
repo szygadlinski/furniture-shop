@@ -18,7 +18,6 @@ const ProductBox = ({
   promo,
   stars,
   image,
-  number,
   favorite,
   toggleFavorite,
   id,
@@ -72,20 +71,14 @@ const ProductBox = ({
         <div className={styles.outlines}>
           <Button
             variant='outline'
-            className={
-              (number === 0 || number === 2 ? styles.favorite : '') +
-              (favorite ? styles.favorite : '')
-            }
+            className={favorite ? styles.favorite : ''}
             onClick={faveHandler}
           >
             <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
           </Button>
           <Button
             variant='outline'
-            className={
-              (number === 1 || number === 2 ? styles.compare : '') +
-              (compare ? styles.compare : '')
-            }
+            className={compare ? styles.compare : ''}
             onClick={comparisonHandler}
           >
             <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
@@ -118,7 +111,6 @@ ProductBox.propTypes = {
   toggleFavorite: PropTypes.func,
   favorite: PropTypes.bool,
   id: PropTypes.string,
-  number: PropTypes.number,
   comparisonHandler: PropTypes.func,
   compareItems: PropTypes.func,
   compare: PropTypes.bool,
