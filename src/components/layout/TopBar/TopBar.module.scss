@@ -2,6 +2,7 @@
 
 .root {
   background-color: $header-topbar-bcg;
+  max-height: 36px;
 
   ul {
     list-style: none;
@@ -10,8 +11,28 @@
 
     li {
       display: inline-block;
-      line-height: 55px;
+      position: relative;
+      line-height: 35px;
 
+      &:hover ul {
+          display: block;
+          position: absolute;
+      }
+      &:hover .optionsIcon {
+        transform: rotate(180deg);
+      }
+
+      ul {
+        display: none;
+        z-index: 999;
+        
+        li {
+          display: block;
+          line-height: 17px;
+          border-top: 1px solid $header-phone;
+        }
+      }
+    
       a {
         color: $tp-text;
         font-size: 13px;
@@ -50,6 +71,10 @@
         display: none;
       }
     }
+    .topOptions ul li {
+      background-color: $header-topbar-bcg;
+      border-radius: 10%;
+    }
   }
 
   @media (max-width: 575px) {
@@ -63,6 +88,9 @@
         .icon {
           margin-left: 2px;
           margin-right: 2px;
+        }
+        .opitonsIcon {
+          margin-right: 1px;
         }
       }
     }

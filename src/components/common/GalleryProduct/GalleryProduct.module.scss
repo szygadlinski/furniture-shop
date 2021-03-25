@@ -1,0 +1,65 @@
+@import "../../../styles/settings.scss";
+
+.root {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 300px;
+  background: {
+    color: $pb-photo-bcg;
+    size: contain;
+    position: center;
+    repeat: no-repeat;
+  }
+  overflow: hidden;
+
+  .buttons {
+    > * {
+      margin-top: 5px;
+      margin-left: 5px;
+    }
+  }
+
+  .label {
+    text-align: center;
+    padding: 20px;
+    background-color: $label-bcg;
+    background-image: linear-gradient(135deg, $label-corner, $label-corner 10%, $label-bcg 10%,$label-bcg 90%, $label-corner 0);
+    margin-bottom: $base-padding;
+    box-shadow: 2px 3.464px 6px $label-shadow;
+
+    h5 {
+      font-size: 16px;
+      line-height: 24px;
+      letter-spacing: 1px;
+    }
+
+    .stars {
+      a {
+        text-decoration: none;
+        color: $stars-colour;
+      }
+    }
+  }
+
+  .price {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: -80px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: $price-color;
+    background-color: transparentize($price-bcg, 0.2);
+    border-radius: 50%;
+    height: 90px;
+    width: 90px;
+    justify-content: center;
+  }
+
+  .old_price {
+    text-decoration: line-through;
+    font-size: 0.8em;
+  }
+}

@@ -15,6 +15,7 @@ $light-5: #b6b6b6;
 $light-6: #a9a9a9;
 $light-7: #e0e3ed;
 $orange: #d58e32;
+$green: #79AE31;
 
 //*******COLOURS BY COMPONENT*******//
 //OTHER FILES USABLE!//
@@ -70,6 +71,11 @@ $compare-bcg: $dark-3;
 $compare-color: $light-1;
 
 //*****FEATURES*****//
+//DEALS
+$deals-layer: $dark-3;
+$deals-white: $white;
+$deals-orange: $orange;
+
 //NEW FURNITURE
 $nf-border: $light-3;
 $nf-head-border: $orange;
@@ -96,10 +102,30 @@ $form-select-bcg: $transparent;
 
 //STICKY BAR//
 $sticky-bcg: $dark-3;
-
 $sticky-photo-bcg: $light-1;
-
 $sticky-icon-bcg: $light-6;
+
+//GALLERY
+$tab-bcg: $light-1;
+$tab-border: $light-2;
+$tab-active: $orange;
+$slider-text: $white;
+$slider-btn: $dark-3;
+$slider-btn-hover: $orange;
+$promo-button: $green;
+
+//GALLERY PRODUCT
+$label-bcg: $white;
+$label-corner: $dark-5;
+$label-shadow: $light-5;
+$price-color: $white;
+$price-bcg: $dark-1;
+
+//CART
+$cart-bcg: $orange;
+$cart-hover: $dark-3;
+$cart-text: $white;
+$cc-counter: $light-7;
 
 //*****LAYOUT*****//
 //FOOTER
@@ -115,9 +141,6 @@ $header-topbar-bcg: $dark-1;
 $header-phone: $light-4;
 $header-icon: $orange;
 
-$cart-text: $white;
-$cc-counter: $light-7;
-
 //MENU BAR
 $menu-bcg: $white;
 $menu-bcg-hover: $orange;
@@ -128,6 +151,11 @@ $menu-text-hover: $white;
 //TOP BAR
 $tp-text: $white;
 $tp-text-hover: $orange;
+
+//CHATBOX
+$button: $dark-4;
+$window: $white;
+$message: $light-7;
 
 //***BASE***//
 
