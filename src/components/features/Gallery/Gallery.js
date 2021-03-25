@@ -8,6 +8,7 @@ import Button from '../../common/Button/Button';
 
 import styles from './Gallery.module.scss';
 
+/* Custom hook for getting container width */
 const useContainerWidth = myRef => {
   const getWidth = () => myRef.current.offsetWidth;
   const [width, setWidth] = useState(0);
@@ -51,18 +52,21 @@ const Gallery = ({ featured, topSeller, sale, topRated, deviceType }) => {
     },
   ];
 
+  /* Device dependent parameters */
   const sliderRef = useRef();
   const sliderWidth = useContainerWidth(sliderRef);
   let sliderStep = 6;
-  if (deviceType === 'tablet') sliderStep = 4;
-  let slideWidth = (sliderWidth - 30) / sliderStep;
+  if (deviceType === 'tablet') sliderStep = 3;
+  let slideWidth = (sliderWidth - 5 * sliderStep) / sliderStep;
 
+  /* State */
   const [isFading, setFading] = useState(false);
   const [isProductFading, setProductFading] = useState(false);
   const [activeTab, setActiveTab] = useState(tabs[0]);
   const [activeProduct, setActiveProduct] = useState(activeTab.products[0]);
   const [sliderOffset, setSliderOffset] = useState(0);
 
+  /* Tabs functionality */
   const handleTabChange = newIndex => {
     setFading(true);
     setTimeout(() => {
@@ -75,6 +79,7 @@ const Gallery = ({ featured, topSeller, sale, topRated, deviceType }) => {
     }, 500);
   };
 
+  /* Slider control */
   const handleSlideClick = product => {
     setProductFading(true);
     setTimeout(() => {
