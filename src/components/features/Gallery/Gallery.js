@@ -32,7 +32,7 @@ const useContainerWidth = myRef => {
   return width;
 };
 
-const Gallery = ({ featured, topSeller, sale, topRated, deviceType }) => {
+const Gallery = ({ featured, topSeller, sale, topRated }) => {
   const tabs = [
     {
       name: 'Featured',
@@ -52,11 +52,14 @@ const Gallery = ({ featured, topSeller, sale, topRated, deviceType }) => {
     },
   ];
 
-  /* Device dependent parameters */
+  /* RWD */
   const sliderRef = useRef();
   const sliderWidth = useContainerWidth(sliderRef);
-  let sliderStep = 6;
-  if (deviceType === 'tablet') sliderStep = 3;
+  let sliderStep;
+  if (sliderWidth < 350) sliderStep = 3;
+  else if (sliderWidth < 463) sliderStep = 4;
+  else sliderStep = 6;
+
   let slideWidth = (sliderWidth - 5 * sliderStep) / sliderStep;
 
   /* State */
