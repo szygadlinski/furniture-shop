@@ -5,6 +5,7 @@ import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
 import { faThLarge } from '@fortawesome/free-solid-svg-icons';
 import { faThList } from '@fortawesome/free-solid-svg-icons';
 import styles from './ProductList.module.scss';
+import Banner from '../../features/Banner/Banner.js';
 import ProductBox from '../../common/ProductBox/ProductBoxContainer';
 
 class ProductList extends React.Component {
@@ -19,6 +20,8 @@ class ProductList extends React.Component {
     return(
       <div className={styles.root}>
         <div className='container'>
+          <Banner />
+      
           <div className='row'>
             <div className='col-9'>
               {/*{categories.map(category => (
