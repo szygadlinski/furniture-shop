@@ -4,16 +4,14 @@ import styles from './Deals.module.scss';
 
 class Deals extends React.Component {
   static propTypes = {
-    deals: PropTypes.objectOf(
-      PropTypes.shape({
-        leftImage: PropTypes.string,
-        leftDescription: PropTypes.arrayOf(PropTypes.string),
-        rightUpImage: PropTypes.string,
-        rightUpDescription: PropTypes.arrayOf(PropTypes.string),
-        rightDownImage: PropTypes.string,
-        rightDownDescription: PropTypes.arrayOf(PropTypes.string),
-      })
-    ),
+    deals: PropTypes.shape({
+      leftImage: PropTypes.string,
+      leftDescription: PropTypes.arrayOf(PropTypes.string),
+      rightUpImage: PropTypes.string,
+      rightUpDescription: PropTypes.arrayOf(PropTypes.string),
+      rightDownImage: PropTypes.string,
+      rightDownDescription: PropTypes.arrayOf(PropTypes.string),
+    }),
   };
 
   static defaultProps = {
