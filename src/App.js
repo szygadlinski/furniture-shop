@@ -10,7 +10,6 @@ import MainLayout from './components/layout/MainLayout/MainLayoutContainer.js';
 import Homepage from './components/views/Homepage/Homepage';
 import ProductList from './components/views/ProductList/ProductList';
 import ProductPage from './components/views/ProductPage/ProductPage';
-import Products from './components/views/Products/Products';
 
 const App = () => (
   <Provider store={store}>
@@ -19,7 +18,6 @@ const App = () => (
         <Switch>
           <Route exact path={'/'} component={Homepage} />
           <Route exact path={'/shop/:categoryId'} component={ProductList} />
-          <Route exact path={'/product'} component={Products} />
           <Route exact path={'/product/:productId'} component={ProductPage} />
         </Switch>
       </MainLayout>
