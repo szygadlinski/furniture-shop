@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 import styles from './Footer.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -22,16 +23,16 @@ const Footer = ({ children }) => (
               <h6>Information</h6>
               <ul>
                 <li>
-                  <a href='/#'>About us</a>
+                  <Link to='/info/about_us'>About us</Link>
                 </li>
                 <li>
-                  <a href='/#'>Policy</a>
+                  <Link to='/info/policy'>Policy</Link>
                 </li>
                 <li>
-                  <a href='/#'>Conditions</a>
+                  <Link to='/info/conditions'>Conditions</Link>
                 </li>
                 <li>
-                  <a href='/#'>Online support</a>
+                  <Link to='/info/support'>Online support</Link>
                 </li>
               </ul>
             </div>
@@ -41,16 +42,16 @@ const Footer = ({ children }) => (
               <h6>My account</h6>
               <ul>
                 <li>
-                  <a href='/#'>Login</a>
+                  <Link to='/account/login'>Login</Link>
                 </li>
                 <li>
-                  <a href='/#'>My cart</a>
+                  <Link to='/account/cart'>My cart</Link>
                 </li>
                 <li>
-                  <a href='/#'>Wishlist</a>
+                  <Link to='/account/wishlist'>Wishlist</Link>
                 </li>
                 <li>
-                  <a href='/#'>Checkout</a>
+                  <Link to='/account/checkout'>Checkout</Link>
                 </li>
               </ul>
             </div>
@@ -60,16 +61,16 @@ const Footer = ({ children }) => (
               <h6>Information</h6>
               <ul>
                 <li>
-                  <a href='/#'>Specials</a>
+                  <Link to='/info/specials'>Specials</Link>
                 </li>
                 <li>
-                  <a href='/#'>New products</a>
+                  <Link to='/info/new_products'>New products</Link>
                 </li>
                 <li>
-                  <a href='/#'>Best Sellers</a>
+                  <Link to='/info/best_sellers'>Best Sellers</Link>
                 </li>
                 <li>
-                  <a href='/#'>Out Stores</a>
+                  <Link to='/info/stores'>Out Stores</Link>
                 </li>
               </ul>
             </div>
@@ -79,16 +80,16 @@ const Footer = ({ children }) => (
               <h6>Orders</h6>
               <ul>
                 <li>
-                  <a href='/#'>Payment options</a>
+                  <Link to='/orders/payment'>Payment options</Link>
                 </li>
                 <li>
-                  <a href='/#'>Shipping and delivery</a>
+                  <Link to='/orders/shipping_delivery'>Shipping and delivery</Link>
                 </li>
                 <li>
-                  <a href='/#'>Returns</a>
+                  <Link to='/orders/returns'>Returns</Link>
                 </li>
                 <li>
-                  <a href='/#'>Shipping</a>
+                  <Link to='/orders/shipping'>Shipping</Link>
                 </li>
               </ul>
             </div>
