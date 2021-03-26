@@ -32,7 +32,7 @@ const Footer = ({ children }) => (
                   <Link to='/info/conditions'>Conditions</Link>
                 </li>
                 <li>
-                  <Link to='/info/support'>Online support</Link>
+                  <Link to='/info/online_support'>Online support</Link>
                 </li>
               </ul>
             </div>
@@ -45,7 +45,7 @@ const Footer = ({ children }) => (
                   <Link to='/account/login'>Login</Link>
                 </li>
                 <li>
-                  <Link to='/account/cart'>My cart</Link>
+                  <Link to='/account/my_cart'>My cart</Link>
                 </li>
                 <li>
                   <Link to='/account/wishlist'>Wishlist</Link>
@@ -67,10 +67,10 @@ const Footer = ({ children }) => (
                   <Link to='/info/new_products'>New products</Link>
                 </li>
                 <li>
-                  <Link to='/info/best_sellers'>Best Sellers</Link>
+                  <Link to='/info/best_sellers'>Best sellers</Link>
                 </li>
                 <li>
-                  <Link to='/info/stores'>Out Stores</Link>
+                  <Link to='/info/out_stores'>Out stores</Link>
                 </li>
               </ul>
             </div>
@@ -80,10 +80,10 @@ const Footer = ({ children }) => (
               <h6>Orders</h6>
               <ul>
                 <li>
-                  <Link to='/orders/payment'>Payment options</Link>
+                  <Link to='/orders/payment_options'>Payment options</Link>
                 </li>
                 <li>
-                  <Link to='/orders/shipping_delivery'>Shipping and delivery</Link>
+                  <Link to='/orders/shipping_and_delivery'>Shipping and delivery</Link>
                 </li>
                 <li>
                   <Link to='/orders/returns'>Returns</Link>

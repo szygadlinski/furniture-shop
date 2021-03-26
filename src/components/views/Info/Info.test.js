@@ -4,6 +4,8 @@ import Info from './Info';
 
 describe('Info', () => {
   it('renders without crashing', () => {
-    shallow(<Info />);
+    shallow(
+      <Info match={{ params: { pageId: 'id' }, isExact: true, path: '', url: '' }} />
+    );
   });
 });

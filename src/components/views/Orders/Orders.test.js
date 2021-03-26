@@ -4,6 +4,8 @@ import Orders from './Orders';
 
 describe('Orders', () => {
   it('renders without crashing', () => {
-    shallow(<Orders />);
+    shallow(
+      <Orders match={{ params: { pageId: 'id' }, isExact: true, path: '', url: '' }} />
+    );
   });
 });

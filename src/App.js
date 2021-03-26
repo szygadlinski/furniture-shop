@@ -26,9 +26,9 @@ const App = () => (
           <Route exact path={'/shop/:categoryId'} component={ProductList} />
           <Route exact path={'/product/:productId'} component={ProductPage} />
           <Route exact path={'/blog'} component={Blog} />
-          <Route exact path={'/account/:pageName'} component={Account} />
-          <Route exact path={'/info/:pageName'} component={Info} />
-          <Route exact path={'/orders/:pageName'} component={Orders} />
+          <Route exact path={'/account/:pageId'} component={Account} />
+          <Route exact path={'/info/:pageId'} component={Info} />
+          <Route exact path={'/orders/:pageId'} component={Orders} />
         </Switch>
       </MainLayout>
     </BrowserRouter>
