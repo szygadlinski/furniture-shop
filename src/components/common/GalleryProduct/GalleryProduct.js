@@ -43,7 +43,7 @@ const GalleryProduct = ({ name, price, oldPrice, stars }) => {
           <h5>{name}</h5>
           <div className={styles.stars}>
             {[1, 2, 3, 4, 5].map(i => (
-              <a key={i} href='#'>
+              <a key={i} href='/#'>
                 {i <= stars ? (
                   <FontAwesomeIcon icon={faStar}>{i} stars</FontAwesomeIcon>
                 ) : (
