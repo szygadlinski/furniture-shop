@@ -18,15 +18,15 @@ class Feedback extends React.Component {
               <div className={'col-auto ' + styles.dots}>
                 <ul>
                   <li className={styles.dot}>
-                    <a className={styles.active} href='#'>
+                    <a className={styles.active} href='/#'>
                       page
                     </a>
                   </li>
                   <li className={styles.dot}>
-                    <a href='#'>page</a>
+                    <a href='/#'>page</a>
                   </li>
                   <li className={styles.dot}>
-                    <a href='#'>page</a>
+                    <a href='/#'>page</a>
                   </li>
                 </ul>
               </div>
