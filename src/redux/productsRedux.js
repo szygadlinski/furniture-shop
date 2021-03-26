@@ -15,7 +15,6 @@ const createActionName = name => `app/products/${name}`;
 const TOGGLE_FAVORITE = createActionName('TOGGLE_FAVORITE');
 const COMPARISON_HANDLER = createActionName('COMPARISON_HANDLER');
 const REMOVAL_HANDLER = createActionName('REMOVAL_HANDLER');
-const TOGGLE_COLOUR = createActionName('TOGGLE_COLOUR');
 const TOGGLE_STAR = createActionName('TOGGLE_STAR');
 const HOVER_STAR = createActionName('HOVER_STAR');
 
@@ -23,7 +22,6 @@ const HOVER_STAR = createActionName('HOVER_STAR');
 export const toggleFavorite = payload => ({ payload, type: TOGGLE_FAVORITE });
 export const compareItems = payload => ({ payload, type: COMPARISON_HANDLER });
 export const removeItem = payload => ({ payload, type: REMOVAL_HANDLER });
-export const toggleColour = payload => ({ payload, type: TOGGLE_COLOUR });
 export const toggleStar = payload => ({ payload, type: TOGGLE_STAR });
 export const hoverStar = payload => ({ payload, type: HOVER_STAR });
 
@@ -70,21 +68,11 @@ export default function reducer(statePart = [], action = {}) {
       });
     }
 
-    case TOGGLE_COLOUR: {
-      return statePart.map(product => {
-        if (product.id === action.payload.id) {
-          product.rated = true;
-          return product;
-        } else {
-          return product;
-        }
-      });
-    }
-
     case TOGGLE_STAR: {
       return statePart.map(product => {
         if (product.id === action.payload.id) {
           product.stars = action.payload.rateValue;
+          product.rated = true;
           return product;
         } else {
           return product;

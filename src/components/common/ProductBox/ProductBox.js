@@ -15,13 +15,11 @@ const ProductBox = ({
   promo,
   stars,
   image,
-  number,
   favorite,
   toggleFavorite,
   id,
   compareItems,
   compare,
-  toggleColour,
   toggleStar,
   hoverStar,
   rated,
@@ -59,7 +57,6 @@ const ProductBox = ({
         <Rating
           id={id}
           rate={stars}
-          toggleColour={toggleColour}
           toggleStar={toggleStar}
           hoverStar={hoverStar}
           rated={rated}
@@ -71,7 +68,6 @@ const ProductBox = ({
           <Button
             variant='outline'
             className={favorite ? styles.favorite : ''}
-
             onClick={faveHandler}
           >
             <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
@@ -79,7 +75,6 @@ const ProductBox = ({
           <Button
             variant='outline'
             className={compare ? styles.compare : ''}
-    
             onClick={comparisonHandler}
           >
             <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
@@ -115,12 +110,10 @@ ProductBox.propTypes = {
   comparisonHandler: PropTypes.func,
   compareItems: PropTypes.func,
   compare: PropTypes.bool,
-  toggleColour: PropTypes.func,
   toggleStar: PropTypes.func,
   hoverStar: PropTypes.func,
   rated: PropTypes.bool,
   addToCart: PropTypes.func,
-
 };
 
 export default ProductBox;

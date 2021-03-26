@@ -5,16 +5,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { faStar as farStar } from '@fortawesome/free-regular-svg-icons';
 
-const Rating = ({ id, rate, toggleColour, toggleStar, hoverStar, rated }) => {
+const Rating = ({ id, rate, toggleStar, hoverStar, rated }) => {
   return (
-    <div
-      onClick={() => toggleColour({ id })}
-      className={!rated ? styles.stars : styles.starsRated}
-    >
+    <div className={!rated ? styles.stars : styles.starsRated}>
       {[1, 2, 3, 4, 5].map((star, i) => {
         const rateValue = i + 1;
         return (
-          <a key={star} href='#'>
+          <a key={star} href='/#'>
             <label>
               <input type='radio' name='rating' value={rateValue} />
               <FontAwesomeIcon
@@ -33,7 +30,6 @@ const Rating = ({ id, rate, toggleColour, toggleStar, hoverStar, rated }) => {
 Rating.propTypes = {
   id: PropTypes.string,
   rate: PropTypes.number,
-  toggleColour: PropTypes.func,
   toggleStar: PropTypes.func,
   hoverStar: PropTypes.func,
   rated: PropTypes.bool,
