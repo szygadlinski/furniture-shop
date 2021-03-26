@@ -15,25 +15,14 @@ const Rating = ({ id, rate, toggleColour, toggleStar, hoverStar, rated }) => {
         const rateValue = i + 1;
         return (
           <a key={star} href='#'>
-            {star > rate ? (
-              <label>
-                <input type='radio' name='rating' value={rateValue} />
-                <FontAwesomeIcon
-                  onClick={() => toggleStar({ id, rateValue })}
-                  onMouseEnter={() => hoverStar({ id, rateValue })}
-                  icon={farStar}
-                />
-              </label>
-            ) : (
-              <label>
-                <input type='radio' name='rating' value={rateValue} />
-                <FontAwesomeIcon
-                  onClick={() => toggleStar({ id, rateValue })}
-                  onMouseEnter={() => hoverStar({ id, rateValue })}
-                  icon={faStar}
-                />
-              </label>
-            )}
+            <label>
+              <input type='radio' name='rating' value={rateValue} />
+              <FontAwesomeIcon
+                onClick={() => toggleStar({ id, rateValue })}
+                onMouseEnter={() => hoverStar({ id, rateValue })}
+                icon={star > rate ? farStar : faStar}
+              />
+            </label>
           </a>
         );
       })}
