@@ -13,50 +13,50 @@ const TopBar = () => (
         <div className={`col text-left ${styles.topOptions}`}>
           <ul>
             <li>
-              <a href='#'>
+              <a href='/#'>
                 USD{' '}
                 <FontAwesomeIcon className={styles.optionsIcon} icon={faCaretDown} />
               </a>
               <ul>
                 <li>
-                  <a href='#'>USD</a>
+                  <a href='/#'>USD</a>
                 </li>
                 <li>
-                  <a href='#'>PLN</a>
+                  <a href='/#'>PLN</a>
                 </li>
                 <li>
-                  <a href='#'>EUR</a>
+                  <a href='/#'>EUR</a>
                 </li>
               </ul>
             </li>
             <li>
-              <a href='#'>
+              <a href='/#'>
                 English{' '}
                 <FontAwesomeIcon className={styles.optionsIcon} icon={faCaretDown} />
               </a>
               <ul>
                 <li>
-                  <a href='#'>English</a>
+                  <a href='/#'>English</a>
                 </li>
                 <li>
-                  <a href='#'>Polish</a>
+                  <a href='/#'>Polish</a>
                 </li>
               </ul>
             </li>
             <li>
-              <a href='#'>
+              <a href='/#'>
                 Help{' '}
                 <FontAwesomeIcon className={styles.optionsIcon} icon={faCaretDown} />
               </a>
               <ul>
                 <li>
-                  <a href='#'>Payment</a>
+                  <a href='/#'>Payment</a>
                 </li>
                 <li>
-                  <a href='#'>Delivery</a>
+                  <a href='/#'>Delivery</a>
                 </li>
                 <li>
-                  <a href='#'>Shop list</a>
+                  <a href='/#'>Shop list</a>
                 </li>
               </ul>
             </li>
@@ -65,18 +65,18 @@ const TopBar = () => (
         <div className={`col text-right ${styles.topMenu}`}>
           <ul>
             <li>
-              <a href='#'>
+              <a href='/#'>
                 <FontAwesomeIcon className={styles.icon} icon={faUser} /> <p>Login</p>
               </a>
             </li>
             <li>
-              <a href='#'>
+              <a href='/#'>
                 <FontAwesomeIcon className={styles.icon} icon={faLock} />
                 <p>Register</p>
               </a>
             </li>
             <li>
-              <a href='#'>
+              <a href='/#'>
                 <FontAwesomeIcon className={styles.icon} icon={faBars} />
               </a>
             </li>
