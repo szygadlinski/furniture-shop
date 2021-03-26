@@ -345,6 +345,10 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://cdn.pixabay.com/photo/2017/02/17/06/17/konsyap-2073454_960_720.jpg',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'mauris-eu-nunc-2',
@@ -354,6 +358,10 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://cdn.pixabay.com/photo/2017/02/17/06/17/konsyap-2073454_960_720.jpg',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'mauris-eu-nunc-3',
@@ -364,6 +372,10 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://cdn.pixabay.com/photo/2017/02/17/06/17/konsyap-2073454_960_720.jpg',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'mauris-eu-nunc-4',
@@ -373,6 +385,10 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://cdn.pixabay.com/photo/2017/02/17/06/17/konsyap-2073454_960_720.jpg',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'mauris-eu-nunc-5',
@@ -382,6 +398,10 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://cdn.pixabay.com/photo/2017/02/17/06/17/konsyap-2073454_960_720.jpg',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'mauris-eu-nunc-6',
@@ -392,6 +412,10 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://cdn.pixabay.com/photo/2017/02/17/06/17/konsyap-2073454_960_720.jpg',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'mauris-eu-nunc-7',
@@ -401,6 +425,10 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://cdn.pixabay.com/photo/2017/02/17/06/17/konsyap-2073454_960_720.jpg',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'mauris-eu-nunc-8',
@@ -410,6 +438,10 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://cdn.pixabay.com/photo/2017/02/17/06/17/konsyap-2073454_960_720.jpg',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'mauris-eu-nunc-9',
@@ -419,6 +451,10 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://cdn.pixabay.com/photo/2017/02/17/06/17/konsyap-2073454_960_720.jpg',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'mauris-eu-nunc-10',
@@ -428,6 +464,10 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://cdn.pixabay.com/photo/2017/02/17/06/17/konsyap-2073454_960_720.jpg',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'mauris-eu-nunc-11',
@@ -437,6 +477,10 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://cdn.pixabay.com/photo/2017/02/17/06/17/konsyap-2073454_960_720.jpg',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'mauris-eu-nunc-12',
@@ -446,6 +490,10 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://cdn.pixabay.com/photo/2017/02/17/06/17/konsyap-2073454_960_720.jpg',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'mauris-eu-nunc-13',
@@ -455,6 +503,10 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://cdn.pixabay.com/photo/2017/02/17/06/17/konsyap-2073454_960_720.jpg',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'mauris-eu-nunc-14',
@@ -464,6 +516,10 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://cdn.pixabay.com/photo/2017/02/17/06/17/konsyap-2073454_960_720.jpg',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'mauris-eu-nunc-15',
@@ -473,6 +529,10 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://cdn.pixabay.com/photo/2017/02/17/06/17/konsyap-2073454_960_720.jpg',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'mauris-eu-nunc-16',
@@ -482,6 +542,10 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://cdn.pixabay.com/photo/2017/02/17/06/17/konsyap-2073454_960_720.jpg',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'mauris-eu-nunc-17',
@@ -491,6 +555,10 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://cdn.pixabay.com/photo/2017/02/17/06/17/konsyap-2073454_960_720.jpg',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'mauris-eu-nunc-18',
@@ -500,6 +568,10 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://cdn.pixabay.com/photo/2017/02/17/06/17/konsyap-2073454_960_720.jpg',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'mauris-eu-nunc-19',
@@ -509,6 +581,10 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://cdn.pixabay.com/photo/2017/02/17/06/17/konsyap-2073454_960_720.jpg',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'mauris-eu-nunc-20',
@@ -518,6 +594,9 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image: 'https://cdn.pixabay.com/photo/2019/01/06/06/56/couch-3916537_960_720.png',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'etiam-molestie-magna-1',
@@ -528,6 +607,9 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image: 'https://cdn.pixabay.com/photo/2019/01/06/06/56/couch-3916537_960_720.png',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'etiam-molestie-magna-2',
@@ -537,6 +619,9 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image: 'https://cdn.pixabay.com/photo/2019/01/06/06/56/couch-3916537_960_720.png',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'etiam-molestie-magna-3',
@@ -547,6 +632,9 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image: 'https://cdn.pixabay.com/photo/2019/01/06/06/56/couch-3916537_960_720.png',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'etiam-molestie-magna-4',
@@ -556,6 +644,9 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image: 'https://cdn.pixabay.com/photo/2019/01/06/06/56/couch-3916537_960_720.png',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'etiam-molestie-magna-5',
@@ -565,6 +656,9 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image: 'https://cdn.pixabay.com/photo/2019/01/06/06/56/couch-3916537_960_720.png',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'etiam-molestie-magna-6',
@@ -574,6 +668,9 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image: 'https://cdn.pixabay.com/photo/2019/01/06/06/56/couch-3916537_960_720.png',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'etiam-molestie-magna-7',
@@ -583,6 +680,9 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image: 'https://cdn.pixabay.com/photo/2019/01/06/06/56/couch-3916537_960_720.png',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'etiam-molestie-magna-8',
@@ -592,6 +692,9 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image: 'https://cdn.pixabay.com/photo/2019/01/06/06/56/couch-3916537_960_720.png',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'etiam-molestie-magna-9',
@@ -601,6 +704,9 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image: 'https://cdn.pixabay.com/photo/2019/01/06/06/56/couch-3916537_960_720.png',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'etiam-molestie-magna-10',
@@ -610,6 +716,9 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image: 'https://cdn.pixabay.com/photo/2019/01/06/06/56/couch-3916537_960_720.png',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'etiam-molestie-magna-11',
@@ -619,6 +728,9 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image: 'https://cdn.pixabay.com/photo/2019/01/06/06/56/couch-3916537_960_720.png',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'etiam-molestie-magna-12',
@@ -628,6 +740,9 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image: 'https://cdn.pixabay.com/photo/2019/01/06/06/56/couch-3916537_960_720.png',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'etiam-molestie-magna-13',
@@ -637,6 +752,9 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image: 'https://cdn.pixabay.com/photo/2019/01/06/06/56/couch-3916537_960_720.png',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'etiam-molestie-magna-14',
@@ -646,6 +764,9 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image: 'https://cdn.pixabay.com/photo/2019/01/06/06/56/couch-3916537_960_720.png',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'etiam-molestie-magna-15',
@@ -655,6 +776,9 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image: 'https://cdn.pixabay.com/photo/2019/01/06/06/56/couch-3916537_960_720.png',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'etiam-molestie-magna-16',
@@ -664,6 +788,9 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image: 'https://cdn.pixabay.com/photo/2019/01/06/06/56/couch-3916537_960_720.png',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'etiam-molestie-magna-17',
@@ -673,6 +800,9 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image: 'https://cdn.pixabay.com/photo/2019/01/06/06/56/couch-3916537_960_720.png',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'etiam-molestie-magna-18',
@@ -682,6 +812,9 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image: 'https://cdn.pixabay.com/photo/2019/01/06/06/56/couch-3916537_960_720.png',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'in-egestas-sem-1',
@@ -691,6 +824,10 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://cdn.pixabay.com/photo/2015/09/27/17/51/antique-961102_960_720.png',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'in-egestas-sem-2',
@@ -700,6 +837,10 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://cdn.pixabay.com/photo/2015/09/27/17/51/antique-961102_960_720.png',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'in-egestas-sem-3',
@@ -709,6 +850,10 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://cdn.pixabay.com/photo/2015/09/27/17/51/antique-961102_960_720.png',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'in-egestas-sem-4',
@@ -719,6 +864,10 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://cdn.pixabay.com/photo/2015/09/27/17/51/antique-961102_960_720.png',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'in-egestas-sem-5',
@@ -729,6 +878,10 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://cdn.pixabay.com/photo/2015/09/27/17/51/antique-961102_960_720.png',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'in-egestas-sem-6',
@@ -738,6 +891,10 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://cdn.pixabay.com/photo/2015/09/27/17/51/antique-961102_960_720.png',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'in-egestas-sem-7',
@@ -748,6 +905,10 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://cdn.pixabay.com/photo/2015/09/27/17/51/antique-961102_960_720.png',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'in-egestas-sem-8',
@@ -757,6 +918,10 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://cdn.pixabay.com/photo/2015/09/27/17/51/antique-961102_960_720.png',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'in-egestas-sem-9',
@@ -766,6 +931,10 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://cdn.pixabay.com/photo/2015/09/27/17/51/antique-961102_960_720.png',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'in-egestas-sem-10',
@@ -775,6 +944,10 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://cdn.pixabay.com/photo/2015/09/27/17/51/antique-961102_960_720.png',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'in-egestas-sem-11',
@@ -784,6 +957,10 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://cdn.pixabay.com/photo/2015/09/27/17/51/antique-961102_960_720.png',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'in-egestas-sem-12',
@@ -793,6 +970,10 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://cdn.pixabay.com/photo/2015/09/27/17/51/antique-961102_960_720.png',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'in-egestas-sem-13',
@@ -802,6 +983,10 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://cdn.pixabay.com/photo/2015/09/27/17/51/antique-961102_960_720.png',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'in-egestas-sem-14',
@@ -811,6 +996,10 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://cdn.pixabay.com/photo/2015/09/27/17/51/antique-961102_960_720.png',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'in-egestas-sem-15',
@@ -820,6 +1009,10 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://cdn.pixabay.com/photo/2015/09/27/17/51/antique-961102_960_720.png',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'in-egestas-sem-16',
@@ -829,6 +1022,10 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://cdn.pixabay.com/photo/2015/09/27/17/51/antique-961102_960_720.png',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'in-egestas-sem-17',
@@ -838,6 +1035,10 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://cdn.pixabay.com/photo/2015/09/27/17/51/antique-961102_960_720.png',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'in-egestas-sem-18',
@@ -847,6 +1048,10 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://cdn.pixabay.com/photo/2015/09/27/17/51/antique-961102_960_720.png',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'in-egestas-sem-19',
@@ -856,6 +1061,10 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://cdn.pixabay.com/photo/2015/09/27/17/51/antique-961102_960_720.png',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'in-egestas-sem-20',
@@ -865,6 +1074,10 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://cdn.pixabay.com/photo/2015/09/27/17/51/antique-961102_960_720.png',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'in-egestas-sem-21',
@@ -874,6 +1087,10 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://cdn.pixabay.com/photo/2015/09/27/17/51/antique-961102_960_720.png',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'in-egestas-sem-22',
@@ -883,6 +1100,10 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://cdn.pixabay.com/photo/2015/09/27/17/51/antique-961102_960_720.png',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'in-egestas-sem-23',
@@ -892,6 +1113,10 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://cdn.pixabay.com/photo/2015/09/27/17/51/antique-961102_960_720.png',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'in-egestas-sem-24',
@@ -901,6 +1126,10 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://cdn.pixabay.com/photo/2015/09/27/17/51/antique-961102_960_720.png',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'in-egestas-sem-25',
@@ -910,6 +1139,10 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://cdn.pixabay.com/photo/2015/09/27/17/51/antique-961102_960_720.png',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'in-egestas-sem-26',
@@ -919,6 +1152,10 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://cdn.pixabay.com/photo/2015/09/27/17/51/antique-961102_960_720.png',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'in-egestas-sem-27',
@@ -928,6 +1165,10 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://cdn.pixabay.com/photo/2015/09/27/17/51/antique-961102_960_720.png',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'in-egestas-sem-28',
@@ -937,6 +1178,10 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://cdn.pixabay.com/photo/2015/09/27/17/51/antique-961102_960_720.png',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'in-egestas-sem-29',
@@ -946,6 +1191,10 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://cdn.pixabay.com/photo/2015/09/27/17/51/antique-961102_960_720.png',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'in-egestas-sem-30',
@@ -955,6 +1204,10 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://cdn.pixabay.com/photo/2015/09/27/17/51/antique-961102_960_720.png',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'pellentesque-id-dolor-1',
@@ -964,6 +1217,10 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://cdn.pixabay.com/photo/2019/06/18/23/13/dining-4283451_960_720.png',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'pellentesque-id-dolor-2',
@@ -974,6 +1231,10 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://cdn.pixabay.com/photo/2019/06/18/23/13/dining-4283451_960_720.png',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'pellentesque-id-dolor-3',
@@ -984,6 +1245,10 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://cdn.pixabay.com/photo/2019/06/18/23/13/dining-4283451_960_720.png',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'pellentesque-id-dolor-4',
@@ -993,6 +1258,10 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://cdn.pixabay.com/photo/2019/06/18/23/13/dining-4283451_960_720.png',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'pellentesque-id-dolor-5',
@@ -1002,6 +1271,10 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://cdn.pixabay.com/photo/2019/06/18/23/13/dining-4283451_960_720.png',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'pellentesque-id-dolor-6',
@@ -1011,6 +1284,10 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://cdn.pixabay.com/photo/2019/06/18/23/13/dining-4283451_960_720.png',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'pellentesque-id-dolor-7',
@@ -1020,6 +1297,10 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://cdn.pixabay.com/photo/2019/06/18/23/13/dining-4283451_960_720.png',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'pellentesque-id-dolor-8',
@@ -1030,6 +1311,10 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://cdn.pixabay.com/photo/2019/06/18/23/13/dining-4283451_960_720.png',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'pellentesque-id-dolor-9',
@@ -1039,6 +1324,10 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://cdn.pixabay.com/photo/2019/06/18/23/13/dining-4283451_960_720.png',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'pellentesque-id-dolor-10',
@@ -1048,6 +1337,10 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://cdn.pixabay.com/photo/2019/06/18/23/13/dining-4283451_960_720.png',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'pellentesque-id-dolor-11',
@@ -1057,6 +1350,10 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://cdn.pixabay.com/photo/2019/06/18/23/13/dining-4283451_960_720.png',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'pellentesque-id-dolor-12',
@@ -1066,6 +1363,10 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://cdn.pixabay.com/photo/2019/06/18/23/13/dining-4283451_960_720.png',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'pellentesque-id-dolor-13',
@@ -1075,6 +1376,10 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://cdn.pixabay.com/photo/2019/06/18/23/13/dining-4283451_960_720.png',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'pellentesque-id-dolor-14',
@@ -1084,6 +1389,10 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://cdn.pixabay.com/photo/2019/06/18/23/13/dining-4283451_960_720.png',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'pellentesque-id-dolor-15',
@@ -1093,6 +1402,10 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://cdn.pixabay.com/photo/2019/06/18/23/13/dining-4283451_960_720.png',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'pellentesque-id-dolor-16',
@@ -1102,6 +1415,10 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://cdn.pixabay.com/photo/2019/06/18/23/13/dining-4283451_960_720.png',
+      favorite: false,
+      compare: false,
     },
     {
       id: 'pellentesque-id-dolor-17',
@@ -1111,17 +1428,33 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://cdn.pixabay.com/photo/2019/06/18/23/13/dining-4283451_960_720.png',
+      favorite: false,
+      compare: false,
     },
   ],
-  feedbacks: [
+  brands: [
     {
-      id: 'client-1',
-      icon:
-        'https://www.flaticon.com/svg/vstatic/svg/565/565703.svg?token=exp=1616333731~hmac=efc4d87e0dbbcd8b62bfd8383e7ef1dd',
-      quote:
-        'Curabitur gravida dictum pulvinar. Aenean scelerisque sem eu imperdiet cursus. Cras porttitor elit imperdiet congue dignissim. Duis vitae nulla vitae risus lobortis tincidunt. Proin lacus turpis, volutpat eget sodales eu, vestibulum quis leo.',
-      image: 'https://cdn.pixabay.com/photo/2017/11/02/14/36/model-2911363_1280.jpg',
-      name: '~ John Smith',
+      id: 'brand-1',
+      image:
+        'https://cdn.pixabay.com/photo/2015/05/04/20/23/corporate-752923_960_720.png',
+    },
+    {
+      id: 'brand-2',
+      image: 'https://cdn.pixabay.com/photo/2015/05/04/20/23/color-752920_960_720.png',
+    },
+    {
+      id: 'brand-3',
+      image: 'https://cdn.pixabay.com/photo/2015/05/03/12/38/logo-751133_960_720.png',
+    },
+    {
+      id: 'brand-4',
+      image: 'https://cdn.pixabay.com/photo/2015/05/04/20/23/logo-752922_960_720.png',
+    },
+    {
+      id: 'brand-5',
+      image: 'https://cdn.pixabay.com/photo/2015/05/04/20/23/logo-752921_960_720.png',
     },
     {
       id: 'brand-6',
@@ -1204,6 +1537,17 @@ const initialState = {
     {
       id: 'brand-24',
       image: 'https://cdn.pixabay.com/photo/2015/05/04/20/23/logo-752921_960_720.png',
+    },
+  ],
+  feedbacks: [
+    {
+      id: 'client-1',
+      icon:
+        'https://www.flaticon.com/svg/vstatic/svg/565/565703.svg?token=exp=1616333731~hmac=efc4d87e0dbbcd8b62bfd8383e7ef1dd',
+      quote:
+        'Curabitur gravida dictum pulvinar. Aenean scelerisque sem eu imperdiet cursus. Cras porttitor elit imperdiet congue dignissim. Duis vitae nulla vitae risus lobortis tincidunt. Proin lacus turpis, volutpat eget sodales eu, vestibulum quis leo.',
+      image: 'https://cdn.pixabay.com/photo/2017/11/02/14/36/model-2911363_1280.jpg',
+      name: '~ John Smith',
     },
   ],
   cart: {

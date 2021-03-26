@@ -13,7 +13,7 @@ export function get_window_width() {
 class MainLayout extends React.Component {
   static propTypes = {
     children: PropTypes.node,
-    determineWindowWidth: PropTypes.string,
+    determineWindowWidth: PropTypes.func,
   };
   constructor(props) {
     super(props);
