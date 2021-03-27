@@ -1,11 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styles from './Rating.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { faStar as farStar } from '@fortawesome/free-regular-svg-icons';
 
-const Rating = ({ id, rate, toggleStar, hoverStar, rated }) => {
+const Rating = ({ product, id, rate, toggleStar, rated }) => {
+  const [myRate, setMyRate] = useState(rate);
+
+  const handleHover = i => {
+    if (product === rated) {
+      setMyRate(i + 1);
+    }
+  };
+
   return (
     <div className={!rated ? styles.stars : styles.starsRated}>
       {[1, 2, 3, 4, 5].map((star, i) => {
@@ -16,8 +24,8 @@ const Rating = ({ id, rate, toggleStar, hoverStar, rated }) => {
               <input type='radio' name='rating' value={rateValue} />
               <FontAwesomeIcon
                 onClick={() => toggleStar({ id, rateValue })}
-                onMouseEnter={() => hoverStar({ id, rateValue })}
-                icon={star > rate ? farStar : faStar}
+                onMouseEnter={() => handleHover(i)}
+                icon={star > myRate ? farStar : faStar}
               />
             </label>
           </a>
@@ -28,10 +36,10 @@ const Rating = ({ id, rate, toggleStar, hoverStar, rated }) => {
 };
 
 Rating.propTypes = {
+  product: PropTypes.string,
   id: PropTypes.string,
   rate: PropTypes.number,
   toggleStar: PropTypes.func,
-  hoverStar: PropTypes.func,
   rated: PropTypes.bool,
 };
 

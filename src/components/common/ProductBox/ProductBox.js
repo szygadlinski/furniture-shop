@@ -21,7 +21,6 @@ const ProductBox = ({
   compareItems,
   compare,
   toggleStar,
-  hoverStar,
   rated,
   addToCart,
 }) => {
@@ -54,13 +53,7 @@ const ProductBox = ({
       </div>
       <div className={styles.content}>
         <h5>{name}</h5>
-        <Rating
-          id={id}
-          rate={stars}
-          toggleStar={toggleStar}
-          hoverStar={hoverStar}
-          rated={rated}
-        />
+        <Rating id={id} rate={stars} toggleStar={toggleStar} rated={rated} />
       </div>
       <div className={styles.line}></div>
       <div className={styles.actions}>
@@ -111,7 +104,6 @@ ProductBox.propTypes = {
   compareItems: PropTypes.func,
   compare: PropTypes.bool,
   toggleStar: PropTypes.func,
-  hoverStar: PropTypes.func,
   rated: PropTypes.bool,
   addToCart: PropTypes.func,
 };
