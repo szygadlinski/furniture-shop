@@ -75,9 +75,9 @@ class ProductList extends React.Component {
 
               <div className={styles.products}>
                 <div className='row'>
-                  {products.map((item, i) => (
+                  {products.map(item => (
                     <div key={item.id} className='col-12 col-md-6 col-lg-4'>
-                      <ProductBox image={item.image} {...item} number={i} product={item} />
+                      <ProductBox {...item} />
                     </div>
                   ))}
                 </div>
