@@ -7,29 +7,6 @@ const initialState = {
     { id: 'table', name: 'Table' },
     { id: 'dining', name: 'Dining' },
   ],
-  brands: [
-    {
-      id: 'brand-1',
-      image:
-        'https://cdn.pixabay.com/photo/2015/05/04/20/23/corporate-752923_960_720.png',
-    },
-    {
-      id: 'brand-2',
-      image: 'https://cdn.pixabay.com/photo/2015/05/04/20/23/color-752920_960_720.png',
-    },
-    {
-      id: 'brand-3',
-      image: 'https://cdn.pixabay.com/photo/2015/05/03/12/38/logo-751133_960_720.png',
-    },
-    {
-      id: 'brand-4',
-      image: 'https://cdn.pixabay.com/photo/2015/05/04/20/23/logo-752922_960_720.png',
-    },
-    {
-      id: 'brand-5',
-      image: 'https://cdn.pixabay.com/photo/2015/05/04/20/23/logo-752921_960_720.png',
-    },
-  ],
   products: [
     {
       id: 'aenean-ru-bristique-1',
@@ -1554,6 +1531,38 @@ const initialState = {
       'https://images.pexels.com/photos/276528/pexels-photo-276528.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
   },
   favorites: [],
+  tags: [
+    {
+      id: 'table',
+      name: 'Table',
+      checked: true,
+    },
+    {
+      id: 'chair',
+      name: 'Chair',
+      checked: false,
+    },
+    {
+      id: 'hand-bag',
+      name: 'Hand Bag',
+      checked: false,
+    },
+    {
+      id: 'women',
+      name: 'Women',
+      checked: false,
+    },
+    {
+      id: 'fashion',
+      name: 'Fashion',
+      checked: false,
+    },
+    {
+      id: 'clothes',
+      name: 'Clothes',
+      checked: false,
+    },
+  ],
 };
 
 export default initialState;
