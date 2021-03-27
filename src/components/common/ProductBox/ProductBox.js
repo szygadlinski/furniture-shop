@@ -45,8 +45,10 @@ const ProductBox = ({
         <div className={styles.image}>
           <img src={image} alt='' />
           <div className={styles.buttons}>
-            <Button variant='small'>Quick View</Button>
-            <Button variant='small' onClick={addCartHandler}>
+            <Button className={styles.button} variant='small'>
+              Quick View
+            </Button>
+            <Button className={styles.button} variant='small' onClick={addCartHandler}>
               <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO CART
             </Button>
           </div>
