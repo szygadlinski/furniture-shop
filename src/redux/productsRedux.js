@@ -68,7 +68,7 @@ export default function reducer(statePart = [], action = {}) {
 
     case TOGGLE_STAR: {
       return statePart.map(product => {
-        if (product.id === action.payload.id) {
+        if (product.id === action.payload.id && product.rated !== true) {
           product.stars = action.payload.rateValue;
           product.rated = true;
           return product;
