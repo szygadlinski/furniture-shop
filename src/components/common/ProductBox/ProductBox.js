@@ -22,16 +22,16 @@ const ProductBox = ({
   compareItems,
   compare,
   addToCart,
-  isFavourite,
-  addFavourite,
-  removeFavourite,
+  isFavorite,
+  addFavorite,
+  removeFavorite,
 }) => {
   const faveHandler = event => {
     event.preventDefault();
-    if (isFavourite) {
-      removeFavourite(id);
+    if (isFavorite) {
+      removeFavorite(id);
     } else {
-      addFavourite(id);
+      addFavorite(id);
     }
   };
 
@@ -77,7 +77,7 @@ const ProductBox = ({
         <div className={styles.outlines}>
           <Button
             variant='outline'
-            className={isFavourite ? styles.favorite : ''}
+            className={isFavorite ? styles.favorite : ''}
             onClick={faveHandler}
           >
             <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
@@ -119,9 +119,9 @@ ProductBox.propTypes = {
   compareItems: PropTypes.func,
   compare: PropTypes.bool,
   addToCart: PropTypes.func,
-  isFavourite: PropTypes.bool,
-  addFavourite: PropTypes.func,
-  removeFavourite: PropTypes.func,
+  isFavorite: PropTypes.bool,
+  addFavorite: PropTypes.func,
+  removeFavorite: PropTypes.func,
 };
 
 export default ProductBox;

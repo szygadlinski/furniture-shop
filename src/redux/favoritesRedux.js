@@ -1,18 +1,18 @@
 /* selectors */
-export const getAll = ({ favourites }) => favourites;
-export const isFavourite = ({ favourites }, id) =>
-  favourites.find(favourite => favourite === id) ? true : false;
+export const getAll = ({ favorites }) => favorites;
+export const isFavorite = ({ favorites }, id) =>
+  favorites.find(favourite => favourite === id) ? true : false;
 
 /* action name creator */
-const createActionName = name => `app/favourites/${name}`;
+const createActionName = name => `app/favorites/${name}`;
 
 /* action types */
 const ADD = createActionName('ADD');
 const REMOVE = createActionName('REMOVE');
 
 /* action creators */
-export const addFavourite = payload => ({ payload, type: ADD });
-export const removeFavourite = payload => ({ payload, type: REMOVE });
+export const addFavorite = payload => ({ payload, type: ADD });
+export const removeFavorite = payload => ({ payload, type: REMOVE });
 
 /* reducer */
 export default function reducer(statePart = [], action = {}) {
