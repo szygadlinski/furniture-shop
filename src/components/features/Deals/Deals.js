@@ -4,16 +4,14 @@ import styles from './Deals.module.scss';
 
 class Deals extends React.Component {
   static propTypes = {
-    deals: PropTypes.objectOf(
-      PropTypes.shape({
-        leftImage: PropTypes.string,
-        leftDescription: PropTypes.arrayOf(PropTypes.string),
-        rightUpImage: PropTypes.string,
-        rightUpDescription: PropTypes.arrayOf(PropTypes.string),
-        rightDownImage: PropTypes.string,
-        rightDownDescription: PropTypes.arrayOf(PropTypes.string),
-      })
-    ),
+    deals: PropTypes.shape({
+      leftImage: PropTypes.string,
+      leftDescription: PropTypes.arrayOf(PropTypes.string),
+      rightUpImage: PropTypes.string,
+      rightUpDescription: PropTypes.arrayOf(PropTypes.string),
+      rightDownImage: PropTypes.string,
+      rightDownDescription: PropTypes.arrayOf(PropTypes.string),
+    }),
   };
 
   static defaultProps = {
@@ -34,7 +32,7 @@ class Deals extends React.Component {
       <div className={styles.root}>
         <div className='container'>
           <div className='row'>
-            <div className='col-6'>
+            <div className='col-12 col-lg-6'>
               <div className={styles.image}>
                 <img src={deals.leftImage} alt='deal1' />
                 <div className={styles.description + ' ' + styles.descriptionLeft}>
@@ -45,7 +43,7 @@ class Deals extends React.Component {
               </div>
             </div>
 
-            <div className='col-6'>
+            <div className='col-12 col-lg-6'>
               <div className={styles.image + ' ' + styles.small}>
                 <img src={deals.rightUpImage} alt='deal2' />
                 <div className={styles.description + ' ' + styles.descriptionRightUp}>

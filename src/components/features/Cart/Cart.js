@@ -1,8 +1,10 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 import PropTypes from 'prop-types';
 
 import { faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// eslint-disable-next-line no-unused-vars
 import Button from '../../common/Button/Button';
 
 import styles from './Cart.module.scss';

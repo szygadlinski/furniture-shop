@@ -50,6 +50,12 @@ $fb-bcg-active: $orange;
 $fb-content-active: $orange;
 $fb-text-active: $white;
 
+//BLOG BOX
+$bb-border: $dark-1;
+$bb-bcg: $white;
+
+
+
 //PRODUCT BOX
 $pb-border: $light-2;
 $pb-bcg: $white;
@@ -64,15 +70,28 @@ $sale-text: $white;
 
 $product-title: $orange;
 
-$stars-colour: $dark-3;
-
 $fave-bcg: $dark-3;
 $fave-color: $light-1;
 
 $compare-bcg: $dark-3;
 $compare-color: $light-1;
 
+//RATING
+$stars-colour: $dark-3;
+$stars-rated-colour: $orange;
+
 //*****FEATURES*****//
+//BANNER
+$bm-bcg: $dark-1;
+$bm-color: $white;
+
+$bs-span: $orange;
+
+$sb-bcg: $light-3;
+$sb-a: $dark-5;
+$sb-link-after: $dark-5;
+$sb-link-active: $orange;
+
 //DEALS
 $deals-layer: $dark-3;
 $deals-white: $white;
@@ -158,6 +177,14 @@ $tp-text-hover: $orange;
 $button: $dark-4;
 $window: $white;
 $message: $light-7;
+
+//*****VIEWS*****//
+//PRODUCT LIST
+$pl-select: $light-6;
+$pl-border: $dark-1;
+$pl-hover: $orange;
+$pl-background-ul: $white;
+$pl-background-li: $light-4;
 
 //***BASE***//
 

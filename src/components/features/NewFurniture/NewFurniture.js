@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 import PropTypes from 'prop-types';
 
@@ -42,7 +43,7 @@ class NewFurniture extends React.Component {
   };
 
   render() {
-    const { categories, products, image, deviceType } = this.props;
+    const { categories, products, deviceType } = this.props;
     const { activeCategory, activePage, isFading } = this.state;
 
     const categoryProducts = products.filter(item => item.category === activeCategory);
@@ -113,15 +114,19 @@ class NewFurniture extends React.Component {
                 </div>
               </div>
             </div>
-          </div>
-          <div
-            className={'row' + (isFading ? ' ' + styles.fadeout : ' ' + styles.fadein)}
-          >
-            {categoryProducts.slice(activePage * 8, (activePage + 1) * 8).map(item => (
-              <div key={item.id} className='col-6 col-md-4 col-lg-3'>
-                <ProductBox {...item} />
-              </div>
-            ))}
+            <div
+              className={
+                'row' + (isFading ? ' ' + styles.fadeout : ' ' + styles.fadein)
+              }
+            >
+              {categoryProducts
+                .slice(activePage * 8, (activePage + 1) * 8)
+                .map(item => (
+                  <div key={item.id} className='col-6 col-md-4 col-lg-3'>
+                    <ProductBox {...item} />
+                  </div>
+                ))}
+            </div>
           </div>
         </div>
       </Swipeable>
