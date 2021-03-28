@@ -1,0 +1,17 @@
+@import "../../../styles/settings.scss";
+
+input[type="radio"] {
+  display: none;
+}
+
+.stars {
+  a {
+    color: $stars-colour;
+  } 
+}
+
+.starsRated {
+  a {
+    color: $stars-rated-colour;
+  }
+}
