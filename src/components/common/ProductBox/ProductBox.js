@@ -101,7 +101,7 @@ ProductBox.propTypes = {
   oldPrice: PropTypes.number,
   promo: PropTypes.string,
   stars: PropTypes.number,
-  image: PropTypes.string.isRequired,
+  image: PropTypes.string,
   faveHandler: PropTypes.func,
   id: PropTypes.string,
   comparisonHandler: PropTypes.func,
