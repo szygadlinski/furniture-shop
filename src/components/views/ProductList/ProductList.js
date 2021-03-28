@@ -6,6 +6,7 @@ import { faThLarge } from '@fortawesome/free-solid-svg-icons';
 import { faThList } from '@fortawesome/free-solid-svg-icons';
 import styles from './ProductList.module.scss';
 import Banner from '../../features/Banner/Banner.js';
+import CategoryFilter from '../../features/CategoryFilter/CategoryFilter';
 import ProductBox from '../../common/ProductBox/ProductBoxContainer';
 
 class ProductList extends React.Component {
@@ -91,7 +92,7 @@ class ProductList extends React.Component {
                   ))}*/}
             </div>
             <div className='col-3'>
-
+              <CategoryFilter />
               {/*   filters here   */}
 
             </div>

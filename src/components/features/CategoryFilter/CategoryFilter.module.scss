@@ -1,0 +1,54 @@
+@import "../../../styles/settings.scss";
+
+.root {
+  margin-top: -12px;
+  margin-left: 1219px;
+  padding: 0 15px 15px 15px;
+  max-width: 300px;
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  .filterTitle {
+    border-bottom: 2px solid $cf-header;
+    padding: 10px 0;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  .filterList {
+    padding: 7px;
+    list-style-type: none;
+
+    .item {
+      display: flex;
+      justify-content: space-between;
+      margin: 12px 0;
+      text-transform: capitalize;
+      @extend %hover-animation;
+      cursor: pointer;
+
+      &:hover {
+        color: $cf-item-hover;
+        padding-left: 20px;
+      }
+      &:hover .amount {
+        background-color: $cf-item-hover;
+      }
+    }
+
+    .amount {
+      background-color: $cf-amount-bcg;
+      color: $cf-amount-color;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      line-height: 25px;
+      text-align: center;
+      font-weight: bold;
+    }
+  }
+}
