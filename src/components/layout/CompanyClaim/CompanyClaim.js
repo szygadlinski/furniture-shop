@@ -23,7 +23,9 @@ const CompanyClaim = () => (
           </a>
         </div>
         <div className={`col text-right ${styles.cart}`}>
-          <Cart />
+          <a href='/cart'>
+            <Cart />
+          </a>
         </div>
       </div>
     </div>
