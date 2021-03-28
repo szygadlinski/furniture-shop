@@ -36,8 +36,8 @@ describe('Component Deals', () => {
     expect(component.find('.row').length).toBe(1);
   });
 
-  it('should contain divs with class col-6', () => {
-    expect(component.find('.col-6').length).toBe(2);
+  it('should contain divs with class col-12', () => {
+    expect(component.find('.col-12').length).toBe(2);
   });
 
   it('should contain divs with class image', () => {

@@ -20,6 +20,14 @@ $green: #79AE31;
 //*******COLOURS BY COMPONENT*******//
 //OTHER FILES USABLE!//
 
+//*****VIEWS******//
+//CART
+$background-banner: $dark-1;
+$background-white: $white;
+$button: $dark-4;
+$orange: $orange;
+
+
 //*****COMMON*****//
 //BUTTON
 $btn-dark-bcg: $dark-3;
@@ -62,13 +70,15 @@ $sale-text: $white;
 
 $product-title: $orange;
 
-$stars-colour: $dark-3;
-
 $fave-bcg: $dark-3;
 $fave-color: $light-1;
 
 $compare-bcg: $dark-3;
 $compare-color: $light-1;
+
+//RATING
+$stars-colour: $dark-3;
+$stars-rated-colour: $orange;
 
 //*****FEATURES*****//
 //BANNER
@@ -167,6 +177,14 @@ $tp-text-hover: $orange;
 $button: $dark-4;
 $window: $white;
 $message: $light-7;
+
+//*****VIEWS*****//
+//PRODUCT LIST
+$pl-select: $light-6;
+$pl-border: $dark-1;
+$pl-hover: $orange;
+$pl-background-ul: $white;
+$pl-background-li: $light-4;
 
 //***BASE***//
 
