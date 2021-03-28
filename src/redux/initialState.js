@@ -314,111 +314,6 @@ const initialState = {
         'https://images.unsplash.com/flagged/photo-1556438758-8d49568ce18e?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1053&q=80',
       compare: false,
     },
-  ],
-  brands: [
-    {
-      id: 'brand-1',
-      image:
-        'https://cdn.pixabay.com/photo/2015/05/04/20/23/corporate-752923_960_720.png',
-    },
-    {
-      id: 'brand-2',
-      image: 'https://cdn.pixabay.com/photo/2015/05/04/20/23/color-752920_960_720.png',
-    },
-    {
-      id: 'brand-3',
-      image: 'https://cdn.pixabay.com/photo/2015/05/03/12/38/logo-751133_960_720.png',
-    },
-    {
-      id: 'brand-4',
-      image: 'https://cdn.pixabay.com/photo/2015/05/04/20/23/logo-752922_960_720.png',
-    },
-    {
-      id: 'brand-5',
-      image: 'https://cdn.pixabay.com/photo/2015/05/04/20/23/logo-752921_960_720.png',
-    },
-    {
-      id: 'brand-6',
-      image: 'https://cdn.pixabay.com/photo/2015/05/04/20/23/logo-752921_960_720.png',
-    },
-    {
-      id: 'brand-7',
-      image: 'https://cdn.pixabay.com/photo/2015/05/04/20/23/logo-752921_960_720.png',
-    },
-    {
-      id: 'brand-8',
-      image:
-        'https://cdn.pixabay.com/photo/2015/05/04/20/23/corporate-752923_960_720.png',
-    },
-    {
-      id: 'brand-9',
-      image: 'https://cdn.pixabay.com/photo/2015/05/04/20/23/logo-752921_960_720.png',
-    },
-    {
-      id: 'brand-10',
-      image:
-        'https://cdn.pixabay.com/photo/2015/05/04/20/23/corporate-752923_960_720.png',
-    },
-    {
-      id: 'brand-11',
-      image: 'https://cdn.pixabay.com/photo/2015/05/04/20/23/logo-752921_960_720.png',
-    },
-    {
-      id: 'brand-12',
-      image:
-        'https://cdn.pixabay.com/photo/2015/05/04/20/23/corporate-752923_960_720.png',
-    },
-    {
-      id: 'brand-13',
-      image: 'https://cdn.pixabay.com/photo/2015/05/04/20/23/logo-752921_960_720.png',
-    },
-    {
-      id: 'brand-14',
-      image: 'https://cdn.pixabay.com/photo/2015/05/04/20/23/logo-752921_960_720.png',
-    },
-    {
-      id: 'brand-15',
-      image:
-        'https://cdn.pixabay.com/photo/2015/05/04/20/23/corporate-752923_960_720.png',
-    },
-    {
-      id: 'brand-16',
-      image: 'https://cdn.pixabay.com/photo/2015/05/04/20/23/logo-752921_960_720.png',
-    },
-    {
-      id: 'brand-17',
-      image: 'https://cdn.pixabay.com/photo/2015/05/04/20/23/logo-752921_960_720.png',
-    },
-    {
-      id: 'brand-18',
-      image:
-        'https://cdn.pixabay.com/photo/2015/05/04/20/23/corporate-752923_960_720.png',
-    },
-    {
-      id: 'brand-19',
-      image: 'https://cdn.pixabay.com/photo/2015/05/04/20/23/logo-752921_960_720.png',
-    },
-    {
-      id: 'brand-20',
-      image: 'https://cdn.pixabay.com/photo/2015/05/04/20/23/logo-752921_960_720.png',
-    },
-    {
-      id: 'brand-21',
-      image: 'https://cdn.pixabay.com/photo/2015/05/04/20/23/logo-752921_960_720.png',
-    },
-    {
-      id: 'brand-22',
-      image:
-        'https://cdn.pixabay.com/photo/2015/05/04/20/23/corporate-752923_960_720.png',
-    },
-    {
-      id: 'brand-23',
-      image: 'https://cdn.pixabay.com/photo/2015/05/04/20/23/color-752920_960_720.png',
-    },
-    {
-      id: 'brand-24',
-      image: 'https://cdn.pixabay.com/photo/2015/05/04/20/23/logo-752921_960_720.png',
-    },
     {
       id: 'mauris-eu-nunc-1',
       name: 'Mauris eu nunc 1',
@@ -1514,6 +1409,111 @@ const initialState = {
         'https://cdn.pixabay.com/photo/2019/06/18/23/13/dining-4283451_960_720.png',
       favorite: false,
       compare: false,
+    },
+  ],
+  brands: [
+    {
+      id: 'brand-1',
+      image:
+        'https://cdn.pixabay.com/photo/2015/05/04/20/23/corporate-752923_960_720.png',
+    },
+    {
+      id: 'brand-2',
+      image: 'https://cdn.pixabay.com/photo/2015/05/04/20/23/color-752920_960_720.png',
+    },
+    {
+      id: 'brand-3',
+      image: 'https://cdn.pixabay.com/photo/2015/05/03/12/38/logo-751133_960_720.png',
+    },
+    {
+      id: 'brand-4',
+      image: 'https://cdn.pixabay.com/photo/2015/05/04/20/23/logo-752922_960_720.png',
+    },
+    {
+      id: 'brand-5',
+      image: 'https://cdn.pixabay.com/photo/2015/05/04/20/23/logo-752921_960_720.png',
+    },
+    {
+      id: 'brand-6',
+      image: 'https://cdn.pixabay.com/photo/2015/05/04/20/23/logo-752921_960_720.png',
+    },
+    {
+      id: 'brand-7',
+      image: 'https://cdn.pixabay.com/photo/2015/05/04/20/23/logo-752921_960_720.png',
+    },
+    {
+      id: 'brand-8',
+      image:
+        'https://cdn.pixabay.com/photo/2015/05/04/20/23/corporate-752923_960_720.png',
+    },
+    {
+      id: 'brand-9',
+      image: 'https://cdn.pixabay.com/photo/2015/05/04/20/23/logo-752921_960_720.png',
+    },
+    {
+      id: 'brand-10',
+      image:
+        'https://cdn.pixabay.com/photo/2015/05/04/20/23/corporate-752923_960_720.png',
+    },
+    {
+      id: 'brand-11',
+      image: 'https://cdn.pixabay.com/photo/2015/05/04/20/23/logo-752921_960_720.png',
+    },
+    {
+      id: 'brand-12',
+      image:
+        'https://cdn.pixabay.com/photo/2015/05/04/20/23/corporate-752923_960_720.png',
+    },
+    {
+      id: 'brand-13',
+      image: 'https://cdn.pixabay.com/photo/2015/05/04/20/23/logo-752921_960_720.png',
+    },
+    {
+      id: 'brand-14',
+      image: 'https://cdn.pixabay.com/photo/2015/05/04/20/23/logo-752921_960_720.png',
+    },
+    {
+      id: 'brand-15',
+      image:
+        'https://cdn.pixabay.com/photo/2015/05/04/20/23/corporate-752923_960_720.png',
+    },
+    {
+      id: 'brand-16',
+      image: 'https://cdn.pixabay.com/photo/2015/05/04/20/23/logo-752921_960_720.png',
+    },
+    {
+      id: 'brand-17',
+      image: 'https://cdn.pixabay.com/photo/2015/05/04/20/23/logo-752921_960_720.png',
+    },
+    {
+      id: 'brand-18',
+      image:
+        'https://cdn.pixabay.com/photo/2015/05/04/20/23/corporate-752923_960_720.png',
+    },
+    {
+      id: 'brand-19',
+      image: 'https://cdn.pixabay.com/photo/2015/05/04/20/23/logo-752921_960_720.png',
+    },
+    {
+      id: 'brand-20',
+      image: 'https://cdn.pixabay.com/photo/2015/05/04/20/23/logo-752921_960_720.png',
+    },
+    {
+      id: 'brand-21',
+      image: 'https://cdn.pixabay.com/photo/2015/05/04/20/23/logo-752921_960_720.png',
+    },
+    {
+      id: 'brand-22',
+      image:
+        'https://cdn.pixabay.com/photo/2015/05/04/20/23/corporate-752923_960_720.png',
+    },
+    {
+      id: 'brand-23',
+      image: 'https://cdn.pixabay.com/photo/2015/05/04/20/23/color-752920_960_720.png',
+    },
+    {
+      id: 'brand-24',
+      image: 'https://cdn.pixabay.com/photo/2015/05/04/20/23/logo-752921_960_720.png',
     },
   ],
   feedbacks: [
