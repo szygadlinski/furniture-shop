@@ -243,6 +243,7 @@ const ProductPage = () => (
   </div>
 );
 
+
 // ProductPage.propTypes = {};
 
 export default ProductPage;

@@ -1,0 +1,62 @@
+@import "../../../styles/settings.scss";
+
+.bannerMain {
+  background-color: $bm-bcg;
+  color: $bm-color;
+  letter-spacing: 0.2em;
+  height: 210px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  .bannerTitle, .bannerSubtitle {
+    text-align: center;
+  }
+  .bannerTitle {
+      font-size: 52px;
+      font-weight: 300;
+      margin-top: 45px;
+      margin-bottom: 0;
+      span {
+        font-weight: bold;
+      }
+  }
+  .bannerSubtitle {
+      letter-spacing: 0.5em;
+      font-size: 25px;
+      margin-left: 10px;
+      margin-top: -15px;
+      span {
+        font-weight: bold;
+        color: $bs-span;
+      }
+  }
+
+}
+
+.subBanner {
+  padding: 10px;
+  background-color: $sb-bcg;
+
+  .item {
+  display: inline-block;
+  position: relative;
+  padding-right: 5px;
+  }
+  a {
+      padding: 10px;
+      color: $sb-a;
+  }
+  .link:after {
+      content: ">";
+      position: absolute;
+      height: 20px;
+      width: 10px;
+      top: 0;
+      right: 0;
+      color: $sb-link-after;
+  }
+  .link_active {
+    font-weight: bold;
+    color: $sb-link-active;
+  }
+}
