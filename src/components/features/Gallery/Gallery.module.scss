@@ -6,6 +6,12 @@
   }
 }
 
+.root {
+  padding: $base-padding*2 0;
+}
+
+/* Tabs */
+
 .tabs {
   @include border(top, left, right);
 
@@ -19,6 +25,9 @@
 
   li {
     flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
 
     & + li {
       @include border(left);
@@ -26,8 +35,7 @@
   }
 
   a {
-    display: flex;
-    justify-content: center;
+    flex: 1;
     color: $menu-text;
     text-transform: uppercase;
     font-size: 12px;
@@ -54,9 +62,27 @@
   }
 }
 
-.product {
-  @include border(left, right);
+/* Product */
+
+.productAndSlider {
   flex: 1 0 auto;
+  @include border(left, right, bottom);
+  display: flex;
+
+  >div {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+  }
+}
+
+.fadeout {
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.fadein {
+  transition: 0.5s;
 }
 
 /* Slider */
@@ -65,34 +91,36 @@
   padding: 5px 0;
   display: flex;
   align-items: stretch;
-  @include border(bottom, left, right);
+  height: 82px;
 
-  .slidesList {
-    display: flex;
-    flex-wrap: nowrap;
+  .slideList {
+    overflow: hidden;
+
+    .slideListInner {
+      height: 100%;
+      transition-duration: 500ms;
+    }
 
     .slide {
       @include border(top, bottom, left, right);
-      width: calc((100% - 25px) / 6);
       position: relative;
-      display: flex;
-      align-items: center;
       background-color: $pb-photo-bcg;
+      display: inline-block;
+      height: 100%;
+      margin-left: 5px;
 
       img {
         width: 100%;
-        height: auto;
-      }
-
-      &:nth-child(n+7) {
-        display: none;
-      }
-
-      & + .slide {
-        margin-left: 5px;
+        height: 100%;
+        object-fit: cover;
       }
 
       &:not(.active) {
+        &:hover {
+          &::after {
+            background-color: transparent;
+          }
+        }
         &::after {
           content:'';
           position: absolute;
@@ -101,8 +129,9 @@
           display:block;
           height: 100%;
           width: 100%;
-          background-color: transparentize($slider-btn, 0.7);
+          background-color: transparentize($slider-btn, 0.6);
           z-index: 1;
+          @extend %hover-animation;
         }
       }
     }
@@ -110,15 +139,20 @@
 
   .button {
     position: relative;
-    text-decoration: none;
     color: $slider-text;
     width: 30px;
     border-radius: 2px;
     background-color: $slider-btn;
-    margin: 0 5px;
+    margin: 0 0 0 5px;
+    padding: 0;
+    flex: 0 0 auto;
     @extend %hover-animation;
     &:hover {
       background-color: $slider-btn-hover;
+    }
+
+    &:last-child {
+      margin: 0 5px;
     }
 
     span {
@@ -170,5 +204,10 @@
   .promo__button {
     border-radius: 2px;
     background-color: $promo-button;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+  .slider .slideList .slideListInner .slide {
   }
 }

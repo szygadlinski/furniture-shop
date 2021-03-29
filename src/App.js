@@ -8,10 +8,14 @@ import './styles/global.scss';
 
 import MainLayout from './components/layout/MainLayout/MainLayoutContainer.js';
 import Homepage from './components/views/Homepage/Homepage';
-import ProductList from './components/views/ProductList/ProductList';
+import ProductList from './components/views/ProductList/ProductListContainer';
 import ProductPage from './components/views/ProductPage/ProductPage';
+import Cart from './components/views/Cart/Cart';
 import Blog from './components/views/Blog/Blog';
 
+import Account from './components/views/Account/Account';
+import Info from './components/views/Info/Info';
+import Orders from './components/views/Orders/Orders';
 
 const App = () => (
   <Provider store={store}>
@@ -19,9 +23,13 @@ const App = () => (
       <MainLayout>
         <Switch>
           <Route exact path={'/'} component={Homepage} />
+          <Route exact path={'/cart'} component={Cart} />
           <Route exact path={'/shop/:categoryId'} component={ProductList} />
           <Route exact path={'/product/:productId'} component={ProductPage} />
           <Route exact path={'/blog'} component={Blog} />
+          <Route exact path={'/account/:pageId'} component={Account} />
+          <Route exact path={'/info/:pageId'} component={Info} />
+          <Route exact path={'/orders/:pageId'} component={Orders} />
         </Switch>
       </MainLayout>
     </BrowserRouter>

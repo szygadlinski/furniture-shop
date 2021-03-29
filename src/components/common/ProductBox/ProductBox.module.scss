@@ -7,20 +7,13 @@
 
   .photo {
     position: relative;
-    padding: 80% 10px 0 10px;
+    overflow: hidden;
     background: {
       color: $pb-photo-bcg;
       size: contain;
       position: center;
       repeat: no-repeat;
     }
-    overflow: hidden;
-    align-items: flex-end;
-
-    &:hover {
-      background: rgba(0, 0, 0, 0.3);
-    }
-
 
     .sale {
       position: absolute;
@@ -34,47 +27,43 @@
       z-index: 1;
     }
 
-    .image{
-      position: absolute;
+    .image {
+      position: relative;
       max-width: 300px;
-      height: 300px;
-      display: flex;
-      align-content: center;
-      justify-content: center;
-      top: 0;
+      height: 240px;
+      cursor: pointer;
 
-      .img {
-        object-fit: cover;
+      img {
         width: 100%;
-        max-height: 100%;
-
-      }
-
-      &:hover > img {
-        opacity: 0.4;
-        cursor: pointer;
+        height: 100%;
+        object-fit: cover;
       }
 
       .buttons {
-        visibility: hidden;
-        display: flex;
-        justify-content: space-between;
+        display: none;
+        flex-wrap: wrap;
         position: absolute;
-        z-index: 1;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        min-width: 98%;
       }
 
-      &:hover > .buttons {
-        visibility: visible;
-        display: flex;
-        justify-content: space-between;
-        opacity: 1;
-        position: absolute;
-        z-index: 1;
-        align-items: flex-end;
-        bottom: 20px;
+      .button {
+        padding: ($base-padding / 2) ($base-padding / 4);
+        margin: 0 ($base-padding / 2);
+      }
+
+      &:hover {
+        img {
+          opacity: 0.4;
+        }
+
+        .buttons {
+          display: flex;
+        }
       }
     }
-
   }
 
   .content {

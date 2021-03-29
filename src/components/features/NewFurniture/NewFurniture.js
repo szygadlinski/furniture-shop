@@ -125,7 +125,6 @@ class NewFurniture extends React.Component {
                 <ProductBox {...item} image={image} />
               </div>
             ))}
-
           </div>
         </div>
       </Swipeable>

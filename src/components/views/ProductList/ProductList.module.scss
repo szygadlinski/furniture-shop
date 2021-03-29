@@ -2,4 +2,117 @@
 
 .root {
   padding: $base-padding 0;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    border-bottom: 1px solid $pl-border;
+    padding: ($base-padding / 2) 0;
+
+    h4 {
+      text-transform: uppercase;
+      margin: 0;
+      font-weight: 700;
+    }
+
+    .displayOptions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      font-size: 14px;
+
+      label {
+        margin: 0;
+        padding: $base-padding / 2;
+      }
+
+      .select {
+        display: flex;
+        align-items: center;
+        position: relative;
+        border: 1px solid $pl-select;
+        color: $pl-select;
+        height: 30px;
+        padding: $base-padding / 2;
+
+        &:hover {
+          cursor: pointer;
+          color: $pl-hover;
+
+          ul {
+            display: block;
+          }
+        }
+      }
+
+      ul {
+        position: absolute;
+        top: 28px;
+        left: 0;
+        color: $pl-select;
+        background: $pl-background-ul;
+        box-shadow: 2px 3.464px 6px $pl-select;
+        list-style-type: none;
+        padding: 0;
+        z-index: 2;
+        display: none;
+      }
+
+      li {
+        padding: ($base-padding / 4) ($base-padding / 2);
+        cursor: pointer;
+
+        &:hover {
+          background: $pl-background-li;
+          color: $pl-hover;
+        }
+      }
+
+      .icon {
+        position: absolute;
+        right: $base-padding / 2;
+      }
+
+      .productsSorting {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        margin-left: $base-padding * 2;
+
+        .orderSelect, .productsOrder {
+          min-width: 200px;
+        }
+
+        .amountSelect, .productsAmount {
+          min-width: 70px;
+        }
+      }
+
+      .displayType {
+        display: flex;
+        flex-wrap: wrap;
+        border: 1px solid $pl-select;
+        height: 30px;
+        margin-left: $base-padding * 2;
+
+        .icon {
+          position: relative;
+          margin: ($base-padding / 4) ($base-padding / 3);
+          right: 0;
+
+          &:hover {
+            cursor: pointer;
+            color: $pl-hover;
+          }
+        }
+      }
+    }
+  }
+
+  .products {
+    padding: $base-padding 0;
+  }
 }
