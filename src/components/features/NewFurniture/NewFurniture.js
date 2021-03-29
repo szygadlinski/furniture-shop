@@ -36,14 +36,16 @@ class NewFurniture extends React.Component {
 
   static propTypes = {
     image: PropTypes.node,
+    rowSize: PropTypes.number,
   };
 
   static defaultProps = {
     source: initialState.products.image,
+    rowSize: 8,
   };
 
   render() {
-    const { categories, products, deviceType } = this.props;
+    const { categories, products, image, deviceType, rowSize } = this.props;
     const { activeCategory, activePage, isFading } = this.state;
 
     const categoryProducts = products.filter(item => item.category === activeCategory);
@@ -114,19 +116,15 @@ class NewFurniture extends React.Component {
                 </div>
               </div>
             </div>
-            <div
-              className={
-                'row' + (isFading ? ' ' + styles.fadeout : ' ' + styles.fadein)
-              }
-            >
-              {categoryProducts
-                .slice(activePage * 8, (activePage + 1) * 8)
-                .map(item => (
-                  <div key={item.id} className='col-6 col-md-4 col-lg-3'>
-                    <ProductBox {...item} />
-                  </div>
-                ))}
-            </div>
+          </div>
+          <div
+            className={'row' + (isFading ? ' ' + styles.fadeout : ' ' + styles.fadein)}
+          >
+            {categoryProducts.slice(activePage * rowSize, (activePage + 1) * rowSize).map(item => (
+              <div key={item.id} className='col-6 col-md-4 col-lg-3'>
+                <ProductBox {...item} image={image} />
+              </div>
+            ))}
           </div>
         </div>
       </Swipeable>
@@ -159,6 +157,7 @@ NewFurniture.propTypes = {
 NewFurniture.defaultProps = {
   categories: [],
   products: [],
+  rowSize: 8,
 };
 
 export default NewFurniture;
