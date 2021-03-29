@@ -6,9 +6,9 @@ import { faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'react-router-dom';
 
-import styles from './Cart.module.scss';
+import styles from './CartWidget.module.scss';
 
-const Cart = ({ count }) => (
+const CartWidget = ({ count }) => (
   <Link to='/cart' className={styles.cart}>
     <div className={styles.cartIcon}>
       <FontAwesomeIcon className={styles.icon} icon={faShoppingBasket} />
@@ -17,8 +17,8 @@ const Cart = ({ count }) => (
   </Link>
 );
 
-Cart.propTypes = {
+CartWidget.propTypes = {
   count: PropTypes.number,
 };
 
-export default Cart;
+export default CartWidget;
