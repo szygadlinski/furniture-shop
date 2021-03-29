@@ -10,7 +10,7 @@ import MainLayout from './components/layout/MainLayout/MainLayoutContainer.js';
 import Homepage from './components/views/Homepage/Homepage';
 import ProductList from './components/views/ProductList/ProductListContainer';
 import ProductPage from './components/views/ProductPage/ProductPage';
-import Cart from './components/views/Cart/Cart';
+import Cart from './components/views/Cart/CartContainer';
 import Blog from './components/views/Blog/Blog';
 
 import Account from './components/views/Account/Account';

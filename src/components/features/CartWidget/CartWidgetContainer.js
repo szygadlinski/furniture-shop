@@ -1,9 +1,9 @@
 import { connect } from 'react-redux';
-import Cart from './Cart';
+import CartWidget from './CartWidget';
 import { getCount } from '../../../redux/cartRedux';
 
 const mapStateToProps = state => ({
   count: getCount(state),
 });
 
-export default connect(mapStateToProps)(Cart);
+export default connect(mapStateToProps)(CartWidget);
