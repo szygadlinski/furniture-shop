@@ -1,0 +1,56 @@
+@import "../../../styles/settings.scss";
+
+.root {
+  padding: 0 $base-padding;
+
+  .title {
+    text-transform: uppercase;
+    border-bottom: 1px solid $pf-background;
+    padding-bottom: $base-padding / 2;
+  }
+
+  .slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 10px;
+    border-radius: 10px;
+    background: $pf-button;
+    outline: none;
+    
+    &:hover {
+      background-color: $pf-hover;
+      cursor: pointer;
+      @extend %hover-animation;
+    }
+  }
+
+  .form {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+
+    .button {
+      text-decoration: none;
+      padding: 1px 5px;
+      color: $pf-white;
+      border: 1px solid $pf-button;
+      background-color: $pf-button;
+      
+      &:hover {
+        background-color: $pf-hover;
+        @extend %hover-animation;
+      }
+    }
+    
+    .input {
+      width: 100px;
+      height: 30px;
+      text-align: center;
+      
+      &:focus {
+        outline: none;
+        border: 1px solid $pf-hover;
+      } 
+    }
+  }
+}

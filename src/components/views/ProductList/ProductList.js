@@ -9,6 +9,7 @@ import Banner from '../../features/Banner/Banner.js';
 import CategoryFilter from '../../features/CategoryFilter/CategoryFilter';
 import ColorFilter from '../../features/ColorFilter/ColorFilter';
 import ProductBox from '../../common/ProductBox/ProductBoxContainer';
+import PriceFilter from '../../features/PriceFilter/PriceFilter';
 import SizeFilter from '../../features/SizeFilter/SizeFilter';
 
 class ProductList extends React.Component {
@@ -96,9 +97,8 @@ class ProductList extends React.Component {
             <div className='col-3'>
               <CategoryFilter />
               <ColorFilter />
-              {/*   filters here   */}
+              <PriceFilter />
               <SizeFilter />
-
             </div>
           </div>
         </div>

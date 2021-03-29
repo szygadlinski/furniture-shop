@@ -16,6 +16,7 @@ $light-6: #a9a9a9;
 $light-7: #e0e3ed;
 $orange: #d58e32;
 $green: #79AE31;
+$orange-light: #dea55c;
 
 //*******COLOURS BY COMPONENT*******//
 //OTHER FILES USABLE!//
@@ -126,6 +127,12 @@ $form-border: $dark-4;
 $form-icon: $orange;
 $form-text: $dark-3;
 $form-select-bcg: $transparent;
+
+//PRICE FILTER
+$pf-background: $dark-5;
+$pf-white: $white;
+$pf-button: $orange;
+$pf-hover: $orange-light;
 
 //STICKY BAR//
 $sticky-bcg: $dark-3;
