@@ -32,7 +32,7 @@
       &:hover, &.active {
         color: $tf-hover;
         border: 1px solid $tf-hover;
-        transition: all 0.5s;
+        transition: $transition;
       }
     }
   }
