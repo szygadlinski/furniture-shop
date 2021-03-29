@@ -55,50 +55,59 @@ const Cart = ({ products }) => {
             </div>
           </div>
         </div>
-        <div className='row'>
-          <div className={`col-md-2 ${styles.noPadding}`}>
-            <div className={styles.miniature}>
-              <div className={styles.iconCircle}>
-                <FontAwesomeIcon icon={faTimes} />
+        {products.map(product => (
+          <div key={product.id} className='row'>
+            <div className={`col-md-2 ${styles.noPadding}`}>
+              <div className={styles.miniature}>
+                <div className={styles.iconCircle}>
+                  <FontAwesomeIcon icon={faTimes} />
+                </div>
+                <div className={styles.productImage}>
+                  <img src={product.image} alt={product.name} />
+                </div>
               </div>
-              <div className={styles.productImage}> </div>
+            </div>
+            <div className={`col-md-4 ${styles.noPadding}`}>
+              <div className={styles.description}>
+                <p>{product.name}</p>
+              </div>
+            </div>
+            <div className={`col-md-1 ${styles.noPadding}`}>
+              <div className={styles.price}>
+                <p>
+                  {product.price.toLocaleString('en-US', {
+                    style: 'currency',
+                    currency: 'USD',
+                  })}
+                </p>
+              </div>
+            </div>
+            <div className={`col-md-3 ${styles.noPadding}`}>
+              <div className={styles.quantity}>
+                <form id='myform'>
+                  <input
+                    type='button'
+                    value='-'
+                    className={styles.qtyminus}
+                    field='quantity'
+                  />
+                  <input type='text' name='quantity' value='1' className={styles.qty} />
+                  <input
+                    type='button'
+                    value='+'
+                    className={styles.qtyplus}
+                    field='quantity'
+                  />
+                </form>
+              </div>
+            </div>
+            <div className={`col-md-2 ${styles.noPadding}`}>
+              <div className={styles.price}>
+                <p>total price</p>
+              </div>
             </div>
           </div>
-          <div className={`col-md-4 ${styles.noPadding}`}>
-            <div className={styles.description}>
-              <p>Lorem ipsum</p>
-            </div>
-          </div>
-          <div className={`col-md-1 ${styles.noPadding}`}>
-            <div className={styles.price}>
-              <p>$5.00</p>
-            </div>
-          </div>
-          <div className={`col-md-3 ${styles.noPadding}`}>
-            <div className={styles.quantity}>
-              <form id='myform'>
-                <input
-                  type='button'
-                  value='-'
-                  className={styles.qtyminus}
-                  field='quantity'
-                />
-                <input type='text' name='quantity' value='1' className={styles.qty} />
-                <input
-                  type='button'
-                  value='+'
-                  className={styles.qtyplus}
-                  field='quantity'
-                />
-              </form>
-            </div>
-          </div>
-          <div className={`col-md-2 ${styles.noPadding}`}>
-            <div className={styles.price}>
-              <p>$5.00</p>
-            </div>
-          </div>
-        </div>
+        ))}
         <div className='row'>
           <div className={`col-md-12 ${styles.noPadding}`}>
             <div className={styles.coupon}>
