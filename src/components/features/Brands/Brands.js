@@ -33,39 +33,8 @@ class Brands extends React.Component {
   render() {
     const { brands } = this.props;
 
-    let activeBrands = [];
-
-    if (window.innerWidth <= 511) {
-      activeBrands = brands.slice(0, 1);
-    } else if (window.innerWidth <= 767) {
-      activeBrands = brands.slice(0, 2);
-    } else if (window.innerWidth <= 991) {
-      activeBrands = brands.slice(0, 3);
-    } else if (window.innerWidth <= 1199) {
-      activeBrands = brands.slice(0, 4);
-    } else {
-      activeBrands = brands.slice(0, 5);
-    }
-
-    const leftAction = () => {
-      if (brands.indexOf(activeBrands[activeBrands.length - 1]) < brands.length - 1) {
-        const newActiveBrands = brands.slice(
-          brands.indexOf(activeBrands[0]) + 1,
-          brands.indexOf(activeBrands[activeBrands.length - 1]) + 1
-        );
-        this.setState({ activeBrands: newActiveBrands });
-      }
-    };
-
-    const rightAction = () => {
-      if (brands.indexOf(activeBrands[0]) > 0) {
-        const newActiveBrands = brands.slice(
-          brands.indexOf(activeBrands[0]) - 1,
-          brands.indexOf(activeBrands[activeBrands.length - 1]) - 1
-        );
-        this.setState({ activeBrands: newActiveBrands });
-      }
-    };
+    const leftAction = () => this.moveLeft(this.state.margin);
+    const rightAction = () => this.moveRight(this.state.margin);
 
     return (
       <Swipeable leftAction={leftAction} rightAction={rightAction}>
@@ -74,7 +43,10 @@ class Brands extends React.Component {
             <div className={'row align-items-center ' + styles.brandsBar}>
               <Button
                 className={styles.button}
-                onClick={event => `${this.moveRight(this.state.margin)} ${event.preventDefault()}`}>
+                onClick={event =>
+                  `${this.moveRight(this.state.margin)} ${event.preventDefault()}`
+                }
+              >
                 <span className={styles.sign}>&lt;</span>
               </Button>
               <div className={styles.brandsPrimary}>
@@ -84,7 +56,10 @@ class Brands extends React.Component {
                 >
                   {brands.map(brand => {
                     return (
-                      <div className={styles.brand} key={brand.id.replace('brand-', '')}>
+                      <div
+                        className={styles.brand}
+                        key={brand.id.replace('brand-', '')}
+                      >
                         <img src={brand.image} alt={brand.id} />
                       </div>
                     );
@@ -93,7 +68,10 @@ class Brands extends React.Component {
               </div>
               <Button
                 className={styles.button}
-                onClick={event => `${this.moveLeft(this.state.margin)} ${event.preventDefault()}`}>
+                onClick={event =>
+                  `${this.moveLeft(this.state.margin)} ${event.preventDefault()}`
+                }
+              >
                 <span className={styles.sign}>&gt;</span>
               </Button>
             </div>
