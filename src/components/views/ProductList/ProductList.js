@@ -8,6 +8,7 @@ import styles from './ProductList.module.scss';
 import Banner from '../../features/Banner/Banner.js';
 import CategoryFilter from '../../features/CategoryFilter/CategoryFilter';
 import ProductBox from '../../common/ProductBox/ProductBoxContainer';
+import PriceFilter from '../../features/PriceFilter/PriceFilter';
 
 class ProductList extends React.Component {
   static propTypes = {
@@ -94,7 +95,7 @@ class ProductList extends React.Component {
             <div className='col-3'>
               <CategoryFilter />
               {/*   filters here   */}
-
+              <PriceFilter />
             </div>
           </div>
         </div>
