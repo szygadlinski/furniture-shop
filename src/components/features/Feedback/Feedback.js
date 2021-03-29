@@ -13,17 +13,9 @@ class Feedback extends React.Component {
     isFading: false,
   };
 
-  changeActivePage = (activePage, change) => {
-    if (change === 1) {
-      return this.setState({
-        activePage: activePage + 1,
-      });
-    } else if (change === -1) {
-      return this.setState({
-        activePage: activePage - 1,
-      });
-    }
-  };
+  changeActivePage(newPage) {
+    this.setState({ activePage: newPage });
+  }
 
   handlePageChange(newPage) {
     this.setState({ isFading: true });
@@ -68,19 +60,8 @@ class Feedback extends React.Component {
             </div>
           </div>
           <Swipeable
-            activePage={this.state.activePage}
-            changeActivePage={(currentPage, change) => {
-              if (change === 1) {
-                return this.setState({
-                  activePage:
-                    currentPage === dots.length - 1 ? currentPage : currentPage + 1,
-                });
-              } else if (change === -1) {
-                return this.setState({
-                  activePage: currentPage === 0 ? currentPage : currentPage - 1,
-                });
-              }
-            }}
+            leftAction={() => this.changeActivePage(activePage - 1)}
+            rightAction={() => this.changeActivePage(activePage + 1)}
           >
             <div
               className={
