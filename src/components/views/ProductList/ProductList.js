@@ -9,6 +9,7 @@ import Banner from '../../features/Banner/Banner.js';
 import CategoryFilter from '../../features/CategoryFilter/CategoryFilter';
 import ColorFilter from '../../features/ColorFilter/ColorFilter';
 import ProductBox from '../../common/ProductBox/ProductBoxContainer';
+import SizeFilter from '../../features/SizeFilter/SizeFilter';
 
 class ProductList extends React.Component {
   static propTypes = {
@@ -96,6 +97,7 @@ class ProductList extends React.Component {
               <CategoryFilter />
               <ColorFilter />
               {/*   filters here   */}
+              <SizeFilter />
 
             </div>
           </div>
