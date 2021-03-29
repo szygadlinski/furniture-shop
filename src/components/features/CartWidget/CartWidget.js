@@ -4,22 +4,21 @@ import PropTypes from 'prop-types';
 
 import { faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// eslint-disable-next-line no-unused-vars
-import Button from '../../common/Button/Button';
+import { Link } from 'react-router-dom';
 
-import styles from './Cart.module.scss';
+import styles from './CartWidget.module.scss';
 
-const Cart = ({ count }) => (
-  <a className={styles.cart}>
+const CartWidget = ({ count }) => (
+  <Link to='/cart' className={styles.cart}>
     <div className={styles.cartIcon}>
       <FontAwesomeIcon className={styles.icon} icon={faShoppingBasket} />
     </div>
     <div className={styles.cartCounter}>{count}</div>
-  </a>
+  </Link>
 );
 
-Cart.propTypes = {
+CartWidget.propTypes = {
   count: PropTypes.number,
 };
 
-export default Cart;
+export default CartWidget;

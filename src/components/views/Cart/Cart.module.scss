@@ -38,10 +38,8 @@
     }
   }
 
-  .columnFlexparent {
+  .tableHeader {
     margin-top: 50px;
-    display: flex;
-    flex-direction: column;
   }
 
   .columnBanner {
@@ -87,7 +85,13 @@
     .productImage {
       height: 70px;
       width: 70px;
-      background-color: $background-banner;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+
+      img {
+        height: 100%;
+      }
     }
   }
 

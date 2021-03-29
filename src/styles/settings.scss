@@ -149,9 +149,10 @@ $slider-btn-hover: $orange;
 $promo-button: $green;
 
 //GALLERY PRODUCT
+$button-bcg: $white;
 $label-bcg: $white;
 $label-corner: $dark-5;
-$label-shadow: $light-5;
+$label-shadow: $dark-1;
 $price-color: $white;
 $price-bcg: $dark-1;
 
@@ -160,6 +161,11 @@ $cart-bcg: $orange;
 $cart-hover: $dark-3;
 $cart-text: $white;
 $cc-counter: $light-7;
+
+//SIZE FILTER
+$sf-background: $dark-5;
+$sf-white: $white;
+$sf-hover: $orange;
 
 //*****LAYOUT*****//
 //FOOTER

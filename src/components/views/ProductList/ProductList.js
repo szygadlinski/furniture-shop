@@ -7,8 +7,10 @@ import { faThList } from '@fortawesome/free-solid-svg-icons';
 import styles from './ProductList.module.scss';
 import Banner from '../../features/Banner/Banner.js';
 import CategoryFilter from '../../features/CategoryFilter/CategoryFilter';
+import ColorFilter from '../../features/ColorFilter/ColorFilter';
 import ProductBox from '../../common/ProductBox/ProductBoxContainer';
 import PriceFilter from '../../features/PriceFilter/PriceFilter';
+import SizeFilter from '../../features/SizeFilter/SizeFilter';
 
 class ProductList extends React.Component {
   static propTypes = {
@@ -94,8 +96,9 @@ class ProductList extends React.Component {
             </div>
             <div className='col-3'>
               <CategoryFilter />
-              {/*   filters here   */}
+              <ColorFilter />
               <PriceFilter />
+              <SizeFilter />
             </div>
           </div>
         </div>

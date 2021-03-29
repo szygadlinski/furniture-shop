@@ -5,7 +5,7 @@ import styles from './CompanyClaim.module.scss';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMobileAlt } from '@fortawesome/free-solid-svg-icons';
-import Cart from '../../features/Cart/CartContainer';
+import CartWidget from '../../features/CartWidget/CartWidgetContainer';
 
 const CompanyClaim = () => (
   <div className={styles.root}>
@@ -23,9 +23,7 @@ const CompanyClaim = () => (
           </a>
         </div>
         <div className={`col text-right ${styles.cart}`}>
-          <a href='/cart'>
-            <Cart />
-          </a>
+          <CartWidget />
         </div>
       </div>
     </div>
