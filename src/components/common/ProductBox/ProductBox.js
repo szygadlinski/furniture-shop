@@ -7,6 +7,8 @@ import { faExchangeAlt, faShoppingBasket } from '@fortawesome/free-solid-svg-ico
 import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../Button/Button';
 import Rating from '../Rating/Rating';
+import ProductPopup from '../../features/ProductPopup/ProductPopup';
+import { Link } from 'react-router-dom';
 
 const ProductBox = ({
   name,
@@ -43,6 +45,18 @@ const ProductBox = ({
     addToCart({ id, name, price, image });
   };
 
+  const closeModal = event => {
+    event.preventDefault();
+    event.target.parentNode.classList.remove('ProductBox_show__1vQfK');
+    console.log(event.target.parentNode);
+  };
+
+  const openModal = event => {
+    event.preventDefault();
+    const element = document.getElementById('overlay');
+    element.classList.add(`${styles.show}`);
+  };
+
   return (
     <div className={styles.root}>
       <div className={styles.photo}>
@@ -50,7 +64,7 @@ const ProductBox = ({
         <div className={styles.image}>
           <img src={image} alt='' />
           <div className={styles.buttons}>
-            <Button className={styles.button} variant='small'>
+            <Button className={styles.button} variant='small' onClick={openModal}>
               Quick View
             </Button>
             <Button className={styles.button} variant='small' onClick={addCartHandler}>
@@ -91,6 +105,11 @@ const ProductBox = ({
             $ {price}
           </Button>
         </div>
+      </div>
+
+      <div className={styles.overlay} id='overlay'>
+        <Button className={styles.popupButton} onClick={closeModal} />
+        <ProductPopup />
       </div>
     </div>
   );
