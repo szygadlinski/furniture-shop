@@ -211,3 +211,13 @@
   .slider .slideList .slideListInner .slide {
   }
 }
+
+@media (max-width: 768px) {
+  .promo {
+    display: none;
+  }
+
+  .galleryResp {
+    width: 100%;
+  }
+}
