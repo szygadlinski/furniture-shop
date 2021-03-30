@@ -1,5 +1,5 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+//import PropTypes from 'prop-types';
 import styles from './ProductPage.module.scss';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import Button from '../../common/Button/Button';
@@ -22,6 +22,7 @@ import {
   faPinterestP,
   faLinkedin,
 } from '@fortawesome/free-brands-svg-icons';
+import NewFurniture from '../../features/NewFurniture/NewFurnitureContainer';
 
 const ProductPage = () => (
   <div className={styles.root}>
@@ -240,10 +241,17 @@ const ProductPage = () => (
         </Row>
       </div>
     </Grid>
+
+    <div className='container'>
+      <div className={'row ' + styles.rowrow}>
+        <NewFurniture rowSize={4} />
+      </div>
+    </div>
   </div>
 );
 
 
 // ProductPage.propTypes = {};
+
 
 export default ProductPage;

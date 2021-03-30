@@ -4,6 +4,7 @@ import Gallery from './Gallery';
 
 describe('Gallery', () => {
   it('renders without crashing', () => {
-    shallow(<Gallery />);
+    const mockProps = { featured: [], topSeller: [], sale: [], topRated: [] };
+    shallow(<Gallery {...mockProps} />);
   });
 });

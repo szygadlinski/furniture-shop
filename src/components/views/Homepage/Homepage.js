@@ -9,7 +9,7 @@ import Feedback from '../../features/Feedback/FeedbackContainer';
 import Brands from '../../features/Brands/BrandsContainer';
 import Promoted from '../../features/Promoted/Promoted';
 import ChatBox from '../../features/ChatBox/ChatBox';
-import Gallery from '../../features/Gallery/Gallery';
+import Gallery from '../../features/Gallery/GalleryContainer';
 
 const Homepage = () => (
   <div className={styles.root}>
