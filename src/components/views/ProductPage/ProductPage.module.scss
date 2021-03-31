@@ -1,5 +1,8 @@
 @import "../../../styles/settings.scss";
 
+.row {
+  margin-left: 0;
+}
 .root {
   padding: $base-padding 0;
 
@@ -12,4 +15,253 @@
     //overflow: hidden;
     margin-bottom: 10px;
   }
+}
+.productBox{
+  background-color: #ffffff;
+  border: 1px solid rgb(169, 169, 169);
+  padding: 25px;
+
+  .photoWrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .activeImage {
+    color: $white;
+    font-size: 30px;
+    @include center()
+  }
+
+  .miniSliderWrapper {
+    margin-top: 20px;
+
+    .miniSlider{
+      display: flex;
+      height: 80px;
+      justify-content: space-between;
+
+      & > div {
+        text-align: center;
+      }
+
+      .button {
+        margin: 5px;
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+
+  p {
+    font-size: 0.75rem;
+    margin-bottom: 0;
+    line-height: 1.75;
+  }
+
+  h5 {
+    font-weight: bold;
+  }
+
+  .productDetailsSection {
+    padding: 12px 0;
+    border-bottom: 1px solid rgb(169, 169, 169);
+
+    .headerRow {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      margin-left: 10px;
+
+      .button:first-child {
+        margin-right: 10px;
+      }
+    }
+
+    .priceWrapper {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      margin-left: 10px;
+    }
+  }
+
+  .section:last-of-type {
+    border-bottom: none;
+  }
+
+  .mainPhoto {
+    width: 100%;
+    height: 335px;
+    background: {
+      size: contain;
+      position: center;
+      repeat: no-repeat;
+    }
+  }
+
+  .miniPhoto {
+    .photo{
+      width: 80%;
+      height: 100%;
+      background: {
+        size: contain;
+        position: center;
+        repeat: no-repeat;
+      }
+    }
+  }
+
+  .photoActive {
+    transition: all 0.2s;
+    border: 3px solid #d79641;
+  }
+
+  .olderPrice {
+    text-decoration: line-through #e1e1e1;
+    text-align: center;
+    font-size: 22px;;
+    color: #e1e1e1;
+    margin-bottom: 0;
+    margin-right: 10px;
+  }
+
+  .newestPrice {
+    font-size: 22px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: black;
+    margin-bottom: 0;
+    padding: 0 10px;
+  }
+  .buttons {
+    padding: 12px 0;
+  }
+
+  .quantity {
+    p{
+      display: inline;
+      margin-right: 30px;
+    }
+
+    input {
+      padding: 5px 10px;
+      font-size: 13px;
+      line-height: 22px;
+      border: 1px solid #434343;
+      width: 66px;
+      text-align: center;
+      margin-right: 10px;
+    }
+
+    a {
+      margin-right: 10px;
+    }
+  }
+
+  .review {
+    margin-left: 10px;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+
+    .iconStar {
+      font-size: 12px;
+    }
+
+    .reviewButton {
+      font-size: 12px;
+      margin-bottom: 2px;
+      padding-top: 3px;
+      padding-bottom: 3px;
+    }
+
+    p {
+      display: inline;
+      margin-left: 10px;
+      margin-top: 3px;
+      color: #434343;
+    }
+    p:first-of-type {
+      padding-right: 20px;
+    }
+  }
+
+  .buttonsWrapper {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+
+    .buttons {
+      .oneButton {
+        margin-right: 7px;
+      }
+      .oneButton:first-of-type {
+        text-transform: uppercase;
+        font-size: 11px;
+        font-weight: bold;
+
+        .icon {
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+
+  .detailsContent {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+
+    h5 {
+      font-size: 15px;
+    }
+    p {
+      color: #434343;
+    }
+  }
+
+  .details {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+
+    .availability {
+      display: flex;
+      flex-direction: row;
+      align-content: center;
+
+      h6 {
+        margin-right: 15px;
+        font-size: 13px;
+      }
+    }
+    .category {
+      display: flex;
+      flex-direction: row;
+      align-content: center;
+
+      h6 {
+        margin-right: 15px;
+        font-size: 13px;
+      }
+    }
+  }
+
+  .social {
+    margin-left: 10px;
+
+    a {
+      text-decoration: none;
+    }
+    .media {
+      width: 100px;
+      margin: 3px;
+
+      .socialIcon {
+        margin-right: 5px;
+      }
+    }
+  }
+
 }
