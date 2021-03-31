@@ -1,0 +1,151 @@
+@import "../../../styles/settings.scss";
+
+.root {
+  padding: $base-padding 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .containerWrapper {
+    margin: 0 auto;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 50%;
+    box-shadow: 5px 10px 25px $bd-register;
+    margin-top: 35px;
+    margin-bottom: 35px;
+
+    .radioForm {
+      display: flex;
+      justify-content: space-around;
+      width: 80%;
+      margin-top: 25px;
+      margin-right: 35px;
+      .radioBox{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        label {
+          display: flex;
+          flex-direction: row;
+          margin-right: 15px;
+        }
+
+      .radio {
+        display: block;
+        margin-right: 7px;
+        cursor: pointer;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: $bck-register;
+      }
+
+      }
+    }
+
+    .titleWrapper {
+      display: flex;
+      justify-content: flex-start;
+      margin: 45px 0 5px 10px;
+      width: 100%;
+      padding: 0 30px;
+    }
+
+
+    .registerWrapper {
+      display: flex;
+      flex-direction: column;
+      width: 90%;
+      margin-left: 15px;
+
+      input {
+        width: 90%;
+        height: 42px;
+        margin-bottom: 15px;
+        border: 1px solid $bd-register;
+        padding-left: 10px;
+      }
+      .passwordInput {
+        display: flex;
+        position: relative;
+
+
+        .icon {
+          position: absolute;
+          top: 21%;
+          right: 14%;
+        }
+        .icon:hover {
+          cursor: pointer;
+          color: $bd-register;
+        }
+      }
+    }
+
+    .checkboxWrapper {
+      display: flex;
+      flex-direction: column;
+      margin: 25px 0;
+      width: 90%;
+      padding-left: 10px;
+
+      .conditions {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 15px;
+
+        input {
+          height: 19px;
+          width: 19px;
+          margin-right: 10px;
+        }
+
+        h6 {
+          font-size: 13px;
+          color: $bck-register;
+        }
+        .checkAll {
+          font-weight: bold;
+        }
+      }
+    }
+
+    .buttonsWrapper {
+      display: flex;
+      justify-content: space-between;
+      width: 80%;
+      margin-right: 30px;
+      margin-bottom: 25px;
+    }
+
+    .btn1 {
+      border: none;
+      color: $btn-register;
+      font-size: 15px;
+      padding-top: 15px;
+      padding-left: 0;
+    }
+    .btn1:hover {
+      background-color: $white-register;
+    }
+
+    .btn2 {
+      margin-left: 25px;
+      padding: 15px;
+      color: $white-register;
+      background-color: $btn-register;
+      border: none;
+      font-size: 17px;
+      text-decoration: none;
+    }
+    .btn2:hover {
+      background-color: $bck-register;
+    }
+  }
+}
