@@ -2,27 +2,28 @@
 
 .root {
   margin: auto;
-  background-color: #ffffff;
+  background-color: $light-1;
   position: relative;
   padding: 30px;
-  height: 500px;
-  width: 700px;
+  height: 400px;
+  width: 500px;
   text-align: center;
+  border-radius: 5%;
+
+  .box {
+    display: flex;
+    height: 100%;
+  }
+
+  img {
+    object-fit: cover;
+    width: 50%;
+    border-radius: 5%;
+  }
 
   h2 {
-    display: inline-block;
-    margin: 0;
-  }
-  .button {
-    margin-left: 30px;
-    margin-bottom: 20px;
-    padding: 10px;
-    align-items: center;
-    border-radius: 20%;
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 5px 10px;
+    margin-bottom: 10px;
+    font-weight: bold;
   }
 
   .details {
@@ -30,20 +31,19 @@
     width: 50%;
     display: flex;
     flex-direction: column;
+    margin-left: 10px;
   }
-  .box {
-    display: flex;
-  }
-
-  img {
-    object-fit: cover;
-    height: 100%;
-    width: 50%;
-  }
-
   .boxColumn {
-    width: 50%;
     height: 25%;
+    border-bottom: 1px solid $light-2;
+    border-top: 1px solid $light-2;
+    h4 {
+      font-weight: bold;
+      margin-top: 3px;
+    }
+    h5 {
+      font-size: 17px;
+    }
   }
 
 }

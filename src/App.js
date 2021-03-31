@@ -17,7 +17,6 @@ import Register from './components/views/Register/Register';
 import Account from './components/views/Account/Account';
 import Info from './components/views/Info/Info';
 import Orders from './components/views/Orders/Orders';
-import ProductPopup from './components/features/ProductPopup/ProductPopup';
 
 const App = () => (
   <Provider store={store}>
@@ -26,7 +25,6 @@ const App = () => (
         <Switch>
           <Route exact path={'/'} component={Homepage} />
           <Route exact path={'/cart'} component={Cart} />
-          <Route exact path={'/popup'} component={ProductPopup} />
           <Route exact path={'/shop/:categoryId'} component={ProductList} />
           <Route exact path={'/product/:productId'} component={ProductPage} />
           <Route exact path={'/blog'} component={Blog} />

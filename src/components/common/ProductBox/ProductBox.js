@@ -8,7 +8,7 @@ import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../Button/Button';
 import Rating from '../Rating/Rating';
 import ProductPopup from '../../features/ProductPopup/ProductPopup';
-import { Link } from 'react-router-dom';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
 const ProductBox = ({
   name,
@@ -47,14 +47,12 @@ const ProductBox = ({
 
   const closeModal = event => {
     event.preventDefault();
-    event.target.parentNode.classList.remove('ProductBox_show__1vQfK');
-    console.log(event.target.parentNode);
+    event.target.parentNode.classList.remove(`${styles.show}`);
   };
 
   const openModal = event => {
     event.preventDefault();
-    const element = document.getElementById('overlay');
-    element.classList.add(`${styles.show}`);
+    document.getElementById('overlay').classList.add(`${styles.show}`);
   };
 
   return (
@@ -108,7 +106,10 @@ const ProductBox = ({
       </div>
 
       <div className={styles.overlay} id='overlay'>
-        <Button className={styles.popupButton} onClick={closeModal} />
+        <Button className={styles.popupButton} onClick={closeModal}>
+          {' '}
+          Close{' '}
+        </Button>
         <ProductPopup />
       </div>
     </div>
