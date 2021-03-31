@@ -6,7 +6,6 @@ import { faThLarge } from '@fortawesome/free-solid-svg-icons';
 import { faThList } from '@fortawesome/free-solid-svg-icons';
 import styles from './ProductList.module.scss';
 import Banner from '../../features/Banner/Banner.js';
-import ProductBox from '../../common/ProductBox/ProductBoxContainer';
 import CategoryFilter from '../../features/CategoryFilter/CategoryFilter';
 import ColorFilter from '../../features/ColorFilter/ColorFilter';
 import PriceFilter from '../../features/PriceFilter/PriceFilter';
