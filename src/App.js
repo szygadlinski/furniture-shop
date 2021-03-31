@@ -13,6 +13,7 @@ import ProductPage from './components/views/ProductPage/ProductPage';
 import Cart from './components/views/Cart/CartContainer';
 import Blog from './components/views/Blog/Blog';
 import Register from './components/views/Register/Register';
+import Login from './components/views/Login/Login';
 
 import Account from './components/views/Account/Account';
 import Info from './components/views/Info/Info';
@@ -32,6 +33,7 @@ const App = () => (
           <Route exact path={'/info/:pageId'} component={Info} />
           <Route exact path={'/orders/:pageId'} component={Orders} />
           <Route exact path={'/register'} component={Register} />
+          <Route exact path={'/login'} component={Login} />
         </Switch>
       </MainLayout>
     </BrowserRouter>
