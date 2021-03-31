@@ -1,0 +1,104 @@
+@import '../../../styles/settings.scss';
+
+.root {
+  padding: 0 $base-padding;
+
+  .title {
+    text-transform: uppercase;
+    border-bottom: 1px solid $sf-background;
+    padding-bottom: $base-padding / 2;
+  }
+
+  .sizeOptions {
+    padding: $base-padding 0;
+
+    .sizeOption {
+      display: flex;
+      align-items: center;
+      position: relative;
+      padding: ($base-padding / 3) 0;
+      cursor: pointer;
+
+      input[type='checkbox'] {
+        display: none;
+      }
+
+      label {
+        display: inline-flex;
+        align-items: center;
+        width: 100%;
+        margin: 0;
+        font-weight: 600;
+        cursor: pointer;
+
+        span {
+          position: relative;
+          width: 14px;
+          height: 14px;
+          border: 1px solid $sf-background;
+          border-radius: 3px;
+          margin: 0 ($base-padding / 2) 0 0;
+        }
+
+        p {
+          position: absolute;
+          right: 0;
+          width: 30px;
+          height: 30px;
+          line-height: 30px;
+          margin: 0;
+          text-align: center;
+          color: $sf-white;
+          background: $sf-background;
+          border-radius: 50%;
+        }
+      }
+
+      input[type='checkbox']:checked ~ label {
+        color: $sf-hover;
+        margin-left: $base-padding / 2;
+
+        span:before {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          font-family: 'FontAwesome';
+          content: '\f00c';
+          color: $sf-white;
+          font-weight: 100;
+          font-size: 12px;
+          background: $sf-hover;
+          border-radius: 3px;
+          text-align: center;
+          width: 15px;
+          height: 15px;
+          line-height: 15px;
+        }
+
+        p {
+          background: $sf-hover;
+          transform: scale(1.1);
+        }
+      }
+
+      &:hover {
+        label {
+          color: $sf-hover;
+          margin-left: $base-padding / 2;
+          transition: all 0.25s;
+
+          span {
+            border: 1px solid $sf-hover;
+          }
+
+          p {
+            background: $sf-hover;
+            transform: scale(1.1);
+            transition: all 0.25s;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,11 +1,19 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+//import PropTypes from 'prop-types';
 import styles from './ProductPage.module.scss';
+import NewFurniture from '../../features/NewFurniture/NewFurnitureContainer';
+//import { checkPropTypes } from 'prop-types';
 
-//import NewFurniture from '../../features/NewFurniture/NewFurnitureContainer';
+const ProductPage = () => (
+  <div className={styles.root}>
+    <div className='container'>
+      <div className={'row ' + styles.rowrow}>
+        <NewFurniture rowSize={4} />
+      </div>
+    </div>
+  </div>
+);
 
-const ProductPage = () => <div className={styles.root}>This is ProductPage</div>;
-
-// ProductPage.propTypes = {};
+//ProductPage.propTypes = {};
 
 export default ProductPage;

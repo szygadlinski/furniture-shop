@@ -1,6 +1,12 @@
 /* selectors */
 export const getAll = ({ products }) => products;
 export const getCount = ({ products }) => products.length;
+export const getProductForPrice = ({ products }, min, max) =>
+  products.filter(product => product.price <= max && product.price >= min);
+export const getOnSale = ({ products }) =>
+  products.filter(product => product.promo === 'sale');
+export const getMinRate = ({ products }, minRate) =>
+  products.filter(product => product.stars >= minRate);
 
 export const getNew = ({ products }) =>
   products.filter(item => item.newFurniture === true);

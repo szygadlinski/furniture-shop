@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './Brands.module.scss';
 import Button from '../../common/Button/Button';
+import Swipeable from '../../common/Swipeable/Swipeable';
 
 class Brands extends React.Component {
   state = {
@@ -32,37 +33,51 @@ class Brands extends React.Component {
   render() {
     const { brands } = this.props;
 
+    const leftAction = () => this.moveLeft(this.state.margin);
+    const rightAction = () => this.moveRight(this.state.margin);
+
     return (
-      <div className={styles.root}>
-        <div className='container'>
-          <div className={'row align-items-center ' + styles.brandsBar}>
-            <Button
-              className={styles.button}
-              onClick={event => `${this.moveRight(this.state.margin)} ${event.preventDefault()}`}>
-              <span className={styles.sign}>&lt;</span>
-            </Button>
-            <div className={styles.brandsPrimary}>
-              <div
-                className={styles.brandsSecondary}
-                style={{ marginLeft: this.state.margin }}
+      <Swipeable leftAction={leftAction} rightAction={rightAction}>
+        <div className={styles.root}>
+          <div className='container'>
+            <div className={'row align-items-center ' + styles.brandsBar}>
+              <Button
+                className={styles.button}
+                onClick={event =>
+                  `${this.moveRight(this.state.margin)} ${event.preventDefault()}`
+                }
               >
-                {brands.map(brand => {
-                  return (
-                    <div className={styles.brand} key={brand.id.replace('brand-', '')}>
-                      <img src={brand.image} alt={brand.id} />
-                    </div>
-                  );
-                })}
+                <span className={styles.sign}>&lt;</span>
+              </Button>
+              <div className={styles.brandsPrimary}>
+                <div
+                  className={styles.brandsSecondary}
+                  style={{ marginLeft: this.state.margin }}
+                >
+                  {brands.map(brand => {
+                    return (
+                      <div
+                        className={styles.brand}
+                        key={brand.id.replace('brand-', '')}
+                      >
+                        <img src={brand.image} alt={brand.id} />
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
+              <Button
+                className={styles.button}
+                onClick={event =>
+                  `${this.moveLeft(this.state.margin)} ${event.preventDefault()}`
+                }
+              >
+                <span className={styles.sign}>&gt;</span>
+              </Button>
             </div>
-            <Button
-              className={styles.button}
-              onClick={event => `${this.moveLeft(this.state.margin)} ${event.preventDefault()}`}>
-              <span className={styles.sign}>&gt;</span>
-            </Button>
           </div>
         </div>
-      </div>
+      </Swipeable>
     );
   }
 }
