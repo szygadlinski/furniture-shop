@@ -3,7 +3,11 @@ import PropTypes from 'prop-types';
 
 import styles from './GridProduct.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faExchangeAlt, faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
+import {
+  faExchangeAlt,
+  faShoppingBasket,
+  faEye,
+} from '@fortawesome/free-solid-svg-icons';
 import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../../Button/Button';
 import Rating from '../../Rating/Rating';
@@ -27,20 +31,47 @@ const GridProduct = ({
   openModal,
   closeModal,
   category,
+  variant,
+  className: propClassName,
 }) => {
+  const classes = [styles.root];
+  if (propClassName) classes.push(propClassName);
+
   return (
-    <div className={styles.root}>
+    <div className={classes.join(' ')}>
       <div className={styles.photo}>
-        {promo && <div className={styles.sale}>{promo}</div>}
+        {promo && variant !== 'promoted' && <div className={styles.sale}>{promo}</div>}
         <div className={styles.image}>
           <img src={image} alt='' />
           <div className={styles.buttons}>
-            <Button className={styles.button} variant='small' onClick={openModal}>
-              Quick View
-            </Button>
+            {variant !== 'promoted' && (
+              <Button className={styles.button} variant='small' onClick={openModal}>
+                Quick View
+              </Button>
+            )}
             <Button className={styles.button} variant='small' onClick={addCartHandler}>
               <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO CART
             </Button>
+            {variant === 'promoted' && (
+              <div className={styles.counter}>
+                <div className={styles.bigDot}>
+                  <h1>25</h1>
+                  <h1>DAYS</h1>
+                </div>
+                <div className={styles.bigDot}>
+                  <h1>10</h1>
+                  <h1>HRS</h1>
+                </div>
+                <div className={styles.bigDot}>
+                  <h1>45</h1>
+                  <h1>MIN</h1>
+                </div>
+                <div className={styles.bigDot}>
+                  <h1>30</h1>
+                  <h1>SECS</h1>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>
@@ -65,6 +96,11 @@ const GridProduct = ({
           >
             <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
           </Button>
+          {variant === 'promoted' && (
+            <Button variant='outline' onClick={openModal}>
+              <FontAwesomeIcon icon={faEye}>Quick view</FontAwesomeIcon>
+            </Button>
+          )}
         </div>
         <div className={styles.price}>
           {oldPrice && (
@@ -117,6 +153,8 @@ GridProduct.propTypes = {
   openModal: PropTypes.func,
   closeModal: PropTypes.func,
   category: PropTypes.string,
+  variant: PropTypes.string,
+  className: PropTypes.string,
 };
 
 export default GridProduct;

@@ -1,18 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styles from './Promoted.module.scss';
-import initialState from '../../../redux/initialState';
 import Button from '../../common/Button/Button';
+import ProductBox from '../../common/ProductBox/ProductBoxContainer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faExchangeAlt,
-  faEye,
-  faArrowLeft,
-  faArrowRight,
-  faShoppingBasket,
-} from '@fortawesome/free-solid-svg-icons';
-import { faHeart } from '@fortawesome/free-regular-svg-icons';
+import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
-const Promoted = () => {
+const Promoted = ({ products }) => {
   return (
     <div className={styles.root}>
       <div className='container'>
@@ -27,68 +21,11 @@ const Promoted = () => {
                   <div className={styles.dot}></div>
                 </div>
               </div>
-              <div className={styles.deal}>
-                <div className={styles.picture}>
-                  <img src={initialState.promotion.picture} alt='furniture' />
-                  <div className={styles.addToCart}>
-                    <Button variant='small' className={styles.addToCartButton}>
-                      <FontAwesomeIcon icon={faShoppingBasket} /> ADD TO CART
-                    </Button>
-                  </div>
-                  <div className={styles.counter}>
-                    <div className={styles.bigDot}>
-                      <h1>25</h1>
-                      <h1>DAYS</h1>
-                    </div>
-                    <div className={styles.bigDot}>
-                      <h1>10</h1>
-                      <h1>HRS</h1>
-                    </div>
-                    <div className={styles.bigDot}>
-                      <h1>45</h1>
-                      <h1>MIN</h1>
-                    </div>
-                    <div className={styles.bigDot}>
-                      <h1>30</h1>
-                      <h1>SECS</h1>
-                    </div>
-                  </div>
-                </div>
-                <div className={styles.offert}>
-                  <h5>Lorem Ipsum</h5>
-                  <div className={styles.rating}>
-                    <span>☆</span>
-                    <span>☆</span>
-                    <span>☆</span>
-                    <span>☆</span>
-                    <span>☆</span>
-                  </div>
-                  <div className={styles.line}></div>
-                  <div className={styles.actions}>
-                    <div className={styles.options}>
-                      <Button variant='outline'>
-                        <FontAwesomeIcon icon={faEye} />
-                      </Button>
-                      <Button variant='outline'>
-                        <FontAwesomeIcon icon={faHeart} />
-                      </Button>
-                      <Button variant='outline'>
-                        <FontAwesomeIcon icon={faExchangeAlt} />
-                      </Button>
-                    </div>
-                    <div className={styles.price}>
-                      {358 && (
-                        <Button className={styles.old_price} noHover variant='small'>
-                          $ 358.00
-                        </Button>
-                      )}
-                      <Button noHover variant='small'>
-                        $ 300
-                      </Button>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <ProductBox
+                className={styles.product}
+                variant='promoted'
+                {...products[0]}
+              />
             </div>
           </div>
           <div className='col-md-8'>
@@ -111,6 +48,10 @@ const Promoted = () => {
       </div>
     </div>
   );
+};
+
+Promoted.propTypes = {
+  products: PropTypes.arrayOf(PropTypes.object),
 };
 
 export default Promoted;

@@ -57,6 +57,7 @@ const ProductBox = ({
     default:
       return (
         <GridProduct
+          variant={variant}
           {...otherProps}
           comparisonHandler={comparisonHandler}
           faveHandler={faveHandler}
