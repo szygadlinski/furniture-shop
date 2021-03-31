@@ -49,6 +49,148 @@
   }
 }
 
+.outlineYellow {
+  @extend %hover-animation;
+  display: inline-block;
+  padding: 5px 10px;
+  border: 1px solid #2a2a2a;
+  background-color: #ffffff;
+  color: #2a2a2a;
+  font-size: 13px;
+  line-height: 22px;
+  transition: all 0.5s;
+
+  &:not(.noHover):hover {
+    background-color: #d79641;
+    color: #ffffff;
+    border: 1px solid #d79641;
+  }
+}
+
+.outlineFacebook {
+  @extend %hover-animation;
+  display: inline-block;
+  padding: 5px 7px;
+  border: 1.5px solid #2a2a2a;
+  background-color: #ffffff;
+  color: black;
+  font-size: 11px;
+  line-height: 20px;
+  transition: all 0.5s;
+
+  *:first-child {
+    color: rgb(59, 89, 152);
+  }
+
+  &:not(.noHover):hover {
+    background-color: rgb(59, 89, 152);
+    color: #ffffff;
+    border: 1px solid rgb(59, 89, 152);
+    * {
+      color: #ffffff;
+    }
+  }
+}
+
+.outlineGoogle {
+  @extend %hover-animation;
+  display: inline-block;
+  padding: 5px 7px;
+  border: 1.5px solid #2a2a2a;
+  background-color: #ffffff;
+  color: black;
+  font-size: 11px;
+  line-height: 20px;
+  transition: all 0.5s;
+
+  *:first-child {
+    color: rgb(218, 68, 55);
+  }
+
+  &:not(.noHover):hover {
+    background-color: rgb(218, 68, 55);
+    color: #ffffff;
+    border: 1px solid rgb(218, 68, 55);
+    * {
+      color: #ffffff;
+    }
+  }
+}
+
+.outlineTwitter {
+  @extend %hover-animation;
+  display: inline-block;
+  padding: 5px 7px;
+  border: 1.5px solid #2a2a2a;
+  background-color: #ffffff;
+  color: black;
+  font-size: 11px;
+  line-height: 20px;
+  transition: all 0.5s;
+
+  *:first-child {
+    color: rgb(64, 153, 255);
+  }
+
+  &:not(.noHover):hover {
+    background-color: rgb(64, 153, 255);
+    color: #ffffff;
+    border: 1px solid rgb(64, 153, 255);
+    * {
+      color: #ffffff;
+    }
+  }
+}
+
+.outlinePinterest {
+  @extend %hover-animation;
+  display: inline-block;
+  padding: 5px 7px;
+  border: 1.5px solid #2a2a2a;
+  background-color: #ffffff;
+  color: black;
+  font-size: 11px;
+  line-height: 20px;
+  transition: all 0.5s;
+
+  *:first-child {
+    color: rgb(210, 76, 80);
+  }
+
+  &:not(.noHover):hover {
+    background-color: rgb(210, 76, 80);
+    color: #ffffff;
+    border: 1px solid rgb(210, 76, 80);
+    * {
+      color: #ffffff;
+    }
+  }
+}
+.outlineLinkedIn {
+  @extend %hover-animation;
+  display: inline-block;
+  padding: 5px 7px;
+  border: 1.5px solid #2a2a2a;
+  background-color: #ffffff;
+  color: black;
+  font-size: 11px;
+  line-height: 20px;
+  transition: all 0.5s;
+
+  *:first-child {
+    color: rgb(47, 143, 194);
+  }
+
+  &:not(.noHover):hover {
+    background-color: rgb(47, 143, 194);
+    color: #ffffff;
+    border: 1px solid rgb(47, 143, 194);
+    * {
+      color: #ffffff;
+    }
+  }
+}
+
 .tooltip {
   position: absolute;
   left: calc(100% + 6px);

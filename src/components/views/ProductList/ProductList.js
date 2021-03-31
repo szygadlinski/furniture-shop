@@ -11,6 +11,7 @@ import CategoryFilter from '../../features/CategoryFilter/CategoryFilter';
 import ColorFilter from '../../features/ColorFilter/ColorFilter';
 import PriceFilter from '../../features/PriceFilter/PriceFilter';
 import SizeFilter from '../../features/SizeFilter/SizeFilter';
+import TagFilter from '../../features/TagFilter/TagFilterContainer';
 import Feedback from '../../features/Feedback/FeedbackContainer';
 import Brands from '../../features/Brands/BrandsContainer';
 
@@ -101,6 +102,7 @@ class ProductList extends React.Component {
               <ColorFilter />
               <PriceFilter />
               <SizeFilter />
+              <TagFilter />
             </div>
           </div>
         </div>

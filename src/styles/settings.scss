@@ -167,6 +167,12 @@ $sf-background: $dark-5;
 $sf-white: $white;
 $sf-hover: $orange;
 
+//TAG FILTER
+$tf-line: $dark-5;
+$tf-border: $light-4;
+$tf-basic: $light-6;
+$tf-hover: $orange;
+
 //*****LAYOUT*****//
 //FOOTER
 $footer-bcg: $dark-2;
@@ -218,4 +224,12 @@ $transition:
 
 %hover-animation {
   transition: $transition;
+}
+
+//* MIXINS *//
+@mixin center () {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
