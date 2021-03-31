@@ -196,7 +196,7 @@ export const PL = {
     FURNITURE_LINK_TEXT: 'Meble',
   },
 
-  BLOGBOX: {
+  BlogBox: {
     TITLE_TEXT: 'Witamy na nowej stronie sklepu!',
     DATE_TEXT: '16 czerwca 2020',
     BUTTON_TEXT: 'Czytaj więcej...',
@@ -265,7 +265,7 @@ export const PL = {
     LINK_CHECKOUT_TEXT: 'Sprawdź zamówienie',
 
     INFO2_TITLE_TEXT: 'Informacje',
-    LINK_SPECIALS_TEXT: 'Specialności',
+    LINK_SPECIALS_TEXT: 'Specjalności',
     LINK_NEWPRODUCTS_TEXT: 'Nowe produkty',
     LINK_BESTSELLERS_TEXT: 'Bestsellery',
     LINK_OUTSTORES_TEXT: 'Nasze sklepy',
@@ -315,7 +315,7 @@ export const PL = {
   },
 
   ProductBox: {
-    BUTTON_QUICKVIEW_TEXT: 'Szybki podględ',
+    BUTTON_QUICKVIEW_TEXT: 'Szybki podgląd',
     BUTTON_ADDTOCART_TEXT: 'Do koszyka',
     BUTTON_FAVORITE_TEXT: 'Do ulubionych',
     BUTTON_COMPARE_TEXT: 'Do porównania',
@@ -339,7 +339,7 @@ export const PL = {
     DOT_SEC_TEXT: 'Sekund',
     RIGHT_TITLE_TEXT: 'Meble',
     RIGHT_TITLE2_TEXT: 'Wewnętrzne',
-    RIGHT_SUBTITLE_TEXT: 'Oszczędź do 50% na wszytkich meblach',
+    RIGHT_SUBTITLE_TEXT: 'Oszczędź do 50% na wszystkich meblach',
     BUTTON_SHOP_TEXT: 'Kup teraz',
   },
 
@@ -348,7 +348,7 @@ export const PL = {
   },
 
   StickyBar: {
-    BUTTON_TEXT: 'Porówniaj',
+    BUTTON_TEXT: 'Porównaj',
   },
 
   TopBar: {
