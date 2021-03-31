@@ -60,7 +60,7 @@
           display: inline-block;
           margin-left: 0.5rem;
 
-          a {
+          div {
             display: block;
             width: 13px;
             height: 13px;
@@ -121,8 +121,8 @@
       margin-top: 25px;
 
       .imageBox {
-        height: 55px;
-        width: 55px;
+        height: 150px;
+        width: 150px;
         display: flex;
         align-content: center;
         justify-content: center;
@@ -139,4 +139,12 @@
   }
 }
 
+.fadeout {
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.fadein {
+  transition: 0.5s;
+}
 }
