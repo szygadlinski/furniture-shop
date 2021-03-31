@@ -4,6 +4,7 @@ import ProductList from './ProductList';
 
 describe('ProductList', () => {
   it('renders without crashing', () => {
-    shallow(<ProductList />);
+    const mockProducts = [];
+    shallow(<ProductList products={mockProducts} />);
   });
 });

@@ -1518,13 +1518,28 @@ const initialState = {
   ],
   feedbacks: [
     {
-      id: 'client-1',
-      icon:
-        'https://www.flaticon.com/svg/vstatic/svg/565/565703.svg?token=exp=1616333731~hmac=efc4d87e0dbbcd8b62bfd8383e7ef1dd',
+      id: 1,
       quote:
         'Curabitur gravida dictum pulvinar. Aenean scelerisque sem eu imperdiet cursus. Cras porttitor elit imperdiet congue dignissim. Duis vitae nulla vitae risus lobortis tincidunt. Proin lacus turpis, volutpat eget sodales eu, vestibulum quis leo.',
-      image: 'https://cdn.pixabay.com/photo/2017/11/02/14/36/model-2911363_1280.jpg',
+      image:
+        'https://images.pexels.com/photos/7219665/pexels-photo-7219665.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
       name: '~ John Smith',
+    },
+    {
+      id: 2,
+      quote:
+        'Curabitur gravida dictum pulvinar. Aenean scelerisque sem eu imperdiet cursus. Cras porttitor elit imperdiet congue dignissim. Duis vitae nulla vitae risus lobortis tincidunt. Proin lacus turpis, volutpat eget sodales eu, vestibulum quis leo.',
+      image:
+        'https://images.pexels.com/photos/3770254/pexels-photo-3770254.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+      name: '~ Clara Oswald',
+    },
+    {
+      id: 3,
+      quote:
+        'Curabitur gravida dictum pulvinar. Aenean scelerisque sem eu imperdiet cursus. Cras porttitor elit imperdiet congue dignissim. Duis vitae nulla vitae risus lobortis tincidunt. Proin lacus turpis, volutpat eget sodales eu, vestibulum quis leo.',
+      image:
+        'https://images.pexels.com/photos/4946649/pexels-photo-4946649.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+      name: '~ Meredith Grey',
     },
   ],
   cart: {
