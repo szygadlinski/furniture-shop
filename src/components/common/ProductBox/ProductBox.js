@@ -2,19 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import GridProduct from './GridProduct/GridProduct';
+import GalleryProduct from '../GalleryProduct/GalleryProduct';
 
-const ProductBox = props => {
-  const {
-    name,
-    price,
-    image,
-    id,
-    compareItems,
-    addToCart,
-    isFavorite,
-    addFavorite,
-    removeFavorite,
-  } = props;
+const ProductBox = ({
+  addToCart,
+  addFavorite,
+  removeFavorite,
+  compareItems,
+  variant,
+  ...otherProps
+}) => {
+  const { name, price, image, id, isFavorite } = otherProps;
 
   const faveHandler = event => {
     event.preventDefault();
@@ -46,7 +44,7 @@ const ProductBox = props => {
 
   return (
     <GridProduct
-      {...props}
+      {...otherProps}
       comparisonHandler={comparisonHandler}
       faveHandler={faveHandler}
       addCartHandler={addCartHandler}
@@ -67,6 +65,7 @@ ProductBox.propTypes = {
   addFavorite: PropTypes.func,
   removeFavorite: PropTypes.func,
   category: PropTypes.string,
+  variant: PropTypes.string,
 };
 
 export default ProductBox;
