@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import GridProduct from './GridProduct/GridProduct';
-import GalleryProduct from '../GalleryProduct/GalleryProduct';
+import GalleryProduct from './GalleryProduct/GalleryProduct';
 
 const ProductBox = ({
   addToCart,
@@ -42,32 +42,30 @@ const ProductBox = ({
     document.getElementById(`${id}`).classList.add(`${styles.show}`);
   };
 
-  let productComponent;
-  if (variant === 'gallery') {
-    productComponent = (
-      <GalleryProduct
-        {...otherProps}
-        comparisonHandler={comparisonHandler}
-        faveHandler={faveHandler}
-        addCartHandler={addCartHandler}
-        openModal={openModal}
-        closeModal={closeModal}
-      />
-    );
-  } else {
-    productComponent = (
-      <GridProduct
-        {...otherProps}
-        comparisonHandler={comparisonHandler}
-        faveHandler={faveHandler}
-        addCartHandler={addCartHandler}
-        openModal={openModal}
-        closeModal={closeModal}
-      />
-    );
+  switch (variant) {
+    case 'gallery':
+      return (
+        <GalleryProduct
+          {...otherProps}
+          comparisonHandler={comparisonHandler}
+          faveHandler={faveHandler}
+          addCartHandler={addCartHandler}
+          openModal={openModal}
+          closeModal={closeModal}
+        />
+      );
+    default:
+      return (
+        <GridProduct
+          {...otherProps}
+          comparisonHandler={comparisonHandler}
+          faveHandler={faveHandler}
+          addCartHandler={addCartHandler}
+          openModal={openModal}
+          closeModal={closeModal}
+        />
+      );
   }
-
-  return <div>{productComponent}</div>;
 };
 
 ProductBox.propTypes = {
