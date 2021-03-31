@@ -8,10 +8,10 @@ import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../Button/Button';
 import Rating from '../Rating/Rating';
 import ProductPopup from '../../features/ProductPopup/ProductPopup';
-import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
 const ProductBox = ({
   name,
+  category,
   price,
   oldPrice,
   promo,
@@ -52,7 +52,7 @@ const ProductBox = ({
 
   const openModal = event => {
     event.preventDefault();
-    document.getElementById('overlay').classList.add(`${styles.show}`);
+    document.getElementById(`${id}`).classList.add(`${styles.show}`);
   };
 
   return (
@@ -105,12 +105,17 @@ const ProductBox = ({
         </div>
       </div>
 
-      <div className={styles.overlay} id='overlay'>
+      <div className={styles.overlay} id={id}>
         <Button className={styles.popupButton} onClick={closeModal}>
-          {' '}
-          Close{' '}
+          Close
         </Button>
-        <ProductPopup />
+        <ProductPopup
+          name={name}
+          price={price}
+          category={category}
+          rating={stars}
+          image={image}
+        />
       </div>
     </div>
   );
@@ -135,6 +140,7 @@ ProductBox.propTypes = {
   isFavorite: PropTypes.bool,
   addFavorite: PropTypes.func,
   removeFavorite: PropTypes.func,
+  category: PropTypes.string,
 };
 
 export default ProductBox;
