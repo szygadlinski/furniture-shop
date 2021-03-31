@@ -1,0 +1,39 @@
+@import '../../../styles/settings.scss';
+
+.root {
+  padding: 0 $base-padding;
+
+  .title {
+    text-transform: uppercase;
+    border-bottom: 1px solid $tf-line;
+    padding-bottom: $base-padding / 2;
+  }
+
+  .tags {
+    display: inline-flex;
+    flex-wrap: wrap;
+    padding: $base-padding 0;
+
+    .tag {
+      display: flex;
+      align-items: center;
+      color: $tf-basic;
+      border: 1px solid $tf-border;
+      font-size: 14px;
+      padding: $base-padding / 4;
+      margin: 0 ($base-padding / 3) ($base-padding / 3) 0;
+      cursor: pointer;
+
+      .icon {
+        font-size: 10px;
+        margin-right: $base-padding / 4;
+      }
+
+      &:hover, &.active {
+        color: $tf-hover;
+        border: 1px solid $tf-hover;
+        transition: $transition;
+      }
+    }
+  }
+}

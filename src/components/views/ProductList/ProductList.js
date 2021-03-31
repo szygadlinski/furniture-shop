@@ -11,6 +11,7 @@ import ColorFilter from '../../features/ColorFilter/ColorFilter';
 import ProductBox from '../../common/ProductBox/ProductBoxContainer';
 import PriceFilter from '../../features/PriceFilter/PriceFilter';
 import SizeFilter from '../../features/SizeFilter/SizeFilter';
+import TagFilter from '../../features/TagFilter/TagFilterContainer';
 
 class ProductList extends React.Component {
   static propTypes = {
@@ -25,7 +26,7 @@ class ProductList extends React.Component {
       <div className={styles.root}>
         <div className='container'>
           <Banner />
-      
+
           <div className='row'>
             <div className='col-9'>
               {/*{categories.map(category => (
@@ -99,6 +100,7 @@ class ProductList extends React.Component {
               <ColorFilter />
               <PriceFilter />
               <SizeFilter />
+              <TagFilter />
             </div>
           </div>
         </div>
