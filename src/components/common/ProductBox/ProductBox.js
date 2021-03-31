@@ -42,16 +42,32 @@ const ProductBox = ({
     document.getElementById(`${id}`).classList.add(`${styles.show}`);
   };
 
-  return (
-    <GridProduct
-      {...otherProps}
-      comparisonHandler={comparisonHandler}
-      faveHandler={faveHandler}
-      addCartHandler={addCartHandler}
-      openModal={openModal}
-      closeModal={closeModal}
-    />
-  );
+  let productComponent;
+  if (variant === 'gallery') {
+    productComponent = (
+      <GalleryProduct
+        {...otherProps}
+        comparisonHandler={comparisonHandler}
+        faveHandler={faveHandler}
+        addCartHandler={addCartHandler}
+        openModal={openModal}
+        closeModal={closeModal}
+      />
+    );
+  } else {
+    productComponent = (
+      <GridProduct
+        {...otherProps}
+        comparisonHandler={comparisonHandler}
+        faveHandler={faveHandler}
+        addCartHandler={addCartHandler}
+        openModal={openModal}
+        closeModal={closeModal}
+      />
+    );
+  }
+
+  return <div>{productComponent}</div>;
 };
 
 ProductBox.propTypes = {
