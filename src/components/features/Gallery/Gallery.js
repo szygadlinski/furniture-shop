@@ -94,7 +94,8 @@ const Gallery = ({ featured, topSeller, sale, topRated }) => {
     }, 500);
   };
 
-  const handleSliderForward = () => {
+  const handleSliderForward = event => {
+    event.preventDefault();
     const minMargin = -(activeTab.products.length - sliderStep) * (slideWidth + 5);
     const newMargin = -(slideWidth + 5) * sliderStep + sliderOffset;
     if (minMargin < newMargin) {
@@ -102,7 +103,8 @@ const Gallery = ({ featured, topSeller, sale, topRated }) => {
     } else setSliderOffset(minMargin);
   };
 
-  const handleSliderBackward = () => {
+  const handleSliderBackward = event => {
+    event.preventDefault();
     const newMargin = (slideWidth + 5) * sliderStep + sliderOffset;
     if (newMargin < 0) {
       setSliderOffset(newMargin);
@@ -139,9 +141,7 @@ const Gallery = ({ featured, topSeller, sale, topRated }) => {
                   <div className={styles.slider}>
                     <Button
                       className={styles.button}
-                      onClick={event =>
-                        `${handleSliderBackward(event)} ${event.preventDefault()}`
-                      }
+                      onClick={event => handleSliderBackward(event)}
                     >
                       <span>&lt;</span>
                     </Button>
@@ -167,9 +167,7 @@ const Gallery = ({ featured, topSeller, sale, topRated }) => {
                     </div>
                     <Button
                       className={styles.button}
-                      onClick={event =>
-                        `${handleSliderForward(event)} ${event.preventDefault()}`
-                      }
+                      onClick={event => handleSliderForward(event)}
                     >
                       <span>&gt;</span>
                     </Button>
