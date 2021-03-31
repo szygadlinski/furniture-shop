@@ -20,6 +20,11 @@
       margin-left: 5px;
       background-color: $button-bcg;
     }
+
+    .favorite, .compare {
+      background-color: $fave-bcg;
+      color: $fave-color;
+    }
   }
 
   .label {
