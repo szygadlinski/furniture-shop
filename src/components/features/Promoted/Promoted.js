@@ -5,6 +5,7 @@ import Button from '../../common/Button/Button';
 import ProductBox from '../../common/ProductBox/ProductBoxContainer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import Slider from '../../common/Slider/Slider';
 
 const Promoted = ({ products }) => {
   return (
@@ -29,23 +30,21 @@ const Promoted = ({ products }) => {
             </div>
           </div>
           <div className='col-md-8'>
-            <div className={styles.banner}>
-              <div className={styles.buttonBox}>
-                <Button className={styles.button}>
-                  <FontAwesomeIcon icon={faArrowLeft} className={styles.icon} />
-                </Button>
-                <Button className={styles.button}>
-                  <FontAwesomeIcon icon={faArrowRight} className={styles.icon} />
-                </Button>
+            <Slider>
+              <div className={styles.banner}>
+                <img
+                  src='https://images.pexels.com/photos/3757055/pexels-photo-3757055.jpeg?cs=srgb&dl=pexels-andrea-piacquadio-3757055.jpg&fm=jpg'
+                  alt='Promo'
+                />
+                <div className={styles.headerBox}>
+                  <h1>
+                    INDOOR <span>FURNITURE</span>
+                  </h1>
+                  <h2>save up to 50% of all furniture</h2>
+                  <Button className={styles.buttonShop}> SHOP NOW </Button>
+                </div>
               </div>
-              <div className={styles.headerBox}>
-                <h1>
-                  INDOOR <span>FURNITURE</span>
-                </h1>
-                <h2>save up to 50% of all furniture</h2>
-                <Button className={styles.buttonShop}> SHOP NOW </Button>
-              </div>
-            </div>
+            </Slider>
           </div>
         </div>
       </div>

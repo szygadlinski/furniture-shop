@@ -1,0 +1,104 @@
+@import "../../../styles/settings.scss";
+
+@mixin border ($sides...) {
+  @each $side in $sides {
+    border-#{$side}: 1px solid $tab-border;
+  }
+}
+
+/* Product */
+
+.root {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+}
+
+.fadeout {
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.fadein {
+  transition: 0.5s;
+}
+
+/* Slider */
+
+.slider {
+  display: flex;
+  align-items: stretch;
+  flex: 1 1 auto;
+
+  .slideList {
+    overflow: hidden;
+
+    .slideListInner {
+      height: 100%;
+      transition-duration: 500ms;
+    }
+
+    .slide {
+      position: relative;
+      background-color: $pb-photo-bcg;
+      display: inline-block;
+      height: 100%;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  // .button {
+  //   position: relative;
+  //   color: $slider-text;
+  //   width: 30px;
+  //   border-radius: 2px;
+  //   background-color: $slider-btn;
+  //   margin: 0 0 0 5px;
+  //   padding: 0;
+  //   flex: 0 0 auto;
+  //   @extend %hover-animation;
+  //   &:hover {
+  //     background-color: $slider-btn-hover;
+  //   }
+
+  //   &:last-child {
+  //     margin: 0 5px;
+  //   }
+
+  //   span {
+  //     position: absolute;
+  //     transform: translate(-50%, -50%);
+  //     top: 50%;
+  //     left: 50%;
+  //   }
+  // }
+}
+
+// Controls
+
+.controls {
+  display: flex;
+  width: 100%;
+  height: 39px;
+  flex: 0 0 auto;
+}
+
+.button {
+  height: 100%;
+  width: 50%;
+  text-align: center;
+  background-color: $dark-4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .icon {
+    color: $white;
+  }
+}
