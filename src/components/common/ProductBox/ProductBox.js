@@ -7,9 +7,11 @@ import { faExchangeAlt, faShoppingBasket } from '@fortawesome/free-solid-svg-ico
 import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../Button/Button';
 import Rating from '../Rating/Rating';
+import ProductPopup from '../../features/ProductPopup/ProductPopup';
 
 const ProductBox = ({
   name,
+  category,
   price,
   oldPrice,
   promo,
@@ -43,6 +45,16 @@ const ProductBox = ({
     addToCart({ id, name, price, image });
   };
 
+  const closeModal = event => {
+    event.preventDefault();
+    event.target.parentNode.classList.remove(`${styles.show}`);
+  };
+
+  const openModal = event => {
+    event.preventDefault();
+    document.getElementById(`${id}`).classList.add(`${styles.show}`);
+  };
+
   return (
     <div className={styles.root}>
       <div className={styles.photo}>
@@ -50,7 +62,7 @@ const ProductBox = ({
         <div className={styles.image}>
           <img src={image} alt='' />
           <div className={styles.buttons}>
-            <Button className={styles.button} variant='small'>
+            <Button className={styles.button} variant='small' onClick={openModal}>
               Quick View
             </Button>
             <Button className={styles.button} variant='small' onClick={addCartHandler}>
@@ -92,6 +104,19 @@ const ProductBox = ({
           </Button>
         </div>
       </div>
+
+      <div className={styles.overlay} id={id}>
+        <Button className={styles.popupButton} onClick={closeModal}>
+          Close
+        </Button>
+        <ProductPopup
+          name={name}
+          price={price}
+          category={category}
+          rating={stars}
+          image={image}
+        />
+      </div>
     </div>
   );
 };
@@ -115,6 +140,7 @@ ProductBox.propTypes = {
   isFavorite: PropTypes.bool,
   addFavorite: PropTypes.func,
   removeFavorite: PropTypes.func,
+  category: PropTypes.string,
 };
 
 export default ProductBox;
