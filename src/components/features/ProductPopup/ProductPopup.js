@@ -11,20 +11,20 @@ const ProductPopup = ({ name, price, category, rating, image }) => {
           <img src={image} alt='popup_image' />
           <div className={styles.details}>
             <div className={styles.boxColumn}>
-              <h4>Name</h4>
-              <h5>{name}</h5>
+              <h5>Name</h5>
+              <h4>{name}</h4>
             </div>
             <div className={styles.boxColumn}>
-              <h4>Price</h4>
-              <h5>{price}</h5>
+              <h5>Price</h5>
+              <h4>$ {price}</h4>
             </div>
             <div className={styles.boxColumn + ' ' + styles.category}>
-              <h4>Category</h4>
-              <h5>{category}</h5>
+              <h5>Category</h5>
+              <h4>{category}</h4>
             </div>
             <div className={styles.boxColumn}>
-              <h4>Rating</h4>
-              <h5>{rating}</h5>
+              <h5>Rating</h5>
+              <h4>{rating}</h4>
             </div>
           </div>
         </div>
