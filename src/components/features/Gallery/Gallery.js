@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import SectionHeader from '../../common/SectionHeader/SectionHeader';
 import GalleryProduct from '../../common/GalleryProduct/GalleryProduct';
 import Button from '../../common/Button/Button';
+import Swipeable from '../../common/Swipeable/Swipeable.js';
 
 import styles from './Gallery.module.scss';
 
@@ -111,85 +112,90 @@ const Gallery = ({ featured, topSeller, sale, topRated }) => {
   };
 
   return (
-    <section className={styles.root}>
-      <div className='container'>
-        <div className='row'>
-          <div className='col-6 d-flex flex-column'>
-            <SectionHeader title='Furniture Gallery' />
-            <nav className={styles.tabs}>
-              <ul>
-                {tabs.map(tab => (
-                  <li key={tabs.indexOf(tab)}>
-                    <a tabIndex={0} onClick={() => handleTabChange(tabs.indexOf(tab))}>
-                      {tab.name}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </nav>
-            <div className={styles.productAndSlider}>
-              <div className={isFading ? ` ${styles.fadeout}` : styles.fadein}>
-                <GalleryProduct
-                  className={isProductFading ? ` ${styles.fadeout}` : styles.fadein}
-                  {...activeProduct}
-                />
-                <div className={styles.slider}>
-                  <Button
-                    className={styles.button}
-                    onClick={event => handleSliderBackward(event)}
-                  >
-                    <span>&lt;</span>
-                  </Button>
-                  <div ref={sliderRef} className={styles.slideList}>
-                    <div
-                      className={styles.slideListInner}
-                      style={{ marginLeft: sliderOffset }}
+    <Swipeable leftAction={handleSliderBackward} rightAction={handleSliderForward}>
+      <section className={styles.root}>
+        <div className='container'>
+          <div className='row'>
+            <div className={`col-lg-6 col-md-12 col-sm-12 ${styles.galleryResp}`}>
+              <SectionHeader title='Furniture Gallery' />
+              <nav className={styles.tabs}>
+                <ul>
+                  {tabs.map(tab => (
+                    <li key={tabs.indexOf(tab)}>
+                      <a
+                        tabIndex={0}
+                        onClick={() => handleTabChange(tabs.indexOf(tab))}
+                      >
+                        {tab.name}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
+              <div className={styles.productAndSlider}>
+                <div className={isFading ? ` ${styles.fadeout}` : styles.fadein}>
+                  <GalleryProduct
+                    className={isProductFading ? ` ${styles.fadeout}` : styles.fadein}
+                    {...activeProduct}
+                  />
+                  <div className={styles.slider}>
+                    <Button
+                      className={styles.button}
+                      onClick={event => handleSliderBackward(event)}
                     >
-                      {activeTab.products.map(product => (
-                        <div
-                          className={
-                            styles.slide +
-                            (product === activeProduct ? ` ${styles.active}` : '')
-                          }
-                          style={{ width: slideWidth }}
-                          key={product.id}
-                          onClick={() => handleSlideClick(product)}
-                        >
-                          <img src={product.image} alt={product.name} />
-                        </div>
-                      ))}
+                      <span>&lt;</span>
+                    </Button>
+                    <div ref={sliderRef} className={styles.slideList}>
+                      <div
+                        className={styles.slideListInner}
+                        style={{ marginLeft: sliderOffset }}
+                      >
+                        {activeTab.products.map(product => (
+                          <div
+                            className={
+                              styles.slide +
+                              (product === activeProduct ? ` ${styles.active}` : '')
+                            }
+                            style={{ width: slideWidth }}
+                            key={product.id}
+                            onClick={() => handleSlideClick(product)}
+                          >
+                            <img src={product.image} alt={product.name} />
+                          </div>
+                        ))}
+                      </div>
                     </div>
+                    <Button
+                      className={styles.button}
+                      onClick={event => handleSliderForward(event)}
+                    >
+                      <span>&gt;</span>
+                    </Button>
                   </div>
-                  <Button
-                    className={styles.button}
-                    onClick={event => handleSliderForward(event)}
-                  >
-                    <span>&gt;</span>
+                </div>
+              </div>
+            </div>
+            <div className='col-6'>
+              <div className={styles.promo}>
+                <img
+                  src={process.env.PUBLIC_URL + '/images/gallery_right.png'}
+                  alt='bed promo'
+                />
+                <div className={styles.promo__inner}>
+                  <h3>
+                    from <span>$50.80</span>
+                  </h3>
+                  <h2>Bedroom Bed</h2>
+                  <Button className={styles.promo__button} variant='main'>
+                    Shop now
                   </Button>
                 </div>
               </div>
             </div>
           </div>
-          <div className='col-6'>
-            <div className={styles.promo}>
-              <img
-                src={process.env.PUBLIC_URL + '/images/gallery_right.png'}
-                alt='bed promo'
-              />
-              <div className={styles.promo__inner}>
-                <h3>
-                  from <span>$50.80</span>
-                </h3>
-                <h2>Bedroom Bed</h2>
-                <Button className={styles.promo__button} variant='main'>
-                  Shop now
-                </Button>
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </Swipeable>
   );
 };
 
