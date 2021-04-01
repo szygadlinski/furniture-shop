@@ -38,10 +38,13 @@ const Promoted = ({ products }) => {
                   <FontAwesomeIcon icon={faArrowRight} className={styles.icon} />
                 </Button>
               </div>
-              <div className={styles.headerBox}></div>
-              <h1>INDOOR</h1> <h1>FURNITURE</h1>
-              <h2>save up to 50% of all furniture</h2>
-              <Button className={styles.buttonShop}> SHOP NOW </Button>
+              <div className={styles.headerBox}>
+                <h1>
+                  INDOOR <span>FURNITURE</span>
+                </h1>
+                <h2>save up to 50% of all furniture</h2>
+                <Button className={styles.buttonShop}> SHOP NOW </Button>
+              </div>
             </div>
           </div>
         </div>
