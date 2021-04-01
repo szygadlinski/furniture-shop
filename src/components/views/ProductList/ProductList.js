@@ -13,6 +13,7 @@ import SizeFilter from '../../features/SizeFilter/SizeFilter';
 import TagFilter from '../../features/TagFilter/TagFilterContainer';
 import Feedback from '../../features/Feedback/FeedbackContainer';
 import Brands from '../../features/Brands/BrandsContainer';
+import ProductBox from  '../../common/ProductBox/ProductBoxContainer';
 
 class ProductList extends React.Component {
   static propTypes = {
