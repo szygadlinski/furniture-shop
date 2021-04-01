@@ -67,14 +67,17 @@ const Slider = ({ children, className: propClassName }) => {
       <div className={styles.slider}>
         <div className={styles.slideList}>
           <div className={styles.slideListInner}>
-            <div
-              className={
-                styles.slide +
-                (isSlideFading ? ` ${styles.fadeout}` : ` ${styles.fadein}`)
-              }
-            >
-              {children}
-            </div>
+            {React.Children.map(children, (child, i) => (
+              <div
+                key={i}
+                // className={
+                //   styles.slide +
+                // (isSlideFading ? ` ${styles.fadeout}` : ` ${styles.fadein}`)
+                // }
+              >
+                {child}
+              </div>
+            ))}
           </div>
         </div>
       </div>

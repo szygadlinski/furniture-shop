@@ -3,9 +3,25 @@ import PropTypes from 'prop-types';
 import styles from './Promoted.module.scss';
 import Button from '../../common/Button/Button';
 import ProductBox from '../../common/ProductBox/ProductBoxContainer';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import Slider from '../../common/Slider/Slider';
+import parse from 'html-react-parser';
+
+const banners = [
+  {
+    img:
+      'https://images.pexels.com/photos/3757055/pexels-photo-3757055.jpeg?cs=srgb&dl=pexels-andrea-piacquadio-3757055.jpg&fm=jpg',
+    name: 'Indoor furniture',
+    h1: 'INDOOR <span>FURNITURE</span>',
+    h2: 'save up to 50% of all furniture',
+  },
+  {
+    img:
+      'https://images.pexels.com/photos/1350789/pexels-photo-1350789.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+    name: 'Guest room chairs',
+    h1: 'GUEST ROOM <span>CHAIRS</span>',
+    h2: 'save up to 50% of all furniture',
+  },
+];
 
 const Promoted = ({ products }) => {
   return (
@@ -31,19 +47,16 @@ const Promoted = ({ products }) => {
           </div>
           <div className='col-md-8'>
             <Slider>
-              <div className={styles.banner}>
-                <img
-                  src='https://images.pexels.com/photos/3757055/pexels-photo-3757055.jpeg?cs=srgb&dl=pexels-andrea-piacquadio-3757055.jpg&fm=jpg'
-                  alt='Promo'
-                />
-                <div className={styles.headerBox}>
-                  <h1>
-                    INDOOR <span>FURNITURE</span>
-                  </h1>
-                  <h2>save up to 50% of all furniture</h2>
-                  <Button className={styles.buttonShop}> SHOP NOW </Button>
+              {banners.map((banner, i) => (
+                <div key={i} className={styles.banner}>
+                  <img src={banner.img} alt={banner.name} />
+                  <div className={styles.headerBox}>
+                    <h1>{parse(banner.h1)}</h1>
+                    <h2>{banner.h2}</h2>
+                    <Button className={styles.buttonShop}> SHOP NOW </Button>
+                  </div>
                 </div>
-              </div>
+              ))}
             </Slider>
           </div>
         </div>
