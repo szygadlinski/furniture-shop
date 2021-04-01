@@ -1,7 +1,7 @@
 @import "../../../styles/settings.scss";
 
 .root {
-  margin-top: 5px;
+  margin-top: $base-padding *2;
 
   // *** Lewy kafelek ***
 
@@ -13,7 +13,10 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-    border: none;
+
+    & + div {
+      border-top: none;
+    }
 
     h4 {
       color: $light-1;
