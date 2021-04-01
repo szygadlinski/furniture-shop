@@ -77,7 +77,6 @@ const GalleryProduct = ({
 };
 
 GalleryProduct.propTypes = {
-  children: PropTypes.node,
   name: PropTypes.string,
   price: PropTypes.number,
   oldPrice: PropTypes.number,

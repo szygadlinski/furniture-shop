@@ -131,7 +131,6 @@ const GridProduct = ({
 };
 
 GridProduct.propTypes = {
-  children: PropTypes.node,
   name: PropTypes.string,
   price: PropTypes.number,
   oldPrice: PropTypes.number,
@@ -141,14 +140,10 @@ GridProduct.propTypes = {
   faveHandler: PropTypes.func,
   id: PropTypes.string,
   comparisonHandler: PropTypes.func,
-  compareItems: PropTypes.func,
   compare: PropTypes.bool,
   toggleStar: PropTypes.func,
   rated: PropTypes.bool,
-  addToCart: PropTypes.func,
   isFavorite: PropTypes.bool,
-  addFavorite: PropTypes.func,
-  removeFavorite: PropTypes.func,
   addCartHandler: PropTypes.func,
   openModal: PropTypes.func,
   closeModal: PropTypes.func,

@@ -10,9 +10,9 @@ const ProductBox = ({
   removeFavorite,
   compareItems,
   variant,
-  ...otherProps
+  ...productProps
 }) => {
-  const { name, price, image, id, isFavorite } = otherProps;
+  const { name, price, image, id, isFavorite } = productProps;
 
   const faveHandler = event => {
     event.preventDefault();
@@ -42,41 +42,35 @@ const ProductBox = ({
     document.getElementById(`${id}`).classList.add(`${styles.show}`);
   };
 
-  switch (variant) {
-    case 'gallery':
-      return (
-        <GalleryProduct
-          {...otherProps}
-          comparisonHandler={comparisonHandler}
-          faveHandler={faveHandler}
-          addCartHandler={addCartHandler}
-          openModal={openModal}
-          closeModal={closeModal}
-        />
-      );
-    default:
-      return (
-        <GridProduct
-          variant={variant}
-          {...otherProps}
-          comparisonHandler={comparisonHandler}
-          faveHandler={faveHandler}
-          addCartHandler={addCartHandler}
-          openModal={openModal}
-          closeModal={closeModal}
-        />
-      );
+  if (variant === 'gallery') {
+    return (
+      <GalleryProduct
+        {...productProps}
+        comparisonHandler={comparisonHandler}
+        faveHandler={faveHandler}
+        addCartHandler={addCartHandler}
+        openModal={openModal}
+        closeModal={closeModal}
+      />
+    );
+  } else {
+    return (
+      <GridProduct
+        variant={variant}
+        {...productProps}
+        comparisonHandler={comparisonHandler}
+        faveHandler={faveHandler}
+        addCartHandler={addCartHandler}
+        openModal={openModal}
+        closeModal={closeModal}
+      />
+    );
   }
 };
 
 ProductBox.propTypes = {
-  name: PropTypes.string,
-  price: PropTypes.number,
-  image: PropTypes.string,
-  id: PropTypes.string,
   compareItems: PropTypes.func,
   addToCart: PropTypes.func,
-  isFavorite: PropTypes.bool,
   addFavorite: PropTypes.func,
   removeFavorite: PropTypes.func,
   category: PropTypes.string,
