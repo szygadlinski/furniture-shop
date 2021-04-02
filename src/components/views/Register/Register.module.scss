@@ -1,69 +1,121 @@
-@import "../../../styles/settings.scss";
+@import '../../../styles/settings.scss';
 
 .root {
+  padding: ($base-padding * 2) 0;
+  background: $login-bcg-out;
 
-  padding: $base-padding 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  .title {
+    text-align: center;
+    color: $login-title;
+    padding: $base-padding / 2;
+  }
 
-  .containerWrapper {
-    margin: 0 auto;
-    padding: 10px;
+  .loginWrapper {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
     flex-direction: column;
-    width: 50%;
-    box-shadow: 5px 10px 25px $bd-register;
-    margin-top: 35px;
-    margin-bottom: 35px;
+    background: $login-bcg-in;
+    padding: ($base-padding * 2) ($base-padding * 3);
+    max-width: 500px;
+    margin: auto;
+    border-top: 8px solid $login-border-out;
+    border-radius: 10px;
+    box-shadow: 10px 10px 50px;
 
-    .radioForm {
-      display: flex;
-      justify-content: space-around;
-      width: 80%;
-      margin-top: 25px;
-      margin-right: 35px;
-      .radioBox{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        label {
-          display: flex;
-          flex-direction: row;
-          margin-right: 15px;
+    .button {
+      margin: auto;
+      padding: ($base-padding / 2) ($base-padding * 2);
+      background: linear-gradient(lighten($login-btn-bcg, 40%), $login-btn-bcg);
+      color: $login-btn-txt;
+      font-weight: bolder;
+      border-radius: 5px;
+      box-shadow: 0 0 10px $login-border-in;
+
+      &:hover {
+        background: linear-gradient($login-btn-bcg, darken($login-btn-bcg, 40%));
+        box-shadow: 0 0 20px darken($login-hover, 20%);
+        @extend %hover-animation;
+      }
+    }
+
+    // tu pisac kod
+    > div {
+      position: relative;
+      background: white;
+
+      // Looks like placeholder
+      > label {
+        opacity: 0.3;
+        font-weight: bold;
+        position: absolute;
+        top: 12px;
+        left: 20px;
+      }
+
+      > input[type='text'],
+      > input[type='email'],
+      > input[type='password'] {
+        width: 100%;
+        border: 0;
+        padding: 8px 8px 8px 30px;
+        border: 2px solid $login-border-in;
+        margin-bottom: $base-padding;
+        border-radius: 5px;
+        outline: none;
+        font-weight: bolder;
+        box-shadow: 0 0 5px;
+
+
+        &:hover, &:focus {
+          color: $login-hover;
+          border: 2px solid $login-hover;
+          box-shadow: 0 0 10px $login-hover;
+          background: lighten($login-hover, 40%);
+          cursor: pointer;
+          @extend %hover-animation;
+          // removing default focus style
+          outline: 0;
+          // adding new one
+          & + label {
+            opacity: 0;
+            cursor: pointer;
+          }
         }
 
-      .radio {
-        display: block;
-        margin-right: 7px;
-        cursor: pointer;
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
-        background-color: $bck-register;
-      }
+        &:valid {
+          background-size: 20px;
+          background-repeat: no-repeat;
+          background-position: 20px 20px;
+          & + label {
+            opacity: 0;
+          }
+        }
+
+        &:invalid:not(:focus):not(:placeholder-shown) {
+          background: pink;
+          & + label {
+            opacity: 0;
+          }
+        }
+
+        &:invalid:focus:not(:placeholder-shown) {
+          & ~ .requirements {
+            max-height: 200px;
+            padding: 0 30px 20px 50px;
+          }
+        }
 
       }
-    }
 
-    .titleWrapper {
-      display: flex;
-      justify-content: flex-start;
-      margin: 45px 0 5px 10px;
-      width: 100%;
-      padding: 0 30px;
-    }
+      .requirements {
+        padding: 0 30px 0 50px;
+        color: #999;
+        max-height: 0;
+        transition: 0.28s;
+        overflow: hidden;
+        color: red;
+        font-style: italic;
+      }
 
-    // formularz
-    .registerWrapper {
-      display: flex;
-      flex-direction: column;
-      width: 90%;
-      margin-left: 15px;
     }
 
     .checkboxWrapper {
@@ -76,7 +128,7 @@
       .conditions {
         display: flex;
         flex-direction: row;
-        margin-bottom: 15px;
+        align-items: center;
 
         input {
           height: 19px;
@@ -87,6 +139,7 @@
         h6 {
           font-size: 13px;
           color: $bck-register;
+          margin: 0;
         }
         .checkAll {
           font-weight: bold;
@@ -94,36 +147,9 @@
       }
     }
 
-    .buttonsWrapper {
-      display: flex;
-      justify-content: space-between;
-      width: 80%;
-      margin-right: 30px;
-      margin-bottom: 25px;
-    }
-
-    .btn1 {
-      border: none;
-      color: $btn-register;
-      font-size: 15px;
-      padding-top: 15px;
-      padding-left: 0;
-    }
-    .btn1:hover {
-      background-color: $white-register;
-    }
-
-    .btn2 {
-      margin-left: 25px;
-      padding: 15px;
-      color: $white-register;
-      background-color: $btn-register;
-      border: none;
-      font-size: 17px;
-      text-decoration: none;
-    }
-    .btn2:hover {
-      background-color: $bck-register;
+    &:hover {
+      box-shadow: 0 0 50px darken($login-bcg-out, 60%);
+      @extend %hover-animation;
     }
   }
 }
