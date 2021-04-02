@@ -1,7 +1,10 @@
 import React from 'react';
 import styles from './Banner.module.scss';
+import PropTypes from 'prop-types';
 
-const Banner = () => (
+import {Link} from 'react-router-dom';
+
+const Banner = ({match}) => (
   <div className={styles.root}>
     <div className='container'>
       <div className={styles.bannerMain}>
@@ -19,19 +22,36 @@ const Banner = () => (
       <div>
         <ul className={styles.subBanner}>
           <li className={styles.item}>
-            <a href='#' className={styles.link}>
+            <Link to='/'>
+              <a href='' className={styles.link}>
               Home
-            </a>
+              </a>
+            </Link>
           </li>
           <li className={styles.item}>
-            <a href='#' className={styles.link_active}>
-              Furniture
-            </a>
+            <Link to={`/shop/${match.params.categoryId}`}>
+              {match.params.categoryId}
+            </Link>
           </li>
         </ul>
       </div>
     </div>
   </div>
 );
+
+Banner.propTypes = {
+  children: PropTypes.node,
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      categoryId: PropTypes.string,
+    }),
+  }),
+};
+
+Banner.defaultProps = {
+  match: {
+    params: {},
+  },
+};
 
 export default Banner;

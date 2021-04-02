@@ -15,11 +15,13 @@ import Feedback from '../../features/Feedback/FeedbackContainer';
 import Brands from '../../features/Brands/BrandsContainer';
 import ProductBox from '../../features/ProductBox/ProductBoxContainer';
 
+
 class ProductList extends React.Component {
   static propTypes = {
     categories: PropTypes.arrayOf(PropTypes.object),
     products: PropTypes.arrayOf(PropTypes.object),
     productsFilteredByPrice: PropTypes.arrayOf(PropTypes.object),
+
   };
 
   render(){
@@ -28,26 +30,26 @@ class ProductList extends React.Component {
     return (
       <div className={styles.root}>
         <div className='container'>
-          <Banner />
+          <Banner  />
 
           <div className='row'>
+
             <div className='col-9'>
+
               {/*{categories.map(category => (
-                category.id === match.params.id
-              ?
+                category.id === match.params.categoryId
+                  ?
               <div>*/}
 
               <div className={styles.header}>
                 <div className={styles.title}>
-                  <h4>{'category.name'}</h4>{' '}
-                  {/* apostrofy do usunięcia po dodaniu funkcjonalności */}
+                  <h4>{'category.name'}</h4>
                 </div>
 
                 <div className={styles.displayOptions}>
                   <div className={styles.productsSorting}>
                     <label>Sort By</label>
                     <div className={styles.select + ' ' + styles.orderSelect}>
-                      ---
                       <FontAwesomeIcon className={styles.icon} icon={faCaretDown} />
                       <ul className={styles.productsOrder}>
                         <li>Price: Lowest first</li>
