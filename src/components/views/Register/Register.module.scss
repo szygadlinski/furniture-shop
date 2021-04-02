@@ -2,47 +2,46 @@
 
 .root {
   padding: ($base-padding * 2) 0;
-  background: $login-bcg-out;
+  background: $bck-register;
 
   .title {
     text-align: center;
-    color: $login-title;
+    color: $register-title;
     padding: $base-padding / 2;
   }
 
   .loginWrapper {
     display: flex;
     flex-direction: column;
-    background: $login-bcg-in;
+    background: $white-register;
     padding: ($base-padding * 2) ($base-padding * 3);
     max-width: 500px;
     margin: auto;
-    border-top: 8px solid $login-border-out;
+    border-top: 8px solid $register-border-out;
     border-radius: 10px;
     box-shadow: 10px 10px 50px;
 
     .button {
       margin: auto;
       padding: ($base-padding / 2) ($base-padding * 2);
-      background: linear-gradient(lighten($login-btn-bcg, 40%), $login-btn-bcg);
+      background: linear-gradient(lighten($btn-register, 40%), $btn-register);
       color: $login-btn-txt;
       font-weight: bolder;
       border-radius: 5px;
-      box-shadow: 0 0 10px $login-border-in;
+      box-shadow: 0 0 10px $bd-register;
+      margin-top: 15px;
 
       &:hover {
-        background: linear-gradient($login-btn-bcg, darken($login-btn-bcg, 40%));
-        box-shadow: 0 0 20px darken($login-hover, 20%);
+        background: linear-gradient($btn-register, darken($btn-register, 40%));
+        box-shadow: 0 0 20px darken($register-hover, 20%);
         @extend %hover-animation;
       }
     }
 
-    // tu pisac kod
     > div {
       position: relative;
       background: white;
 
-      // Looks like placeholder
       > label {
         opacity: 0.3;
         font-weight: bold;
@@ -57,24 +56,22 @@
         width: 100%;
         border: 0;
         padding: 8px 8px 8px 30px;
-        border: 2px solid $login-border-in;
+        border: 2px solid $bd-register;
         margin-bottom: $base-padding;
         border-radius: 5px;
         outline: none;
         font-weight: bolder;
         box-shadow: 0 0 5px;
 
-
         &:hover, &:focus {
-          color: $login-hover;
-          border: 2px solid $login-hover;
-          box-shadow: 0 0 10px $login-hover;
-          background: lighten($login-hover, 40%);
+          color: $register-hover;
+          border: 2px solid $register-hover;
+          box-shadow: 0 0 10px $register-hover;
+          background: lighten($register-hover, 40%);
           cursor: pointer;
           @extend %hover-animation;
-          // removing default focus style
           outline: 0;
-          // adding new one
+
           & + label {
             opacity: 0;
             cursor: pointer;
@@ -103,7 +100,6 @@
             padding: 0 30px 20px 50px;
           }
         }
-
       }
 
       .requirements {
@@ -115,40 +111,10 @@
         color: red;
         font-style: italic;
       }
-
-    }
-
-    .checkboxWrapper {
-      display: flex;
-      flex-direction: column;
-      margin: 25px 0;
-      width: 90%;
-      padding-left: 10px;
-
-      .conditions {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-
-        input {
-          height: 19px;
-          width: 19px;
-          margin-right: 10px;
-        }
-
-        h6 {
-          font-size: 13px;
-          color: $bck-register;
-          margin: 0;
-        }
-        .checkAll {
-          font-weight: bold;
-        }
-      }
     }
 
     &:hover {
-      box-shadow: 0 0 50px darken($login-bcg-out, 60%);
+      box-shadow: 0 0 50px darken($bck-register, 60%);
       @extend %hover-animation;
     }
   }

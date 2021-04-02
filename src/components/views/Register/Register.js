@@ -1,23 +1,40 @@
 import React from 'react';
 import styles from './Register.module.scss';
 import Button from '../../common/Button/Button';
-import PropTypes from 'prop-types';
 
-const Register = ({ valid = false }) => {
+const Register = () => {
   const validate = event => {
-    event.preventDefault();
     const firstName = document.getElementById('first_name').value;
     const lastName = document.getElementById('last_name').value;
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
     const confirmedPassword = document.getElementById('confirmPassword').value;
-    const termsAndConditions = document.getElementById('conditions').checked;
-    console.log(email.includes('@'));
-    //if(
-    //   (firstName.length >= 3 && firstName.length <= 30)
-    //  && (lastName.length >=3 && lastName.length <= 30)
-    //   && email.contains()
-    // ) return true;
+    if (
+      firstName.length >= 3 &&
+      firstName.length <= 30 &&
+      lastName.length >= 3 && lastName.length <= 30 &&
+      email.includes('@') &&
+      password.length >= 3 &&
+      confirmedPassword.length >= 3 &&
+      password === confirmedPassword
+    ) {
+      return true;
+    } else if (
+      firstName.length >= 3 &&
+      firstName.length <= 30 &&
+      lastName.length >= 3 && lastName.length <= 30 &&
+      email.includes('@') &&
+      password.length >= 3 &&
+      confirmedPassword.length >= 3 &&
+      password !== confirmedPassword
+    ) {
+      window.alert('Check if passwords matches each other!');
+      event.preventDefault();
+      return false;
+    } else {
+      window.alert('Please check, if you filled correctly all labels!');
+      event.preventDefault();
+    }
   };
 
   return (
@@ -92,26 +109,13 @@ const Register = ({ valid = false }) => {
               Your password must be at least 3 characters.
             </div>
           </div>
-          <form className={styles.checkboxWrapper}>
-            <div className={styles.conditions}>
-              <input type='checkbox' id='conditions' />
-              <h6>
-                I accept <a href='/#'>Terms and Conditions</a> *
-              </h6>
-            </div>
-          </form>
-
-          <Button className={styles.button} onClick={validate}>
-            <a href='/'>Sign up</a>
+          <Button className={styles.button} onClick={validate} href='/'>
+            Register
           </Button>
         </form>
       </div>
     </div>
   );
-};
-
-Register.propTypes = {
-  valid: PropTypes.bool,
 };
 
 export default Register;
