@@ -30,11 +30,11 @@ const Register = () => {
       confirmedPassword.length >= 3 &&
       password !== confirmedPassword
     ) {
-      window.alert('Check if passwords matches each other!');
+      window.alert('Please check, if passwords match each other.');
       event.preventDefault();
       return false;
     } else {
-      window.alert('Please check, if you filled in correctly all labels!');
+      window.alert('Please check, if you filled in all labels correctly.');
       event.preventDefault();
     }
   };
