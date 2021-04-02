@@ -33,19 +33,18 @@ const Slider = ({ children, className: propClassName }) => {
   const classes = [styles.root];
   if (propClassName) classes.push(propClassName);
 
-  const slides = [];
+  const sliderCount = React.Children.count(children);
   const sliderStep = 1;
 
   /* State */
   const [isSlideFading, setSlideFading] = useState(false);
-  const [activeSlide, setActiveSlide] = useState(0);
-  // const [sliderOffset, setSliderOffset] = useState(0);
+  const [activeSlideIndex, setActiveSlideIndex] = useState(0);
 
   /* Dots functionality */
   const handleSlideChange = newIndex => {
     setSlideFading(true);
     setTimeout(() => {
-      setActiveSlide(newIndex);
+      setActiveSlideIndex(newIndex);
     }, 300);
     setTimeout(() => {
       setSlideFading(false);
@@ -54,12 +53,16 @@ const Slider = ({ children, className: propClassName }) => {
 
   const handleSliderForward = event => {
     event.preventDefault();
-    console.log('move slider forward');
+    if (activeSlideIndex + 1 < sliderCount) {
+      handleSlideChange(activeSlideIndex + sliderStep);
+    }
   };
 
   const handleSliderBackward = event => {
     event.preventDefault();
-    console.log('move slider back');
+    if (activeSlideIndex - 1 >= 0) {
+      handleSlideChange(activeSlideIndex - sliderStep);
+    }
   };
 
   return (
@@ -67,25 +70,32 @@ const Slider = ({ children, className: propClassName }) => {
       <div className={styles.slider}>
         <div className={styles.slideList}>
           <div className={styles.slideListInner}>
-            {React.Children.map(children, (child, i) => (
-              <div
-                key={i}
-                // className={
-                //   styles.slide +
-                // (isSlideFading ? ` ${styles.fadeout}` : ` ${styles.fadein}`)
-                // }
-              >
-                {child}
-              </div>
-            ))}
+            {React.Children.map(
+              children,
+              (child, i) =>
+                i === activeSlideIndex && (
+                  <div
+                    key={i}
+                    className={
+                      styles.slide +
+                      (isSlideFading ? ` ${styles.fadeout}` : ` ${styles.fadein}`)
+                    }
+                  >
+                    {child}
+                  </div>
+                )
+            )}
           </div>
         </div>
       </div>
       <div className={styles.controls}>
-        <Button className={styles.button}>
+        <Button
+          className={styles.button}
+          onClick={event => handleSliderBackward(event)}
+        >
           <span>&lt;</span>
         </Button>
-        <Button className={styles.button}>
+        <Button className={styles.button} onClick={event => handleSliderForward(event)}>
           <span>&gt;</span>
         </Button>
       </div>

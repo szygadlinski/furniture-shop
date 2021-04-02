@@ -21,6 +21,13 @@ const banners = [
     h1: 'GUEST ROOM <span>CHAIRS</span>',
     h2: 'save up to 50% of all furniture',
   },
+  {
+    img:
+      'https://images.pexels.com/photos/775219/pexels-photo-775219.jpeg?cs=srgb&fm=jpg&h=750&w=1260',
+    name: 'Bedroom collection',
+    h1: '<span>BEDROOM</span> collection',
+    h2: '$200 off',
+  },
 ];
 
 const Promoted = ({ products }) => {
