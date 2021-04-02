@@ -1,7 +1,13 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-const Swipeable = ({ leftAction, rightAction, mouseEvents = false, children }) => {
+const Swipeable = ({
+  leftAction,
+  rightAction,
+  mouseEvents = false,
+  children,
+  className,
+}) => {
   const [touchStart, setTouchStart] = useState(0);
   const [swiped, setSwiped] = useState(false);
 
@@ -47,6 +53,7 @@ const Swipeable = ({ leftAction, rightAction, mouseEvents = false, children }) =
 
   return (
     <div
+      className={className}
       onTouchStart={event => handleTouchStart(event)}
       onTouchEnd={event => handleTouchEnd(event)}
       onTouchMove={event => handleTouchMove(event)}
@@ -63,6 +70,7 @@ Swipeable.propTypes = {
   rightAction: PropTypes.func,
   children: PropTypes.node,
   mouseEvents: PropTypes.bool,
+  className: PropTypes.string,
 };
 
 export default Swipeable;

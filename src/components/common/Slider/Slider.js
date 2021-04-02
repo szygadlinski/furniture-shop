@@ -54,7 +54,7 @@ const Slider = ({
       {[...Array(sliderCount).keys()].map(key => (
         <div
           key={key}
-          className={styles.dot}
+          className={styles.dot + (key === activeSlideIndex ? ` ${styles.active}` : '')}
           onClick={() => handleSlideChange(key)}
         ></div>
       ))}
@@ -73,7 +73,11 @@ const Slider = ({
   );
 
   return (
-    <Swipeable leftAction={handleSliderForward} rightAction={handleSliderBackward}>
+    <Swipeable
+      className={styles.swipeable}
+      leftAction={handleSliderForward}
+      rightAction={handleSliderBackward}
+    >
       <div className={classes.join(' ')}>
         {dots}
         <div className={styles.slider}>

@@ -16,6 +16,10 @@
   position: relative;
 }
 
+.swipeable {
+  height: 100%;
+}
+
 .fadeout {
   opacity: 0;
   transition: 0.5s;
@@ -31,6 +35,7 @@
   display: flex;
   align-items: stretch;
   flex: 1 1 auto;
+  height: 100%;
 
   .slide {
     position: relative;
@@ -86,12 +91,14 @@
   display: inline-block;
   margin: 0 4px;
   cursor: pointer;
+
+  &:hover {
+    background-color: $orange;
+  }
+
+  &.active {
+    background-color: $orange;
+  }
 }
 
-.dot:hover {
-  background-color: $orange;
-}
 
-.dot:active {
-  background-color: $orange;
-}
