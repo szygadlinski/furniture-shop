@@ -12,7 +12,8 @@ const Register = () => {
     if (
       firstName.length >= 3 &&
       firstName.length <= 30 &&
-      lastName.length >= 3 && lastName.length <= 30 &&
+      lastName.length >= 3 &&
+      lastName.length <= 30 &&
       email.includes('@') &&
       password.length >= 3 &&
       confirmedPassword.length >= 3 &&
@@ -22,7 +23,8 @@ const Register = () => {
     } else if (
       firstName.length >= 3 &&
       firstName.length <= 30 &&
-      lastName.length >= 3 && lastName.length <= 30 &&
+      lastName.length >= 3 &&
+      lastName.length <= 30 &&
       email.includes('@') &&
       password.length >= 3 &&
       confirmedPassword.length >= 3 &&
@@ -32,7 +34,7 @@ const Register = () => {
       event.preventDefault();
       return false;
     } else {
-      window.alert('Please check, if you filled correctly all labels!');
+      window.alert('Please check, if you filled in correctly all labels!');
       event.preventDefault();
     }
   };
