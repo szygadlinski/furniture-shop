@@ -1539,12 +1539,6 @@ const initialState = {
       ' of furniture',
     ],
   },
-  promotion: {
-    picture:
-      'https://images.pexels.com/photos/276534/pexels-photo-276534.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-    picture2:
-      'https://images.pexels.com/photos/276528/pexels-photo-276528.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-  },
   favorites: [],
   tags: [
     {
@@ -1576,6 +1570,29 @@ const initialState = {
       id: 'clothes',
       name: 'Clothes',
       checked: false,
+    },
+  ],
+  promoBanners: [
+    {
+      img:
+        'https://images.pexels.com/photos/3757055/pexels-photo-3757055.jpeg?cs=srgb&dl=pexels-andrea-piacquadio-3757055.jpg&fm=jpg',
+      name: 'Indoor furniture',
+      h1: 'INDOOR <span>FURNITURE</span>',
+      h2: 'save up to 50% of all furniture',
+    },
+    {
+      img:
+        'https://images.pexels.com/photos/1350789/pexels-photo-1350789.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+      name: 'Guest room chairs',
+      h1: 'GUEST ROOM <span>CHAIRS</span>',
+      h2: 'save up to 50% of all furniture',
+    },
+    {
+      img:
+        'https://images.pexels.com/photos/775219/pexels-photo-775219.jpeg?cs=srgb&fm=jpg&h=750&w=1260',
+      name: 'Bedroom collection',
+      h1: '<span>BEDROOM</span> collection',
+      h2: '$200 off',
     },
   ],
 };

@@ -9,11 +9,11 @@ import dealsReducer from './dealsRedux';
 import deviceTypeReducer from './deviceTypeRedux';
 import feedbacksReducer from './feedbackRedux';
 import favoritesReducer from './favoritesRedux';
+import promoBannersReducer from './promoBannersRedux';
 
 // load persisted state from LocalStorage and combine with initialState
 const persistedState = loadState();
 const combinedState = Object.assign(initialState, persistedState);
-
 
 // define reducers
 const reducers = {
@@ -24,6 +24,7 @@ const reducers = {
   deviceType: deviceTypeReducer,
   feedbacks: feedbacksReducer,
   favorites: favoritesReducer,
+  promoBanners: promoBannersReducer,
 };
 
 // add blank reducers for initial state properties without reducers
