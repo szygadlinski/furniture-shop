@@ -15,21 +15,21 @@ const Promoted = ({ products, banners }) => {
             <div className={styles.deals}>
               <div className={styles.bar}>
                 <h4>HOT DEALS</h4>
-                <div className={styles.dots}>
-                  <div className={styles.dot}></div>
-                  <div className={styles.dot}></div>
-                  <div className={styles.dot}></div>
-                </div>
               </div>
-              <ProductBox
-                className={styles.product}
-                variant='promoted'
-                {...products[0]}
-              />
+              <Slider noButtons autoPlay interval={3}>
+                {products.map(product => (
+                  <ProductBox
+                    key={product.id}
+                    className={styles.product}
+                    variant='promoted'
+                    {...product}
+                  />
+                ))}
+              </Slider>
             </div>
           </div>
           <div className='col-md-8'>
-            <Slider>
+            <Slider noDots>
               {banners.map((banner, i) => (
                 <div key={i} className={styles.banner}>
                   <img src={banner.img} alt={banner.name} />

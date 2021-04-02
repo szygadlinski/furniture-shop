@@ -1,35 +1,18 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 import Button from '../../common/Button/Button';
 
 import styles from './Slider.module.scss';
 
-/* Custom hook for getting container width */
-// const useContainerWidth = myRef => {
-//   const getWidth = () => myRef.current.offsetWidth;
-//   const [width, setWidth] = useState(0);
-
-//   useEffect(() => {
-//     const handleResize = () => {
-//       setWidth(getWidth());
-//     };
-
-//     if (myRef.current) {
-//       setWidth(getWidth());
-//     }
-
-//     window.addEventListener('resize', handleResize);
-
-//     return () => {
-//       window.removeEventListener('resize', handleResize);
-//     };
-//   }, [getWidth, myRef]);
-
-//   return width;
-// };
-
-const Slider = ({ children, className: propClassName }) => {
+const Slider = ({
+  children,
+  className: propClassName,
+  noButtons,
+  autoPlay,
+  interval,
+  noDots,
+}) => {
   const classes = [styles.root];
   if (propClassName) classes.push(propClassName);
 
@@ -65,52 +48,46 @@ const Slider = ({ children, className: propClassName }) => {
     }
   };
 
-  return (
-    <div className={classes.join(' ')}>
-      <div className={styles.slider}>
-        <div className={styles.slideList}>
-          <div className={styles.slideListInner}>
-            {React.Children.map(
-              children,
-              (child, i) =>
-                i === activeSlideIndex && (
-                  <div
-                    key={i}
-                    className={
-                      styles.slide +
-                      (isSlideFading ? ` ${styles.fadeout}` : ` ${styles.fadein}`)
-                    }
-                  >
-                    {child}
-                  </div>
-                )
-            )}
-          </div>
-        </div>
-      </div>
-      <div className={styles.controls}>
-        <Button
-          className={styles.button}
-          onClick={event => handleSliderBackward(event)}
-        >
-          <span>&lt;</span>
-        </Button>
-        <Button className={styles.button} onClick={event => handleSliderForward(event)}>
-          <span>&gt;</span>
-        </Button>
-      </div>
-      {/* <Button
-        className={styles.button}
-        onClick={event => handleSliderBackward(event)}
-      >
+  const dots = noDots ? null : (
+    <div className={styles.dots}>
+      {[...Array(sliderCount).keys()].map(key => (
+        <div key={key} className={styles.dot}></div>
+      ))}
+    </div>
+  );
+
+  const buttons = noButtons ? null : (
+    <div className={styles.buttons}>
+      <Button className={styles.button} onClick={event => handleSliderBackward(event)}>
         <span>&lt;</span>
       </Button>
-      <Button
-        className={styles.button}
-        onClick={event => handleSliderForward(event)}
-      >
+      <Button className={styles.button} onClick={event => handleSliderForward(event)}>
         <span>&gt;</span>
-      </Button> */}
+      </Button>
+    </div>
+  );
+
+  return (
+    <div className={classes.join(' ')}>
+      {dots}
+      <div className={styles.slider}>
+        {React.Children.map(
+          children,
+          (child, i) =>
+            i === activeSlideIndex && (
+              <div
+                key={i}
+                className={
+                  styles.slide +
+                  (isSlideFading ? ` ${styles.fadeout}` : ` ${styles.fadein}`)
+                }
+              >
+                {child}
+              </div>
+            )
+        )}
+      </div>
+      {buttons}
     </div>
   );
 };
@@ -118,6 +95,10 @@ const Slider = ({ children, className: propClassName }) => {
 Slider.propTypes = {
   children: PropTypes.arrayOf(PropTypes.node),
   className: PropTypes.string,
+  noButtons: PropTypes.bool,
+  autoPlay: PropTypes.bool,
+  interval: PropTypes.number,
+  noDots: PropTypes.bool,
 };
 
 export default Slider;

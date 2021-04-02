@@ -13,6 +13,7 @@
   flex-direction: column;
   height: 100%;
   justify-content: space-between;
+  position: relative;
 }
 
 .fadeout {
@@ -31,58 +32,23 @@
   align-items: stretch;
   flex: 1 1 auto;
 
-  .slideList {
-    overflow: hidden;
+  .slide {
+    position: relative;
+    background-color: $pb-photo-bcg;
+    display: inline-block;
+    height: 100%;
 
-    .slideListInner {
+    img {
+      width: 100%;
       height: 100%;
-      transition-duration: 500ms;
-    }
-
-    .slide {
-      position: relative;
-      background-color: $pb-photo-bcg;
-      display: inline-block;
-      height: 100%;
-
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
+      object-fit: cover;
     }
   }
-
-  // .button {
-  //   position: relative;
-  //   color: $slider-text;
-  //   width: 30px;
-  //   border-radius: 2px;
-  //   background-color: $slider-btn;
-  //   margin: 0 0 0 5px;
-  //   padding: 0;
-  //   flex: 0 0 auto;
-  //   @extend %hover-animation;
-  //   &:hover {
-  //     background-color: $slider-btn-hover;
-  //   }
-
-  //   &:last-child {
-  //     margin: 0 5px;
-  //   }
-
-  //   span {
-  //     position: absolute;
-  //     transform: translate(-50%, -50%);
-  //     top: 50%;
-  //     left: 50%;
-  //   }
-  // }
 }
 
 // Controls
 
-.controls {
+.buttons {
   display: flex;
   width: 100%;
   height: 39px;
@@ -101,4 +67,31 @@
   .icon {
     color: $white;
   }
+}
+
+.dots {
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1;
+  margin: 4px;
+}
+
+.dot {
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background-color: $light-1;
+  display: inline-block;
+  margin: 0 4px;
+  cursor: pointer;
+}
+
+.dot:hover {
+  background-color: $orange;
+}
+
+.dot:active {
+  background-color: $orange;
 }

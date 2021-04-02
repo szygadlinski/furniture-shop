@@ -5,7 +5,7 @@ import { getOnSale } from '../../../redux/productsRedux.js';
 import { getAllBanners } from '../../../redux/promoBannersRedux.js';
 
 const mapStateToProps = state => ({
-  products: getOnSale(state).slice(0, 4),
+  products: getOnSale(state).slice(0, 3),
   banners: getAllBanners(state),
 });
 
