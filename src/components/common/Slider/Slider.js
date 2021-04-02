@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-import Button from '../../common/Button/Button';
+import Button from '../Button/Button';
+import Swipeable from '../Swipeable/Swipeable';
 
 import styles from './Slider.module.scss';
 
@@ -35,14 +36,14 @@ const Slider = ({
   };
 
   const handleSliderForward = event => {
-    event.preventDefault();
+    if (event) event.preventDefault();
     if (activeSlideIndex + 1 < sliderCount) {
       handleSlideChange(activeSlideIndex + sliderStep);
     }
   };
 
   const handleSliderBackward = event => {
-    event.preventDefault();
+    if (event) event.preventDefault();
     if (activeSlideIndex - 1 >= 0) {
       handleSlideChange(activeSlideIndex - sliderStep);
     }
@@ -72,27 +73,29 @@ const Slider = ({
   );
 
   return (
-    <div className={classes.join(' ')}>
-      {dots}
-      <div className={styles.slider}>
-        {React.Children.map(
-          children,
-          (child, i) =>
-            i === activeSlideIndex && (
-              <div
-                key={i}
-                className={
-                  styles.slide +
-                  (isSlideFading ? ` ${styles.fadeout}` : ` ${styles.fadein}`)
-                }
-              >
-                {child}
-              </div>
-            )
-        )}
+    <Swipeable leftAction={handleSliderForward} rightAction={handleSliderBackward}>
+      <div className={classes.join(' ')}>
+        {dots}
+        <div className={styles.slider}>
+          {React.Children.map(
+            children,
+            (child, i) =>
+              i === activeSlideIndex && (
+                <div
+                  key={i}
+                  className={
+                    styles.slide +
+                    (isSlideFading ? ` ${styles.fadeout}` : ` ${styles.fadein}`)
+                  }
+                >
+                  {child}
+                </div>
+              )
+          )}
+        </div>
+        {buttons}
       </div>
-      {buttons}
-    </div>
+    </Swipeable>
   );
 };
 
