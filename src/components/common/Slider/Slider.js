@@ -51,7 +51,11 @@ const Slider = ({
   const dots = noDots ? null : (
     <div className={styles.dots}>
       {[...Array(sliderCount).keys()].map(key => (
-        <div key={key} className={styles.dot}></div>
+        <div
+          key={key}
+          className={styles.dot}
+          onClick={() => handleSlideChange(key)}
+        ></div>
       ))}
     </div>
   );

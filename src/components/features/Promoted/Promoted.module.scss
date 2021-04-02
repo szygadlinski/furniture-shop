@@ -12,42 +12,17 @@
     align-items: center;
     justify-content: space-around;
 
-    & + div {
-      border-top: none;
-    }
-
     h4 {
       color: $light-1;
       display: inline-block;
       margin: 0;
-    }
-
-    .dots {
-      display: inline-block;
-    }
-
-    .dot {
-      height: 15px;
-      width: 15px;
-      border-radius: 50%;
-      background-color: $light-1;
-      display: inline-block;
-      margin-left: 8px;
-      cursor: pointer;
-    }
-
-    .dot:hover {
-      background-color: $orange;
-    }
-
-    .dot:active {
-      background-color: $orange;
     }
   }
 
 // *** Zdjęcie z przyciskami w lewym kafelku ***
  .product {
    margin-bottom: 0;
+   border-top: none;
  }
 
 // *** KAFELEK PO PRAWEJ STRONIE ***
