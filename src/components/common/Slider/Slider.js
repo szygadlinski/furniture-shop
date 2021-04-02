@@ -13,7 +13,10 @@ const Slider = ({
   autoPlay,
   interval,
   noDots,
+  dotsStyle,
+  buttonsStyle,
 }) => {
+  console.log(dotsStyle);
   const classes = [styles.root];
   if (propClassName) classes.push(propClassName);
 
@@ -50,7 +53,7 @@ const Slider = ({
   };
 
   const dots = noDots ? null : (
-    <div className={styles.dots}>
+    <div className={styles.dots} style={dotsStyle}>
       {[...Array(sliderCount).keys()].map(key => (
         <div
           key={key}
@@ -62,7 +65,7 @@ const Slider = ({
   );
 
   const buttons = noButtons ? null : (
-    <div className={styles.buttons}>
+    <div className={styles.buttons} style={buttonsStyle}>
       <Button className={styles.button} onClick={event => handleSliderBackward(event)}>
         <span>&lt;</span>
       </Button>
@@ -110,6 +113,8 @@ Slider.propTypes = {
   autoPlay: PropTypes.bool,
   interval: PropTypes.number,
   noDots: PropTypes.bool,
+  dotsStyle: PropTypes.object,
+  buttonsStyle: PropTypes.object,
 };
 
 export default Slider;

@@ -16,7 +16,7 @@ const Promoted = ({ products, banners }) => {
               <div className={styles.bar}>
                 <h4>HOT DEALS</h4>
               </div>
-              <Slider noButtons autoPlay interval={3}>
+              <Slider dotsStyle={{ top: '-44px' }} noButtons autoPlay interval={3}>
                 {products.map(product => (
                   <ProductBox
                     key={product.id}

@@ -3,7 +3,7 @@
 .root {
   margin-top: $base-padding *2;
 
-  // *** Lewy kafelek ***
+// *** Lewy kafelek ***
   .bar {
     width: 100%;
     height: 60px;
@@ -16,16 +16,16 @@
       color: $light-1;
       display: inline-block;
       margin: 0;
+      padding-right: 69px;
     }
   }
 
-// *** Zdjęcie z przyciskami w lewym kafelku ***
- .product {
+  .product {
    margin-bottom: 0;
    border-top: none;
  }
 
-// *** KAFELEK PO PRAWEJ STRONIE ***
+// *** Prawy kafelek ***
   .banner {
     background-color: $light-1;
     position: relative;
