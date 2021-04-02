@@ -1,6 +1,7 @@
 @import "../../../styles/settings.scss";
 
 .root {
+
   padding: $base-padding 0;
   display: flex;
   justify-content: center;
@@ -57,35 +58,12 @@
       padding: 0 30px;
     }
 
-
+    // formularz
     .registerWrapper {
       display: flex;
       flex-direction: column;
       width: 90%;
       margin-left: 15px;
-
-      input {
-        width: 90%;
-        height: 42px;
-        margin-bottom: 15px;
-        border: 1px solid $bd-register;
-        padding-left: 10px;
-      }
-      .passwordInput {
-        display: flex;
-        position: relative;
-
-
-        .icon {
-          position: absolute;
-          top: 21%;
-          right: 14%;
-        }
-        .icon:hover {
-          cursor: pointer;
-          color: $bd-register;
-        }
-      }
     }
 
     .checkboxWrapper {
