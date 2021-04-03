@@ -14,6 +14,8 @@ const ProductBox = ({
   removeFavorite,
   compareItems,
   variant,
+  onModalOpen,
+  onModalClose,
   ...productProps
 }) => {
   const { name, price, image, id, isFavorite, category, stars } = productProps;
@@ -38,11 +40,13 @@ const ProductBox = ({
 
   const closeModal = event => {
     event.preventDefault();
+    onModalClose();
     event.target.parentNode.style.display = 'none';
   };
 
   const openModal = event => {
     event.preventDefault();
+    onModalOpen();
     document.getElementById(`${id}`).style.display = 'flex';
   };
 
@@ -99,6 +103,8 @@ ProductBox.propTypes = {
   removeFavorite: PropTypes.func,
   category: PropTypes.string,
   variant: PropTypes.string,
+  onModalOpen: PropTypes.func,
+  onModalClose: PropTypes.func,
 };
 
 export default ProductBox;

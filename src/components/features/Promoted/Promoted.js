@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styles from './Promoted.module.scss';
 import Button from '../../common/Button/Button';
@@ -7,6 +7,8 @@ import Slider from '../../common/Slider/Slider';
 import parse from 'html-react-parser';
 
 const Promoted = ({ products, banners }) => {
+  const [playSlider, setPlaySlider] = useState(true);
+
   return (
     <div className={styles.root}>
       <div className='container'>
@@ -16,12 +18,19 @@ const Promoted = ({ products, banners }) => {
               <div className={styles.bar}>
                 <h4>HOT DEALS</h4>
               </div>
-              <Slider dotsStyle={{ top: '-44px' }} noButtons autoPlay interval={3}>
+              <Slider
+                dotsStyle={{ top: '-44px' }}
+                noButtons
+                autoPlay={playSlider}
+                interval={3}
+              >
                 {products.map(product => (
                   <ProductBox
                     key={product.id}
                     className={styles.product}
                     variant='promoted'
+                    onModalOpen={() => setPlaySlider(false)}
+                    onModalClose={() => setPlaySlider(true)}
                     {...product}
                   />
                 ))}
