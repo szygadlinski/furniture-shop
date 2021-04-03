@@ -1595,6 +1595,7 @@ const initialState = {
       h2: '$200 off',
     },
   ],
+  currentPrice: 0,
 };
 
 export default initialState;

@@ -8,7 +8,7 @@ import styles from './ProductList.module.scss';
 import Banner from '../../features/Banner/Banner.js';
 import CategoryFilter from '../../features/CategoryFilter/CategoryFilter';
 import ColorFilter from '../../features/ColorFilter/ColorFilter';
-import PriceFilter from '../../features/PriceFilter/PriceFilter';
+import PriceFilter from '../../features/PriceFilter/PriceFilterContainer';
 import SizeFilter from '../../features/SizeFilter/SizeFilter';
 import TagFilter from '../../features/TagFilter/TagFilterContainer';
 import Feedback from '../../features/Feedback/FeedbackContainer';
@@ -17,12 +17,13 @@ import ProductBox from '../../features/ProductBox/ProductBoxContainer';
 
 class ProductList extends React.Component {
   static propTypes = {
-    categories: PropTypes.array,
-    products: PropTypes.array,
+    categories: PropTypes.arrayOf(PropTypes.object),
+    products: PropTypes.arrayOf(PropTypes.object),
+    productsFilteredByPrice: PropTypes.arrayOf(PropTypes.object),
   };
 
-  render() {
-    const { /*categories,*/ products } = this.props;
+  render(){
+    const { /*categories, products,*/ productsFilteredByPrice } = this.props;
 
     return (
       <div className={styles.root}>
@@ -83,7 +84,7 @@ class ProductList extends React.Component {
 
               <div className={styles.products}>
                 <div className='row'>
-                  {products.map(item => (
+                  {productsFilteredByPrice.map(item => (
                     <div key={item.id} className='col-12 col-md-6 col-lg-4'>
                       <ProductBox {...item} />
                     </div>
