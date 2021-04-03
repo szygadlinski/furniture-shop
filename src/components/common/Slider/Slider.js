@@ -25,6 +25,7 @@ const Slider = ({
   /* State */
   const [isSlideFading, setSlideFading] = useState(false);
   const [activeSlideIndex, setActiveSlideIndex] = useState(0);
+  const [pause, setPause] = useState(interval);
 
   /* Autoplay */
   const autoPlayRef = useRef();
@@ -38,9 +39,9 @@ const Slider = ({
       if (autoPlay) autoPlayRef.current();
     };
 
-    const autoplayFunc = setInterval(play, interval * 1000);
+    const autoplayFunc = setInterval(play, pause * 1000);
     return () => clearInterval(autoplayFunc);
-  }, [autoPlay, interval]);
+  }, [autoPlay, pause]);
 
   const nextSlide = () => {
     if (activeSlideIndex === sliderCount - 1) {
@@ -48,6 +49,7 @@ const Slider = ({
     }
 
     handleSlideChange(activeSlideIndex + 1);
+    setPause(interval);
   };
 
   /* Slider controls */
@@ -61,8 +63,14 @@ const Slider = ({
     }, 500);
   };
 
+  const handleDotsClick = newIndex => {
+    if (autoPlay) setPause(10);
+    handleSlideChange(newIndex);
+  };
+
   const handleSliderForward = event => {
     if (event) event.preventDefault();
+    if (autoPlay) setPause(10);
     if (activeSlideIndex + 1 < sliderCount) {
       handleSlideChange(activeSlideIndex + sliderStep);
     }
@@ -70,6 +78,7 @@ const Slider = ({
 
   const handleSliderBackward = event => {
     if (event) event.preventDefault();
+    if (autoPlay) setPause(10);
     if (activeSlideIndex - 1 >= 0) {
       handleSlideChange(activeSlideIndex - sliderStep);
     }
@@ -81,7 +90,7 @@ const Slider = ({
         <div
           key={key}
           className={styles.dot + (key === activeSlideIndex ? ` ${styles.active}` : '')}
-          onClick={() => handleSlideChange(key)}
+          onClick={() => handleDotsClick(key)}
         ></div>
       ))}
     </div>
