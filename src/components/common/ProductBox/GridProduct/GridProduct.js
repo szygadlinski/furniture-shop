@@ -11,7 +11,7 @@ import {
 import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../../Button/Button';
 import Rating from '../../Rating/Rating';
-import ProductPopup from '../../features/ProductPopup/ProductPopup';
+import ProductPopup from '../../../features/ProductPopup/ProductPopup';
 
 const GridProduct = ({
   name,
@@ -28,14 +28,24 @@ const GridProduct = ({
   faveHandler,
   comparisonHandler,
   addCartHandler,
-  openModal,
-  closeModal,
+  // openModal,
+  // closeModal,
   category,
   variant,
   className: propClassName,
 }) => {
   const classes = [styles.root];
   if (propClassName) classes.push(propClassName);
+
+  const closeModal = event => {
+    event.preventDefault();
+    event.target.parentNode.classList.remove(`${styles.show}`);
+  };
+
+  const openModal = event => {
+    event.preventDefault();
+    document.getElementById(`${id}`).classList.add(`${styles.show}`);
+  };
 
   return (
     <div className={classes.join(' ')}>
