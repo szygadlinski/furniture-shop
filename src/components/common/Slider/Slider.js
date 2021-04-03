@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 
 import Button from '../Button/Button';
@@ -11,12 +11,11 @@ const Slider = ({
   className: propClassName,
   noButtons,
   autoPlay,
-  interval,
+  interval = 2,
   noDots,
   dotsStyle,
   buttonsStyle,
 }) => {
-  console.log(dotsStyle);
   const classes = [styles.root];
   if (propClassName) classes.push(propClassName);
 
@@ -27,7 +26,31 @@ const Slider = ({
   const [isSlideFading, setSlideFading] = useState(false);
   const [activeSlideIndex, setActiveSlideIndex] = useState(0);
 
-  /* Dots functionality */
+  /* Autoplay */
+  const autoPlayRef = useRef();
+
+  useEffect(() => {
+    if (autoPlay) autoPlayRef.current = nextSlide;
+  });
+
+  useEffect(() => {
+    const play = () => {
+      if (autoPlay) autoPlayRef.current();
+    };
+
+    const autoplayFunc = setInterval(play, interval * 1000);
+    return () => clearInterval(autoplayFunc);
+  }, [autoPlay, interval]);
+
+  const nextSlide = () => {
+    if (activeSlideIndex === sliderCount - 1) {
+      return handleSlideChange(0);
+    }
+
+    handleSlideChange(activeSlideIndex + 1);
+  };
+
+  /* Slider controls */
   const handleSlideChange = newIndex => {
     setSlideFading(true);
     setTimeout(() => {
