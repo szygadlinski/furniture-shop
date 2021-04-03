@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './Promoted.module.scss';
 import Button from '../../common/Button/Button';
-import ProductBox from '../../common/ProductBox/ProductBoxContainer';
+import ProductBox from '../../features/ProductBox/ProductBoxContainer';
 import Slider from '../../common/Slider/Slider';
 import parse from 'html-react-parser';
 

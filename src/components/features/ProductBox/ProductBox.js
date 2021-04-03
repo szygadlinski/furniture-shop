@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 
 import GridProduct from './GridProduct/GridProduct';
 import GalleryProduct from './GalleryProduct/GalleryProduct';
-import Button from '../Button/Button';
-import ProductPopup from '../../features/ProductPopup/ProductPopup';
+import Button from '../../common/Button/Button';
+import ProductPopup from '../ProductPopup/ProductPopup';
 
 import styles from './ProductBox.module.scss';
 

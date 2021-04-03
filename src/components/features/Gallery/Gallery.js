@@ -3,7 +3,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 import SectionHeader from '../../common/SectionHeader/SectionHeader';
-import ProductBox from '../../common/ProductBox/ProductBoxContainer';
+import ProductBox from '../../features/ProductBox/ProductBoxContainer';
 import Button from '../../common/Button/Button';
 import Swipeable from '../../common/Swipeable/Swipeable.js';
 

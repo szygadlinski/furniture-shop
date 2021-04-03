@@ -9,9 +9,9 @@ import {
   faEye,
 } from '@fortawesome/free-solid-svg-icons';
 import { faHeart } from '@fortawesome/free-regular-svg-icons';
-import Button from '../../Button/Button';
-import Rating from '../../Rating/Rating';
-import ProductPopup from '../../../features/ProductPopup/ProductPopup';
+import Button from '../../../common/Button/Button';
+import Rating from '../../../common/Rating/Rating';
+import ProductPopup from '../../ProductPopup/ProductPopup';
 
 const GridProduct = ({
   name,
@@ -36,16 +36,6 @@ const GridProduct = ({
 }) => {
   const classes = [styles.root];
   if (propClassName) classes.push(propClassName);
-
-  // const closeModal = event => {
-  //   event.preventDefault();
-  //   event.target.parentNode.style.display = 'none';
-  // };
-
-  // const openModal = event => {
-  //   event.preventDefault();
-  //   document.getElementById(`${id}`).style.display = 'flex';
-  // };
 
   return (
     <div className={classes.join(' ')}>

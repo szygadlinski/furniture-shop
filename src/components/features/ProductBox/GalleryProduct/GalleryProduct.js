@@ -9,9 +9,9 @@ import {
   faEye,
 } from '@fortawesome/free-solid-svg-icons';
 import { faHeart } from '@fortawesome/free-regular-svg-icons';
-import Button from '../../Button/Button';
-import Rating from '../../Rating/Rating';
-import ProductPopup from '../../../features/ProductPopup/ProductPopup';
+import Button from '../../../common/Button/Button';
+import Rating from '../../../common/Rating/Rating';
+import ProductPopup from '../../ProductPopup/ProductPopup';
 
 const GalleryProduct = ({
   id,
