@@ -11,6 +11,7 @@ import {
 import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../../Button/Button';
 import Rating from '../../Rating/Rating';
+import ProductPopup from '../../../features/ProductPopup/ProductPopup';
 
 const GalleryProduct = ({
   id,
@@ -27,6 +28,9 @@ const GalleryProduct = ({
   addCartHandler,
   toggleStar,
   rated,
+  closeModal,
+  openModal,
+  category,
 }) => {
   const classes = [styles.root];
   if (propClassName) classes.push(propClassName);
@@ -55,7 +59,7 @@ const GalleryProduct = ({
         >
           <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
         </Button>
-        <Button variant='outline' tooltip='Quick view'>
+        <Button variant='outline' tooltip='Quick view' onClick={openModal}>
           <FontAwesomeIcon icon={faEye}>Quick view</FontAwesomeIcon>
         </Button>
         <Button variant='outline' tooltip='Add to cart' onClick={addCartHandler}>
@@ -91,6 +95,9 @@ GalleryProduct.propTypes = {
   id: PropTypes.string,
   toggleStar: PropTypes.func,
   rated: PropTypes.bool,
+  closeModal: PropTypes.func,
+  openModal: PropTypes.func,
+  category: PropTypes.string,
 };
 
 export default GalleryProduct;

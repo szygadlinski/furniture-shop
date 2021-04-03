@@ -32,15 +32,15 @@ const ProductBox = ({
     addToCart({ id, name, price, image });
   };
 
-  // const closeModal = event => {
-  //   event.preventDefault();
-  //   event.target.parentNode.classList.remove(`${styles.show}`);
-  // };
+  const closeModal = event => {
+    event.preventDefault();
+    event.target.parentNode.style.display = 'none';
+  };
 
-  // const openModal = event => {
-  //   event.preventDefault();
-  //   document.getElementById(`${id}`).classList.add(`${styles.show}`);
-  // };
+  const openModal = event => {
+    event.preventDefault();
+    document.getElementById(`${id}`).style.display = 'flex';
+  };
 
   if (variant === 'gallery') {
     return (
@@ -49,8 +49,8 @@ const ProductBox = ({
         comparisonHandler={comparisonHandler}
         faveHandler={faveHandler}
         addCartHandler={addCartHandler}
-        // openModal={openModal}
-        // closeModal={closeModal}
+        openModal={openModal}
+        closeModal={closeModal}
       />
     );
   } else {
@@ -61,8 +61,8 @@ const ProductBox = ({
         comparisonHandler={comparisonHandler}
         faveHandler={faveHandler}
         addCartHandler={addCartHandler}
-        // openModal={openModal}
-        // closeModal={closeModal}
+        openModal={openModal}
+        closeModal={closeModal}
       />
     );
   }

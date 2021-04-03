@@ -28,8 +28,8 @@ const GridProduct = ({
   faveHandler,
   comparisonHandler,
   addCartHandler,
-  // openModal,
-  // closeModal,
+  openModal,
+  closeModal,
   category,
   variant,
   className: propClassName,
@@ -37,15 +37,15 @@ const GridProduct = ({
   const classes = [styles.root];
   if (propClassName) classes.push(propClassName);
 
-  const closeModal = event => {
-    event.preventDefault();
-    event.target.parentNode.classList.remove(`${styles.show}`);
-  };
+  // const closeModal = event => {
+  //   event.preventDefault();
+  //   event.target.parentNode.style.display = 'none';
+  // };
 
-  const openModal = event => {
-    event.preventDefault();
-    document.getElementById(`${id}`).classList.add(`${styles.show}`);
-  };
+  // const openModal = event => {
+  //   event.preventDefault();
+  //   document.getElementById(`${id}`).style.display = 'flex';
+  // };
 
   return (
     <div className={classes.join(' ')}>
