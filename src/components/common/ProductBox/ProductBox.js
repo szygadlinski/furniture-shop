@@ -3,6 +3,10 @@ import PropTypes from 'prop-types';
 
 import GridProduct from './GridProduct/GridProduct';
 import GalleryProduct from './GalleryProduct/GalleryProduct';
+import Button from '../Button/Button';
+import ProductPopup from '../../features/ProductPopup/ProductPopup';
+
+import styles from './ProductBox.module.scss';
 
 const ProductBox = ({
   addToCart,
@@ -12,7 +16,7 @@ const ProductBox = ({
   variant,
   ...productProps
 }) => {
-  const { name, price, image, id, isFavorite } = productProps;
+  const { name, price, image, id, isFavorite, category, stars } = productProps;
 
   const faveHandler = event => {
     event.preventDefault();
@@ -42,8 +46,10 @@ const ProductBox = ({
     document.getElementById(`${id}`).style.display = 'flex';
   };
 
+  let component;
+
   if (variant === 'gallery') {
-    return (
+    component = (
       <GalleryProduct
         {...productProps}
         comparisonHandler={comparisonHandler}
@@ -54,7 +60,7 @@ const ProductBox = ({
       />
     );
   } else {
-    return (
+    component = (
       <GridProduct
         variant={variant}
         {...productProps}
@@ -66,6 +72,24 @@ const ProductBox = ({
       />
     );
   }
+
+  return (
+    <div>
+      {component}
+      <div className={styles.overlay} id={id}>
+        <Button className={styles.popupButton} onClick={closeModal}>
+          Close
+        </Button>
+        <ProductPopup
+          name={name}
+          price={price}
+          category={category}
+          rating={stars}
+          image={image}
+        />
+      </div>
+    </div>
+  );
 };
 
 ProductBox.propTypes = {
