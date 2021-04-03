@@ -1,5 +1,11 @@
 /* selectors */
 export const getAll = ({ products }) => products;
+
+export const getProductById = ({products}, productId) => {
+  const filtered = products.filter(product => product.id === productId);
+  return filtered.length ? filtered[0] : {error: true};
+};
+
 export const getCount = ({ products }) => products.length;
 export const getProductForPrice = ({ products }, min, max) =>
   products.filter(product => product.price <= max && product.price >= min);
