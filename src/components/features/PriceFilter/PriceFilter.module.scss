@@ -29,8 +29,7 @@
     justify-content: flex-end;
 
     .priceValue {
-      margin: ($base-padding / 2) 0 $base-padding auto;
-      text-align: right;
+      margin: ($base-padding / 2) 0 $base-padding;
       font-weight: bolder;
       border: 1px solid $pf-background;
       padding: ($base-padding / 4) ($base-padding / 2);
