@@ -1,0 +1,79 @@
+@import '../../../styles/settings.scss';
+
+.root {
+  padding: ($base-padding * 2) 0;
+  background: $login-bcg-out;
+
+  .title {
+    text-align: center;
+    color: $login-title;
+    padding: $base-padding / 2;
+  }
+
+  .loginWrapper {
+    display: flex;
+    flex-direction: column;
+    background: $login-bcg-in;
+    padding: ($base-padding * 2) ($base-padding * 3);
+    max-width: 500px;
+    margin: auto;
+    border-top: 8px solid $login-border-out;
+    border-radius: 10px;
+    box-shadow: 10px 10px 50px;
+
+    label {
+      font-weight: bolder;
+    }
+
+    input[type='email'], input[type='password'] {
+      font-weight: bolder;
+      margin-bottom: $base-padding;
+      padding: $base-padding / 3;
+      outline: none;
+      cursor: pointer;
+      border: 2px solid $login-border-in;
+      border-radius: 5px;
+      box-shadow: 0 0 5px;
+
+      &:hover, &:focus {
+        color: $login-hover;
+        border: 2px solid $login-hover;
+        box-shadow: 0 0 10px $login-hover;
+        background: lighten($login-hover, 40%);
+        @extend %hover-animation;
+      }
+    }
+
+    p {
+      margin-bottom: $base-padding;
+
+      a:hover {
+        color: $login-hover;
+        text-decoration: none;
+        font-weight: bolder;
+        @extend %hover-animation;
+      }
+    }
+
+    .button {
+      margin: auto;
+      padding: ($base-padding / 2) ($base-padding * 2);
+      background: linear-gradient(lighten($login-btn-bcg, 40%), $login-btn-bcg);
+      color: $login-btn-txt;
+      font-weight: bolder;
+      border-radius: 5px;
+      box-shadow: 0 0 10px $login-border-in;
+
+      &:hover {
+        background: linear-gradient($login-btn-bcg, darken($login-btn-bcg, 40%));
+        box-shadow: 0 0 20px darken($login-hover, 20%);
+        @extend %hover-animation;
+      }
+    }
+
+    &:hover {
+      box-shadow: 0 0 50px darken($login-bcg-out, 60%);
+      @extend %hover-animation;
+    }
+  }
+}

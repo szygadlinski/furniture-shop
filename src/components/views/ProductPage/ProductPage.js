@@ -23,6 +23,8 @@ import {
   faLinkedin,
 } from '@fortawesome/free-brands-svg-icons';
 import NewFurniture from '../../features/NewFurniture/NewFurnitureContainer';
+import Feedback from '../../features/Feedback/FeedbackContainer';
+import Brands from '../../features/Brands/BrandsContainer';
 
 const ProductPage = () => (
   <div className={styles.root}>
@@ -245,13 +247,13 @@ const ProductPage = () => (
     <div className='container'>
       <div className={'row ' + styles.rowrow}>
         <NewFurniture rowSize={4} />
+        <Feedback />
+        <Brands />
       </div>
     </div>
   </div>
 );
 
-
 // ProductPage.propTypes = {};
-
 
 export default ProductPage;

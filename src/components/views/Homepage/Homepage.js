@@ -7,7 +7,7 @@ import Deals from '../../features/Deals/DealsContainer';
 import NewFurniture from '../../features/NewFurniture/NewFurnitureContainer';
 import Feedback from '../../features/Feedback/FeedbackContainer';
 import Brands from '../../features/Brands/BrandsContainer';
-import Promoted from '../../features/Promoted/Promoted';
+import Promoted from '../../features/Promoted/PromotedContainer';
 import ChatBox from '../../features/ChatBox/ChatBox';
 import Gallery from '../../features/Gallery/GalleryContainer';
 

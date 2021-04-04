@@ -21,14 +21,6 @@ $orange-light: #dea55c;
 //*******COLOURS BY COMPONENT*******//
 //OTHER FILES USABLE!//
 
-//*****VIEWS******//
-//CART
-$background-banner: $dark-1;
-$background-white: $white;
-$button: $dark-4;
-$orange: $orange;
-
-
 //*****COMMON*****//
 //BUTTON
 $btn-dark-bcg: $dark-3;
@@ -204,6 +196,13 @@ $window: $white;
 $message: $light-7;
 
 //*****VIEWS*****//
+
+//CART
+$background-banner: $dark-1;
+$background-white: $white;
+$button: $dark-4;
+$orange: $orange;
+
 //PRODUCT LIST
 $pl-select: $light-6;
 $pl-border: $dark-1;
@@ -214,8 +213,21 @@ $pl-background-li: $light-4;
 //REGISTER
 $bck-register: $dark-1;
 $bd-register: $light-6;
+$register-border-out: $orange;
 $btn-register: $orange;
 $white-register: $white;
+$register-title: $white;
+$register-hover: $orange;
+
+//LOGIN
+$login-bcg-out: $dark-1;
+$login-bcg-in: $white;
+$login-title: $white;
+$login-border-out: $orange;
+$login-border-in: $light-6;
+$login-hover: $orange;
+$login-btn-bcg: $orange;
+$login-btn-txt: $dark-5;
 
 //***BASE***//
 

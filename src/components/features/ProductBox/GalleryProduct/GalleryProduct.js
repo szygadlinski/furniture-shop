@@ -4,21 +4,33 @@ import PropTypes from 'prop-types';
 import styles from './GalleryProduct.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-  faStar,
   faExchangeAlt,
   faShoppingBasket,
   faEye,
 } from '@fortawesome/free-solid-svg-icons';
-import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons';
-import Button from '../Button/Button';
+import { faHeart } from '@fortawesome/free-regular-svg-icons';
+import Button from '../../../common/Button/Button';
+import Rating from '../../../common/Rating/Rating';
+import ProductPopup from '../../ProductPopup/ProductPopup';
 
 const GalleryProduct = ({
+  id,
   name,
   price,
   oldPrice,
   stars,
   image,
   className: propClassName,
+  isFavorite,
+  faveHandler,
+  comparisonHandler,
+  compare,
+  addCartHandler,
+  toggleStar,
+  rated,
+  closeModal,
+  openModal,
+  category,
 }) => {
   const classes = [styles.root];
   if (propClassName) classes.push(propClassName);
@@ -31,16 +43,26 @@ const GalleryProduct = ({
       }}
     >
       <div className={'col-auto d-flex flex-column p-0 ' + styles.buttons}>
-        <Button variant='outline' tooltip='Favourite'>
+        <Button
+          variant='outline'
+          tooltip='Favourite'
+          className={isFavorite ? styles.favorite : ''}
+          onClick={faveHandler}
+        >
           <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
         </Button>
-        <Button variant='outline' tooltip='Add to compare'>
+        <Button
+          variant='outline'
+          tooltip='Add to compare'
+          className={compare ? styles.compare : ''}
+          onClick={comparisonHandler}
+        >
           <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
         </Button>
-        <Button variant='outline' tooltip='Quick view'>
+        <Button variant='outline' tooltip='Quick view' onClick={openModal}>
           <FontAwesomeIcon icon={faEye}>Quick view</FontAwesomeIcon>
         </Button>
-        <Button variant='outline' tooltip='Add to cart'>
+        <Button variant='outline' tooltip='Add to cart' onClick={addCartHandler}>
           <FontAwesomeIcon icon={faShoppingBasket}>Add to cart</FontAwesomeIcon>
         </Button>
       </div>
@@ -51,17 +73,7 @@ const GalleryProduct = ({
             {oldPrice && <div className={styles.old_price}>$ {oldPrice}</div>}
           </div>
           <h5>{name}</h5>
-          <div className={styles.stars}>
-            {[1, 2, 3, 4, 5].map(i => (
-              <a key={i} href='/#'>
-                {i <= stars ? (
-                  <FontAwesomeIcon icon={faStar}>{i} stars</FontAwesomeIcon>
-                ) : (
-                  <FontAwesomeIcon icon={farStar}>{i} stars</FontAwesomeIcon>
-                )}
-              </a>
-            ))}
-          </div>
+          <Rating id={id} rate={stars} toggleStar={toggleStar} rated={rated} />
         </div>
       </div>
     </div>
@@ -69,13 +81,23 @@ const GalleryProduct = ({
 };
 
 GalleryProduct.propTypes = {
-  children: PropTypes.node,
   name: PropTypes.string,
   price: PropTypes.number,
   oldPrice: PropTypes.number,
   stars: PropTypes.number,
   image: PropTypes.string,
   className: PropTypes.string,
+  isFavorite: PropTypes.bool,
+  faveHandler: PropTypes.func,
+  compare: PropTypes.bool,
+  comparisonHandler: PropTypes.func,
+  addCartHandler: PropTypes.func,
+  id: PropTypes.string,
+  toggleStar: PropTypes.func,
+  rated: PropTypes.bool,
+  closeModal: PropTypes.func,
+  openModal: PropTypes.func,
+  category: PropTypes.string,
 };
 
 export default GalleryProduct;

@@ -8,10 +8,12 @@ import styles from './ProductList.module.scss';
 import Banner from '../../features/Banner/Banner.js';
 import CategoryFilter from '../../features/CategoryFilter/CategoryFilter';
 import ColorFilter from '../../features/ColorFilter/ColorFilter';
-import ProductBox from '../../common/ProductBox/ProductBoxContainer';
 import PriceFilter from '../../features/PriceFilter/PriceFilter';
 import SizeFilter from '../../features/SizeFilter/SizeFilter';
 import TagFilter from '../../features/TagFilter/TagFilterContainer';
+import Feedback from '../../features/Feedback/FeedbackContainer';
+import Brands from '../../features/Brands/BrandsContainer';
+import ProductBox from '../../features/ProductBox/ProductBoxContainer';
 
 class ProductList extends React.Component {
   static propTypes = {
@@ -19,10 +21,10 @@ class ProductList extends React.Component {
     products: PropTypes.array,
   };
 
-  render(){
+  render() {
     const { /*categories,*/ products } = this.props;
 
-    return(
+    return (
       <div className={styles.root}>
         <div className='container'>
           <Banner />
@@ -36,7 +38,8 @@ class ProductList extends React.Component {
 
               <div className={styles.header}>
                 <div className={styles.title}>
-                  <h4>{'category.name'}</h4>                {/* apostrofy do usunięcia po dodaniu funkcjonalności */}
+                  <h4>{'category.name'}</h4>{' '}
+                  {/* apostrofy do usunięcia po dodaniu funkcjonalności */}
                 </div>
 
                 <div className={styles.displayOptions}>
@@ -104,6 +107,9 @@ class ProductList extends React.Component {
             </div>
           </div>
         </div>
+
+        <Feedback />
+        <Brands />
       </div>
     );
   }

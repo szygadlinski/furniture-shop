@@ -1,92 +1,123 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
 import styles from './Register.module.scss';
 import Button from '../../common/Button/Button';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEye } from '@fortawesome/free-solid-svg-icons';
 
-const Register = () => (
-  <div className={styles.root}>
-    <div className='container'>
-      <div className={styles.containerWrapper}>
-        <form className={styles.radioForm}>
-          <div className={styles.radioBox}>
-            <label>
-              <input
-                type='radio'
-                className={styles.radio}
-                checked='checked'
-                value='no-account'
-                name='register'
-              ></input>
-              I don&apos;t have an account
-            </label>
-            <label>
-              <input
-                type='radio'
-                className={styles.radio}
-                value='account'
-                name='register'
-              ></input>
-              I have an account
-            </label>
-          </div>
-        </form>
+const Register = () => {
+  const validate = event => {
+    const firstName = document.getElementById('first_name').value;
+    const lastName = document.getElementById('last_name').value;
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+    const confirmedPassword = document.getElementById('confirmPassword').value;
+    if (
+      firstName.length >= 3 &&
+      firstName.length <= 30 &&
+      lastName.length >= 3 &&
+      lastName.length <= 30 &&
+      email.includes('@') &&
+      password.length >= 3 &&
+      confirmedPassword.length >= 3 &&
+      password === confirmedPassword
+    ) {
+      return true;
+    } else if (
+      firstName.length >= 3 &&
+      firstName.length <= 30 &&
+      lastName.length >= 3 &&
+      lastName.length <= 30 &&
+      email.includes('@') &&
+      password.length >= 3 &&
+      confirmedPassword.length >= 3 &&
+      password !== confirmedPassword
+    ) {
+      window.alert('Please check, if passwords match each other.');
+      event.preventDefault();
+      return false;
+    } else {
+      window.alert('Please check, if you filled in all labels correctly.');
+      event.preventDefault();
+    }
+  };
 
-        <div className={styles.titleWrapper}>
-          <h5>Create account</h5>
-        </div>
+  return (
+    <div className={styles.root}>
+      <div className='container'>
+        <h2 className={styles.title}>Create your account</h2>
+        <form className={styles.loginWrapper}>
+          <div>
+            <input
+              type='text'
+              id='first_name'
+              minLength='3'
+              maxLength='30'
+              name='first_name'
+              required
+              placeholder=' '
+            />
+            <label htmlFor='first_name'>First Name</label>
+            <div className={styles.requirements}>
+              Your first name must be at least 3 characters and max 30 characters.
+            </div>
+          </div>
 
-        <form className={styles.registerWrapper}>
-          <div className={styles.emailInput}>
-            <input type='text' placeholder='First name *' />
+          <div>
+            <input
+              type='text'
+              id='last_name'
+              minLength='3'
+              maxLength='30'
+              name='last_name'
+              required
+              placeholder=' '
+            />
+            <label htmlFor='last_name'>Last Name</label>
+            <div className={styles.requirements}>
+              Your last name must be at least 3 characters and max 30 characters.
+            </div>
           </div>
-          <div className={styles.emailInput}>
-            <input type='text' placeholder='Last name *' />
-          </div>
-          <div className={styles.emailInput}>
-            <input type='text' placeholder='E-mail *' />
-          </div>
-          <div className={styles.passwordInput}>
-            <input type='password' placeholder='Password *' />
-            <FontAwesomeIcon icon={faEye} className={styles.icon} />
-          </div>
-          <div className={styles.passwordInput}>
-            <input type='password' placeholder='Confirm password *' />
-            <FontAwesomeIcon icon={faEye} className={styles.icon} />
-          </div>
-        </form>
 
-        <form className={styles.checkboxWrapper}>
-          <div className={styles.conditions}>
-            <input type='checkbox' />
-            <h6 className={styles.checkAll}>Select all</h6>
+          <div>
+            <input type='email' id='email' name='email' required placeholder=' ' />
+            <label htmlFor='email'>Email Address</label>
+            <div className={styles.requirements}>Must be a valid email address.</div>
           </div>
-          <div className={styles.conditions}>
-            <input type='checkbox' />
-            <h6>
-              I accept <a href='/#'>Terms and Conditions</a> *
-            </h6>
-          </div>
-          <div className={styles.conditions}>
-            <input type='checkbox' />
-            <h6>Sign up for newsletter</h6>
-          </div>
-        </form>
 
-        <div className={styles.buttonsWrapper}>
-          <Button variant='outline' className={styles.btn1}>
-            &#10094; Cancel
+          <div>
+            <input
+              type='password'
+              id='password'
+              minLength='3'
+              name='password'
+              required
+              placeholder=' '
+            />
+            <label htmlFor='password'>Password</label>
+            <div className={styles.requirements}>
+              Your password must be at least 3 characters.
+            </div>
+          </div>
+
+          <div>
+            <input
+              type='password'
+              id='confirmPassword'
+              minLength='3'
+              name='confirmPassword'
+              required
+              placeholder=' '
+            />
+            <label htmlFor='confirmPassword'>Confirm password</label>
+            <div className={styles.requirements}>
+              Your password must be at least 3 characters.
+            </div>
+          </div>
+          <Button className={styles.button} onClick={validate} href='/'>
+            Register
           </Button>
-          <Button variant='outline' className={styles.btn2}>
-            Sign up
-          </Button>
-        </div>
+        </form>
       </div>
     </div>
-  </div>
-);
-
-// Register.propTypes = {};
+  );
+};
 
 export default Register;
