@@ -1,4 +1,4 @@
-@import "../../../styles/settings.scss";
+@import "../../../../styles/settings.scss";
 
 .root {
   background-color: $pb-bcg;
@@ -29,7 +29,7 @@
 
     .image {
       position: relative;
-      max-width: 300px;
+      width: 100%;
       height: 240px;
       cursor: pointer;
 
@@ -47,11 +47,42 @@
         left: 50%;
         transform: translateX(-50%);
         min-width: 98%;
+        justify-content: center;
       }
 
       .button {
         padding: ($base-padding / 2) ($base-padding / 4);
         margin: 0 ($base-padding / 2);
+      }
+
+      .counter {
+        margin-top: 10%;
+        display: none;
+        width: 100%;
+        z-index: 5;
+        justify-content: space-around;
+      }
+
+      .bigDot {
+        height: 75px;
+        width: 75px;
+        border-radius: 50%;
+        background-color: $dark-4;
+        text-align: center;
+        opacity: 0.8;
+        padding: 10px 10px;
+
+        h1:first-of-type {
+          font-size: 25px;
+          color: $white;
+          margin-bottom: 0;
+        }
+
+        h1:nth-of-type(2) {
+          font-size: 15px;
+          color: $white;
+          margin-top: 0;
+        }
       }
 
       &:hover {
@@ -60,6 +91,10 @@
         }
 
         .buttons {
+          display: flex;
+        }
+
+        .counter {
           display: flex;
         }
       }
@@ -147,9 +182,6 @@
     overflow: auto;
     padding: 30px;
     display: none;
-  }
-  .overlay.show {
-    display: flex;
   }
 
   .popupButton {

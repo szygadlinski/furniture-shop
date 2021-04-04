@@ -13,7 +13,7 @@ import SizeFilter from '../../features/SizeFilter/SizeFilter';
 import TagFilter from '../../features/TagFilter/TagFilterContainer';
 import Feedback from '../../features/Feedback/FeedbackContainer';
 import Brands from '../../features/Brands/BrandsContainer';
-import ProductBox from  '../../common/ProductBox/ProductBoxContainer';
+import ProductBox from '../../features/ProductBox/ProductBoxContainer';
 
 class ProductList extends React.Component {
   static propTypes = {
@@ -21,10 +21,10 @@ class ProductList extends React.Component {
     products: PropTypes.array,
   };
 
-  render(){
+  render() {
     const { /*categories,*/ products } = this.props;
 
-    return(
+    return (
       <div className={styles.root}>
         <div className='container'>
           <Banner />
@@ -38,7 +38,8 @@ class ProductList extends React.Component {
 
               <div className={styles.header}>
                 <div className={styles.title}>
-                  <h4>{'category.name'}</h4>                {/* apostrofy do usunięcia po dodaniu funkcjonalności */}
+                  <h4>{'category.name'}</h4>{' '}
+                  {/* apostrofy do usunięcia po dodaniu funkcjonalności */}
                 </div>
 
                 <div className={styles.displayOptions}>

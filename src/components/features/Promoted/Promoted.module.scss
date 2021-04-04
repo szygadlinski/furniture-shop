@@ -1,14 +1,9 @@
 @import "../../../styles/settings.scss";
 
 .root {
-  margin-top: 5px;
+  margin-top: $base-padding *2;
 
-  // *** Prawy kafelek ***
-  .deals {
-    border: 2px solid $light-2;
-    border-top: none;
-  }
-  // *** Górny baner z napisem HOT DEALS ***
+// *** Lewy kafelek ***
   .bar {
     width: 100%;
     height: 60px;
@@ -16,216 +11,31 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-    border: none;
 
     h4 {
       color: $light-1;
       display: inline-block;
-    }
-
-    .dots {
-      display: inline-block;
-    }
-
-    .dot {
-      height: 15px;
-      width: 15px;
-      border-radius: 50%;
-      background-color: $light-1;
-      display: inline-block;
-      margin-left: 8px;
-      cursor: pointer;
-    }
-
-    .dot:hover {
-      background-color: $orange;
-    }
-
-    .dot:active {
-      background-color: $orange;
+      margin: 0;
+      padding-right: 69px;
     }
   }
 
-// *** Zdjęcie z przyciskami w lewym kafelku ***
-  .deal {
-    height: 400px;
-    width: 100%;
-    background-color: $light-1;
+  .product {
+   margin-bottom: 0;
+   border-top: none;
+ }
 
-    .picture {
-      width: 100%;
-      height: 250px;
-      position: relative;
-
-      img {
-        object-fit: cover;
-        width: 100%;
-        height: 100%;
-      }
-
-      .addToCart {
-        visibility: hidden;
-        position: absolute;
-        top: 35%;
-        left: 50%;
-        transform: translate(-50%,-50%);
-      }
-
-      .addToCartButton {
-        height: 40px;
-        font-size: 13px;
-        padding: 10px;
-      }
-    }
-
-    .counter {
-      display: flex;
-      width: 100%;
-      position: absolute;
-      top: 60%;
-      left: 0;
-      z-index: 5;
-      justify-content: space-around;
-      visibility: hidden;
-    }
-
-    .bigDot {
-      height: 75px;
-      width: 75px;
-      border-radius: 50%;
-      background-color: $dark-4;
-      text-align: center;
-      opacity: 0.8;
-      padding: 10px 10px;
-
-      h1:first-of-type {
-        font-size: 25px;
-        color: $white;
-        margin-bottom: 0;
-      }
-
-      h1:nth-of-type(2) {
-        font-size: 15px;
-        color: $white;
-        margin-top: 0;
-      }
-    }
-
-    .picture:hover {
-      .addToCart {
-        visibility: visible;
-      }
-
-      .counter {
-        visibility: visible;
-      }
-    }
-  }
-  // *** Rating i przyciski pod nim ***
-  .offert {
-    width: 100%;
-    height: 150px;
-    background-color: $white;
-    text-align: center;
-    padding-top: 10px;
-    position: relative;
-
-    h5 {
-      font-size: 24px;
-      font-weight: bold;
-    }
-
-    .rating {
-      unicode-bidi: bidi-override;
-      direction: rtl;
-      font-size: 25px;
-      cursor: pointer;
-    }
-
-    .rating > span {
-      display: inline-block;
-      position: relative;
-      width: 1.1em;
-    }
-
-    .rating > span:hover:before,
-    .rating > span:hover ~ span:before {
-       content: "\2605";
-       position: absolute;
-    }
-
-    .line {
-      margin: 0 10px;
-      border-bottom: 1px solid $pb-bb;
-      position: relative;
-      &::before {
-        content: "";
-        position: absolute;
-        bottom: -1px;
-        left: 50%;
-        width: 30px;
-        border-bottom: 4px solid $pb-bb-before;
-        transform: translateX(-50%);
-      }
-    }
-  }
-
-  .price {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-
-    >* {
-      flex: 1 0 auto;
-      text-align: center;
-    }
-  }
-
-  .old_price {
-    text-decoration: line-through;
-    opacity: 0.5;
-  }
-
-  .actions {
-    padding: 15px 10px 10px 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    .options {
-      width: 120px;
-      display: flex;
-      justify-content: space-around;
-    }
-  }
-  // *** KAFELEK PO PRAWEJ STRONIE ***
+// *** Prawy kafelek ***
   .banner {
-    height: 460px;
     background-color: $light-1;
-    background-image: url('https://images.pexels.com/photos/4352247/pexels-photo-4352247.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
-    background-position: center center;
-    background-size: cover;
     position: relative;
+    height: 100%;
 
-    .buttonBox {
-      display: flex;
+    img {
+      max-height: 427px;
       width: 100%;
-      height: 39px;
-      position: absolute;
-      top: 92%;
-    }
-
-    .button {
       height: 100%;
-      width: 50%;
-      text-align: center;
-      background-color: $dark-4;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      .icon {
-        color: $white;
-      }
+      object-fit: cover;
     }
 
     .button:hover {
@@ -237,55 +47,43 @@
       height: 200px;
       position: absolute;
       top: 25%;
-      background-color:black;
-      opacity: 0.5;
+      background-color: transparentize(black, 0.5);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: $white;
     }
 
-    h1:first-of-type {
-      display: inline-block;
-      position: absolute;
-      color: $white;
+    h1 {
       font-size: 50px;
       font-weight: 200;
-      top: 35%;
-      left: 20%;
-    }
+      text-align: center;
+      text-transform: uppercase;
 
-    h1:nth-of-type(2) {
-      position: absolute;
-      display: inline-block;
-      color: $white;
-      font-size: 50px;
-      top: 35%;
-      left: 47%;
-      font-weight: bolder;
+      span {
+        font-weight: bolder;
+      }
     }
 
     h2 {
-      position: absolute;
-      color: $white;
       font-size: 25px;
       text-transform: uppercase;
-      width: 100%;
-      top: 55%;
-      left: 75%;
-      transform: translate(-50%,-50%);
       font-weight: 100;
     }
 
     .buttonShop {
-      height: 50px;
-      width: 140px;
       background-color: $white;
       position: absolute;
-      top: 65%;
-      left: 40%;
+      height: 50px;
+      bottom: -25px;
+      left: 50%;
+      transform: translateX(-50%);
       border-radius: 4px;
-      padding: 14px 25px;
-      cursor: pointer;
-      text-align: center;
       color: $dark-4;
       font-weight: bold;
+      display: flex;
+      align-items: center;
 
       &:hover {
         background-color: $orange;

@@ -3,7 +3,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 import SectionHeader from '../../common/SectionHeader/SectionHeader';
-import GalleryProduct from '../../common/GalleryProduct/GalleryProduct';
+import ProductBox from '../../features/ProductBox/ProductBoxContainer';
 import Button from '../../common/Button/Button';
 import Swipeable from '../../common/Swipeable/Swipeable.js';
 
@@ -134,7 +134,8 @@ const Gallery = ({ featured, topSeller, sale, topRated }) => {
               </nav>
               <div className={styles.productAndSlider}>
                 <div className={isFading ? ` ${styles.fadeout}` : styles.fadein}>
-                  <GalleryProduct
+                  <ProductBox
+                    variant='gallery'
                     className={isProductFading ? ` ${styles.fadeout}` : styles.fadein}
                     {...activeProduct}
                   />

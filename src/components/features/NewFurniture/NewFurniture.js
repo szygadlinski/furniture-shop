@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 import styles from './NewFurniture.module.scss';
 import initialState from '../../../redux/initialState';
-import ProductBox from '../../common/ProductBox/ProductBoxContainer';
+import ProductBox from '../../features/ProductBox/ProductBoxContainer';
 import Swipeable from '../../common/Swipeable/Swipeable';
 
 class NewFurniture extends React.Component {
