@@ -1,151 +1,121 @@
-@import "../../../styles/settings.scss";
+@import '../../../styles/settings.scss';
 
 .root {
-  padding: $base-padding 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  padding: ($base-padding * 2) 0;
+  background: $bck-register;
 
-  .containerWrapper {
-    margin: 0 auto;
-    padding: 10px;
+  .title {
+    text-align: center;
+    color: $register-title;
+    padding: $base-padding / 2;
+  }
+
+  .loginWrapper {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
     flex-direction: column;
-    width: 50%;
-    box-shadow: 5px 10px 25px $bd-register;
-    margin-top: 35px;
-    margin-bottom: 35px;
+    background: $white-register;
+    padding: ($base-padding * 2) ($base-padding * 3);
+    max-width: 500px;
+    margin: auto;
+    border-top: 8px solid $register-border-out;
+    border-radius: 10px;
+    box-shadow: 10px 10px 50px;
 
-    .radioForm {
-      display: flex;
-      justify-content: space-around;
-      width: 80%;
-      margin-top: 25px;
-      margin-right: 35px;
-      .radioBox{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        label {
-          display: flex;
-          flex-direction: row;
-          margin-right: 15px;
-        }
+    .button {
+      margin: auto;
+      padding: ($base-padding / 2) ($base-padding * 2);
+      background: linear-gradient(lighten($btn-register, 40%), $btn-register);
+      color: $login-btn-txt;
+      font-weight: bolder;
+      border-radius: 5px;
+      box-shadow: 0 0 10px $bd-register;
+      margin-top: 15px;
 
-      .radio {
-        display: block;
-        margin-right: 7px;
-        cursor: pointer;
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
-        background-color: $bck-register;
-      }
-
+      &:hover {
+        background: linear-gradient($btn-register, darken($btn-register, 40%));
+        box-shadow: 0 0 20px darken($register-hover, 20%);
+        @extend %hover-animation;
       }
     }
 
-    .titleWrapper {
-      display: flex;
-      justify-content: flex-start;
-      margin: 45px 0 5px 10px;
-      width: 100%;
-      padding: 0 30px;
-    }
+    > div {
+      position: relative;
+      background: white;
 
-
-    .registerWrapper {
-      display: flex;
-      flex-direction: column;
-      width: 90%;
-      margin-left: 15px;
-
-      input {
-        width: 90%;
-        height: 42px;
-        margin-bottom: 15px;
-        border: 1px solid $bd-register;
-        padding-left: 10px;
+      > label {
+        opacity: 0.3;
+        font-weight: bold;
+        position: absolute;
+        top: 12px;
+        left: 20px;
       }
-      .passwordInput {
-        display: flex;
-        position: relative;
 
+      > input[type='text'],
+      > input[type='email'],
+      > input[type='password'] {
+        width: 100%;
+        border: 0;
+        padding: 8px 8px 8px 30px;
+        border: 2px solid $bd-register;
+        margin-bottom: $base-padding;
+        border-radius: 5px;
+        outline: none;
+        font-weight: bolder;
+        box-shadow: 0 0 5px;
 
-        .icon {
-          position: absolute;
-          top: 21%;
-          right: 14%;
-        }
-        .icon:hover {
+        &:hover, &:focus {
+          color: $register-hover;
+          border: 2px solid $register-hover;
+          box-shadow: 0 0 10px $register-hover;
+          background: lighten($register-hover, 40%);
           cursor: pointer;
-          color: $bd-register;
+          @extend %hover-animation;
+          outline: 0;
+
+          & + label {
+            opacity: 0;
+            cursor: pointer;
+          }
         }
+
+        &:valid {
+          background-size: 20px;
+          background-repeat: no-repeat;
+          background-position: 20px 20px;
+          & + label {
+            opacity: 0;
+          }
+        }
+
+        &:invalid:not(:focus):not(:placeholder-shown) {
+          background: pink;
+          & + label {
+            opacity: 0;
+          }
+        }
+
+        &:invalid:focus:not(:placeholder-shown) {
+          & ~ .requirements {
+            max-height: 200px;
+            padding: 0 30px 20px 50px;
+          }
+        }
+      }
+
+      .requirements {
+        padding: 0 30px 0 50px;
+        color: #999;
+        max-height: 0;
+        transition: 0.28s;
+        overflow: hidden;
+        color: red;
+        font-style: italic;
       }
     }
 
-    .checkboxWrapper {
-      display: flex;
-      flex-direction: column;
-      margin: 25px 0;
-      width: 90%;
-      padding-left: 10px;
-
-      .conditions {
-        display: flex;
-        flex-direction: row;
-        margin-bottom: 15px;
-
-        input {
-          height: 19px;
-          width: 19px;
-          margin-right: 10px;
-        }
-
-        h6 {
-          font-size: 13px;
-          color: $bck-register;
-        }
-        .checkAll {
-          font-weight: bold;
-        }
-      }
-    }
-
-    .buttonsWrapper {
-      display: flex;
-      justify-content: space-between;
-      width: 80%;
-      margin-right: 30px;
-      margin-bottom: 25px;
-    }
-
-    .btn1 {
-      border: none;
-      color: $btn-register;
-      font-size: 15px;
-      padding-top: 15px;
-      padding-left: 0;
-    }
-    .btn1:hover {
-      background-color: $white-register;
-    }
-
-    .btn2 {
-      margin-left: 25px;
-      padding: 15px;
-      color: $white-register;
-      background-color: $btn-register;
-      border: none;
-      font-size: 17px;
-      text-decoration: none;
-    }
-    .btn2:hover {
-      background-color: $bck-register;
+    &:hover {
+      box-shadow: 0 0 50px darken($bck-register, 60%);
+      @extend %hover-animation;
     }
   }
 }

@@ -36,8 +36,8 @@ const ProductPopup = ({ name, price, category, rating, image }) => {
 ProductPopup.propTypes = {
   name: PropTypes.string,
   category: PropTypes.string,
-  price: PropTypes.string,
-  rating: PropTypes.string,
+  price: PropTypes.number,
+  rating: PropTypes.number,
   image: PropTypes.string,
 };
 export default ProductPopup;
