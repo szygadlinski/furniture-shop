@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import styles from './ProductBox.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -46,7 +46,7 @@ const ProductBox = ({
 
   return (
     <div className={styles.root}>
-      <Link to={{ pathname: `/product/${id}`, state: {id} }}>
+      <Link to={{ pathname: `/product/${id}`, state: { id } }}>
         <div className={styles.photo}>
           {promo && <div className={styles.sale}>{promo}</div>}
           <div className={styles.image}>
@@ -55,7 +55,11 @@ const ProductBox = ({
               <Button className={styles.button} variant='small'>
                 Quick View
               </Button>
-              <Button className={styles.button} variant='small' onClick={addCartHandler}>
+              <Button
+                className={styles.button}
+                variant='small'
+                onClick={addCartHandler}
+              >
                 <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO CART
               </Button>
             </div>
@@ -64,7 +68,7 @@ const ProductBox = ({
       </Link>
 
       <div className={styles.content}>
-        <Link to={{ pathname: `/product/${id}`, state: {id} }}>
+        <Link to={{ pathname: `/product/${id}`, state: { id } }}>
           <h5>{name}</h5>
         </Link>
         <Rating id={id} rate={stars} toggleStar={toggleStar} rated={rated} />

@@ -1,9 +1,9 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import styles from './ProductPage.module.scss';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import Button from '../../common/Button/Button';
-import { useLocation} from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faExchangeAlt,
@@ -27,16 +27,14 @@ import NewFurniture from '../../features/NewFurniture/NewFurnitureContainer';
 import Feedback from '../../features/Feedback/FeedbackContainer';
 import Brands from '../../features/Brands/BrandsContainer';
 
-
-const ProductPage = ({products}) => {
-
+const ProductPage = ({ products }) => {
   const location = useLocation();
   const currentProduct = location.state.id;
   const [currentItem, setCurrentItem] = useState([]);
   const [activeImage] = useState(0);
 
   useEffect(() => {
-    const filteredProduct = (products || []).filter(product => {
+    const filteredProduct = products.filter(product => {
       return product.id === currentProduct;
     });
     setCurrentItem(filteredProduct);
@@ -56,7 +54,7 @@ const ProductPage = ({products}) => {
                       <img
                         className={styles.mainPhoto}
                         alt=''
-                        src={`../${product.image}`}
+                        src='https://cdn.pixabay.com/photo/2020/11/24/11/36/bedroom-5772286_1280.jpg'
                       ></img>
                     </Col>
                   </Row>
@@ -87,7 +85,9 @@ const ProductPage = ({products}) => {
                         ></img>
                       </div>
                       <Button className={styles.button} variant='outlineYellow'>
-                        <FontAwesomeIcon icon={faChevronRight}>Favorite</FontAwesomeIcon>
+                        <FontAwesomeIcon icon={faChevronRight}>
+                          Favorite
+                        </FontAwesomeIcon>
                       </Button>
                     </Col>
                   </Row>
@@ -101,10 +101,14 @@ const ProductPage = ({products}) => {
                       </Col>
                       <Col>
                         <Button className={styles.button} variant='outlineYellow'>
-                          <FontAwesomeIcon icon={faChevronLeft}>Favorite</FontAwesomeIcon>
+                          <FontAwesomeIcon icon={faChevronLeft}>
+                            Favorite
+                          </FontAwesomeIcon>
                         </Button>
                         <Button className={styles.button} variant='outlineYellow'>
-                          <FontAwesomeIcon icon={faChevronRight}>Favorite</FontAwesomeIcon>
+                          <FontAwesomeIcon icon={faChevronRight}>
+                            Favorite
+                          </FontAwesomeIcon>
                         </Button>
                       </Col>
                     </Row>
@@ -159,7 +163,7 @@ const ProductPage = ({products}) => {
                               icon={faShoppingBasket}
                               className={styles.icon}
                             ></FontAwesomeIcon>
-                          Add to cart
+                            Add to cart
                           </Button>
                           <Button className={styles.oneButton} variant='outlineYellow'>
                             <FontAwesomeIcon icon={faHeart}></FontAwesomeIcon>
@@ -193,10 +197,11 @@ const ProductPage = ({products}) => {
                     <Row className={styles.detailsContent}>
                       <h5>Quick Overview</h5>
                       <p>
-                        Vivamus nec elit posuere mauris ornare ultricies non iaculis quam.
-                        Morbi aliquam felis non tincidunt ultricies. Aliquam facilisis metus
-                        at dignissim sollicitudin. Ut gravida, lacus at consectetur pharetra,
-                        lectus nunc bibendum enim, ac consequat massa diam non quam.{' '}
+                        Vivamus nec elit posuere mauris ornare ultricies non iaculis
+                        quam. Morbi aliquam felis non tincidunt ultricies. Aliquam
+                        facilisis metus at dignissim sollicitudin. Ut gravida, lacus at
+                        consectetur pharetra, lectus nunc bibendum enim, ac consequat
+                        massa diam non quam.{' '}
                       </p>
                     </Row>
                   </div>
@@ -223,7 +228,7 @@ const ProductPage = ({products}) => {
                               icon={faFacebookF}
                               className={styles.socialIcon}
                             ></FontAwesomeIcon>
-                              Share
+                            Share
                           </Button>
                           <Button className={styles.media} variant='outlineGoogle'>
                             <FontAwesomeIcon
@@ -244,7 +249,7 @@ const ProductPage = ({products}) => {
                               icon={faPinterestP}
                               className={styles.socialIcon}
                             ></FontAwesomeIcon>
-                          Pinterest
+                            Pinterest
                           </Button>
                           <Button className={styles.media} variant='outlineLinkedIn'>
                             <FontAwesomeIcon
@@ -260,8 +265,6 @@ const ProductPage = ({products}) => {
                 </Col>
               </Row>
             </div>
-
-
           </Grid>
         );
       })}
@@ -276,8 +279,6 @@ const ProductPage = ({products}) => {
     </div>
   );
 };
-
-
 
 ProductPage.propTypes = {
   image: PropTypes.string,

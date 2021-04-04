@@ -15,13 +15,11 @@ import Feedback from '../../features/Feedback/FeedbackContainer';
 import Brands from '../../features/Brands/BrandsContainer';
 import ProductBox from '../../features/ProductBox/ProductBoxContainer';
 
-
 class ProductList extends React.Component {
   static propTypes = {
     categories: PropTypes.arrayOf(PropTypes.object),
     products: PropTypes.arrayOf(PropTypes.object),
     productsFilteredByPrice: PropTypes.arrayOf(PropTypes.object),
-
   };
 
   render(){
@@ -33,7 +31,6 @@ class ProductList extends React.Component {
           <Banner  />
 
           <div className='row'>
-
             <div className='col-9'>
 
               {/*{categories.map(category => (
@@ -59,6 +56,7 @@ class ProductList extends React.Component {
                         <li>Name: A to Z</li>
                         <li>Name: Z to A</li>
                       </ul>
+
                     </div>
                   </div>
 
@@ -100,6 +98,7 @@ class ProductList extends React.Component {
                 <h2>Page not found :(</h2>
               </div>
                   ))}*/}
+
             </div>
             <div className='col-3'>
               <CategoryFilter />

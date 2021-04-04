@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 import GridProduct from './GridProduct/GridProduct';
 import GalleryProduct from './GalleryProduct/GalleryProduct';
@@ -79,19 +80,21 @@ const ProductBox = ({
 
   return (
     <div>
-      {component}
-      <div className={styles.overlay} id={id}>
-        <Button className={styles.popupButton} onClick={closeModal}>
-          Close
-        </Button>
-        <ProductPopup
-          name={name}
-          price={price}
-          category={category}
-          rating={stars}
-          image={image}
-        />
-      </div>
+      <Link to={{ pathname: `/product/${id}`, state: { id } }}>
+        {component}
+        <div className={styles.overlay} id={id}>
+          <Button className={styles.popupButton} onClick={closeModal}>
+            Close
+          </Button>
+          <ProductPopup
+            name={name}
+            price={price}
+            category={category}
+            rating={stars}
+            image={image}
+          />
+        </div>
+      </Link>
     </div>
   );
 };
