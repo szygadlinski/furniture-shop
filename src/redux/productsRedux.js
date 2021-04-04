@@ -14,8 +14,8 @@ export const getNew = ({ products }) =>
 export const getComparison = ({ products }) =>
   products.filter(product => product.compare === true);
 
-export const getProductsCheaperThan = ({products, maxPrice}) =>
-  products.filter(product => product.price <= maxPrice);
+export const getProductsCheaperThan = ({products, currentPrice}) =>
+  products.filter(product => product.price <= currentPrice);
 
 /* action name */
 const createActionName = name => `app/products/${name}`;

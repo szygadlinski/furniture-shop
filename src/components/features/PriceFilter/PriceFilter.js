@@ -3,11 +3,20 @@ import PropTypes from 'prop-types';
 import styles from './PriceFilter.module.scss';
 
 class PriceFilter extends React.Component {
-  state = {
-    currentValue: 0,
-  };
+  constructor(props){
+    super(props);
 
-  getMinPrice(products){
+    let maxPrice = 0;
+    for (let product of this.props.products) {
+      if (product.price > maxPrice) {
+        maxPrice = product.price;
+      }
+    }
+
+    this.props.changePrice(maxPrice);
+  }
+
+  getMinPrice (products) {
     let minPrice = 100000;
     for (let product of products) {
       if (product.price < minPrice) {
@@ -17,7 +26,7 @@ class PriceFilter extends React.Component {
     return minPrice;
   }
 
-  getMaxPrice(products){
+  getMaxPrice (products) {
     let maxPrice = 0;
     for (let product of products) {
       if (product.price > maxPrice) {
@@ -28,10 +37,7 @@ class PriceFilter extends React.Component {
   }
 
   render(){
-    const { products } = this.props;
-    const { currentValue } = this.state;
-
-    const midPrice = (this.getMinPrice(products) + this.getMaxPrice(products)) / 2;
+    const { products, changePrice, currentPrice } = this.props;
 
     return (
       <div className={styles.root}>
@@ -41,12 +47,12 @@ class PriceFilter extends React.Component {
           type='range'
           min={this.getMinPrice(products)}
           max={this.getMaxPrice(products)}
-          defaultValue={midPrice}
+          defaultValue={this.getMaxPrice(products)}
           step='5'
-          onChange={event => this.setState({currentValue: event.target.value})}
+          onChange={event => changePrice(event.currentTarget.value)}
         />
         <div className={styles.price}>
-          <p className={styles.priceValue}>&#8804; {currentValue === 0 ? midPrice : currentValue}$</p>
+          <p className={styles.priceValue}>&#8804; {currentPrice}$</p>
         </div>
       </div>
     );
@@ -55,6 +61,8 @@ class PriceFilter extends React.Component {
 
 PriceFilter.propTypes = {
   products: PropTypes.arrayOf(PropTypes.object),
+  changePrice: PropTypes.func,
+  currentPrice: PropTypes.number,
 };
 
 export default PriceFilter;
