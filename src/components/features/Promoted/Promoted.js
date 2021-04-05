@@ -13,7 +13,7 @@ const Promoted = ({ products, banners }) => {
     <div className={styles.root}>
       <div className='container'>
         <div className='row'>
-          <div className='col-md-4'>
+          <div className='d-none d-md-block col-12 col-lg-4'>
             <div className={styles.deals}>
               <div className={styles.bar}>
                 <h4>HOT DEALS</h4>
@@ -37,19 +37,21 @@ const Promoted = ({ products, banners }) => {
               </Slider>
             </div>
           </div>
-          <div className='col-md-8'>
-            <Slider noDots>
-              {banners.map((banner, i) => (
-                <div key={i} className={styles.banner}>
-                  <img src={banner.img} alt={banner.name} />
-                  <div className={styles.headerBox}>
-                    <h1>{parse(banner.h1)}</h1>
-                    <h2>{banner.h2}</h2>
-                    <Button className={styles.buttonShop}> SHOP NOW </Button>
+          <div className='col-12 col-lg-8'>
+            <div className={styles.promoted}>
+              <Slider noDots>
+                {banners.map((banner, i) => (
+                  <div key={i} className={styles.banner}>
+                    <img src={banner.img} alt={banner.name} />
+                    <div className={styles.headerBox}>
+                      <h1>{parse(banner.h1)}</h1>
+                      <h2>{banner.h2}</h2>
+                      <Button className={styles.buttonShop}> SHOP NOW </Button>
+                    </div>
                   </div>
-                </div>
-              ))}
-            </Slider>
+                ))}
+              </Slider>
+            </div>
           </div>
         </div>
       </div>

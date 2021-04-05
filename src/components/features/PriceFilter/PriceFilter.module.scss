@@ -16,41 +16,30 @@
     border-radius: 10px;
     background: $pf-button;
     outline: none;
-    
+    cursor: pointer;
+
     &:hover {
       background-color: $pf-hover;
-      cursor: pointer;
       @extend %hover-animation;
     }
   }
 
-  .form {
+  .price {
     display: flex;
-    justify-content: space-between;
-    margin: 10px 0;
+    justify-content: flex-end;
 
-    .button {
-      text-decoration: none;
-      padding: 1px 5px;
-      color: $pf-white;
-      border: 1px solid $pf-button;
-      background-color: $pf-button;
-      
-      &:hover {
-        background-color: $pf-hover;
-        @extend %hover-animation;
-      }
+    .priceValue {
+      margin: ($base-padding / 2) 0 $base-padding;
+      font-weight: bolder;
+      border: 1px solid $pf-background;
+      padding: ($base-padding / 4) ($base-padding / 2);
     }
-    
-    .input {
-      width: 100px;
-      height: 30px;
-      text-align: center;
-      
-      &:focus {
-        outline: none;
-        border: 1px solid $pf-hover;
-      } 
+  }
+
+  &:hover {
+    .priceValue {
+      border: 1px solid $pf-button;
+      color: $pf-button;
     }
   }
 }
