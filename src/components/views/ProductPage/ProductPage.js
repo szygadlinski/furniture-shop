@@ -31,10 +31,9 @@ const ProductPage = ({ products }) => {
   const location = useLocation();
   const currentProduct = location.state.id;
   const [currentItem, setCurrentItem] = useState([]);
-  const [activeImage] = useState(0);
 
   useEffect(() => {
-    const filteredProduct = products.filter(product => {
+    const filteredProduct = (products || []).filter(product => {
       return product.id === currentProduct;
     });
     setCurrentItem(filteredProduct);
@@ -50,7 +49,7 @@ const ProductPage = ({ products }) => {
                 <Col sm={12} md={6} className={styles.photoWrapper}>
                   <Row>
                     <Col sm={12}>
-                      <p className={styles.activeImage}>{activeImage}</p>
+                      <p className={styles.activeImage}></p>
                       <img
                         className={styles.mainPhoto}
                         alt=''

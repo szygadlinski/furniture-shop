@@ -20,85 +20,96 @@ class ProductList extends React.Component {
     categories: PropTypes.arrayOf(PropTypes.object),
     products: PropTypes.arrayOf(PropTypes.object),
     productsFilteredByPrice: PropTypes.arrayOf(PropTypes.object),
+    match: PropTypes.shape({
+      params: PropTypes.shape({
+        categoryId: PropTypes.string,
+      }),
+    }),
   };
 
-  render(){
-    const { /*categories, products,*/ productsFilteredByPrice } = this.props;
+  static defaultProps = {
+    match: {
+      params: {},
+    },
+    categories: [],
+  };
+
+  render() {
+    const { categories, match, productsFilteredByPrice } = this.props;
 
     return (
       <div className={styles.root}>
         <div className='container'>
-          <Banner  />
+          <Banner match={match} />
 
           <div className='row'>
             <div className='col-9'>
+              {categories.map(category =>
+                category.id === match.params.categoryId ? (
+                  <div>
+                    <div className={styles.header}>
+                      <div className={styles.title}>
+                        <h4>{category.name}</h4>
+                      </div>
 
-              {/*{categories.map(category => (
-                category.id === match.params.categoryId
-                  ?
-              <div>*/}
+                      <div className={styles.displayOptions}>
+                        <div className={styles.productsSorting}>
+                          <label>Sort By</label>
+                          <div className={styles.select + ' ' + styles.orderSelect}>
+                            <FontAwesomeIcon
+                              className={styles.icon}
+                              icon={faCaretDown}
+                            />
+                            <ul className={styles.productsOrder}>
+                              <li>Price: Lowest first</li>
+                              <li>Price: Highest first</li>
+                              <li>Rating: Highest first</li>
+                              <li>Rating: Lowest first</li>
+                              <li>Name: A to Z</li>
+                              <li>Name: Z to A</li>
+                            </ul>
+                          </div>
+                        </div>
 
-              <div className={styles.header}>
-                <div className={styles.title}>
-                  <h4>{'category.name'}</h4>
-                </div>
+                        <div className={styles.productsSorting}>
+                          <label>Show</label>
+                          <div className={styles.select + ' ' + styles.amountSelect}>
+                            ---
+                            <FontAwesomeIcon
+                              className={styles.icon}
+                              icon={faCaretDown}
+                            />
+                            <ul className={styles.productsAmount}>
+                              <li>12</li>
+                              <li>24</li>
+                              <li>36</li>
+                              <li>48</li>
+                              <li>60</li>
+                            </ul>
+                          </div>
+                        </div>
 
-                <div className={styles.displayOptions}>
-                  <div className={styles.productsSorting}>
-                    <label>Sort By</label>
-                    <div className={styles.select + ' ' + styles.orderSelect}>
-                      <FontAwesomeIcon className={styles.icon} icon={faCaretDown} />
-                      <ul className={styles.productsOrder}>
-                        <li>Price: Lowest first</li>
-                        <li>Price: Highest first</li>
-                        <li>Rating: Highest first</li>
-                        <li>Rating: Lowest first</li>
-                        <li>Name: A to Z</li>
-                        <li>Name: Z to A</li>
-                      </ul>
+                        <div className={styles.displayType}>
+                          <FontAwesomeIcon className={styles.icon} icon={faThLarge} />
+                          <FontAwesomeIcon className={styles.icon} icon={faThList} />
+                        </div>
+                      </div>
+                    </div>
 
+                    <div className={styles.products}>
+                      <div className='row'>
+                        {productsFilteredByPrice.map(item => (
+                          <div key={item.id} className='col-12 col-md-6 col-lg-4'>
+                            <ProductBox {...item} />
+                          </div>
+                        ))}
+                      </div>
                     </div>
                   </div>
-
-                  <div className={styles.productsSorting}>
-                    <label>Show</label>
-                    <div className={styles.select + ' ' + styles.amountSelect}>
-                      ---
-                      <FontAwesomeIcon className={styles.icon} icon={faCaretDown} />
-                      <ul className={styles.productsAmount}>
-                        <li>12</li>
-                        <li>24</li>
-                        <li>36</li>
-                        <li>48</li>
-                        <li>60</li>
-                      </ul>
-                    </div>
-                  </div>
-
-                  <div className={styles.displayType}>
-                    <FontAwesomeIcon className={styles.icon} icon={faThLarge} />
-                    <FontAwesomeIcon className={styles.icon} icon={faThList} />
-                  </div>
-                </div>
-              </div>
-
-              <div className={styles.products}>
-                <div className='row'>
-                  {productsFilteredByPrice.map(item => (
-                    <div key={item.id} className='col-12 col-md-6 col-lg-4'>
-                      <ProductBox {...item} />
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/*</div>
-              :
-              <div>
-                <h2>Page not found :(</h2>
-              </div>
-                  ))}*/}
-
+                ) : (
+                  <div className={styles.notFound}></div>
+                )
+              )}
             </div>
             <div className='col-3'>
               <CategoryFilter />
