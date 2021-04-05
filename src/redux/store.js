@@ -10,6 +10,7 @@ import deviceTypeReducer from './deviceTypeRedux';
 import feedbacksReducer from './feedbackRedux';
 import favoritesReducer from './favoritesRedux';
 import promoBannersReducer from './promoBannersRedux';
+import currentPriceReducer from './priceRedux';
 
 // load persisted state from LocalStorage and combine with initialState
 const persistedState = loadState();
@@ -25,6 +26,7 @@ const reducers = {
   feedbacks: feedbacksReducer,
   favorites: favoritesReducer,
   promoBanners: promoBannersReducer,
+  currentPrice: currentPriceReducer,
 };
 
 // add blank reducers for initial state properties without reducers
