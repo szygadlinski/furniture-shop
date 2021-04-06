@@ -68,11 +68,15 @@
   flex: 1 0 auto;
   @include border(left, right, bottom);
   display: flex;
+}
 
-  >div {
-    display: flex;
-    width: 100%;
-    flex-direction: column;
+.product {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+
+  >div:first-child{
+    flex: 1 0 auto;
   }
 }
 
