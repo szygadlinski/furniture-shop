@@ -113,19 +113,6 @@ const GridProduct = ({
           </Button>
         </div>
       </div>
-
-      <div className={styles.overlay} id={id}>
-        <Button className={styles.popupButton} onClick={closeModal}>
-          Close
-        </Button>
-        <ProductPopup
-          name={name}
-          price={price}
-          category={category}
-          rating={stars}
-          image={image}
-        />
-      </div>
     </div>
   );
 };
