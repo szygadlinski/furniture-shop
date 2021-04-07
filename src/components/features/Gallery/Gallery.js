@@ -116,7 +116,9 @@ const Gallery = ({ featured, topSeller, sale, topRated }) => {
       <section className={styles.root}>
         <div className='container'>
           <div className='row'>
-            <div className={`col-lg-6 col-md-12 col-sm-12 ${styles.galleryResp}`}>
+            <div
+              className={`col-lg-6 col-md-12 col-sm-12 d-flex flex-column ${styles.galleryResp}`}
+            >
               <SectionHeader title='Furniture Gallery' />
               <nav className={styles.tabs}>
                 <ul>
@@ -133,7 +135,12 @@ const Gallery = ({ featured, topSeller, sale, topRated }) => {
                 </ul>
               </nav>
               <div className={styles.productAndSlider}>
-                <div className={isFading ? ` ${styles.fadeout}` : styles.fadein}>
+                <div
+                  className={
+                    styles.product +
+                    (isFading ? ` ${styles.fadeout}` : ` ${styles.fadein}`)
+                  }
+                >
                   <ProductBox
                     variant='gallery'
                     className={isProductFading ? ` ${styles.fadeout}` : styles.fadein}
