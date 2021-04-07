@@ -41,13 +41,13 @@ const ProductBox = ({
 
   const closeModal = event => {
     event.preventDefault();
-    onModalClose();
+    if (onModalClose) onModalClose();
     event.target.parentNode.style.display = 'none';
   };
 
   const openModal = event => {
     event.preventDefault();
-    onModalOpen();
+    if (onModalOpen) onModalOpen();
     document.getElementById(`${id}`).style.display = 'flex';
   };
 
